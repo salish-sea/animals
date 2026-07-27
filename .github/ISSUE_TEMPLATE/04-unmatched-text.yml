@@ -1,0 +1,37 @@
+name: Vocabulary gap (escape-hatch report)
+description: A moderator needed to say something the register couldn't express
+title: "Gap: "
+labels: ["vocabulary-gap"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This is the most valuable kind of issue in this repository.**
+
+        Free text is deliberately never removed from OrcaSound bouts. What moderators
+        type that the register can't express is the highest-signal input about what's
+        missing — it should be reviewed on a cadence, not just when someone files one.
+  - type: textarea
+    id: text
+    attributes:
+      label: What did the moderator write?
+      description: Paste the bout name or tag text verbatim.
+    validations: {required: true}
+  - type: input
+    id: bout
+    attributes:
+      label: Bout id or link
+  - type: textarea
+    id: meaning
+    attributes:
+      label: What were they trying to say?
+  - type: dropdown
+    id: category
+    attributes:
+      label: What's missing?
+      options:
+        - "An animal or group that isn't in the register"
+        - "A way to express uncertainty or a hedge"
+        - "A relationship the model can't hold"
+        - "Something that isn't animal identity at all (location, behaviour, sound)"
+        - "Not sure"

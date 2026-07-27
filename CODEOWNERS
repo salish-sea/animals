@@ -1,0 +1,20 @@
+# Review routing, and — more importantly — a record of who owns what.
+#
+# Neglect, not modelling error, is the most likely way this register dies (see
+# docs/background.md). If a section below has no owner, that is a finding, not a
+# formatting problem. See docs/open-questions.md Q8.
+
+# Schema, tooling, and implementation decisions
+/bin/                   @rainhead
+/.github/               @rainhead
+/decisions/             @rainhead
+/data/sources.tsv       @rainhead
+
+# Domain content. Needs scientific review; software review is not sufficient.
+# TODO(Q8): add @scottveirs and other scientific reviewers once confirmed.
+/definitions/           @rainhead
+/data/entities.tsv      @rainhead
+/data/membership.tsv    @rainhead
+/data/status.tsv        @rainhead
+/data/names.tsv         @rainhead
+/data/ranks.tsv         @rainhead

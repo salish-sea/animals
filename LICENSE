@@ -1,0 +1,39 @@
+Two licences apply, and the data is deliberately covered by neither yet.
+
+DOCUMENTATION AND SCHEMA (docs/, decisions/, definitions/, README, and the column
+definitions themselves) — Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+
+CODE (bin/, .github/) — MIT.
+
+  Copyright (c) 2026 the contributors to salish-sea/animals
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy of this
+  software and associated documentation files (the "Software"), to deal in the Software
+  without restriction, including without limitation the rights to use, copy, modify,
+  merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+  permit persons to whom the Software is furnished to do so, subject to the following
+  conditions:
+
+  The above copyright notice and this permission notice shall be included in all copies
+  or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+DATA (data/) — NOT YET LICENSED.
+
+Rows in data/ are derived from external catalogues maintained by other organisations.
+Redistribution permission has not been requested from any of them; data/sources.tsv
+records license_status = not-yet-requested for every external source.
+
+Facts are not copyrightable in the United States, but the selection and arrangement of
+a catalogue can be, database rights differ in other jurisdictions, and some individual
+animal names carry obligations that have nothing to do with copyright.
+
+Until each source in data/sources.tsv has a resolved license_status, treat data/ as
+unlicensed and do not redistribute it as a dataset.

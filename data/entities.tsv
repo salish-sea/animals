@@ -1,0 +1,16 @@
+entity_id	kind	rank	label	taxon_id	born	sex	source_id	note
+SSA:0000001	group	ecotype	Southern Resident	NCBITaxon:9733			SEED	
+SSA:0000002	group	ecotype	Bigg's	NCBITaxon:9733			SEED	Also called "transient" in older literature; see names.tsv.
+SSA:0000010	group	community	Southern Resident community	NCBITaxon:9733			SEED	Relationship between community and ecotype is unresolved; see open-questions.md Q1.
+SSA:0000011	group	clan	J clan	NCBITaxon:9733			SEED	Southern Residents are believed to comprise a single acoustic clan. Needs expert confirmation.
+SSA:0000020	group	pod	J pod	NCBITaxon:9733			SEED	
+SSA:0000021	group	pod	K pod	NCBITaxon:9733			SEED	
+SSA:0000022	group	pod	L pod	NCBITaxon:9733			SEED	
+SSA:0000030	group	matriline	J17	NCBITaxon:9733			SEED	The matriline, distinct from individual SSA:0000105. See ADR-0003.
+SSA:0000031	group	matriline	L32	NCBITaxon:9733			SEED	
+SSA:0000040	group	matriline	T090	NCBITaxon:9733			SEED	
+SSA:0000101	individual		J35	NCBITaxon:9733	1998	F	SEED	Birth year unverified.
+SSA:0000102	individual		J57	NCBITaxon:9733	2020-09	M	SEED	Calf of J35.
+SSA:0000103	individual		J50	NCBITaxon:9733	2014-12	F	SEED	See status.tsv.
+SSA:0000104	individual		L87	NCBITaxon:9733	1992	M	SEED	Born to L32; travelled with K pod and later J pod. See ADR-0005 and docs/walkthrough.md.
+SSA:0000105	individual		J17	NCBITaxon:9733	1977	F	SEED	The individual, distinct from matriline SSA:0000030.

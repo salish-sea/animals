@@ -1,0 +1,12 @@
+member_id	group_id	start	end	source_id	note
+SSA:0000011	SSA:0000010			SEED	J clan is the acoustic clan of the Southern Resident community.
+SSA:0000020	SSA:0000011			SEED
+SSA:0000021	SSA:0000011			SEED
+SSA:0000022	SSA:0000011			SEED
+SSA:0000030	SSA:0000020			SEED	Matriline J17 is in J pod.
+SSA:0000031	SSA:0000022			SEED	Matriline L32 is in L pod.
+SSA:0000101	SSA:0000030			SEED	Natal membership: empty interval means "bounded by the individual's lifespan". See ADR-0006.
+SSA:0000102	SSA:0000030			SEED
+SSA:0000103	SSA:0000020			SEED	Matriline not recorded; membership asserted at pod level only.
+SSA:0000104	SSA:0000031			SEED	Genealogical membership. L87's later travel with K and J pods is NOT recorded here — see ADR-0005.
+SSA:0000105	SSA:0000030			SEED

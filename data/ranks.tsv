@@ -1,0 +1,6 @@
+rank	label	applies_to	definition_file	status	note
+ecotype	Ecotype	Orcinus orca	definitions/ecotype.md	proposed	Not a formal taxonomic rank. See ADR-0004.
+community	Community	Orcinus orca (resident)	definitions/community.md	proposed
+clan	Acoustic clan	Orcinus orca (resident)	definitions/clan.md	proposed	Defined by call repertoire sharing, not by association.
+pod	Pod	Orcinus orca (resident)	definitions/pod.md	proposed	Bigg's do not use this rank. See ADR-0004.
+matriline	Matriline	Orcinus orca	definitions/matriline.md	proposed	The only rank used by every ecotype in scope.

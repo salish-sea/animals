@@ -1,0 +1,51 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # ADR-0006 makes git history the assertion-time axis. Full history is
+          # needed for the no-rewrite check below to mean anything.
+          fetch-depth: 0
+
+      - name: Validate the register
+        run: python3 bin/validate.py
+
+      - name: Check that no identifier has been deleted (ADR-0010)
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --quiet origin "${{ github.base_ref }}"
+          base=$(git show "origin/${{ github.base_ref }}:data/entities.tsv" \
+                 | tail -n +2 | cut -f1 | sort)
+          head=$(tail -n +2 data/entities.tsv | cut -f1 | sort)
+          gone=$(comm -23 <(echo "$base") <(echo "$head"))
+          if [ -n "$gone" ]; then
+            echo "Identifiers removed from entities.tsv:"
+            echo "$gone"
+            echo "Identifiers are permanent. Deprecate in data/deprecations.tsv instead."
+            echo "See decisions/0010-identifiers-are-never-reused.md"
+            exit 1
+          fi
+
+      - name: Check that status.tsv is append-only (ADR-0006)
+        if: github.event_name == 'pull_request'
+        run: |
+          base=$(git show "origin/${{ github.base_ref }}:data/status.tsv" | tail -n +2 | sort)
+          head=$(tail -n +2 data/status.tsv | sort)
+          gone=$(comm -23 <(echo "$base") <(echo "$head"))
+          if [ -n "$gone" ]; then
+            echo "Status rows were modified or removed:"
+            echo "$gone"
+            echo "status.tsv is append-only. Record a correction as a new row."
+            exit 1
+          fi

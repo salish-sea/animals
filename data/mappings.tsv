@@ -1,0 +1,4 @@
+subject_id	predicate_id	object_id	object_label	mapping_justification	confidence	source_id	note
+SSA:0000001	skos:broadMatch	NCBITaxon:9733	Orcinus orca	semapv:ManualMappingCuration	1.0	SEED	An ecotype is narrower than the species.
+SSA:0000002	skos:broadMatch	NCBITaxon:9733	Orcinus orca	semapv:ManualMappingCuration	1.0	SEED
+SSA:0000040	skos:exactMatch	finwave:T090	T090	semapv:ManualMappingCuration		SEED	Placeholder. The finwave identifier scheme has not been confirmed.

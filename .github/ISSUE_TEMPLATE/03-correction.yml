@@ -1,0 +1,40 @@
+name: Data correction
+description: Something in the register is factually wrong
+title: "Correction: "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Note which kind of change this is — it determines how it gets recorded (ADR-0006):
+        a **life event** is appended as a new row; a **correction** is edited in place,
+        with git history recording when we learned better.
+  - type: input
+    id: entity
+    attributes:
+      label: Entity identifier or label
+    validations: {required: true}
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of change
+      options:
+        - "Life event (birth, death, dispersal) — something changed in the world"
+        - "Correction — it was always wrong and we're fixing it"
+        - "Not sure"
+    validations: {required: true}
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong, and what should it say?
+    validations: {required: true}
+  - type: input
+    id: source
+    attributes:
+      label: Source
+    validations: {required: true}
+  - type: input
+    id: when
+    attributes:
+      label: When did the source say this?
+      description: For life events, also when did it become true? (These are often different dates.)

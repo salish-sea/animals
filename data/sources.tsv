@@ -1,0 +1,8 @@
+source_id	name	url	scope	license	license_status	retrieved_on	note
+SEED	Illustrative seed data	https://github.com/salish-sea/animals	examples only	n/a	n/a		Unverified. Every SEED row must be replaced or confirmed by a curator before first release.
+CWR	Center for Whale Research annual census	https://www.whaleresearch.com/	SRKW individuals, matrilines, pods	unknown	not-yet-requested		Presumed authority for Southern Residents. Redistribution permission not yet discussed.
+MERS	Marine Education and Research Society	https://mersociety.org/	Bigg's individuals and matrilines	unknown	not-yet-requested		One of several candidate authorities for Bigg's; see docs/open-questions.md Q3.
+FINWAVE	finwave.io	https://finwave.io/	Bigg's individuals	unknown	not-yet-requested		Named by S. Veirs in orcasound/orcasite#1001 as a queryable Bigg's source.
+NCBI	NCBI Taxonomy	https://www.ncbi.nlm.nih.gov/taxonomy/	species	public-domain	cleared	2026-07-27	Used for taxon_id only. We mint no species identifiers.
+WORMS	World Register of Marine Species	https://www.marinespecies.org/	marine species	CC-BY-4.0	cleared	2026-07-27	Alternative/parallel species authority; see ADR-0008.
+EDITORS	Editors of this repository	https://github.com/salish-sea/animals	working definitions	CC-BY-4.0	cleared		Definitions written here rather than inherited from a source.

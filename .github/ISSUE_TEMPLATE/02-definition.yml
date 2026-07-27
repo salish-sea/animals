@@ -1,0 +1,30 @@
+name: Definition question or dispute
+description: A term's definition is unclear, wrong, or being applied inconsistently
+title: "Definition: "
+labels: ["definition"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Vague definitions are the one failure mode that a script cannot fix later —
+        two curators apply a term differently, nobody notices, and the inconsistency
+        is invisible in the data. These issues are high priority.
+  - type: input
+    id: term
+    attributes:
+      label: Which term?
+    validations: {required: true}
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong with the current definition?
+    validations: {required: true}
+  - type: textarea
+    id: case
+    attributes:
+      label: A concrete case it gets wrong
+      description: A specific animal, group, or bout where the current wording gives the wrong answer or no answer.
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed wording

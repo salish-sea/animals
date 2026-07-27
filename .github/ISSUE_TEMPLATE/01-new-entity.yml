@@ -1,0 +1,45 @@
+name: New entity (animal or group)
+description: Request an identifier for an animal or group that isn't in the register yet
+title: "Add: "
+labels: ["new-entity"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Identifiers are minted when this is merged, not when the issue is filed.
+        If you need one today, you can open a pull request adding the row with
+        `source_id = SEED` — validation will flag it as unverified but nothing breaks.
+        See ADR-0001.
+  - type: input
+    id: label
+    attributes:
+      label: Label
+      description: How it should be displayed, e.g. "T090" or "J60"
+    validations: {required: true}
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Individual or group?
+      options: ["individual", "group"]
+    validations: {required: true}
+  - type: input
+    id: rank
+    attributes:
+      label: Rank (groups only)
+      description: ecotype, community, clan, pod, or matriline. If none fit, say so.
+  - type: input
+    id: parent
+    attributes:
+      label: What group does it belong to?
+      description: Label or identifier. Genealogically — not who it travels with. See definitions/membership.md
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Who says this exists? A catalogue, a census, a publication, or a person.
+    validations: {required: true}
+  - type: textarea
+    id: names
+    attributes:
+      label: Other names
+      description: Common names, nicknames, alternative spellings people might search for
