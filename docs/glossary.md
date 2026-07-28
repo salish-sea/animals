@@ -70,6 +70,12 @@ A short controlled value recording *how* a claim was arrived at: heard by a mode
 confirmed against a photo-ID sighting, inferred from a co-occurring visual report,
 produced by an automated detector. Borrowed from the Gene Ontology.
 
+### ⚖️ Label
+The register's **preferred name** for an entity — what it is canonically called. It is
+input to display, not display itself: a consumer builds its own dropdown entry or map
+label from this plus rank and context. Mutable by design, so nothing may key on it. See
+[ADR-0011](../decisions/0011-label-is-a-preferred-name.md).
+
 ### 🐋 Matriline
 A female and her surviving descendants, travelling as a unit. The only rank used by
 every ecotype in scope. See [definitions/matriline.md](../definitions/matriline.md).

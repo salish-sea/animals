@@ -13,8 +13,12 @@ and it is what most projects later regret.
 ## Decision
 
 Identifiers are `SSA:` followed by a zero-padded number: `SSA:0000020`. They carry no
-meaning. The human-readable label lives in the adjacent `label` column of the same row
+meaning. The entity's preferred name lives in the adjacent `label` column of the same row
 and may change freely without affecting identity.
+
+What `label` is *for* — a preferred name, not a display string and not an integration key
+— is [ADR-0011](0011-label-is-a-preferred-name.md). This record only relies on the fact
+that it is mutable and that identity does not depend on it.
 
 ## What this means for the data
 
@@ -39,6 +43,8 @@ The cost is real: you cannot read `SSA:0000020` and know what it is. Which is wh
 - **The `label` column sits immediately beside `entity_id` in every file where it
   helps.** A diff reads `SSA:0000101 individual  J35 …`, not a bare number. This is the
   standard mitigation and it is why opaque identifiers do not make review impossible.
+  Note that diff readability is a *by-product* of the preferred name being there, not the
+  reason the column exists — see [ADR-0011](0011-label-is-a-preferred-name.md).
 - In `membership.tsv`, where both columns are identifiers, the `note` field carries the
   human reading. Validation does not check it — it's a comment.
 - Numbers are assigned sequentially from blocks by kind, purely for legibility when

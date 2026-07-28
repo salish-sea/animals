@@ -33,6 +33,7 @@ addressed to it yet.
 | [0008](0008-species-identity-is-delegated.md) | Species identity is delegated, not minted | Scientific + informatics |
 | [0009](0009-uncertainty-on-the-annotation.md) | Uncertainty belongs on the annotation, not in the vocabulary | Scientific + informatics |
 | [0010](0010-identifiers-are-never-reused.md) | Identifiers are never deleted or reused | Informatics reviewers |
+| [0011](0011-label-is-a-preferred-name.md) | The label is a preferred name, not a display string | Scientific + informatics |
 
 ## Template
 

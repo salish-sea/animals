@@ -99,6 +99,16 @@ tag. If identifiers should ever be dereferenceable as URLs
 (`https://salishsea.io/animals/SSA:0000101`), that is a permanent hosting commitment and
 should be decided before anything is published, not after.
 
+### Q14 — How are preferred names localised?
+*Owner: P. Abrahamsen.*
+`names.tsv` has a `language` column; `entities.tsv.label` does not, so the preferred name
+is implicitly English. Scott has raised the possibility of Spanish-language signal labels
+for a future humpback vocabulary, and the same pressure would apply here. Options: add a
+language dimension to `label`, or move preferred names into `names.tsv` as a typed row
+and accept the hit to diff readability. Not urgent, but it is a schema change and worth
+deciding before there is much data. See
+[ADR-0011](../decisions/0011-label-is-a-preferred-name.md).
+
 ### Q12 — How do the two repositories reference each other?
 *Owner: P. Abrahamsen, S. Veirs.*
 `signals-srkw` currently copies ecotype and pod labels rather than referencing them.

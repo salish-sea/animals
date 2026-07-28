@@ -48,7 +48,7 @@ Decision records addressed to `Informatics reviewers` are implementation detail.
 
 ### If you're reviewing the design
 
-[docs/scope.md](docs/scope.md), then [decisions/](decisions/) — ten records covering the
+[docs/scope.md](docs/scope.md), then [decisions/](decisions/) — eleven records covering the
 choices that are expensive to reverse. [docs/background.md](docs/background.md) explains
 what we're borrowing from the Gene Ontology and OBO Foundry, what we're deliberately not
 taking, and why most projects like this one die.
@@ -98,8 +98,13 @@ SSA:0000001  Southern Resident (ecotype)
 ```
 
 Identifiers are opaque on purpose — a readable identifier becomes a lie when the thing
-it names changes ([ADR-0002](decisions/0002-opaque-permanent-identifiers.md)). The label
-always sits next to the identifier so diffs stay reviewable.
+it names changes ([ADR-0002](decisions/0002-opaque-permanent-identifiers.md)). The
+preferred name sits next to the identifier, which also keeps diffs reviewable.
+
+That name is the register's claim about what the entity is *called*, not a string to put
+in a dropdown ([ADR-0011](decisions/0011-label-is-a-preferred-name.md)). Consumers
+compose their own presentation from the label, the rank, and the membership context;
+nothing should ever key on a label, because labels are meant to change.
 
 ## What it deliberately doesn't do
 
