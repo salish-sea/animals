@@ -52,10 +52,19 @@ signal is characteristic of Bigg's. Any assumption that one tag identifies both 
 animal and the sound source breaks here. See [walkthrough.md](walkthrough.md).
 
 ### Q9 — Are there animals or names we should *not* publish?
-*Owner: S. Veirs.*
+*Owner: S. Veirs, for the part that is still open.*
 Some individual names come from naming programmes with donor relationships or cultural
-significance. Some catalogues withhold detail deliberately. Is there anything in scope
-that should not be in a public repository?
+significance. Some catalogues withhold detail deliberately.
+
+**Mostly already answered.** `salishsea-io/docs/rights-policy.md` and its decision 004 are
+prior work by the same author on this exact question, including the Bigg's nickname
+material — naming *facts* are public, the prose "story" behind a nickname is not, and that
+column is already restricted from anonymous access there. That analysis should be ported
+here rather than redone.
+
+What remains for the scientific reviewers is narrower: is there anything **in scope for
+this register** — an animal, a designation, a grouping — that should not appear in a public
+repository at all?
 
 ### Q13 — Is the plural the canonical written form for a matriline?
 *Owner: S. Veirs, D. Bain.*
@@ -160,14 +169,15 @@ the failure this register exists to prevent.
 *Owner: P. Abrahamsen.*
 [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) specifies `certainty` and
 `evidence` and claims this repository is "the shared document" for the annotation shape.
-SalishSea.io has already shipped a different one, governed by its own accepted decision:
-`identification_evidence`, `identification_method`, and `identification_status`
-(candidate / validated / rejected).
+An earlier pass at the same problem — the SalishSea.io catalogue, same author — shipped a
+different one: `identification_evidence`, `identification_method`, and
+`identification_status` (candidate / validated / rejected).
 
-Their model separates *evidence* from *method*, and separates the **asserter's
-confidence** from the **dataset's verification status**. ADR-0009 conflates the last two:
-a moderator's `possible` that a curator later confirms has nowhere to land. Reconcile
-before either has data.
+That model separates *evidence* from *method*, and separates the **asserter's confidence**
+from the **dataset's verification status**. ADR-0009 collapses the last two, so a
+moderator's `possible` that a curator later confirms has nowhere to land. On this point
+the earlier model is better and the newer one should adopt it — the task is picking the
+better of two designs, not reconciling two parties. Do it before either has data.
 
 ### Q19 — Is bulk import a supported operation, and how are identifiers assigned?
 *Owner: P. Abrahamsen.*

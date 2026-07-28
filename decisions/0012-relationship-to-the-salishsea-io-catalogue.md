@@ -11,9 +11,12 @@ SalishSea.io already ships a marine-mammal catalogue in production: `individuals
 from a 649-row Bigg's identification file, with public profile pages for individuals,
 matrilines and ecotypes.
 
-This register was designed without reference to it. That was an oversight, and it means
-several decisions here were argued from first principles when a working implementation
-of the same problem existed next door.
+**Both are the work of the same author.** This is not two projects negotiating; it is one
+person's quick first pass at the problem and their later, more deliberate one. The
+catalogue was built without a design process; this register was designed without reference
+to the catalogue. Neither is a counterparty to the other, and framing the reconciliation
+as a negotiation would be a category error — the only real question is which model is
+better, one piece at a time.
 
 The two models disagree:
 
@@ -29,12 +32,11 @@ The two models disagree:
 ## Decision
 
 **This register is the authority for animal identity in the Salish Sea, and the
-SalishSea.io catalogue reconciles toward it.** The catalogue is a consumer, not a peer
-authority, and its schema is expected to migrate rather than to be crosswalked to
-indefinitely.
+SalishSea.io catalogue reconciles toward it.** The catalogue is a consumer, and its schema
+is expected to migrate rather than to be crosswalked to indefinitely.
 
-This is the repository owner's call as maintainer of both, recorded here so that the
-direction is not rediscovered or reversed by accident.
+Recorded so the direction is not rediscovered or reversed by accident — the author holds
+both repositories, so nothing external enforces it.
 
 ## What this means for the data
 
@@ -62,8 +64,9 @@ must answer** before the migration can happen:
   [Q18](../docs/open-questions.md).
 
 Treating these as requirements rather than as divergence is the point of this record. A
-model that cannot express what the working implementation already expresses is not more
-considered; it is just younger.
+model that cannot express what the earlier attempt already expresses is not more
+considered; it is just younger. Where the earlier pass got something right, the win is to
+notice and adopt it — not to defend the newer model.
 
 ## Implementation
 
@@ -77,9 +80,10 @@ considered; it is just younger.
   does not survive a several-thousand-row pull request without a stated exception.
 - Migration direction is one-way. Until the catalogue migrates, crosswalk rows in
   `mappings.tsv` are the interim bridge, and they are expected to be temporary.
-- SalishSea.io's rights analysis (`docs/rights-policy.md`, and its decision 004) has
-  already covered ground that [Q9](../docs/open-questions.md) asks from scratch. Q9
-  should cite it rather than duplicate it.
+- The rights analysis in `salishsea-io/docs/rights-policy.md` (and its decision 004) is
+  the same author's prior work on the same question, and it already covers the Bigg's
+  nickname material specifically. [Q9](../docs/open-questions.md) was written as though
+  from scratch; most of it is answered and should be ported, not re-asked.
 
 ## Consequences
 
@@ -99,15 +103,34 @@ considered; it is just younger.
 
 - **Reframe this repository as a crosswalk and definitions layer over the SalishSea.io
   catalogue**, leaving identity where it already lives. Coherent, and cheaper in the
-  short run. Rejected by the owner: the catalogue's modelling was a quick first pass, and
-  the considered model should be the one that survives.
+  short run. Rejected: the catalogue's modelling was a quick first pass, and the
+  considered model should be the one that survives.
 - **Two peer authorities with a maintained crosswalk.** Rejected — it is the outcome this
   record exists to prevent, and it is the expensive one.
 
 ## Open questions
 
+- **Does this register count as an "upstream source" under SalishSea.io's decision 008?**
+  That record establishes an anti-corruption layer: per-source schemas are verbatim
+  mirrors, their semantics must never reach `public.*`, and native concepts are coined and
+  translated at the boundary. Applied literally to this register, it reproduces exactly
+  the divergence this ADR exists to prevent — a native catalogue with its own semantics
+  beside the register.
+
+  The argument that it does *not* apply: everything decision 008 defends against —
+  undocumented fields, unstable vocabulary, no change process, no deprecation story — is
+  the set of properties this register is being built to have. A governed publication with
+  permanent identifiers and `replaced_by` semantics is structurally closer to that repo's
+  `dwc` export contract than to a scraped API. That suggests a third category alongside
+  mirrors and native domain: **shared contracts**, of which `dwc` is already one.
+
+  This is a change to SalishSea.io's governing principle rather than a schema migration,
+  and it is a prerequisite for the decision above rather than a consequence of it.
+
 - What is the migration sequence, and does the catalogue migrate before or after the
   first OrcaSound bout is tagged? Tagging against identifiers that later change would
   defeat the purpose.
-- Does OrcaSound have equivalent latent modelling that has not been read either? This
-  record was prompted by discovering one such repository; there may be a second.
+- **OrcaSound is the genuinely external party here** — a separate project with its own
+  contributors — and this record says nothing about what it should do. Whether it has
+  latent modelling that nobody has read is a live question; discovering one such
+  repository is what prompted this ADR.

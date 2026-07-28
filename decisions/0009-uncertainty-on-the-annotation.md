@@ -76,10 +76,12 @@ Two related patterns fall out of the same principle:
 - This ADR constrains **consumers**, not this repository — there is nothing to enforce
   here. It is recorded here because the vocabulary's shape depends on it: banning hedge
   terms is only defensible if the hedge has somewhere else to go.
-- It does **not** make this repository the owner of annotation semantics. SalishSea.io has
-  shipped a different and in places better model — it separates the asserter's confidence
-  from the dataset's verification status, which the table above does not. Reconciling them
-  is [Q18](../docs/open-questions.md), and this ADR should expect to lose ground there.
+- It does **not** make this repository the owner of annotation semantics. An earlier pass
+  at the same problem, in the SalishSea.io catalogue, separates the asserter's confidence
+  from the dataset's verification status — a distinction the table above collapses, and a
+  real gap: a moderator's `possible` that a curator later confirms has nowhere to land.
+  The earlier model is better on that point and this one should adopt it. See
+  [Q18](../docs/open-questions.md).
 - `certainty` is a three-value enum on purpose. A numeric probability implies a
   precision a listening moderator does not have.
 - Validation rejects any entity label matching `\?$` or resembling a hedge, as a
