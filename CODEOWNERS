@@ -17,7 +17,10 @@
 # any domain review at all. This is not a formatting gap — it is the mis-routing itself.
 # Until a scientific reviewer is named (Q8), treat any change to these paths as blocked
 # on out-of-band review, because CODEOWNERS will not ask for it.
-# TODO(Q8): add @scottveirs and other scientific reviewers once confirmed.
+#
+# Intended reviewers: S. Veirs and D. Bain. Deliberately not listed yet — adding a handle
+# here starts auto-requesting reviews, which should be agreed with them first rather than
+# arriving unannounced. Scott is on sabbatical until 1 October 2026.
 /definitions/           @rainhead
 /data/entities.tsv      @rainhead
 /data/membership.tsv    @rainhead

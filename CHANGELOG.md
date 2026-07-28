@@ -9,6 +9,11 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Design
+- Added `docs/start-here.md` — a short entry point covering what is proposed, how it
+  departs from the original service proposal in orcasound/orcasite#1001, and the nine
+  domain questions ordered by how much they block.
+- ADR-0014 records the publication-not-a-service redirect explicitly, rather than leaving
+  a reviewer to infer it.
 - `schema.sql` now states the constraints declaratively and the build is the validation;
   `bin/validate.py` keeps only what SQL can't express, plus curator-facing diagnostics.
 - `dist/` carries the derived views as TSV — closure, current status, searchable names,

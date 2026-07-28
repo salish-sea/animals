@@ -30,6 +30,17 @@ The honest test: **what breaks if this register stops being maintained?**
 Today the answer is "SalishSea.io's map degrades back to parsing bout names." That is a
 real dependency but a thin one. It is not GBIF-rejects-your-data.
 
+Two things cut the other way, and it would be dishonest to leave them out of an argument
+that leans this hard on the graveyard. This work **is** funded, which is the property the
+survivors above shared and the failures mostly lacked. And it is not a new idea imposed on
+an existing project — OrcaSound, SalishSea.io and this register are all one long-running
+initiative, so the register is being built for consumers that already want it rather than
+in hope of adoption.
+
+Neither makes the failure modes below go away. Funding is finite and the roster is a
+census-cadence obligation that outlives any engagement; see
+[Q8](open-questions.md).
+
 Two consequences we should act on:
 
 1. **Stay subordinate to the consuming systems for as long as possible.** This should
@@ -116,10 +127,14 @@ shared conventions. We are taking its **policies** and leaving its **formalism**
 
 Ranked by how likely they are to actually kill this, most likely first.
 
-1. **Nobody owns it.** The roster goes stale after a birth season, consumers notice it's
-   wrong, they stop trusting it, and it's over. This is the single most common cause of
-   death in this space, and it is a staffing problem wearing a governance costume. See
-   `CODEOWNERS` and [open-questions.md](open-questions.md) Q8.
+1. **Nobody owns it — later.** The roster goes stale after a birth season, consumers
+   notice it's wrong, they stop trusting it, and it's over. This is the single most common
+   cause of death in this space, and it is a staffing problem wearing a governance costume.
+   The near-term version is narrower than usual: the work is funded now, and the risk is
+   the handover. The immediate constraint is that essentially all bout curation has been
+   done by one person, who is on sabbatical until October — so the register can be built
+   ahead of the curation it serves, but it cannot be validated against practice until
+   curation resumes. See `CODEOWNERS` and [Q8](open-questions.md).
 2. **Moderators route around it.** If the pick list is slower than typing, or the term
    they need isn't there and there's no fast way to get it added, they go back to free
    text — and the data acquires a silent bias toward whichever terms were easy to find.

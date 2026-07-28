@@ -130,13 +130,23 @@ larger) or normalise to the most specific term and derive the rest (smaller, but
 the fact that the moderator asserted the ecotype independently)? Leaning toward storing
 what was picked.
 
-### Q8 — Who is the named editor?
+### Q8 — Who is the named editor, and who reviews the domain content?
 *Owner: P. Abrahamsen, to resolve with S. Veirs.*
-Per [background.md](background.md), neglect is the most likely cause of death. Someone
-needs "keeps the roster current" as an explicit responsibility, and `CODEOWNERS` needs
-to name them. If nobody will take it, the design should change: the register should
-advertise its staleness loudly (an `as_of` date on every published artefact) rather than
-imply a currency it doesn't have.
+Partly answered: this work is funded, and the schema/tooling side has an owner. Two gaps
+remain, and they are different from the one originally filed.
+
+**A scientific reviewer of record.** `CODEOWNERS` marks `definitions/`, `entities.tsv`,
+`membership.tsv` and the rest as needing domain review, then assigns them all to a software
+reviewer — so domain content currently merges with no domain review at all. The obvious
+candidates are S. Veirs and D. Bain. Adding either to `CODEOWNERS` would start
+auto-requesting reviews, which is worth agreeing with them first rather than springing on
+them; Scott is on sabbatical until 1 October.
+
+**What happens after the funded period.** Roster maintenance is a census-cadence
+obligation that outlives any particular engagement. If there is no answer, the design
+should change: publish an `as_of` date on every artefact and advertise staleness loudly
+rather than imply a currency the register does not have. That is a good idea regardless,
+and cheap.
 
 ### Q10 — Is `SSA:` a safe prefix?
 *Owner: P. Abrahamsen.*

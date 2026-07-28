@@ -25,8 +25,13 @@ knowledge survives the trip.
 
 ## How to review this
 
-Two groups are reviewing this work and they need different things. Please read your
-half; you are welcome to read the other, but nothing in it should block you.
+**New here, or short on time? [docs/start-here.md](docs/start-here.md).** It covers what
+is being proposed, how it departs from the original proposal in
+[orcasound/orcasite#1001](https://github.com/orcasound/orcasite/issues/1001), and the nine
+questions that need a domain expert — ordered by how much they block.
+
+Otherwise: two groups are reviewing this work and they need different things. Please read
+your half; you are welcome to read the other, but nothing in it should block you.
 
 ### If you're reviewing the science
 
@@ -48,7 +53,7 @@ Decision records addressed to `Informatics reviewers` are implementation detail.
 
 ### If you're reviewing the design
 
-[docs/scope.md](docs/scope.md), then [decisions/](decisions/) — eleven records covering the
+[docs/scope.md](docs/scope.md), then [decisions/](decisions/) — fourteen records covering the
 choices that are expensive to reverse. [docs/background.md](docs/background.md) explains
 what we're borrowing from the Gene Ontology and OBO Foundry, what we're deliberately not
 taking, and why most projects like this one die.

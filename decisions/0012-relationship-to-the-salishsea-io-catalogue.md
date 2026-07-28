@@ -52,11 +52,19 @@ both repositories, so nothing external enforces it.
 | Relationship | The same data, presented. No translation boundary. | A separate project: distinct audience and purpose, organizationally adjacent. |
 | Coupling | Tight, permanently. Separate repos for process reasons only. | Loose. Consumes a released artefact at a pinned version. |
 | Animal identity of its own | None — materialized from here. | None, and that is the ask in [orcasound/orcasite#1001](https://github.com/orcasound/orcasite/issues/1001), not yet agreed. |
-| Who decides | The author of both. | OrcaSound's contributors. |
+| Who decides | The author of both. | In practice S. Veirs, whose initiative the whole effort is, plus this repository's author. See below. |
 
 Unifying the two on one roster is the goal of this effort. OrcaSound currently carries
 free-text tags (`tag.ex`, `item_tag.ex` in `server/lib/orcasite/radio/`) and no roster;
 the intent is that it never acquires one.
+
+"Separate project" describes audience and purpose, not distance. All three efforts are
+S. Veirs's initiative over many years, funded partly by volunteer effort and partly
+through Beam Reach. The contributors who built and maintained OrcaSound's current
+architecture have minimal availability this year, so the practical decision path for
+adopting the register there is narrow — which makes it *easier* to agree and *more*
+important to write down, because there is little standing review capacity to catch a bad
+call later.
 
 ## What this means for the data
 
