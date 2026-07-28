@@ -15,7 +15,10 @@ published source, and it deliberately narrows the everyday usage. Needs expert r
 
 ## Scope notes
 
-- A newborn is a member of its mother's matriline from birth.
+- A newborn is a member of its mother's matriline from birth. Where the mother is
+  recorded in `parentage.tsv` this is checkable, and validation warns when a calf and its
+  mother sit in different matrilines — which is legitimate only after a fission. See
+  [ADR-0016](../decisions/0016-parentage.md).
 - Membership ends only at death, or — for ecotypes where dispersal occurs — when the
   individual leaves the natal social unit permanently.
 - Where an individual's matriline is unknown but its pod is known, record membership at

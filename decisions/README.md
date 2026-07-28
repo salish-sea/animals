@@ -55,6 +55,7 @@ been formally put to the scientific reviewers.
 | [0013](0013-distribution.md) | The schema is the validation; releases carry the artefacts | Informatics reviewers |
 | [0014](0014-a-publication-not-a-service.md) | The register is a publication, not a service | Scientific + informatics |
 | [0015](0015-bulk-import.md) | Bulk imports are reviewed as a transformation, not as rows | Scientific + informatics |
+| [0016](0016-parentage.md) | The register records parentage, as edges rather than columns | Scientific + informatics |
 
 ## Template
 

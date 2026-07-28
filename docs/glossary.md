@@ -88,6 +88,13 @@ every ecotype in scope. See [definitions/matriline.md](../definitions/matriline.
 were born into. This is narrower than the everyday sense — L87 travelling with J pod is
 not membership. See [definitions/membership.md](../definitions/membership.md).
 
+### ⚖️ Parentage
+Who bore whom, in `parentage.tsv`. **Not the same as membership and not recoverable from
+it**: a matriline spans three or four generations, so a membership edge means "descended
+from the matriarch", not "child of". Recorded for very few animals so far — absent means
+*not recorded*, never *no mother*. See
+[ADR-0016](../decisions/0016-parentage.md).
+
 ### 💾 Namespace / prefix
 The `SSA:` in `SSA:0000101`. Distinguishes our identifiers from `NCBITaxon:9733` or
 `finwave:T090` so they can be mixed in one column without collision.

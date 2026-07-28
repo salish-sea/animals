@@ -87,8 +87,9 @@ GitHub. Two things are worth noticing in it:
 
 ## What this deliberately refuses to hold
 
-No sightings, no locations, no photographs, no health data, no parentage (yet — see
-[Q16](open-questions.md)), and no sound vocabulary. Signal types stay in
+No sightings, no locations, no photographs, no health data, and no sound vocabulary.
+Parentage *is* held, as of [ADR-0016](../decisions/0016-parentage.md) — it is identity
+rather than encounter, and matriline membership never implied it. Signal types stay in
 [signals-srkw](https://github.com/orcasound/signals-srkw). The boundaries are argued in
 [docs/scope.md](scope.md); the load-bearing one is
 [ADR-0007](../decisions/0007-no-observations.md).

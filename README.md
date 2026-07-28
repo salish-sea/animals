@@ -91,6 +91,7 @@ sqlite3 register.db 'SELECT sql FROM sqlite_master'
 |---|---|
 | `data/entities.tsv` | Every individual and group, with a permanent identifier |
 | `data/membership.tsv` | Who belongs to what, genealogically |
+| `data/parentage.tsv` | Who bore whom — not recoverable from membership, which spans generations |
 | `data/status.tsv` | Life status, append-only |
 | `data/names.tsv` | Alternate, historical and hidden names |
 | `data/mappings.tsv` | Crosswalks to NCBI Taxonomy, finwave, and other catalogues |

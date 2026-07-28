@@ -35,6 +35,7 @@ generating this table rather than maintaining it by hand.
 | C10 | Who says so, and when did they say it? | Everyone, always | Yes, `source_id` |
 | C11 | A moderator heard an orca but couldn't place the ecotype. What do they tag? | OrcaSound, ~30% of biophony bouts | Yes — the `Orcinus orca` taxon entity, with no ecotype alongside |
 | C12 | This bout is a humpback / sea lion / harbour seal. What do they tag? | OrcaSound, SalishSea.io | Yes — `kind = taxon` entities |
+| C13 | Who is this animal's mother? | SalishSea.io profile pages, curators checking a roster | Yes, `parentage.tsv` — but recorded for very few animals so far. Absent means *not recorded*, never *no mother*. It is not recoverable from membership: a matriline spans generations, so membership implies descent from the matriarch. See [ADR-0016](../decisions/0016-parentage.md) |
 
 ## Open — the model does not answer these yet
 
@@ -53,7 +54,6 @@ answer, with the reason.
 | Question | Why not |
 |---|---|
 | Where was this animal on this date? | Occurrence data. Belongs in the consuming systems. |
-| Who is this animal's mother? | **Unresolved — see [Q16](open-questions.md).** Not recoverable from membership: a matriline spans generations, so membership implies descent from the matriarch, not a mother. |
 | Is this animal healthy / pregnant / emaciated? | Health data, out of scope, and sensitive. |
 | What does this animal's call sound like? | The sound vocabulary's job. |
 | Which animals were travelling together? | Association, not membership. See [ADR-0005](../decisions/0005-membership-is-genealogical.md). |

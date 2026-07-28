@@ -10,9 +10,9 @@ SSA:0000030	group	matriline	J17s	NCBITaxon:9733			SEED	The matriline, distinct f
 SSA:0000031	group	matriline	L32s	NCBITaxon:9733			SEED	
 SSA:0000040	group	matriline	T090s	NCBITaxon:9733			SEED	
 SSA:0000101	individual		J35	NCBITaxon:9733	1998	F	SEED	Birth year unverified.
-SSA:0000102	individual		J57	NCBITaxon:9733	2020-09	M	SEED	Calf of J35.
+SSA:0000102	individual		J57	NCBITaxon:9733	2020-09	M	SEED	
 SSA:0000103	individual		J50	NCBITaxon:9733	2014-12	F	SEED	See status.tsv.
-SSA:0000104	individual		L87	NCBITaxon:9733	1992	M	SEED	Born to L32; travelled with K pod and later J pod. See ADR-0005 and docs/walkthrough.md.
+SSA:0000104	individual		L87	NCBITaxon:9733	1992	M	SEED	Mother was L32, who is not yet in the register, so the edge is not in parentage.tsv. Travelled with K pod and later J pod. See ADR-0005 and docs/walkthrough.md.
 SSA:0000105	individual		J17	NCBITaxon:9733	1977	F	SEED	The individual, distinct from matriline SSA:0000030.
 SSA:0000900	taxon		Orcinus orca	NCBITaxon:9733			SEED	Tag this when an orca is heard but the ecotype is undetermined.
 SSA:0000901	taxon		Megaptera novaeangliae	NCBITaxon:9773			SEED	

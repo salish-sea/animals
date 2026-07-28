@@ -118,6 +118,36 @@ CREATE TABLE membership (
 );
 
 -- ---------------------------------------------------------------------------
+-- Parentage — identity, not occurrence (ADR-0016)
+-- ---------------------------------------------------------------------------
+--
+-- Membership does not imply parentage. A matriline spans three or four generations, so
+-- an edge into one says "descended from the matriarch", not "child of". J57's mother is
+-- J35 and no walk of membership recovers it.
+
+CREATE TABLE parentage (
+  child_id    TEXT NOT NULL,
+  parent_id   TEXT NOT NULL,
+  role        TEXT NOT NULL CHECK (role IN ('mother','father')),
+
+  -- Denormalised so the composite foreign keys below can say "only animals have
+  -- parents, and only animals are parents". Curators never maintain these; the build
+  -- populates them, and they exist in the database and not in the TSV (ADR-0013).
+  child_kind  TEXT NOT NULL CHECK (child_kind  = 'individual'),
+  parent_kind TEXT NOT NULL CHECK (parent_kind = 'individual'),
+
+  source_id   TEXT NOT NULL REFERENCES source(source_id),
+  note        TEXT,
+
+  -- One mother and one father. Where two sources disagree, a curator picks before it is
+  -- published; the register carries an answer, not an argument (Q3).
+  PRIMARY KEY (child_id, role),
+  CHECK (child_id <> parent_id),
+  FOREIGN KEY (child_id,  child_kind)  REFERENCES entity(entity_id, kind),
+  FOREIGN KEY (parent_id, parent_kind) REFERENCES entity(entity_id, kind)
+);
+
+-- ---------------------------------------------------------------------------
 -- Life status — append-only, three clocks (ADR-0006)
 -- ---------------------------------------------------------------------------
 
@@ -216,5 +246,6 @@ CREATE VIEW unverified AS
 SELECT 'entity' AS tbl, entity_id AS id FROM entity      WHERE source_id = 'SEED'
 UNION ALL SELECT 'name',       entity_id FROM name       WHERE source_id = 'SEED'
 UNION ALL SELECT 'membership', member_id FROM membership WHERE source_id = 'SEED'
+UNION ALL SELECT 'parentage',  child_id  FROM parentage  WHERE source_id = 'SEED'
 UNION ALL SELECT 'status',     entity_id FROM status     WHERE source_id = 'SEED'
 UNION ALL SELECT 'mapping',    subject_id FROM mapping   WHERE source_id = 'SEED';

@@ -39,7 +39,7 @@ It has three parts, deliberately kept separate:
 
 | Part | Files | Changes when |
 |---|---|---|
-| The roster | `data/entities.tsv`, `membership.tsv`, `status.tsv`, `names.tsv` | An animal is born, dies, or is recatalogued |
+| The roster | `data/entities.tsv`, `membership.tsv`, `parentage.tsv`, `status.tsv`, `names.tsv` | An animal is born, dies, or is recatalogued |
 | The definitions | `definitions/`, `data/ranks.tsv` | The community refines what a word means |
 | The crosswalks | `data/mappings.tsv` | An external catalogue is linked or relinked |
 
@@ -61,10 +61,12 @@ into a competing database that will drift from the sources it depends on.
 - **Not a replacement for CWR, MERS, DFO, or finwave.** Those are the upstream
   authorities. This register mirrors the parts two named systems need and points back.
   (SalishSea.io's own catalogue is *downstream*, not an authority — see below.)
-- **Not a health or life-history database.** Membership and life status only.
-  Whether parentage belongs here is unresolved — see [Q16](open-questions.md). Note that
-  it is *not* recoverable from membership: a matriline spans generations, so membership
-  implies descent from the matriarch, not from a mother.
+- **Not a health or life-history database.** Membership, life status and parentage.
+  Parentage is recorded because it is identity rather than encounter, and because it is
+  *not* recoverable from membership: a matriline spans generations, so membership implies
+  descent from the matriarch, not from a mother. See
+  [ADR-0016](../decisions/0016-parentage.md). Health, condition and reproductive state
+  stay out.
 - **Not the sound vocabulary.** Signal types (calls, whistles, clicks, S01–S42) live in
   [orcasound/signals-srkw](https://github.com/orcasound/signals-srkw). See "Relationship
   to signals-srkw" below.
@@ -95,7 +97,8 @@ it.** It is a consumer with an existing schema to migrate, not a peer authority.
 The differences are not simply errors, though. Each exists because real data demanded it
 — associational rosters, parentage-derived matrilines, designation normalization, named
 groups with no rank — and each is a requirement this register must meet before the
-migration is possible. They are tracked as Q15–Q19.
+migration is possible. They are tracked as Q15–Q19; parentage is answered by
+[ADR-0016](../decisions/0016-parentage.md), and the rest remain open.
 
 ## Relationship to signals-srkw
 

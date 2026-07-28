@@ -48,6 +48,9 @@ seen* would be an occurrence, and is not recorded.
 - `status.tsv` is the only table with a real-world date, and it holds life status only —
   not "last seen".
 - New columns proposed on any table should be tested against the rule above in review.
+  [ADR-0016](0016-parentage.md) is the first case where that happened: "J57's mother is
+  J35" needs neither a date nor a place, so parentage is in scope. The rule is meant to
+  admit as well as refuse, and a rule that only ever refuses is not being applied.
 
 ## Consequences
 

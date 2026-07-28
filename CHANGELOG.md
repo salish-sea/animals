@@ -9,6 +9,13 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Design
+- **The register records parentage** (ADR-0016), resolving Q16. `data/parentage.tsv`
+  holds one row per child and role, as edges rather than `mother_id` columns, so a
+  paternity from a genetic study and an existence from a census keep separate
+  provenance. It passes ADR-0007's own test — the claim needs neither a date nor a
+  place — which is the first time that rule has admitted something rather than refused
+  it. Matrilines are *not* derived from parentage; the two are asserted independently
+  and cross-checked, because a mother and calf share a matriline except after a fission.
 - Added `docs/start-here.md` — a short entry point covering what is proposed, how it
   departs from the original service proposal in orcasound/orcasite#1001, and the domain
   questions ordered by how much they block.
@@ -50,6 +57,8 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 - All decision records are `Proposed`. No definition is `agreed`.
 
 ### Register
+- `parentage.tsv` added, with one row: J57's mother is J35. That fact was previously
+  carried in a free-text note on `entities.tsv` that the validator ignored.
 - **Imported the Bigg's designation sheet**: 510 individuals and 132 derived matrilines,
   with nicknames, Alaska/California designations, birth years, sex and deceased status.
   The register goes from 20 entities to 661. Imported, not curated — see ADR-0015, and

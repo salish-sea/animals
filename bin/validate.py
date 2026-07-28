@@ -17,6 +17,7 @@ Usage:
 """
 
 import csv
+import re
 import sqlite3
 import sys
 from pathlib import Path
@@ -33,6 +34,7 @@ TABLES = [
     ("entity", "entities", {}),
     ("name", "names", {}),
     ("membership", "membership", {"start": "starts", "end": "ends"}),
+    ("parentage", "parentage", {}),
     ("status", "status", {}),
     ("mapping", "mappings", {}),
     ("deprecation", "deprecations", {}),
@@ -93,8 +95,9 @@ def build(db: sqlite3.Connection) -> None:
     """Load every TSV. The schema rejects what is malformed; we report where."""
     db.executescript((ROOT / "schema.sql").read_text())
 
-    # `membership.group_kind` is denormalised so a composite foreign key can constrain
-    # what sort of thing a container may be. Curators never maintain it; the build does.
+    # `membership.group_kind` and `parentage.{child,parent}_kind` are denormalised so a
+    # composite foreign key can constrain what sort of thing may appear where. Curators
+    # never maintain them; the build does.
     kinds: dict = {}
 
     for table, stem, rename in TABLES:
@@ -107,6 +110,9 @@ def build(db: sqlite3.Connection) -> None:
                 kinds[row.get("entity_id")] = row.get("kind")
             elif table == "membership":
                 row["group_kind"] = kinds.get(row.get("group_id"))
+            elif table == "parentage":
+                row["child_kind"] = kinds.get(row.get("child_id"))
+                row["parent_kind"] = kinds.get(row.get("parent_id"))
             elif table == "source" and not row.get("license_status"):
                 row["license_status"] = "n/a"
 
@@ -125,6 +131,12 @@ def build(db: sqlite3.Connection) -> None:
             if row.get("source_id") == "SEED":
                 warn(f"{stem}.tsv:{line}: unverified SEED row")
     db.commit()
+
+
+def _year(edtf: str | None) -> int | None:
+    """The year of an EDTF date, when it opens with one. None when it does not."""
+    m = re.match(r"^(\d{4})", edtf or "")
+    return int(m.group(1)) if m else None
 
 
 def graph_checks(db: sqlite3.Connection) -> None:
@@ -161,6 +173,52 @@ def graph_checks(db: sqlite3.Connection) -> None:
              + ", ".join(f"{r[1]} ({r[3] or r[2]})" for r in roots))
         for eid, label, kind, rank in unreachable:
             warn(f"entities.tsv: {eid} ({label}, {rank or kind}) is unreachable")
+
+    for (child,) in db.execute(
+        """WITH RECURSIVE ancestor_of(a, b) AS (
+             SELECT child_id, parent_id FROM parentage
+             UNION SELECT n.a, p.parent_id FROM ancestor_of n
+                   JOIN parentage p ON p.child_id = n.b)
+           SELECT a FROM ancestor_of WHERE a = b"""
+    ):
+        err(f"parentage.tsv: {child} is transitively its own ancestor")
+
+    for child, parent, role, sex in db.execute(
+        """SELECT p.child_id, p.parent_id, p.role, e.sex
+           FROM parentage p JOIN entity e ON e.entity_id = p.parent_id
+           WHERE (p.role = 'mother' AND e.sex = 'M')
+              OR (p.role = 'father' AND e.sex = 'F')"""
+    ):
+        err(f"parentage.tsv: {child}: {parent} is recorded as {role} but sexed {sex}")
+
+    # A mother and her calf share a matriline, because a calf is born into its mother's
+    # (ADR-0005). Not an error: a matriline that grows large is eventually split, and
+    # after a fission the two can legitimately differ. Worth a curator's eye either way,
+    # since the alternative explanation is that one of the two claims is wrong.
+    for child, mother, cg, mg in db.execute(
+        """WITH matriline AS (
+             SELECT m.member_id AS id, m.group_id AS grp FROM membership m
+             JOIN entity g ON g.entity_id = m.group_id WHERE g.rank = 'matriline')
+           SELECT p.child_id, p.parent_id, c.grp, m.grp
+           FROM parentage p
+           JOIN matriline c ON c.id = p.child_id
+           JOIN matriline m ON m.id = p.parent_id
+           WHERE p.role = 'mother' AND c.grp <> m.grp"""
+    ):
+        warn(f"parentage.tsv: {child} ({cg}) and its mother {mother} ({mg}) are in "
+             "different matrilines; expected the same unless the matriline has split")
+
+    # EDTF is only compared when both dates start with a plain year, which is what the
+    # roster actually carries. '../1966' and a bare qualifier yield nothing to compare,
+    # and guessing at them would be worse than staying quiet.
+    born = dict(db.execute("SELECT entity_id, born FROM entity WHERE born IS NOT NULL"))
+    for child, parent, role in db.execute(
+        "SELECT child_id, parent_id, role FROM parentage"
+    ):
+        cy, py = _year(born.get(child)), _year(born.get(parent))
+        if cy and py and py >= cy:
+            err(f"parentage.tsv: {child} (born {born[child]}) cannot have {role} "
+                f"{parent} (born {born[parent]})")
 
     for eid, name in db.execute(
         """SELECT n.entity_id, n.name FROM name n

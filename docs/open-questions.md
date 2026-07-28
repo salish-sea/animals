@@ -184,23 +184,6 @@ Note that SalishSea.io's catalogue took the opposite position in code, with a
 `membership_basis` of `maternal` / `association` / `curated`. See
 [ADR-0012](../decisions/0012-relationship-to-the-salishsea-io-catalogue.md).
 
-### Q16 — Should the register hold parentage?
-*Owner: S. Veirs, P. Abrahamsen.*
-[scope.md](scope.md) and [competency-questions.md](competency-questions.md) both claim
-parentage is "implied by matriline membership". **That is false** — a matriline spans
-three or four generations, so membership implies descent from the matriarch, not from a
-mother. J57's mother is J35, and no walk of `membership.tsv` recovers it; in the seed data
-that fact survives only in a free-text `note` the validator ignores.
-
-Two ways out: record `mother_id` on individuals (defensible — parentage is identity, not
-occurrence, so [ADR-0007](../decisions/0007-no-observations.md) does not obviously forbid
-it), or state plainly that parentage is out of scope and delete the false claim. The first
-is what SalishSea.io does, and it *derives* matriline groups from it rather than asserting
-them by hand — which is arguably the better model.
-
-The false claim should be corrected either way, and immediately: it is the kind of error
-a whale researcher notices in the first five minutes.
-
 ---
 
 ## For the informatics reviewers
@@ -330,6 +313,25 @@ edition of this register.
 ---
 
 ## Answered
+
+### Q16 — Should the register hold parentage?
+**Resolved 2026-07-28.** Yes, in `data/parentage.tsv`, as edges rather than as
+`mother_id` / `father_id` columns. Parentage is identity rather than encounter, and it
+passes [ADR-0007](../decisions/0007-no-observations.md)'s own test — the claim needs
+neither a date nor a place — so the ADR that exists to refuse new facts does not refuse
+this one. Edges because provenance is per claim: maternity comes from a census and
+paternity from genetics, and one `source_id` per entity row cannot carry both.
+
+Membership is *not* derived from parentage, which is what SalishSea.io does. That model is
+arguably better and was rejected on data rather than on principle — parentage is sparse
+and Bigg's have effectively none, so derived matrilines would be empty exactly where the
+roster is largest. Instead the two are asserted independently and checked against each
+other: a mother and her calf should share a matriline, and a warning fires when they do
+not. See [ADR-0016](../decisions/0016-parentage.md).
+
+The false claim that parentage was "implied by matriline membership" is gone from
+`scope.md` and `competency-questions.md`, where "who is this animal's mother?" is now C13
+rather than an entry on the deliberately-unanswerable list.
 
 ### Q5 — Do consumers store redundant ancestors, or derive them?
 **Resolved 2026-07-28, by declining it.** The question named its own owner and it was not

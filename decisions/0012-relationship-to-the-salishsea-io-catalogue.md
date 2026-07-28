@@ -91,9 +91,13 @@ must answer** before the migration can happen:
   genealogical without telling a curator what to do when the source roster disagrees.
   Unresolved — see [Q15](../docs/open-questions.md).
 - **`mother_id`** exists because matrilines are *derived* from parentage rather than
-  asserted by hand. This register claims parentage is "implied by matriline membership",
-  which is false — a matriline spans generations, and membership implies descent from the
-  matriarch, not from a mother. See [Q16](../docs/open-questions.md).
+  asserted by hand. This register used to claim parentage was "implied by matriline
+  membership", which is false — a matriline spans generations, and membership implies
+  descent from the matriarch, not from a mother. **Answered**: the register now records
+  parentage ([ADR-0016](0016-parentage.md)), as edges rather than columns, so per-claim
+  provenance survives. It does not yet *derive* matrilines from it — parentage is too
+  sparse, and Bigg's have none — so the two are asserted independently and checked
+  against each other instead.
 - **`normalize_designation()`** exists because 649 T-codes have inconsistent zero-padding
   (`T065A5` vs `T65A5`), hyphenation and plural forms. This register assumes exact string
   matching against hand-enumerated names. See [Q17](../docs/open-questions.md).
