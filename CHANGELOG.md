@@ -9,6 +9,11 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Design
+- **The register publishes no counts of animals** (ADR-0017), resolving Q6 as "no". A
+  count would read the roster's silence as data while it is knowingly incomplete, and the
+  derivable count is one of descent rather than of a travelling group. Consumers may
+  derive one and own the claim. Entity counts in `dist/structure.md` are unaffected —
+  they describe the register, not the world.
 - **The register records parentage** (ADR-0016), resolving Q16. `data/parentage.tsv`
   holds one row per child and role, as edges rather than `mother_id` columns, so a
   paternity from a genetic study and an existence from a census keep separate

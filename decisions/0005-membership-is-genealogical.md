@@ -32,8 +32,9 @@ surprise people. Two consequences to check:
   the register reporting descent while the annotation reports an encounter. Both are
   true.
 - **Group membership counts derived from this register are counts of descent, not of
-  travelling units.** If anyone publishes such a count, it must be labelled as such. See
-  [open-questions.md](../docs/open-questions.md) Q6.
+  travelling units.** This register therefore publishes no such count at all
+  ([ADR-0017](0017-no-counts.md)); the labelling problem passes to any consumer that
+  derives one, along with the number.
 
 The alternative — defining membership as observed association — was rejected because it
 makes membership change constantly, makes it dependent on who was looking, and means the

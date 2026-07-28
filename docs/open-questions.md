@@ -100,12 +100,6 @@ than one Bigg's source.
 They are in scope but empty. Populating them costs curation effort; leaving them out
 means a moderator who hears one has nothing to pick.
 
-### Q6 — Should the register publish group sizes?
-*Owner: S. Veirs, D. Bain.*
-A count of living members is derivable from the data. Publishing it is a claim, and a
-claim that will sometimes be wrong or out of date in a way that matters publicly. Do we
-derive it, publish it, or refuse to?
-
 ### Q9 — Are there animals or names we should *not* publish?
 *Owner: S. Veirs, for the part that is still open.*
 Some individual names come from naming programmes with donor relationships or cultural
@@ -313,6 +307,26 @@ edition of this register.
 ---
 
 ## Answered
+
+### Q6 — Should the register publish group sizes?
+**Resolved 2026-07-28. No.** Not as a column, not as a view, not in prose. The roster is
+knowingly incomplete — Northern Residents and offshores unpopulated, 510 Bigg's rows
+unverified — so a count would read the register's silence as data and be wrong with no
+error bar. The count that *is* derivable is a count of descent, not of a travelling
+group, so it would be read as answering a question the register deliberately refuses.
+And CWR publishes the census; a second figure that differs because a birth has not been
+ingested sets the register against the source it depends on.
+
+Derivability is not publication: a consumer that wants a count can compute one and own
+the claim. See [ADR-0017](../decisions/0017-no-counts.md), which also draws the line
+against `dist/structure.md` — counting entities in the register is a diagnostic about the
+register, not a claim about how many animals exist.
+
+Closed by P. Abrahamsen rather than by the listed owners, because every reason above is
+structural rather than a domain judgement. The one part that *is* theirs is the condition
+for reopening: the objection is empirical, and would weaken if a population's roster were
+ever complete and verified. What would count as complete enough is recorded as the ADR's
+open question.
 
 ### Q16 — Should the register hold parentage?
 **Resolved 2026-07-28.** Yes, in `data/parentage.tsv`, as edges rather than as

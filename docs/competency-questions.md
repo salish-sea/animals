@@ -44,7 +44,6 @@ generating this table rather than maintaining it by hand.
 | O2 | Which hydrophone locations is this group plausibly detectable at? | OrcaSound UI hinting | Out of scope here — this is occurrence data |
 | O3 | Two sources disagree about this animal's matriline. What do we publish? | Curators | [ADR pending](open-questions.md) Q3 |
 | O4 | Which signal types are valid for this animal? | OrcaSound moderator UI | Cross-repo dependency on signals-srkw |
-| O5 | How many individuals are in this group right now? | Public-facing display | Answerable, but is a *count* a claim we want to make? See Q6 |
 
 ## Deliberately unanswerable
 
@@ -54,6 +53,7 @@ answer, with the reason.
 | Question | Why not |
 |---|---|
 | Where was this animal on this date? | Occurrence data. Belongs in the consuming systems. |
+| How many individuals are in this group right now? | Derivable, and deliberately not published. The roster is knowingly incomplete, and the derivable count is one of descent rather than of a travelling group. A consumer that computes one owns the claim. See [ADR-0017](../decisions/0017-no-counts.md). |
 | Is this animal healthy / pregnant / emaciated? | Health data, out of scope, and sensitive. |
 | What does this animal's call sound like? | The sound vocabulary's job. |
 | Which animals were travelling together? | Association, not membership. See [ADR-0005](../decisions/0005-membership-is-genealogical.md). |
