@@ -50,10 +50,12 @@ preserved rather than flattened.**
 
 Two related patterns fall out of the same principle:
 
-- **Compound terms are also banned.** `signals-srkw` currently has `JK`, `JL`, `JKL` as
-  single labels meaning "J and K", and so on. That is the vocabulary encoding a *set*.
-  It explodes combinatorially, and it still cannot express "J pod plus the T090s". Apply
-  two annotations instead.
+- **Compound terms are banned here, for the same reason.** A single label meaning "J and
+  K" is the vocabulary encoding a *set*: it explodes combinatorially, and it still cannot
+  express "J pod plus the T090s". Two annotations express that without either problem.
+  The `signals-srkw` vocabulary does currently carry `JK`, `JL` and `JKL` — that is its
+  own call, and it is noted here only because a moderator working across both will meet
+  the two conventions side by side.
 
 - **Negative claims are mostly not this register's problem, and saying so is the
   contribution.** The originating issue asked for `unconfirmed` and `false-positive` tags.
@@ -90,11 +92,13 @@ Two related patterns fall out of the same principle:
 ## Consequences
 
 - OrcaSound's tag join needs columns, so the originating issue's claim that this needs
-  "only slug conventions and a moderator habit" is not quite right. A schema change is
-  required, and it is small.
-- Moderators need a certainty control in the UI. If it is awkward, they will not use it
-  and everything will be recorded as `certain`, which is worse than free text. The
-  control should default to `certain` and be one click away.
+  "only slug conventions and a moderator habit" is not quite right: a schema change is
+  required. How large it is, and what it costs them, is theirs to say.
+- **A certainty column is worth exactly as much as the affordance that fills it.** If
+  recording a hedge is more work than omitting one, everything arrives as `certain` — and
+  that is worse than free text, because it looks like data. This register carries the risk
+  (it is why hedge terms are banned here, and why the hedge needs somewhere to go) but the
+  interface that answers it is the consuming system's design, not ours.
 - The register stays clean: every entity is an animal or a group of animals, always.
 
 ## Alternatives considered

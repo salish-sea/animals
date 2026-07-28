@@ -31,4 +31,7 @@ about descent. See [membership.md](membership.md).
 
 - Are L pod's subgroups stable enough to warrant register entities of their own?
 - What does a moderator mean by "J pod" on a bout — the whole pod, or any member of it?
-  The `signals-srkw` repository uses the second reading. Both consumers must agree.
+  The `signals-srkw` vocabulary uses the second reading. This register needs an answer
+  because the reading decides what a membership edge asserts. If annotations elsewhere
+  settle on a different one, that mismatch is worth knowing about — but it is not this
+  file's to legislate.

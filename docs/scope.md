@@ -102,15 +102,19 @@ migration is possible. They are tracked as Q15–Q19.
 The sound vocabulary is a separate repository with a different community of authorship,
 and should stay separate.
 
-One thing needs fixing between them. `signals-srkw/labels.md` currently *copies* the
-ecotype and pod labels (`SRKW`, `J`, `K`, `L`, `JK`, `JKL`) into its own context-label
-section. That is a fork of this register living inside the sound vocabulary, and the two
-will drift. Those labels should become references to entity identifiers here.
+There is one place the two touch. `signals-srkw/labels.md` currently *copies* the ecotype
+and pod labels (`SRKW`, `J`, `K`, `L`, `JK`, `JKL`) into its own context-label section.
+That is a second copy of this register's labels, and two copies drift — which is the
+failure this register exists to prevent. Referencing entity identifiers would close it.
+Whether to do that, and when, belongs to that repository; what this register can do is
+make identifiers stable enough to be worth referencing, and say plainly that the copy
+exists.
 
-Note also that `JK` and `JKL` encode a *set* as a single label. Multiple identifiers
-should be applied instead — see [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md).
-This is **migration work, not prevention**: `JKL at Sunset Bay` and `JKL calls fall S25E2
-day 2` are live bout names today.
+Note also that `JK` and `JKL` encode a *set* as a single label, which this register will
+not do — see [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) for the
+reasoning. If the two vocabularies ever do converge, that is **migration work, not
+prevention**: `JKL at Sunset Bay` and `JKL calls fall S25E2 day 2` are live bout names
+today.
 
 ## Success criteria
 

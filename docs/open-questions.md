@@ -106,12 +106,6 @@ A count of living members is derivable from the data. Publishing it is a claim, 
 claim that will sometimes be wrong or out of date in a way that matters publicly. Do we
 derive it, publish it, or refuse to?
 
-### Q7 — How do we model a bout where the animal and the sound belong to different species?
-*Owner: S. Veirs, and whoever designs the annotation schema.*
-Prompted by the real bout `Humpback mimics Bigg's?`. The animal is a humpback; the
-signal is characteristic of Bigg's. Any assumption that one tag identifies both the
-animal and the sound source breaks here. See [walkthrough.md](walkthrough.md).
-
 ### Q9 — Are there animals or names we should *not* publish?
 *Owner: S. Veirs, for the part that is still open.*
 Some individual names come from naming programmes with donor relationships or cultural
@@ -211,14 +205,6 @@ a whale researcher notices in the first five minutes.
 
 ## For the informatics reviewers
 
-### Q5 — Do consumers store redundant ancestors, or derive them?
-*Owner: P. Abrahamsen.*
-The walkthrough bout is tagged with both an ecotype and two pods, but the pods already
-imply the ecotype. Should OrcaSound store what the moderator picked (redundant, honest,
-larger) or normalise to the most specific term and derive the rest (smaller, but loses
-the fact that the moderator asserted the ecotype independently)? Leaning toward storing
-what was picked.
-
 ### Q8 — Who is the named editor, and who reviews the domain content?
 *Owner: P. Abrahamsen, to resolve with S. Veirs.*
 Partly answered: this work is funded, and the schema/tooling side has an owner. Two gaps
@@ -236,6 +222,25 @@ obligation that outlives any particular engagement. If there is no answer, the d
 should change: publish an `as_of` date on every artefact and advertise staleness loudly
 rather than imply a currency the register does not have. That is a good idea regardless,
 and cheap.
+
+### Q25 — Who else can cut a release, and what makes that safe?
+*Owner: P. Abrahamsen, to resolve with S. Veirs.*
+
+A release is a CalVer tag push ([ADR-0013](../decisions/0013-distribution.md)), and today
+only this repository's author can make one. During active development the register may be
+tagged several times a day, so a consumer waiting on an edition is waiting on one person's
+availability. S. Veirs is the obvious second.
+
+Widening it is not merely a permissions change. The tag is what a consumer pins and what
+`register_edition` records
+([ADR-0006](../decisions/0006-valid-time-in-data-assertion-time-in-git.md)), so whoever
+can push a tag can publish an artefact under the register's name. Making that safe is
+presumably some combination of protected tags, artefacts only ever built by CI from a
+reviewed commit on `main`, and an agreement about what a release *asserts* — which today
+is nothing beyond "the validator passed".
+
+Distinct from Q8, and deliberately so: the person who can publish an edition and the
+person who reviews its domain content need not be the same, and probably should not be.
 
 ### Q10 — Is `SSA:` a safe prefix?
 *Owner: P. Abrahamsen.*
@@ -276,19 +281,34 @@ perhaps a `dist/` lookup of normalized form → identifier), or it states that m
 a consumer concern and C2 is downgraded. Two implementations that disagree is precisely
 the failure this register exists to prevent.
 
-### Q18 — Reconcile the annotation schema with SalishSea.io's identifications model
+### Q18 — Adopt the confidence/verification split in the annotation shape
 *Owner: P. Abrahamsen.*
-[ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) specifies `certainty` and
-`evidence` and claims this repository is "the shared document" for the annotation shape.
-An earlier pass at the same problem — the SalishSea.io catalogue, same author — shipped a
-different one: `identification_evidence`, `identification_method`, and
-`identification_status` (candidate / validated / rejected).
+[ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) sketches an annotation
+carrying `certainty` and `evidence`. An earlier pass at the same problem — the
+SalishSea.io catalogue, same author — shipped a different shape:
+`identification_evidence`, `identification_method`, and `identification_status`
+(candidate / validated / rejected).
 
 That model separates *evidence* from *method*, and separates the **asserter's confidence**
-from the **dataset's verification status**. ADR-0009 collapses the last two, so a
-moderator's `possible` that a curator later confirms has nowhere to land. On this point
-the earlier model is better and the newer one should adopt it — the task is picking the
-better of two designs, not reconciling two parties. Do it before either has data.
+from the **dataset's verification status**. ADR-0009's table collapses the last two, so a
+moderator's `possible` that a curator later confirms has nowhere to land. The earlier
+model is better on this point.
+
+**This is agreed, not disputed.** ADR-0009 says so itself, and in the same breath declines
+the ownership this question used to accuse it of: the annotation "constrains **consumers**,
+not this repository", and the ADR "does **not** make this repository the owner of
+annotation semantics". So what is left is not a reconciliation between two positions but a
+piece of work — carrying the split into the sketch — and it should be done before either
+system has data. Where the resulting shape is *implemented*, and who decides its final
+form, is the consuming system's business.
+
+**A signal must also be taggable with no animal tag** (from Q7, resolved). A moderator may
+know the call type and not the producer: `Humpback mimics Bigg's?` is exactly that case.
+If every signal annotation requires an animal, the honest answer is unavailable and the
+nearest available one is a species claim nobody intended — tagging `Bigg's` for a sound
+suspected to have come from a humpback. This is a data-quality risk to the register even
+though it is not a register question, because the bad tags land in annotations that cite
+register identifiers.
 
 ### Q14 — How are preferred names localised?
 *Owner: P. Abrahamsen.*
@@ -310,6 +330,40 @@ edition of this register.
 ---
 
 ## Answered
+
+### Q5 — Do consumers store redundant ancestors, or derive them?
+**Resolved 2026-07-28, by declining it.** The question named its own owner and it was not
+this repository: "should *OrcaSound* store what the moderator picked". How an occurrence
+records the individuals and groups a moderator tagged is that consumer's annotation
+design, and there is a separate process for that work.
+
+The register's part is already discharged. `dist/ancestor.tsv` publishes the transitive
+closure precomputed ([ADR-0013](../decisions/0013-distribution.md)), so deriving a parent
+costs a lookup. Having made the choice free, the register has no stake in which way it
+goes.
+
+Worth carrying into that other process: the two options were framed here as a size
+trade-off, and that is the least interesting difference between them. **They promise
+different things over time.** Storing what the moderator picked is a faithful record of an
+act of identification and stays true as one. Deriving instead tracks the register, so the
+ecotype shown against a 2026 bout will change when Q1 reparents the Southern Residents.
+Neither is wrong — they answer different questions.
+
+### Q7 — How do we model a bout where the animal and the sound belong to different species?
+**Resolved 2026-07-28, by declining it.** The question was an artefact of how the bout was
+written up, not a property of the bout. `Humpback mimics Bigg's?` is a hypothesis — a
+signal characteristic of Bigg's, suspected to have come from a humpback. **A call type
+being characteristic of Bigg's is a regularity about who usually produces it, not a
+property of the sound**; sounds carry no species. The walkthrough had promoted
+"characteristic of" to "belongs to", which manufactured a second species and with it the
+appearance of a modelling problem. What was recorded is one animal, identified with low
+confidence — [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) — plus a call
+type, which is the signals vocabulary's business. The register was never asked to identify
+sound sources, so nothing here bears on it.
+
+One real requirement survives, and it is the annotation schema's, not the register's: a
+signal must be taggable with no animal tag, so that a moderator who knows the call type
+and not the producer is not forced to name an animal. Folded into Q18.
 
 ### Q19 — Is bulk import a supported operation, and how are identifiers assigned?
 **Resolved 2026-07-28.** Yes, as a stated exception to ADR-0001's reviewable-diff premise:

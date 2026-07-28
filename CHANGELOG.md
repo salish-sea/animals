@@ -10,15 +10,41 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ### Design
 - Added `docs/start-here.md` — a short entry point covering what is proposed, how it
-  departs from the original service proposal in orcasound/orcasite#1001, and the nine
-  domain questions ordered by how much they block.
+  departs from the original service proposal in orcasound/orcasite#1001, and the domain
+  questions ordered by how much they block.
 - ADR-0014 records the publication-not-a-service redirect explicitly, rather than leaving
   a reviewer to infer it.
+- Q18 corrected: it attributed to ADR-0009 a claim that ADR-0009 explicitly disclaims —
+  that this repository owns annotation semantics — and quoted words it does not contain.
+  The two documents agree; Q18 is now the work of carrying the confidence/verification
+  split into the sketch, not a dispute to settle.
+- Swept the repo for places where it prescribed to systems it does not own. ADR-0009 no
+  longer designs OrcaSound's certainty control (it states the risk and leaves the
+  interface to them) and no longer reads as banning `signals-srkw`'s compound labels;
+  `scope.md` and `definitions/pod.md` state the drift risk and the "J pod" ambiguity as
+  facts rather than instructions; ADR-0011 keeps label non-uniqueness and drops the
+  picker.
+- ADR-0013 and ADR-0014 no longer disagree about release cadence. It is demand-driven —
+  several a day under active development, a few times a year in steady state — and
+  ADR-0014 depends only on there being editions to be stale between.
+- Q5 retired by declining it: whether a consumer stores redundant ancestors or derives
+  them is that consumer's annotation design. The register's part — publishing the closure
+  so deriving is cheap — is already done. `dist/README.md` now warns that derived facts
+  are edition-specific.
+- Q7 retired by declining it: the `Humpback mimics Bigg's?` bout was never a register
+  problem. A call type characteristic of Bigg's is a regularity about who produces it, not
+  a property of the sound, and the walkthrough had promoted "characteristic of" to
+  "belongs to". The one real finding — a signal must be taggable with no animal tag — moves
+  to Q18, where the annotation schema lives.
 - `schema.sql` now states the constraints declaratively and the build is the validation;
   `bin/validate.py` keeps only what SQL can't express, plus curator-facing diagnostics.
 - `dist/` carries the derived views as TSV — closure, current status, searchable names,
   deprecations — so consumers don't reimplement them.
 - Releases carry `register.db`, the TSVs, `schema.sql` and `SHA256SUMS`.
+- ADR-0013 now states release cadence — a tag push, on demand, possibly several a day —
+  and ADR-0012 states how SalishSea.io consumes the register: a released artefact at a
+  pinned tag, the same way OrcaSound does. Its tight coupling is about the model, not the
+  transport. Who besides the author may cut a release is Q25.
 - Initial scaffold: scope, competency questions, walkthrough, glossary, background,
   open questions, twelve decision records, six definitions, and a validator.
 - All decision records are `Proposed`. No definition is `agreed`.

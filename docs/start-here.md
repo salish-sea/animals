@@ -50,7 +50,6 @@ tagged, because tagging against them and then changing our minds means re-taggin
 | **[Q15](open-questions.md)** | How does CWR's published census list L87 during the years he travelled with J pod? | The register defines membership as genealogical, so L87 is L pod permanently. If CWR prints him under J pod, curators need a stated rule for transcribing an associational roster — otherwise two curators will diverge silently. |
 | [Q4](open-questions.md) | Populate Northern Residents and offshores now, or later? | Curation effort against moderator coverage. |
 | [Q6](open-questions.md) | Should the register publish group sizes? | A count is derivable; publishing it is a public claim that will sometimes be wrong. |
-| [Q7](open-questions.md) | How do we model `Humpback mimics Bigg's?` — a real bout where the animal and the sound belong to different species? | Breaks any assumption that one tag identifies both. |
 | [Q9](open-questions.md) | Is there anything in scope that should not be in a public repository? | Naming programmes, cultural significance, catalogues that withhold detail. |
 | **[Q22](open-questions.md)** | Is a T-number lineage the right grouping? The sheet seems to record two levels — a lineage, and travelling sub-groups within it — and the import flattens them to one. | 132 derived groups depend on the answer. |
 | [Q13](open-questions.md) | Is `J17s` the canonical written form for a matriline, or would a catalogue write `T090 matriline`? | Display is the consumer's business; this is asking what the community actually writes. |

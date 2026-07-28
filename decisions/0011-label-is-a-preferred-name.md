@@ -68,9 +68,10 @@ have to review it.
 
 ## Consequences
 
-- Consumers must implement composition. A picker showing bare labels will be ambiguous
-  the first time a curator types `J17`, and that is now documented as expected rather
-  than as a defect.
+- **Labels are not unique, and that is now documented as expected rather than as a
+  defect.** A matriline and its matriarch may legitimately share a designation, so bare
+  labels collide. That is a fact about the data and the register owns it; what to display
+  instead is presentation, and the next bullet applies to it like anything else.
 - The register can stay silent on presentation questions it has no basis to answer:
   truncation, capitalisation in running prose, sort order, disambiguation. All consumer
   concerns.
