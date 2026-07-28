@@ -40,8 +40,37 @@ recorded as `skos:broadMatch` to *Orcinus orca* — narrower than the species, b
 subspecies and not making any claim about formal taxonomy. That distinction matters if
 anything here is ever exported to GBIF.
 
+### Delegating an identifier is not the same as refusing an entity
+
+This decision was read, initially by its own author, as "the register holds nothing at
+species level". That reading blocks about 30% of the OrcaSound biophony corpus: humpbacks,
+sea lions, fish, and — most often — **an orca heard too faintly to resolve to an ecotype**,
+which is a routine moderator outcome rather than an edge case.
+
+The reading is wrong. This ADR forbids **minting a species identifier**. It does not forbid
+a **register entity that references one**:
+
+```
+SSA:0000900   taxon   Orcinus orca   NCBITaxon:9733
+```
+
+`SSA:0000900` is a taggable stand-in for "an animal of this species, not resolved further".
+It mints no taxonomy — NCBI still owns the species concept, and the entity carries a
+pointer to it.
+
+"An orca, ecotype undetermined" then needs no new concept at all: it is `SSA:0000900`
+with no ecotype tagged alongside it. Uncertainty about *which* ecotype stays out of the
+vocabulary, exactly as [ADR-0009](0009-uncertainty-on-the-annotation.md) requires.
+
 ## Implementation
 
+- Entities of `kind = taxon` carry a `taxon_id` and no `rank` — ranks are social levels,
+  and a species is not one ([ADR-0004](0004-rank-is-an-open-vocabulary.md)). Validation
+  enforces both.
+- Ecotypes are members of their species taxon, which roots the membership graph and lets a
+  matriline roll up to a species even while the ecotype/community question
+  ([Q1](../docs/open-questions.md)) is unresolved.
+- Taxon entities have no life status. They are kinds, not animals.
 - `taxon_id` uses `NCBITaxon:` CURIEs. NCBI was chosen over WoRMS because OLS resolves
   it directly and it is what the OBO ecosystem uses; WoRMS is recorded in `sources.tsv`
   as a parallel authority and a WoRMS crosswalk can be added to `mappings.tsv` when
@@ -56,9 +85,10 @@ anything here is ever exported to GBIF.
 - No species curation burden, and no risk of our species list drifting from consensus.
 - A dependency on NCBI's identifiers being stable. They are, and they are not going
   anywhere.
-- Species-level tagging for animals with no register entity (a harbour seal, say) has no
-  obvious home yet — there is no entity to tag. See
-  [competency-questions.md](../docs/competency-questions.md) O1.
+- Species-level tagging works via `kind = taxon` entities, which closes
+  [competency question O1](../docs/competency-questions.md).
+- The register now holds entities that are *kinds*, not collections of individuals.
+  Anything iterating over entities must handle three kinds, not two.
 - iNaturalist is deliberately *not* the taxonomic authority here, despite being named
   first in the originating discussion. It is a good audience and a reasonable crosswalk
   target, but it is crowd-edited and its taxonomy shifts. A crosswalk to iNat taxon

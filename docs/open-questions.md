@@ -182,22 +182,6 @@ Unanswered: is a scripted import an acceptable `source_id`? Who mints several hu
 identifiers, and how do two concurrent import branches avoid colliding on `SSA:0000106`?
 ADR-0002's sequential blocks by kind run out at nine matrilines.
 
-### Q21 — Absence and false-positive claims block a consumer today
-*Owner: P. Abrahamsen, S. Veirs.*
-[ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) bans `unconfirmed` and
-`false-positive` as terms — correctly — and defers designing the replacement.
-
-But SalishSea.io's accepted decision on ingesting OrcaSound acoustic occurrences needs
-exactly that capability: of ~196 bouts, the tail includes OrcaHello false positives and
-non-animal sounds mistagged as biophony, and their ingest must exclude them. So the
-register currently says "you may not express the thing you need on day one, and we
-haven't designed the alternative" — which is failure mode #2 in
-[background.md](background.md), caused by us.
-
-Likely shape: an annotation-level `presence` ∈ {present, absent} plus a bout-level
-"reviewed, nothing present" marker, so that absence of a tag never has to be read as
-absence of the animal. Should be finished rather than deferred.
-
 ### Q14 — How are preferred names localised?
 *Owner: P. Abrahamsen.*
 `names.tsv` has a `language` column; `entities.tsv.label` does not, so the preferred name
@@ -218,6 +202,22 @@ edition of this register.
 ---
 
 ## Answered
+
+### Q21 — Absence and false-positive claims block a consumer today
+**Resolved 2026-07-27, mostly by declining it.** Reading the live bouts, the requested
+`unconfirmed` / `false-positive` vocabulary turned out to be three separate problems:
+
+- `OrcaHello FP at Bush Point` — a real bout. The detector fired on nothing. That is a
+  **bout-level flag in OrcaSound**, never a tag, because it names no animal.
+- `Passing boat noise`, category `biophony` — a **wrong value in an existing field**. Fix
+  `bout.category`; not a vocabulary question.
+- `Mystery squeaks at Port Townsend` — there is a signal, nobody knows whose. **Tag at the
+  level you are sure of**, which required a species-level entity. Those now exist as
+  `kind = taxon` ([ADR-0008](../decisions/0008-species-identity-is-delegated.md)).
+
+So "unconfirmed" was never a missing modality — it was a missing *entity*. The register's
+only remaining contribution is a warning, now in [scope.md](scope.md): a biophony bout may
+be about no animal at all, so the absence of tags is not the absence of animals.
 
 ### Q20 — `status.tsv` is append-only with no way to retract a claim
 **Resolved 2026-07-27.** `status.tsv` gains a `recorded` column — when *we* wrote the row

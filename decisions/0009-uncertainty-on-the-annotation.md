@@ -55,17 +55,31 @@ Two related patterns fall out of the same principle:
   It explodes combinatorially, and it still cannot express "J pod plus the T090s". Apply
   two annotations instead.
 
-- **Negative and absence claims need their own treatment.** "Not Bigg's" and "reviewed,
-  nothing present" are not expressible as a tag, and absence of a tag must never be read
-  as absence of the animal — an unreviewed bout and a reviewed-and-empty bout look
-  identical otherwise. This matters if anyone ever uses the data ecologically. Not yet
-  designed; flagged here so it is not solved accidentally with a term.
+- **Negative claims are mostly not this register's problem, and saying so is the
+  contribution.** The originating issue asked for `unconfirmed` and `false-positive` tags.
+  In the live data those turn out to be three different things, only one of which touches
+  the register:
+
+  | Real bout | What it is | Where it belongs |
+  |---|---|---|
+  | `OrcaHello FP at Bush Point` | The detector fired on nothing | A bout-level flag in OrcaSound. Never a tag — it names no animal. |
+  | `Passing boat noise`, category `biophony` | A wrong value in a field that already exists | Fix `bout.category`. Not a vocabulary question at all. |
+  | `Mystery squeaks at Port Townsend` | There is a signal; nobody knows whose | Tag at the level you are sure of — which needs a `taxon` entity, and those now exist ([ADR-0008](0008-species-identity-is-delegated.md)). |
+
+  The register's whole contribution is one warning to consumers: **a biophony bout may be
+  about no animal at all, so the absence of tags must never be read as the absence of
+  animals.** An unreviewed bout and a reviewed-and-empty bout are indistinguishable
+  otherwise, which matters to anyone using the data ecologically.
 
 ## Implementation
 
 - This ADR constrains **consumers**, not this repository — there is nothing to enforce
-  here. It lives here because both consumers need to implement it the same way, and this
-  is the shared document.
+  here. It is recorded here because the vocabulary's shape depends on it: banning hedge
+  terms is only defensible if the hedge has somewhere else to go.
+- It does **not** make this repository the owner of annotation semantics. SalishSea.io has
+  shipped a different and in places better model — it separates the asserter's confidence
+  from the dataset's verification status, which the table above does not. Reconciling them
+  is [Q18](../docs/open-questions.md), and this ADR should expect to lose ground there.
 - `certainty` is a three-value enum on purpose. A numeric probability implies a
   precision a listening moderator does not have.
 - Validation rejects any entity label matching `\?$` or resembling a hedge, as a

@@ -14,6 +14,10 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 - All decision records are `Proposed`. No definition is `agreed`.
 
 ### Register
+- Added `kind = taxon` entities for *Orcinus orca*, humpback, Steller sea lion, California
+  sea lion and harbour seal, plus ecotype→species membership edges. These are what a
+  moderator tags when an orca is heard too faintly to place in an ecotype — roughly 30% of
+  the biophony corpus previously had nothing to tag.
 - `status.tsv` gains a `recorded` column and a stated precedence rule, so a retracted
   life-status claim is resolvable. Consumers must order by `(recorded, effective)`.
 - Reviewed by two independent passes (consistency, gaps); corrections applied and the

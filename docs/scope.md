@@ -42,6 +42,11 @@ into a competing database that will drift from the sources it depends on.
 - **Not a sightings or occurrence database.** Nothing here records that an animal was
   somewhere at a time. Occurrences live in OrcaSound and SalishSea.io and point *at*
   this register.
+- **Not a record of what is *absent*.** A `biophony` bout may be about no animal at all —
+  `OrcaHello FP at Bush Point` is a real one, and so is `Passing boat noise`. The register
+  cannot express that and should not try. The warning consumers need is that **the absence
+  of tags is not the absence of animals**: an unreviewed bout and a reviewed-and-empty
+  bout look identical from here.
 - **Not a photo-ID catalogue.** No images, no fin matching. We record that the Center
   for Whale Research says J35 exists; we do not duplicate their catalogue.
 - **Not a replacement for CWR, MERS, DFO, or finwave.** Those are the upstream
@@ -63,8 +68,10 @@ initially:
 - *Orcinus orca* — Southern Residents and Bigg's, resolved to ecotype, pod, matriline
   and individual. Northern Residents and offshores are in scope but unpopulated.
 - *Megaptera novaeangliae* (humpback) — individuals where a catalogue exists.
-- Pinnipeds and other species at the species level only, via `taxon_id`, with no
-  register entities of their own until someone needs them.
+- Pinnipeds and other in-scope species as `kind = taxon` entities — taggable stand-ins
+  for "an animal of this species, not resolved further", including an orca heard too
+  faintly to place in an ecotype. See
+  [ADR-0008](../decisions/0008-species-identity-is-delegated.md).
 
 ## Relationship to the SalishSea.io catalogue
 
@@ -93,6 +100,8 @@ will drift. Those labels should become references to entity identifiers here.
 
 Note also that `JK` and `JKL` encode a *set* as a single label. Multiple identifiers
 should be applied instead — see [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md).
+This is **migration work, not prevention**: `JKL at Sunset Bay` and `JKL calls fall S25E2
+day 2` are live bout names today.
 
 ## Success criteria
 

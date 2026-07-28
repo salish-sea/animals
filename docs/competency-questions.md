@@ -27,18 +27,19 @@ generating this table rather than maintaining it by hand.
 | C2 | A moderator typed "T090s" / "J-35" / "Biggs" — which entity is that? | OrcaSound autocomplete | Yes |
 | C3 | Which individuals belonged to J pod at the time of this bout? | SalishSea.io map | Yes |
 | C4 | Was this individual alive on this date? | SalishSea.io, data QA | Yes |
-| C5 | Is this entity a Southern Resident? (at any depth below the ecotype) | Both, filtering | **No** — ecotype entities have no membership edges, pending [Q1](open-questions.md) |
-| C6 | This bout is tagged with a matriline. Which pod and ecotype does that roll up to? | SalishSea.io ingest | **Partly** — reaches the community, not the ecotype; and `T090s` has no edge at all |
+| C5 | Is this entity a Southern Resident? (at any depth below the ecotype) | Both, filtering | **Partly** — pods and below reach the community, not yet the ecotype, pending [Q1](open-questions.md) |
+| C6 | This bout is tagged with a matriline. Which pod and ecotype does that roll up to? | SalishSea.io ingest | **Partly** — reaches the community; the ecotype level awaits [Q1](open-questions.md) |
 | C7 | What did identifier X mean, given that a bout was tagged in March 2026? | Reinterpreting old annotations | Yes, via git |
 | C8 | Which entities changed since the last time we synced? | Both, incremental ingest | Yes, via git |
 | C9 | Identifier X is deprecated — what should we use instead, and can we substitute automatically? | Both, migration | Yes, `deprecations.tsv` |
 | C10 | Who says so, and when did they say it? | Everyone, always | Yes, `source_id` |
+| C11 | A moderator heard an orca but couldn't place the ecotype. What do they tag? | OrcaSound, ~30% of biophony bouts | Yes — the `Orcinus orca` taxon entity, with no ecotype alongside |
+| C12 | This bout is a humpback / sea lion / harbour seal. What do they tag? | OrcaSound, SalishSea.io | Yes — `kind = taxon` entities |
 
 ## Open — the model does not answer these yet
 
 | # | Question | Asked by | Blocked on |
 |---|---|---|---|
-| O1 | Which species is this entity, for a non-orca bout? | SalishSea.io | Needs humpback/pinniped entities, or a convention for tagging a bare `taxon_id` |
 | O2 | Which hydrophone locations is this group plausibly detectable at? | OrcaSound UI hinting | Out of scope here — this is occurrence data |
 | O3 | Two sources disagree about this animal's matriline. What do we publish? | Curators | [ADR pending](open-questions.md) Q3 |
 | O4 | Which signal types are valid for this animal? | OrcaSound moderator UI | Cross-repo dependency on signals-srkw |

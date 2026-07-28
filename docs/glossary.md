@@ -112,6 +112,14 @@ taxonomic rank** — an ecotype is explicitly not a formal taxon
 social, not Linnaean. The list is open and not every population uses every level; Bigg's
 have no pods. See [ADR-0004](../decisions/0004-rank-is-an-open-vocabulary.md).
 
+### ⚖️ Taxon entity
+An entity of `kind = taxon`: a taggable stand-in for "an animal of this species, not
+resolved further". `Orcinus orca` with no ecotype alongside it *is* "an orca, ecotype
+undetermined" — no separate concept needed. It references an external species identifier
+rather than minting one, has no rank (ranks are social levels), and has no life status,
+because it is a kind rather than an animal. See
+[ADR-0008](../decisions/0008-species-identity-is-delegated.md).
+
 ### ⚖️ Register
 A curated list of individually identified things, each with a permanent identifier.
 Distinct from a *taxonomy* (a classification of kinds) and a *vocabulary* (an agreed set

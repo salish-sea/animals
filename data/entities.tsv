@@ -14,3 +14,8 @@ SSA:0000102	individual		J57	NCBITaxon:9733	2020-09	M	SEED	Calf of J35.
 SSA:0000103	individual		J50	NCBITaxon:9733	2014-12	F	SEED	See status.tsv.
 SSA:0000104	individual		L87	NCBITaxon:9733	1992	M	SEED	Born to L32; travelled with K pod and later J pod. See ADR-0005 and docs/walkthrough.md.
 SSA:0000105	individual		J17	NCBITaxon:9733	1977	F	SEED	The individual, distinct from matriline SSA:0000030.
+SSA:0000900	taxon		Orcinus orca	NCBITaxon:9733			SEED	Tag this when an orca is heard but the ecotype is undetermined.
+SSA:0000901	taxon		Megaptera novaeangliae	NCBITaxon:9773			SEED	
+SSA:0000902	taxon		Eumetopias jubatus	NCBITaxon:34886			SEED	
+SSA:0000903	taxon		Zalophus californianus	NCBITaxon:9704			SEED	
+SSA:0000904	taxon		Phoca vitulina	NCBITaxon:9720			SEED	

@@ -130,6 +130,7 @@ def main() -> int:
     # --- entities: identity, uniqueness, well-formedness (ADR-0002, 0003) ---
     entity_ids: set = set()
     groups: set = set()
+    taxa: set = set()
     labels: dict = {}
     for e in entities:
         eid = e["entity_id"].strip()
@@ -141,15 +142,24 @@ def main() -> int:
         entity_ids.add(eid)
 
         kind = e["kind"].strip()
-        if kind not in ("individual", "group"):
-            err(e["__file"], e["__line"], f"kind={kind!r} must be individual or group")
+        if kind not in ("individual", "group", "taxon"):
+            err(e["__file"], e["__line"],
+                f"kind={kind!r} must be individual, group or taxon")
+        if kind == "taxon":
+            taxa.add(eid)
+            if e["rank"].strip():
+                err(e["__file"], e["__line"],
+                    "taxon must not have a rank — ranks are social levels (ADR-0004)")
+            if not e.get("taxon_id", "").strip():
+                err(e["__file"], e["__line"],
+                    "taxon entity must carry a taxon_id; it exists to reference one (ADR-0008)")
         if kind == "group":
             groups.add(eid)
             if not e["rank"].strip():
                 err(e["__file"], e["__line"], "group has no rank")
             elif e["rank"].strip() not in rank_ids:
                 err(e["__file"], e["__line"], f"rank={e['rank']!r} is not in ranks.tsv")
-        elif e["rank"].strip():
+        elif kind == "individual" and e["rank"].strip():
             err(e["__file"], e["__line"], "individual must not have a rank")
 
         label = e["label"].strip()
@@ -189,8 +199,9 @@ def main() -> int:
         check_id(m, "member_id", entity_ids)
         check_id(m, "group_id", entity_ids)
         gid = m["group_id"].strip()
-        if gid in entity_ids and gid not in groups:
-            err(m["__file"], m["__line"], f"group_id={gid} is not kind=group")
+        if gid in entity_ids and gid not in groups and gid not in taxa:
+            err(m["__file"], m["__line"],
+                f"group_id={gid} must be kind=group or kind=taxon")
         if m["member_id"].strip() == gid:
             err(m["__file"], m["__line"], "entity cannot be a member of itself")
         check_edtf(m, "start")
@@ -223,8 +234,9 @@ def main() -> int:
     for s in status:
         check_id(s, "entity_id", entity_ids)
         eid = s["entity_id"].strip()
-        if eid in groups:
-            err(s["__file"], s["__line"], "status applies to individuals, not groups")
+        if eid in groups or eid in taxa:
+            err(s["__file"], s["__line"],
+                "status applies to individuals only — groups and taxa are not alive or dead")
         if s.get("status", "").strip() not in STATUSES:
             err(s["__file"], s["__line"], f"status must be one of {STATUSES}")
         check_edtf(s, "effective")

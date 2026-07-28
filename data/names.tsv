@@ -16,3 +16,12 @@ SSA:0000030	J17 matriline	hidden	en	SEED
 SSA:0000031	L32	hidden	en	SEED	Bare designation, as used in catalogues.
 SSA:0000040	T090	hidden	en	SEED	Bare designation, as used in catalogues.
 SSA:0000040	T090 matriline	hidden	en	SEED	
+SSA:0000900	Killer whale	common	en	SEED	
+SSA:0000900	orca	hidden	en	SEED	
+SSA:0000901	Humpback whale	common	en	SEED	
+SSA:0000901	humpback	hidden	en	SEED	
+SSA:0000902	Steller sea lion	common	en	SEED	
+SSA:0000903	California sea lion	common	en	SEED	
+SSA:0000903	CA sea lion	hidden	en	SEED	As used in bout name "CA sea lion barks at Orcasound Lab".
+SSA:0000904	Harbour seal	common	en	SEED	
+SSA:0000904	harbor seal	hidden	en	SEED	US spelling.

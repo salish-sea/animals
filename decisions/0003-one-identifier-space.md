@@ -55,8 +55,10 @@ distinction in the string, and every consumer would have to parse it correctly f
 
 ## Implementation
 
-- `kind` is `individual` or `group`. `rank` is populated for groups and empty for
-  individuals.
+- `kind` is `individual`, `group`, or `taxon`. `rank` is populated for groups and empty
+  for the other two. Taxon entities were added later — see
+  [ADR-0008](0008-species-identity-is-delegated.md) — and they fit this decision without
+  changing it, which is some evidence the one-space choice was right.
 - `membership.tsv` is uniform: any entity may appear in either column. Validation
   enforces that `group_id` refers to a row with `kind = group`.
 - Validation warns when two entities share a preferred name at the same `kind` and
