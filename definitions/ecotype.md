@@ -15,7 +15,10 @@ for *Orcinus orca*. Needs a citation to a specific source and expert confirmatio
 
 ## Scope notes
 
-- In scope for the Salish Sea: Southern Resident, Northern Resident, Bigg's, offshore.
+- In scope for the Salish Sea: resident, Bigg's, offshore — **or** Southern Resident,
+  Northern Resident, Bigg's, offshore, depending on [Q1](../docs/open-questions.md). In
+  the stricter reading the residents are one ecotype containing two communities; in common
+  usage SRKW and NRKW are spoken of as separate ecotypes. Unresolved.
 - An ecotype is **not a formal taxonomic rank**, which is exactly why it needs an
   identifier here — no external taxonomy will provide one. See
   [ADR-0008](../decisions/0008-species-identity-is-delegated.md).
@@ -25,7 +28,10 @@ for *Orcinus orca*. Needs a citation to a specific source and expert confirmatio
 
 **Not a subspecies**, and no claim about formal taxonomy is intended or should be
 inferred. If ecotypes are formally described as subspecies or species in future, that
-becomes a crosswalk change, not a restructuring.
+becomes a crosswalk change, not a restructuring — which is no longer hypothetical:
+resident and Bigg's killer whales have been proposed as *Orcinus ater* and *Orcinus
+rectipinnus*. NCBI Taxonomy has not adopted them (checked 2026-07-28), so `NCBITaxon:9733`
+remains correct for everything here.
 
 **Not a community.** See [community.md](community.md) and open question Q1 — these two
 may in fact be redundant in this register.

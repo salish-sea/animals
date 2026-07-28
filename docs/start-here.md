@@ -44,7 +44,7 @@ tagged, because tagging against them and then changing our minds means re-taggin
 
 | | Question | Why it blocks |
 |---|---|---|
-| **[Q1](open-questions.md)** | Is "community" a rank we need, or is it the same thing as ecotype? | Both are in the data now and may be redundant. Until it is settled, nothing rolls up from a pod to an ecotype — a gap the validator currently reports as a warning. |
+| **[Q1](open-questions.md)** | Is "Southern Resident" an ecotype, or a community of the *Resident* ecotype? | The register has it entered twice, once at each rank. In the standard reading the ecotype is *Resident* and SRKW is a community within it — but #1001 called SRKW an ecotype, which is common usage. This is why nothing in the Southern Resident branch rolls up to *Orcinus orca*. |
 | **[Q2](open-questions.md)** | Are the Southern Residents one acoustic clan, or more? | Asserted with low confidence. If moderators would never tag at clan level, the rank should be dropped rather than maintained. |
 | **[Q3](open-questions.md)** | Which source is authoritative for Bigg's — MERS, finwave, DFO? And what happens when two disagree? | Until the second half has an answer, the register cannot take in more than one Bigg's source. |
 | **[Q15](open-questions.md)** | How does CWR's published census list L87 during the years he travelled with J pod? | The register defines membership as genealogical, so L87 is L pod permanently. If CWR prints him under J pod, curators need a stated rule for transcribing an associational roster — otherwise two curators will diverge silently. |

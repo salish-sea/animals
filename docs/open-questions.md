@@ -14,12 +14,64 @@ answered.
 
 ## For the scientific reviewers
 
-### Q1 — Is "community" a rank we need, and how does it relate to ecotype?
+### Q1 — Is "Southern Resident" an ecotype, or a community of the Resident ecotype?
 *Owner: S. Veirs, D. Bain.*
-The register currently has both `ecotype` (Southern Resident) and `community` (Southern
-Resident community) as separate entities, which may be redundant. Are these the same
-thing at different granularity, or genuinely different concepts? If redundant, one
-should go before anyone tags anything.
+
+Community is not redundant with ecotype — in the standard Northeast Pacific literature it
+sits below it:
+
+```
+ecotype  ⊃  community  ⊃  clan  ⊃  pod  ⊃  matriline  ⊃  individual
+```
+
+where the ecotypes are **resident**, **Bigg's** and **offshore** (prey specialisation,
+genetics, morphology, no interbreeding), a **community** is the set of pods that associate
+with one another, and a **clan** is the set of pods sharing an acoustic repertoire. The
+Northern Resident community contains three clans; the Southern Resident community contains
+one, J clan.
+
+**So the real problem is that the register has "Southern Resident" entered twice, once at
+the wrong rank.** `SSA:0000001` calls it an ecotype and `SSA:0000010` calls it a
+community. Under the reading above, the ecotype is *Resident* — which does not exist in
+the register at all — and Southern Resident is a community within it.
+
+That also explains the graph break. Bigg's connects to *Orcinus orca* because Bigg's
+genuinely is an ecotype. The Southern Resident branch does not connect, because the
+community's actual parent — the Resident ecotype — is missing. The break is a symptom of
+the category error, not a separate problem.
+
+**But there is a real conflict of usage, and it is yours to settle.** The #1001 comment
+proposing this work says "the *Orcinus orca* species has 4 ecotypes that have occurred
+within Orcasite's ecoregion (SRKW, Biggs, offshore, NRKW)" — treating SRKW and NRKW as
+separate ecotypes. That is common in management and conversation (NOAA's listing unit is
+the Southern Resident DPS), and it conflicts with the stricter reading, in which
+SRKW-vs-NRKW is a *community* distinction inside one ecotype while Bigg's-vs-resident is
+an *ecotype* distinction. Treating all four as parallel ecotypes flattens a real
+difference.
+
+Two ways to go:
+
+**(a) Strict.** Add a `Resident` ecotype; merge `SSA:0000001` into `SSA:0000010` as a
+community beneath it; Northern Residents become a sibling community. The graph connects
+and the ranks mean one thing each. Costs: "SRKW" is then a community, which will read
+oddly to anyone used to calling it an ecotype.
+
+**(b) Colloquial.** Keep SRKW as an ecotype, drop `community` as a rank entirely, and
+attach J clan directly to the SRKW ecotype. Simpler, matches how people talk, and gives up
+the ability to say that Northern and Southern Residents are the same ecotype.
+
+The register does not need a fixed hierarchy
+([ADR-0004](../decisions/0004-rank-is-an-open-vocabulary.md)), so either works
+structurally. This is a question about what the words should mean, which is why it is
+yours.
+
+*One thing to know before answering:* resident and Bigg's killer whales have been proposed
+as separate species (*Orcinus ater* and *Orcinus rectipinnus*). NCBI Taxonomy has not
+adopted them — checked 2026-07-28, only `NCBITaxon:9733 Orcinus orca` exists — so nothing
+changes today. [ADR-0008](../decisions/0008-species-identity-is-delegated.md) anticipated
+this: if ecotypes become formal taxa it is a crosswalk change, not a restructuring. Choice
+(a) would age slightly better if the split is eventually adopted, since the ecotype level
+is where the taxa would attach.
 
 ### Q2 — Are the Southern Residents one acoustic clan or more?
 *Owner: S. Veirs.*
