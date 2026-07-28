@@ -1,47 +1,47 @@
 entity_id	name	type	language
+SSA:0000001	SRKW	hidden	en
 SSA:0000001	Southern Resident	preferred	en
+SSA:0000001	Southern Resident killer whale	common	en
 SSA:0000002	Bigg's	preferred	en
+SSA:0000002	Bigg's killer whale	common	en
+SSA:0000002	Biggs	hidden	en
+SSA:0000002	Transient	historical	en
 SSA:0000010	Southern Resident community	preferred	en
 SSA:0000011	J clan	preferred	en
 SSA:0000020	J pod	preferred	en
+SSA:0000020	Js	hidden	en
 SSA:0000021	K pod	preferred	en
 SSA:0000022	L pod	preferred	en
-SSA:0000030	J17s	preferred	en
-SSA:0000031	L32s	preferred	en
-SSA:0000040	T090s	preferred	en
-SSA:0000101	J35	preferred	en
-SSA:0000102	J57	preferred	en
-SSA:0000103	J50	preferred	en
-SSA:0000104	L87	preferred	en
-SSA:0000105	J17	preferred	en
-SSA:0000900	Orcinus orca	preferred	en
-SSA:0000901	Megaptera novaeangliae	preferred	en
-SSA:0000902	Eumetopias jubatus	preferred	en
-SSA:0000903	Zalophus californianus	preferred	en
-SSA:0000904	Phoca vitulina	preferred	en
-SSA:0000001	SRKW	hidden	en
-SSA:0000001	Southern Resident killer whale	common	en
-SSA:0000002	Transient	historical	en
-SSA:0000002	Biggs	hidden	en
-SSA:0000002	Bigg's killer whale	common	en
-SSA:0000020	Js	hidden	en
-SSA:0000101	Tahlequah	common	en
-SSA:0000101	J-35	hidden	en
-SSA:0000102	Phoenix	common	en
-SSA:0000103	Scarlet	common	en
-SSA:0000104	Onyx	common	en
-SSA:0000105	Princess Angeline	common	en
 SSA:0000030	J17	hidden	en
 SSA:0000030	J17 matriline	hidden	en
+SSA:0000030	J17s	preferred	en
 SSA:0000031	L32	hidden	en
+SSA:0000031	L32s	preferred	en
 SSA:0000040	T090	hidden	en
 SSA:0000040	T090 matriline	hidden	en
+SSA:0000040	T090s	preferred	en
+SSA:0000101	J-35	hidden	en
+SSA:0000101	J35	preferred	en
+SSA:0000101	Tahlequah	common	en
+SSA:0000102	J57	preferred	en
+SSA:0000102	Phoenix	common	en
+SSA:0000103	J50	preferred	en
+SSA:0000103	Scarlet	common	en
+SSA:0000104	L87	preferred	en
+SSA:0000104	Onyx	common	en
+SSA:0000105	J17	preferred	en
+SSA:0000105	Princess Angeline	common	en
 SSA:0000900	Killer whale	common	en
+SSA:0000900	Orcinus orca	preferred	en
 SSA:0000900	orca	hidden	en
 SSA:0000901	Humpback whale	common	en
+SSA:0000901	Megaptera novaeangliae	preferred	en
 SSA:0000901	humpback	hidden	en
+SSA:0000902	Eumetopias jubatus	preferred	en
 SSA:0000902	Steller sea lion	common	en
-SSA:0000903	California sea lion	common	en
 SSA:0000903	CA sea lion	hidden	en
+SSA:0000903	California sea lion	common	en
+SSA:0000903	Zalophus californianus	preferred	en
 SSA:0000904	Harbour seal	common	en
+SSA:0000904	Phoca vitulina	preferred	en
 SSA:0000904	harbor seal	hidden	en

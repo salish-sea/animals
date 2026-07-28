@@ -164,13 +164,22 @@ def graph_checks(db: sqlite3.Connection) -> None:
 
 
 def write_dist(db: sqlite3.Connection) -> None:
+    """Export the views as TSV, deterministically.
+
+    Rows are sorted here rather than with ORDER BY because these files are committed and
+    CI compares them against a fresh build: SQLite versions may order an unordered
+    recursive CTE differently, which would make the artefact spuriously dirty on some
+    machines. Sorting in Python is engine-independent.
+    """
     DIST.mkdir(exist_ok=True)
     for view in DIST_VIEWS:
         cur = db.execute(f"SELECT * FROM {view}")
+        cols = [d[0] for d in cur.description]
+        rows = sorted(cur, key=lambda r: tuple("" if v is None else str(v) for v in r))
         with open(DIST / f"{view}.tsv", "w", newline="") as f:
             w = csv.writer(f, delimiter="\t", lineterminator="\n")
-            w.writerow([d[0] for d in cur.description])
-            w.writerows(cur)
+            w.writerow(cols)
+            w.writerows(rows)
 
 
 def main() -> int:

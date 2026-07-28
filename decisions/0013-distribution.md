@@ -89,6 +89,13 @@ curator's afternoon for an engineer's tidiness.
 | `searchable_name.tsv` | C2 — preferred names and every alternate, in one place |
 | `retired.tsv` | C9 — deprecations, marked `automatic` or `needs-human` |
 
+Generated files are sorted in Python, not with `ORDER BY`. They are committed and CI
+compares them against a fresh build, and SQLite versions order an unordered recursive CTE
+differently — which made the artefact spuriously dirty on the first CI run. Sorting
+outside the engine is version-independent. **Any committed generated artefact needs a
+deterministic order**, and it is worth knowing that the freshness check is what surfaces
+it.
+
 `current_status` is the point of the exercise. Without it, every consumer reimplements a
 precedence rule whose subtlety is that ordering by `effective` alone is wrong. With it,
 they `SELECT`.

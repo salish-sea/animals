@@ -2,34 +2,34 @@ entity_id	ancestor_id	depth	ancestor_label	ancestor_kind	ancestor_rank
 SSA:0000001	SSA:0000900	1	Orcinus orca	taxon	
 SSA:0000002	SSA:0000900	1	Orcinus orca	taxon	
 SSA:0000011	SSA:0000010	1	Southern Resident community	group	community
-SSA:0000020	SSA:0000011	1	J clan	group	clan
-SSA:0000021	SSA:0000011	1	J clan	group	clan
-SSA:0000022	SSA:0000011	1	J clan	group	clan
-SSA:0000030	SSA:0000020	1	J pod	group	pod
-SSA:0000031	SSA:0000022	1	L pod	group	pod
-SSA:0000101	SSA:0000030	1	J17s	group	matriline
-SSA:0000102	SSA:0000030	1	J17s	group	matriline
-SSA:0000103	SSA:0000020	1	J pod	group	pod
-SSA:0000104	SSA:0000031	1	L32s	group	matriline
-SSA:0000105	SSA:0000030	1	J17s	group	matriline
 SSA:0000020	SSA:0000010	2	Southern Resident community	group	community
+SSA:0000020	SSA:0000011	1	J clan	group	clan
 SSA:0000021	SSA:0000010	2	Southern Resident community	group	community
+SSA:0000021	SSA:0000011	1	J clan	group	clan
 SSA:0000022	SSA:0000010	2	Southern Resident community	group	community
-SSA:0000030	SSA:0000011	2	J clan	group	clan
-SSA:0000031	SSA:0000011	2	J clan	group	clan
-SSA:0000101	SSA:0000020	2	J pod	group	pod
-SSA:0000102	SSA:0000020	2	J pod	group	pod
-SSA:0000103	SSA:0000011	2	J clan	group	clan
-SSA:0000104	SSA:0000022	2	L pod	group	pod
-SSA:0000105	SSA:0000020	2	J pod	group	pod
+SSA:0000022	SSA:0000011	1	J clan	group	clan
 SSA:0000030	SSA:0000010	3	Southern Resident community	group	community
+SSA:0000030	SSA:0000011	2	J clan	group	clan
+SSA:0000030	SSA:0000020	1	J pod	group	pod
 SSA:0000031	SSA:0000010	3	Southern Resident community	group	community
-SSA:0000101	SSA:0000011	3	J clan	group	clan
-SSA:0000102	SSA:0000011	3	J clan	group	clan
-SSA:0000103	SSA:0000010	3	Southern Resident community	group	community
-SSA:0000104	SSA:0000011	3	J clan	group	clan
-SSA:0000105	SSA:0000011	3	J clan	group	clan
+SSA:0000031	SSA:0000011	2	J clan	group	clan
+SSA:0000031	SSA:0000022	1	L pod	group	pod
 SSA:0000101	SSA:0000010	4	Southern Resident community	group	community
+SSA:0000101	SSA:0000011	3	J clan	group	clan
+SSA:0000101	SSA:0000020	2	J pod	group	pod
+SSA:0000101	SSA:0000030	1	J17s	group	matriline
 SSA:0000102	SSA:0000010	4	Southern Resident community	group	community
+SSA:0000102	SSA:0000011	3	J clan	group	clan
+SSA:0000102	SSA:0000020	2	J pod	group	pod
+SSA:0000102	SSA:0000030	1	J17s	group	matriline
+SSA:0000103	SSA:0000010	3	Southern Resident community	group	community
+SSA:0000103	SSA:0000011	2	J clan	group	clan
+SSA:0000103	SSA:0000020	1	J pod	group	pod
 SSA:0000104	SSA:0000010	4	Southern Resident community	group	community
+SSA:0000104	SSA:0000011	3	J clan	group	clan
+SSA:0000104	SSA:0000022	2	L pod	group	pod
+SSA:0000104	SSA:0000031	1	L32s	group	matriline
 SSA:0000105	SSA:0000010	4	Southern Resident community	group	community
+SSA:0000105	SSA:0000011	3	J clan	group	clan
+SSA:0000105	SSA:0000020	2	J pod	group	pod
+SSA:0000105	SSA:0000030	1	J17s	group	matriline
