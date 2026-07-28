@@ -54,6 +54,7 @@ been formally put to the scientific reviewers.
 | [0012](0012-relationship-to-the-salishsea-io-catalogue.md) | This register is authoritative; the SalishSea.io catalogue reconciles toward it | Scientific + informatics |
 | [0013](0013-distribution.md) | The schema is the validation; releases carry the artefacts | Informatics reviewers |
 | [0014](0014-a-publication-not-a-service.md) | The register is a publication, not a service | Scientific + informatics |
+| [0015](0015-bulk-import.md) | Bulk imports are reviewed as a transformation, not as rows | Scientific + informatics |
 
 ## Template
 

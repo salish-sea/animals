@@ -66,6 +66,34 @@ What remains for the scientific reviewers is narrower: is there anything **in sc
 this register** — an animal, a designation, a grouping — that should not appear in a public
 repository at all?
 
+### Q22 — Is a T-number lineage the right grouping, or does the sheet group differently?
+*Owner: S. Veirs, D. Bain.*
+**The least confident thing in the register.** The import derives matrilines from the
+designation prefix: `T023`, `T023D`, `T023D3`, `T023C`, `T023C3` all land in one group
+labelled `T023s`.
+
+The sheet groups differently. Blank rows separate sub-blocks — `T023` with the T023D line
+in one, the T023C line in another — while a `Known as the Motley Crew` heading spans both.
+So the sheet appears to record two levels: a lineage, and travelling sub-groups within it.
+The register currently flattens them to one.
+
+Three questions: (a) is `T023s` a matriline, or a lineage containing several? (b) if both
+levels are real, which one does a moderator tag when they hear a group? (c) are the "Known
+as" names attached to the right level? They are currently `common` names on the derived
+group, which is a guess.
+
+132 groups were derived this way, so getting it wrong is 132 wrong groups — though the
+individuals underneath are unaffected.
+
+### Q23 — What are the Alaska/California designations, and where do they belong?
+*Owner: S. Veirs.*
+The sheet's second column carries designations like `AM3`, `AM5`, `AM34` alongside the
+BC/WA T-numbers. They are currently imported as `hidden` names so they resolve in search,
+which is a holding position: they are really identifiers in *another catalogue*, and the
+right home is `mappings.tsv` with that catalogue's namespace and a match predicate.
+
+What is that catalogue, and does it have a citable identifier scheme?
+
 ### Q13 — Is the plural the canonical written form for a matriline?
 *Owner: S. Veirs, D. Bain.*
 The register records `J17s` and `T090s` as the **preferred name** for matrilines,
@@ -154,6 +182,25 @@ Chosen for "Salish Sea Animals". Not checked against
 [Bioregistry](https://bioregistry.io/) or any other prefix registry. Cheap to change
 now, expensive after the first external system stores one.
 
+### Q24 — Does releasing the register republish the Bigg's sheet?
+*Owner: P. Abrahamsen.*
+D-21 in `salishsea-io/docs/rights-policy.md` §7.1 concludes that the sheet's factual
+content is uncopyrightable and freely usable, but that **the selection and arrangement is
+the maintainer's compilation**, and that "we do not republish the sheet wholesale as a
+product; the mirror is an internal baseline for change-detection and seeding."
+
+That determination was made for a mirror inside an application. This register *publishes
+release artefacts* — `register.db`, a TSV tarball, permanent download URLs — containing
+510 individuals derived from that sheet. Whether that is a different arrangement of
+uncopyrightable facts or a republication of the compilation is a genuine question, and it
+is the author of both who has to answer it.
+
+Until it is answered, [LICENSE](../LICENSE) already says the data is unlicensed and must
+not be redistributed as a dataset, so importing is safe and *releasing* is the gated step.
+Note also that D-21 requires the maintainer to be credited wherever nickname facts are
+surfaced; `sources.tsv` does that, and any consumer displaying a nickname inherits the
+obligation.
+
 ### Q17 — Whose job is designation normalization?
 *Owner: P. Abrahamsen.*
 [Competency question C2](competency-questions.md) ("a moderator typed `T090s` / `J-35` /
@@ -182,19 +229,6 @@ moderator's `possible` that a curator later confirms has nowhere to land. On thi
 the earlier model is better and the newer one should adopt it — the task is picking the
 better of two designs, not reconciling two parties. Do it before either has data.
 
-### Q19 — Is bulk import a supported operation, and how are identifiers assigned?
-*Owner: P. Abrahamsen.*
-[ADR-0001](../decisions/0001-tsv-in-git-as-source-of-truth.md) rests entirely on the
-reviewable diff. The first real use of this register is importing ~649 Bigg's individuals
-plus the Southern Residents, with their matrilines, names and statuses — a
-several-thousand-row pull request nobody will review line by line. Either the premise gets
-a stated exception for imports, or the register stays empty, which is failure mode #2 in
-[background.md](background.md).
-
-Unanswered: is a scripted import an acceptable `source_id`? Who mints several hundred
-identifiers, and how do two concurrent import branches avoid colliding on `SSA:0000106`?
-ADR-0002's sequential blocks by kind run out at nine matrilines.
-
 ### Q14 — How are preferred names localised?
 *Owner: P. Abrahamsen.*
 `names.tsv` has a `language` column; `entities.tsv.label` does not, so the preferred name
@@ -215,6 +249,15 @@ edition of this register.
 ---
 
 ## Answered
+
+### Q19 — Is bulk import a supported operation, and how are identifiers assigned?
+**Resolved 2026-07-28.** Yes, as a stated exception to ADR-0001's reviewable-diff premise:
+a bulk import is reviewed as a *transformation*, with the importing script committed and
+scrutinised in place of its output. It must be deterministic and idempotent, every row
+carries its `source_id` so the import stays identifiable and reversible, and the script
+comments every judgement it makes. Identifiers come from dedicated blocks, assigned by
+sorted designation and reused on re-run. See
+[ADR-0015](../decisions/0015-bulk-import.md).
 
 ### Q11 — What is the release artefact, and does it need a stable URL?
 **Resolved 2026-07-28.** GitHub releases, with the permanent asset URLs GitHub already

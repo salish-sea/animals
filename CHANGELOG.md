@@ -24,6 +24,10 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 - All decision records are `Proposed`. No definition is `agreed`.
 
 ### Register
+- **Imported the Bigg's designation sheet**: 510 individuals and 132 derived matrilines,
+  with nicknames, Alaska/California designations, birth years, sex and deceased status.
+  The register goes from 20 entities to 661. Imported, not curated — see ADR-0015, and
+  Q22 for the grouping, which is the least confident part.
 - Added `kind = taxon` entities for *Orcinus orca*, humpback, Steller sea lion, California
   sea lion and harbour seal, plus ecotype→species membership edges. These are what a
   moderator tags when an orca is heard too faintly to place in an ecotype — roughly 30% of

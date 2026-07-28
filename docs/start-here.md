@@ -39,7 +39,7 @@ going to.
 
 ## The questions only a domain expert can answer
 
-Ordered by how much they block. The first three should be settled before anything is
+Ordered by how much they block. The first four should be settled before anything is
 tagged, because tagging against them and then changing our minds means re-tagging.
 
 | | Question | Why it blocks |
@@ -52,14 +52,21 @@ tagged, because tagging against them and then changing our minds means re-taggin
 | [Q6](open-questions.md) | Should the register publish group sizes? | A count is derivable; publishing it is a public claim that will sometimes be wrong. |
 | [Q7](open-questions.md) | How do we model `Humpback mimics Bigg's?` — a real bout where the animal and the sound belong to different species? | Breaks any assumption that one tag identifies both. |
 | [Q9](open-questions.md) | Is there anything in scope that should not be in a public repository? | Naming programmes, cultural significance, catalogues that withhold detail. |
+| **[Q22](open-questions.md)** | Is a T-number lineage the right grouping? The sheet seems to record two levels — a lineage, and travelling sub-groups within it — and the import flattens them to one. | 132 derived groups depend on the answer. |
 | [Q13](open-questions.md) | Is `J17s` the canonical written form for a matriline, or would a catalogue write `T090 matriline`? | Display is the consumer's business; this is asking what the community actually writes. |
+| [Q23](open-questions.md) | What are the `AM3`-style Alaska/California designations, and what catalogue are they from? | They are searchable names now; they belong in `mappings.tsv` as a crosswalk. |
 
 ## Things to know before you judge the data
 
-- **Every row is unverified.** All of it is marked `SEED`, meaning illustrative — it
-  exists so the schema is concrete and the walkthrough has something to point at. Errors
-  in it are expected; errors in the *shape* are what to look for.
-- **Nothing is ratified.** All fourteen decision records are `Proposed`. They are written
+- **The Bigg's data is imported, not curated.** 510 individuals and 132 matrilines came
+  from the community designation sheet by script
+  ([ADR-0015](../decisions/0015-bulk-import.md)). Nobody has checked them against a
+  catalogue. The individuals are a fairly direct transcription; **the groupings are
+  derived and are the least confident thing here** — see [Q22](open-questions.md).
+- **The Southern Resident data is illustrative.** Those rows are marked `SEED` and exist
+  so the schema is concrete and the walkthrough has something to point at. Errors in them
+  are expected; errors in the *shape* are what to look for.
+- **Nothing is ratified.** All fifteen decision records are `Proposed`. They are written
   as arguments to disagree with, not as conclusions.
 - **Identifiers look unfriendly on purpose.** `SSA:0000101` rather than `J35`, because a
   meaningful identifier becomes a lie when the thing it names changes. The name sits right

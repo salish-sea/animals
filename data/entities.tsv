@@ -19,3 +19,644 @@ SSA:0000901	taxon		Megaptera novaeangliae	NCBITaxon:9773			SEED
 SSA:0000902	taxon		Eumetopias jubatus	NCBITaxon:34886			SEED	
 SSA:0000903	taxon		Zalophus californianus	NCBITaxon:9704			SEED	
 SSA:0000904	taxon		Phoca vitulina	NCBITaxon:9720			SEED	
+SSA:0002000	group	matriline	T002s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T002 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002001	group	matriline	T007s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T007 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002002	group	matriline	T010s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T010 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002003	group	matriline	T011s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T011 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002004	group	matriline	T012s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T012 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002005	group	matriline	T018s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T018 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002006	group	matriline	T019s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T019 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002007	group	matriline	T020s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T020 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002008	group	matriline	T021s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T021 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002009	group	matriline	T023s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T023 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002010	group	matriline	T026s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T026 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002011	group	matriline	T028s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T028 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002012	group	matriline	T030s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T030 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002013	group	matriline	T031s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T031 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002014	group	matriline	T034s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T034 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002015	group	matriline	T035s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T035 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002016	group	matriline	T036s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T036 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002017	group	matriline	T037s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T037 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002018	group	matriline	T038s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T038 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002019	group	matriline	T040s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T040 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002020	group	matriline	T041s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T041 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002021	group	matriline	T046s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T046 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002022	group	matriline	T049s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T049 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002023	group	matriline	T050s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T050 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002024	group	matriline	T051s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T051 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002025	group	matriline	T054s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T054 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002026	group	matriline	T055s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T055 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002027	group	matriline	T057s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T057 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002028	group	matriline	T058s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T058 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002029	group	matriline	T059s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T059 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002030	group	matriline	T060s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T060 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002031	group	matriline	T063s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T063 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002032	group	matriline	T064s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T064 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002033	group	matriline	T065s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T065 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002034	group	matriline	T068s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T068 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002035	group	matriline	T069s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T069 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002036	group	matriline	T070s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T070 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002037	group	matriline	T071s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T071 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002038	group	matriline	T072s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T072 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002039	group	matriline	T073s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T073 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002040	group	matriline	T074s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T074 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002041	group	matriline	T075s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T075 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002042	group	matriline	T077s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T077 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002043	group	matriline	T085s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T085 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002044	group	matriline	T086s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T086 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002045	group	matriline	T087s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T087 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002046	group	matriline	T091s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T091 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002047	group	matriline	T093s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T093 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002048	group	matriline	T097s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T097 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002049	group	matriline	T099s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T099 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002050	group	matriline	T100s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T100 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002051	group	matriline	T101s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T101 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002052	group	matriline	T102s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T102 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002053	group	matriline	T103s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T103 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002054	group	matriline	T109s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T109 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002055	group	matriline	T111s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T111 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002056	group	matriline	T112s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T112 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002057	group	matriline	T113s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T113 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002058	group	matriline	T114s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T114 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002059	group	matriline	T115s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T115 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002060	group	matriline	T116s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T116 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002061	group	matriline	T117s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T117 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002062	group	matriline	T118s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T118 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002063	group	matriline	T120s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T120 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002064	group	matriline	T121s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T121 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002065	group	matriline	T122s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T122 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002066	group	matriline	T123s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T123 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002067	group	matriline	T124s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T124 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002068	group	matriline	T125s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T125 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002069	group	matriline	T127s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T127 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002070	group	matriline	T128s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T128 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002071	group	matriline	T129s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T129 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002072	group	matriline	T130s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T130 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002073	group	matriline	T131s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T131 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002074	group	matriline	T132s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T132 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002075	group	matriline	T133s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T133 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002076	group	matriline	T134s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T134 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002077	group	matriline	T135s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T135 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002078	group	matriline	T137s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T137 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002079	group	matriline	T139s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T139 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002080	group	matriline	T140s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T140 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002081	group	matriline	T141s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T141 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002082	group	matriline	T142s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T142 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002083	group	matriline	T143s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T143 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002084	group	matriline	T146s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T146 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002085	group	matriline	T147s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T147 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002086	group	matriline	T148s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T148 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002087	group	matriline	T149s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T149 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002088	group	matriline	T150s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T150 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002089	group	matriline	T151s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T151 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002090	group	matriline	T152s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T152 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002091	group	matriline	T157s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T157 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002092	group	matriline	T160s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T160 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002093	group	matriline	T161s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T161 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002094	group	matriline	T162s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T162 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002095	group	matriline	T165s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T165 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002096	group	matriline	T166s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T166 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002097	group	matriline	T167s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T167 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002098	group	matriline	T168s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T168 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002099	group	matriline	T169s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T169 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002100	group	matriline	T170s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T170 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002101	group	matriline	T171s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T171 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002102	group	matriline	T172s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T172 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002103	group	matriline	T173s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T173 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002104	group	matriline	T174s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T174 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002105	group	matriline	T175s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T175 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002106	group	matriline	T176s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T176 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002107	group	matriline	T177s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T177 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002108	group	matriline	T178s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T178 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002109	group	matriline	T179s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T179 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002110	group	matriline	T180s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T180 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002111	group	matriline	T181s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T181 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002112	group	matriline	T182s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T182 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002113	group	matriline	T183s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T183 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002114	group	matriline	T184s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T184 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002115	group	matriline	T185s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T185 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002116	group	matriline	T186s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T186 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002117	group	matriline	T187s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T187 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002118	group	matriline	T188s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T188 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002119	group	matriline	T196s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T196 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002120	group	matriline	T197s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T197 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002121	group	matriline	T199s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T199 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002122	group	matriline	T221s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T221 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002123	group	matriline	T223s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T223 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002124	group	matriline	T224s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T224 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002125	group	matriline	T225s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T225 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002126	group	matriline	T227s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T227 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002127	group	matriline	T250s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T250 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002128	group	matriline	T251s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T251 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002129	group	matriline	T252s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T252 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0002130	group	matriline	T253s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T253 descendants across several blocks. Grouping unconfirmed — see Q22.
+SSA:0010000	individual		T002B	NCBITaxon:9733	1979	F	BIGGS-SHEET	
+SSA:0010001	individual		T002C	NCBITaxon:9733	1989	F	BIGGS-SHEET	
+SSA:0010002	individual		T002C1	NCBITaxon:9733	2002	M	BIGGS-SHEET	
+SSA:0010003	individual		T002C2	NCBITaxon:9733	2005	M	BIGGS-SHEET	
+SSA:0010004	individual		T002C3	NCBITaxon:9733	2011	F	BIGGS-SHEET	
+SSA:0010005	individual		T002C4	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010006	individual		T002C5	NCBITaxon:9733	2020		BIGGS-SHEET	
+SSA:0010007	individual		T002C6	NCBITaxon:9733	2025		BIGGS-SHEET	
+SSA:0010008	individual		T007	NCBITaxon:9733	../1961	F	BIGGS-SHEET	Sheet records '≤1961'.
+SSA:0010009	individual		T007A	NCBITaxon:9733	1976	M	BIGGS-SHEET	
+SSA:0010010	individual		T007B	NCBITaxon:9733	1982	F	BIGGS-SHEET	
+SSA:0010011	individual		T007B3	NCBITaxon:9733	2005	M	BIGGS-SHEET	
+SSA:0010012	individual		T007B4	NCBITaxon:9733	2010	M	BIGGS-SHEET	
+SSA:0010013	individual		T007B6	NCBITaxon:9733	2018	M	BIGGS-SHEET	
+SSA:0010014	individual		T007B7	NCBITaxon:9733	2022	M	BIGGS-SHEET	
+SSA:0010015	individual		T010	NCBITaxon:9733	../1964	F	BIGGS-SHEET	Sheet records '≤1964'.
+SSA:0010016	individual		T010B	NCBITaxon:9733	1983	M	BIGGS-SHEET	
+SSA:0010017	individual		T010C	NCBITaxon:9733	1999	M	BIGGS-SHEET	
+SSA:0010018	individual		T011	NCBITaxon:9733	../1964	F	BIGGS-SHEET	Sheet records '≤1964'.
+SSA:0010019	individual		T011A	NCBITaxon:9733	1978	M	BIGGS-SHEET	
+SSA:0010020	individual		T012A	NCBITaxon:9733	1982	M	BIGGS-SHEET	
+SSA:0010021	individual		T018	NCBITaxon:9733	../1955	F	BIGGS-SHEET	Sheet records '≤1955'.
+SSA:0010022	individual		T019	NCBITaxon:9733	../1965	F	BIGGS-SHEET	Sheet records '≤1965'.
+SSA:0010023	individual		T019B	NCBITaxon:9733	1995	M	BIGGS-SHEET	
+SSA:0010024	individual		T019C	NCBITaxon:9733	2001	M	BIGGS-SHEET	
+SSA:0010025	individual		T020	NCBITaxon:9733	../1963	M	BIGGS-SHEET	Sheet records '≤1963'.
+SSA:0010026	individual		T021	NCBITaxon:9733	../1967	F	BIGGS-SHEET	Sheet records '<1968'.
+SSA:0010027	individual		T023	NCBITaxon:9733	../1964	F	BIGGS-SHEET	Sheet records '≤1964'.
+SSA:0010028	individual		T023C	NCBITaxon:9733	1990	F	BIGGS-SHEET	
+SSA:0010029	individual		T023C3	NCBITaxon:9733	2009	F	BIGGS-SHEET	
+SSA:0010030	individual		T023C4	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010031	individual		T023C5	NCBITaxon:9733	2018	F	BIGGS-SHEET	
+SSA:0010032	individual		T023C6	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010033	individual		T023D	NCBITaxon:9733	1993	F	BIGGS-SHEET	
+SSA:0010034	individual		T023D3	NCBITaxon:9733	2012	M	BIGGS-SHEET	
+SSA:0010035	individual		T023D4	NCBITaxon:9733	2015		BIGGS-SHEET	
+SSA:0010036	individual		T023D5	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010037	individual		T026	NCBITaxon:9733	../1966	F	BIGGS-SHEET	Sheet records '≤1966'.
+SSA:0010038	individual		T026A	NCBITaxon:9733	1990	F	BIGGS-SHEET	
+SSA:0010039	individual		T028	NCBITaxon:9733	../1972	F	BIGGS-SHEET	Sheet records '≤1972'.
+SSA:0010040	individual		T028A	NCBITaxon:9733	1994	F	BIGGS-SHEET	
+SSA:0010041	individual		T028A1	NCBITaxon:9733	2012		BIGGS-SHEET	
+SSA:0010042	individual		T028A2	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010043	individual		T028A3	NCBITaxon:9733	2021		BIGGS-SHEET	
+SSA:0010044	individual		T028B	NCBITaxon:9733	1997	F	BIGGS-SHEET	
+SSA:0010045	individual		T028B1	NCBITaxon:9733	2015		BIGGS-SHEET	
+SSA:0010046	individual		T028B2	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010047	individual		T028C	NCBITaxon:9733	2003	F	BIGGS-SHEET	
+SSA:0010048	individual		T028D	NCBITaxon:9733	2007		BIGGS-SHEET	
+SSA:0010049	individual		T028E	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010050	individual		T030	NCBITaxon:9733	../1967	F	BIGGS-SHEET	Sheet records '≤1967'.
+SSA:0010051	individual		T030A	NCBITaxon:9733	1986	M	BIGGS-SHEET	
+SSA:0010052	individual		T030B	NCBITaxon:9733	1993	F	BIGGS-SHEET	
+SSA:0010053	individual		T030B1	NCBITaxon:9733	2012		BIGGS-SHEET	
+SSA:0010054	individual		T030B2	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010055	individual		T030B3	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010056	individual		T030C	NCBITaxon:9733	2005		BIGGS-SHEET	
+SSA:0010057	individual		T031	NCBITaxon:9733	../1954	M	BIGGS-SHEET	Sheet records '≤1954'.
+SSA:0010058	individual		T034	NCBITaxon:9733	../1969	F	BIGGS-SHEET	Sheet records '≤1969'.
+SSA:0010059	individual		T034A	NCBITaxon:9733	2007	F	BIGGS-SHEET	
+SSA:0010060	individual		T034A1	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010061	individual		T034A2	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010062	individual		T034B	NCBITaxon:9733	2017	F	BIGGS-SHEET	
+SSA:0010063	individual		T035	NCBITaxon:9733	../1970	F	BIGGS-SHEET	Sheet records '≤1970'.
+SSA:0010064	individual		T035A	NCBITaxon:9733	1998	F	BIGGS-SHEET	
+SSA:0010065	individual		T035A1	NCBITaxon:9733	2010	F	BIGGS-SHEET	
+SSA:0010066	individual		T035A2	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010067	individual		T035A3	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010068	individual		T035A4	NCBITaxon:9733	2022		BIGGS-SHEET	
+SSA:0010069	individual		T036	NCBITaxon:9733	../1970	F	BIGGS-SHEET	Sheet records '≤1970'.
+SSA:0010070	individual		T036A	NCBITaxon:9733	1990	F	BIGGS-SHEET	
+SSA:0010071	individual		T036A1	NCBITaxon:9733	2005	F	BIGGS-SHEET	
+SSA:0010072	individual		T036A1A	NCBITaxon:9733	2022	M	BIGGS-SHEET	
+SSA:0010073	individual		T036A2	NCBITaxon:9733	2012	F	BIGGS-SHEET	
+SSA:0010074	individual		T036A3	NCBITaxon:9733	2015	M	BIGGS-SHEET	
+SSA:0010075	individual		T036A5	NCBITaxon:9733	2021	M	BIGGS-SHEET	
+SSA:0010076	individual		T036B	NCBITaxon:9733	1998	F	BIGGS-SHEET	
+SSA:0010077	individual		T036B1	NCBITaxon:9733	2009	F	BIGGS-SHEET	
+SSA:0010078	individual		T036B1A	NCBITaxon:9733	2025	F	BIGGS-SHEET	
+SSA:0010079	individual		T036B2	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010080	individual		T036B3	NCBITaxon:9733	2018	M	BIGGS-SHEET	
+SSA:0010081	individual		T036B4	NCBITaxon:9733	2024	M	BIGGS-SHEET	
+SSA:0010082	individual		T037	NCBITaxon:9733	1979	F	BIGGS-SHEET	
+SSA:0010083	individual		T037A	NCBITaxon:9733	1994	F	BIGGS-SHEET	
+SSA:0010084	individual		T037A1	NCBITaxon:9733	2007	F	BIGGS-SHEET	
+SSA:0010085	individual		T037A2	NCBITaxon:9733	2009	M	BIGGS-SHEET	
+SSA:0010086	individual		T037A3	NCBITaxon:9733	2013	M	BIGGS-SHEET	
+SSA:0010087	individual		T037A4	NCBITaxon:9733	2015	F	BIGGS-SHEET	
+SSA:0010088	individual		T037A5	NCBITaxon:9733	2019	M	BIGGS-SHEET	
+SSA:0010089	individual		T037B	NCBITaxon:9733	1998	F	BIGGS-SHEET	
+SSA:0010090	individual		T037B1	NCBITaxon:9733	2012	M	BIGGS-SHEET	
+SSA:0010091	individual		T037B2	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010092	individual		T037B3	NCBITaxon:9733	2022	F	BIGGS-SHEET	
+SSA:0010093	individual		T038	NCBITaxon:9733	1980	F	BIGGS-SHEET	
+SSA:0010094	individual		T038A	NCBITaxon:9733	2000	F	BIGGS-SHEET	
+SSA:0010095	individual		T038A1	NCBITaxon:9733	2015		BIGGS-SHEET	
+SSA:0010096	individual		T038A2	NCBITaxon:9733	2020		BIGGS-SHEET	
+SSA:0010097	individual		T038A3	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010098	individual		T038B	NCBITaxon:9733	2003	F	BIGGS-SHEET	
+SSA:0010099	individual		T038B1	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010100	individual		T038B2	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010101	individual		T038C	NCBITaxon:9733	2008		BIGGS-SHEET	
+SSA:0010102	individual		T038D	NCBITaxon:9733	2012	M	BIGGS-SHEET	
+SSA:0010103	individual		T038E	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010104	individual		T038F	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010105	individual		T040	NCBITaxon:9733	../1961	M	BIGGS-SHEET	Sheet records '≤1961'.
+SSA:0010106	individual		T041	NCBITaxon:9733	../1966	F	BIGGS-SHEET	Sheet records '≤1966'.
+SSA:0010107	individual		T041A	NCBITaxon:9733	1988	F	BIGGS-SHEET	
+SSA:0010108	individual		T041A1	NCBITaxon:9733	2011		BIGGS-SHEET	
+SSA:0010109	individual		T041A2	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010110	individual		T041A3	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010111	individual		T046	NCBITaxon:9733	../1966	F	BIGGS-SHEET	Sheet records '≤1966'.
+SSA:0010112	individual		T046B	NCBITaxon:9733	1988	F	BIGGS-SHEET	
+SSA:0010113	individual		T046B1	NCBITaxon:9733	2003	F	BIGGS-SHEET	
+SSA:0010114	individual		T046B1A	NCBITaxon:9733	2015	F	BIGGS-SHEET	
+SSA:0010115	individual		T046B1B	NCBITaxon:9733	2018	M	BIGGS-SHEET	
+SSA:0010116	individual		T046B1C	NCBITaxon:9733	2022	M	BIGGS-SHEET	
+SSA:0010117	individual		T046B2	NCBITaxon:9733	2008	F	BIGGS-SHEET	
+SSA:0010118	individual		T046B2A	NCBITaxon:9733	2021		BIGGS-SHEET	
+SSA:0010119	individual		T046B2B	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010120	individual		T046B3	NCBITaxon:9733	2011	F	BIGGS-SHEET	
+SSA:0010121	individual		T046B3A	NCBITaxon:9733	2025		BIGGS-SHEET	
+SSA:0010122	individual		T046B4	NCBITaxon:9733	2013	M	BIGGS-SHEET	
+SSA:0010123	individual		T046B5	NCBITaxon:9733	2015	U	BIGGS-SHEET	Sex recorded in the sheet as 'unknown'.
+SSA:0010124	individual		T046B6	NCBITaxon:9733	2019	F	BIGGS-SHEET	
+SSA:0010125	individual		T046B7	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010126	individual		T046C	NCBITaxon:9733	1994	F	BIGGS-SHEET	
+SSA:0010127	individual		T046C1	NCBITaxon:9733	2006	M	BIGGS-SHEET	
+SSA:0010128	individual		T046C2	NCBITaxon:9733	2009	F	BIGGS-SHEET	
+SSA:0010129	individual		T046C3	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010130	individual		T046C4	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010131	individual		T046C5	NCBITaxon:9733	2025		BIGGS-SHEET	
+SSA:0010132	individual		T046D	NCBITaxon:9733	2000	M	BIGGS-SHEET	
+SSA:0010133	individual		T046E	NCBITaxon:9733	2003	M	BIGGS-SHEET	
+SSA:0010134	individual		T046F	NCBITaxon:9733	2012	M	BIGGS-SHEET	
+SSA:0010135	individual		T049A	NCBITaxon:9733	1986	F	BIGGS-SHEET	
+SSA:0010136	individual		T049A1	NCBITaxon:9733	2001	M	BIGGS-SHEET	
+SSA:0010137	individual		T049A2	NCBITaxon:9733	2007	M	BIGGS-SHEET	
+SSA:0010138	individual		T049A3	NCBITaxon:9733	2011	M	BIGGS-SHEET	
+SSA:0010139	individual		T049A4	NCBITaxon:9733	2014	M	BIGGS-SHEET	
+SSA:0010140	individual		T049A5	NCBITaxon:9733	2017	F	BIGGS-SHEET	
+SSA:0010141	individual		T049A6	NCBITaxon:9733	2022	M	BIGGS-SHEET	
+SSA:0010142	individual		T049B	NCBITaxon:9733	1992	F	BIGGS-SHEET	
+SSA:0010143	individual		T049B1	NCBITaxon:9733	2006		BIGGS-SHEET	
+SSA:0010144	individual		T049B2	NCBITaxon:9733	2010		BIGGS-SHEET	
+SSA:0010145	individual		T049B3	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010146	individual		T049B4	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010147	individual		T049B5	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010148	individual		T049C	NCBITaxon:9733	1998	M	BIGGS-SHEET	
+SSA:0010149	individual		T050	NCBITaxon:9733	1980	F	BIGGS-SHEET	
+SSA:0010150	individual		T050A	NCBITaxon:9733	1995	M	BIGGS-SHEET	
+SSA:0010151	individual		T050B	NCBITaxon:9733	1999	F	BIGGS-SHEET	
+SSA:0010152	individual		T050B1	NCBITaxon:9733	2012		BIGGS-SHEET	
+SSA:0010153	individual		T050B2	NCBITaxon:9733	2020		BIGGS-SHEET	
+SSA:0010154	individual		T050C	NCBITaxon:9733	2005		BIGGS-SHEET	
+SSA:0010155	individual		T050D	NCBITaxon:9733	2011		BIGGS-SHEET	
+SSA:0010156	individual		T050E	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010157	individual		T051	NCBITaxon:9733	1981	M	BIGGS-SHEET	
+SSA:0010158	individual		T054	NCBITaxon:9733	1972	M	BIGGS-SHEET	
+SSA:0010159	individual		T055	NCBITaxon:9733	../1976	F	BIGGS-SHEET	Sheet records '≤1976'.
+SSA:0010160	individual		T055A	NCBITaxon:9733	1989	M	BIGGS-SHEET	
+SSA:0010161	individual		T055B	NCBITaxon:9733	1994	F	BIGGS-SHEET	
+SSA:0010162	individual		T055B1	NCBITaxon:9733	2021	F	BIGGS-SHEET	
+SSA:0010163	individual		T055C	NCBITaxon:9733	2004	M	BIGGS-SHEET	
+SSA:0010164	individual		T057	NCBITaxon:9733	../1979	F	BIGGS-SHEET	Sheet records '≤1979'.
+SSA:0010165	individual		T057A	NCBITaxon:9733	1993	M	BIGGS-SHEET	
+SSA:0010166	individual		T058	NCBITaxon:9733	../1975	F	BIGGS-SHEET	Sheet records '<1976'.
+SSA:0010167	individual		T059	NCBITaxon:9733	../1969	F	BIGGS-SHEET	Sheet records '<1970'.
+SSA:0010168	individual		T059A	NCBITaxon:9733	1995	F	BIGGS-SHEET	
+SSA:0010169	individual		T059A1	NCBITaxon:9733	2006	F	BIGGS-SHEET	
+SSA:0010170	individual		T059A1A	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010171	individual		T059A2	NCBITaxon:9733	2009	F	BIGGS-SHEET	
+SSA:0010172	individual		T059A3	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010173	individual		T059A4	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010174	individual		T059A5	NCBITaxon:9733	2020		BIGGS-SHEET	
+SSA:0010175	individual		T060	NCBITaxon:9733	../1980	F	BIGGS-SHEET	Sheet records '≤1980'.
+SSA:0010176	individual		T060C	NCBITaxon:9733	2001	M	BIGGS-SHEET	
+SSA:0010177	individual		T060D	NCBITaxon:9733	2004	M	BIGGS-SHEET	
+SSA:0010178	individual		T060E	NCBITaxon:9733	2008	M	BIGGS-SHEET	
+SSA:0010179	individual		T060F	NCBITaxon:9733	2012	F	BIGGS-SHEET	
+SSA:0010180	individual		T060G	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010181	individual		T063	NCBITaxon:9733	1978	M	BIGGS-SHEET	
+SSA:0010182	individual		T064	NCBITaxon:9733	../1971	F	BIGGS-SHEET	Sheet records '≤1971'.
+SSA:0010183	individual		T064A	NCBITaxon:9733	1993	F	BIGGS-SHEET	
+SSA:0010184	individual		T064A2	NCBITaxon:9733	2012		BIGGS-SHEET	
+SSA:0010185	individual		T064A3	NCBITaxon:9733	2014		BIGGS-SHEET	
+SSA:0010186	individual		T064A4	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010187	individual		T064A5	NCBITaxon:9733	2021		BIGGS-SHEET	
+SSA:0010188	individual		T064B	NCBITaxon:9733	2002	F	BIGGS-SHEET	
+SSA:0010189	individual		T064B1	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010190	individual		T064B1A	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010191	individual		T064B2	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010192	individual		T065	NCBITaxon:9733	../1967	F	BIGGS-SHEET	Sheet records '<1968'.
+SSA:0010193	individual		T065A	NCBITaxon:9733	1986	F	BIGGS-SHEET	
+SSA:0010194	individual		T065A2	NCBITaxon:9733	2004	M	BIGGS-SHEET	
+SSA:0010195	individual		T065A3	NCBITaxon:9733	2007	M	BIGGS-SHEET	
+SSA:0010196	individual		T065A4	NCBITaxon:9733	2011	F	BIGGS-SHEET	
+SSA:0010197	individual		T065A5	NCBITaxon:9733	2014	M	BIGGS-SHEET	
+SSA:0010198	individual		T065A6	NCBITaxon:9733	2018	F	BIGGS-SHEET	
+SSA:0010199	individual		T065B	NCBITaxon:9733	1993	F	BIGGS-SHEET	
+SSA:0010200	individual		T065B1	NCBITaxon:9733	2011	M	BIGGS-SHEET	
+SSA:0010201	individual		T065B2	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010202	individual		T065B3	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010203	individual		T068	NCBITaxon:9733	../1970	F	BIGGS-SHEET	Sheet records '≤1970'.
+SSA:0010204	individual		T068A	NCBITaxon:9733	1984	M	BIGGS-SHEET	
+SSA:0010205	individual		T068B	NCBITaxon:9733	1987	F	BIGGS-SHEET	
+SSA:0010206	individual		T068B1	NCBITaxon:9733	2001	F	BIGGS-SHEET	
+SSA:0010207	individual		T068B1A	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010208	individual		T068B1C	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010209	individual		T068B1D	NCBITaxon:9733	2025		BIGGS-SHEET	
+SSA:0010210	individual		T068B2	NCBITaxon:9733	2004		BIGGS-SHEET	
+SSA:0010211	individual		T068B3	NCBITaxon:9733	2010		BIGGS-SHEET	
+SSA:0010212	individual		T068B4	NCBITaxon:9733	2014		BIGGS-SHEET	
+SSA:0010213	individual		T068B5	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010214	individual		T068C	NCBITaxon:9733	1992	F	BIGGS-SHEET	
+SSA:0010215	individual		T068C1	NCBITaxon:9733	2007		BIGGS-SHEET	
+SSA:0010216	individual		T068C3	NCBITaxon:9733	2012	F	BIGGS-SHEET	
+SSA:0010217	individual		T068C3A	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010218	individual		T068C4	NCBITaxon:9733	2014		BIGGS-SHEET	
+SSA:0010219	individual		T068C5	NCBITaxon:9733	2020		BIGGS-SHEET	
+SSA:0010220	individual		T068C6	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010221	individual		T069	NCBITaxon:9733	../1974	F	BIGGS-SHEET	Sheet records '≤1974'.
+SSA:0010222	individual		T069A	NCBITaxon:9733	1989	F	BIGGS-SHEET	
+SSA:0010223	individual		T069A2	NCBITaxon:9733	2006	M	BIGGS-SHEET	
+SSA:0010224	individual		T069A3	NCBITaxon:9733	2011		BIGGS-SHEET	
+SSA:0010225	individual		T069A4	NCBITaxon:9733	2016		BIGGS-SHEET	
+SSA:0010226	individual		T069A5	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010227	individual		T069A6	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010228	individual		T069C	NCBITaxon:9733	1995	M	BIGGS-SHEET	
+SSA:0010229	individual		T069D	NCBITaxon:9733	2001	F	BIGGS-SHEET	
+SSA:0010230	individual		T069D1	NCBITaxon:9733	2013	M	BIGGS-SHEET	
+SSA:0010231	individual		T069D2	NCBITaxon:9733	2016		BIGGS-SHEET	
+SSA:0010232	individual		T069D3	NCBITaxon:9733	2020		BIGGS-SHEET	
+SSA:0010233	individual		T069D4	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010234	individual		T069E	NCBITaxon:9733	2004	M	BIGGS-SHEET	
+SSA:0010235	individual		T069F	NCBITaxon:9733	2010	M	BIGGS-SHEET	
+SSA:0010236	individual		T070	NCBITaxon:9733	1970	M	BIGGS-SHEET	
+SSA:0010237	individual		T071	NCBITaxon:9733	1980	F	BIGGS-SHEET	
+SSA:0010238	individual		T071A	NCBITaxon:9733	1995	F	BIGGS-SHEET	
+SSA:0010239	individual		T071B	NCBITaxon:9733	2000	F	BIGGS-SHEET	
+SSA:0010240	individual		T071B1	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010241	individual		T071B2	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010242	individual		T071B3	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010243	individual		T071C	NCBITaxon:9733	2007		BIGGS-SHEET	
+SSA:0010244	individual		T071D	NCBITaxon:9733	2011		BIGGS-SHEET	
+SSA:0010245	individual		T071E	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010246	individual		T072	NCBITaxon:9733	1974	M	BIGGS-SHEET	
+SSA:0010247	individual		T073	NCBITaxon:9733	../1968	F	BIGGS-SHEET	Sheet records '<1969'.
+SSA:0010248	individual		T073A	NCBITaxon:9733	1987	F	BIGGS-SHEET	
+SSA:0010249	individual		T073A1	NCBITaxon:9733	2005	M	BIGGS-SHEET	
+SSA:0010250	individual		T073A2	NCBITaxon:9733	2010		BIGGS-SHEET	
+SSA:0010251	individual		T073A3	NCBITaxon:9733	2015		BIGGS-SHEET	
+SSA:0010252	individual		T073B	NCBITaxon:9733	1991	M	BIGGS-SHEET	
+SSA:0010253	individual		T073C	NCBITaxon:9733	1998	F	BIGGS-SHEET	
+SSA:0010254	individual		T073C1	NCBITaxon:9733	2012		BIGGS-SHEET	
+SSA:0010255	individual		T073C2	NCBITaxon:9733	2021		BIGGS-SHEET	
+SSA:0010256	individual		T073D	NCBITaxon:9733	2005		BIGGS-SHEET	
+SSA:0010257	individual		T074	NCBITaxon:9733	1979	M	BIGGS-SHEET	
+SSA:0010258	individual		T075	NCBITaxon:9733	../1971	F	BIGGS-SHEET	Sheet records '≤1971'.
+SSA:0010259	individual		T075A	NCBITaxon:9733	1991	M	BIGGS-SHEET	
+SSA:0010260	individual		T075B	NCBITaxon:9733	1995	F	BIGGS-SHEET	
+SSA:0010261	individual		T075B1	NCBITaxon:9733	2007	F	BIGGS-SHEET	
+SSA:0010262	individual		T075B2	NCBITaxon:9733	2015		BIGGS-SHEET	
+SSA:0010263	individual		T075B3	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010264	individual		T075B4	NCBITaxon:9733	2021		BIGGS-SHEET	
+SSA:0010265	individual		T075C	NCBITaxon:9733	1998		BIGGS-SHEET	
+SSA:0010266	individual		T075C1	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010267	individual		T075C2	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010268	individual		T075C3	NCBITaxon:9733	2021		BIGGS-SHEET	
+SSA:0010269	individual		T075C4	NCBITaxon:9733	2023	M	BIGGS-SHEET	
+SSA:0010270	individual		T077	NCBITaxon:9733	../1981	F	BIGGS-SHEET	Sheet records '≤1981'.
+SSA:0010271	individual		T077A	NCBITaxon:9733	1996	M	BIGGS-SHEET	
+SSA:0010272	individual		T077B	NCBITaxon:9733	2000		BIGGS-SHEET	
+SSA:0010273	individual		T077C	NCBITaxon:9733	2006	M	BIGGS-SHEET	
+SSA:0010274	individual		T077D	NCBITaxon:9733	2009	F	BIGGS-SHEET	
+SSA:0010275	individual		T077E	NCBITaxon:9733	2016		BIGGS-SHEET	
+SSA:0010276	individual		T085	NCBITaxon:9733	../1977	F	BIGGS-SHEET	Sheet records '≤1977'.
+SSA:0010277	individual		T085A	NCBITaxon:9733	1992	M	BIGGS-SHEET	
+SSA:0010278	individual		T085B	NCBITaxon:9733	1995	M	BIGGS-SHEET	
+SSA:0010279	individual		T085C	NCBITaxon:9733	2005		BIGGS-SHEET	
+SSA:0010280	individual		T085D	NCBITaxon:9733	2014		BIGGS-SHEET	
+SSA:0010281	individual		T086A	NCBITaxon:9733	1988	F	BIGGS-SHEET	
+SSA:0010282	individual		T086A1	NCBITaxon:9733	2001	F	BIGGS-SHEET	
+SSA:0010283	individual		T086A1A	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010284	individual		T086A1B	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010285	individual		T086A3	NCBITaxon:9733	2011	F	BIGGS-SHEET	
+SSA:0010286	individual		T086A3A	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010287	individual		T086A4	NCBITaxon:9733	2016	F	BIGGS-SHEET	
+SSA:0010288	individual		T086A5	NCBITaxon:9733	2024	M	BIGGS-SHEET	
+SSA:0010289	individual		T087	NCBITaxon:9733	../1962	M	BIGGS-SHEET	Sheet records '≤1962'.
+SSA:0010290	individual		T090	NCBITaxon:9733	1980	F	BIGGS-SHEET	
+SSA:0010291	individual		T090B	NCBITaxon:9733	2006	M	BIGGS-SHEET	
+SSA:0010292	individual		T090C	NCBITaxon:9733	2010	F	BIGGS-SHEET	
+SSA:0010293	individual		T090D	NCBITaxon:9733	2017	F	BIGGS-SHEET	
+SSA:0010294	individual		T091	NCBITaxon:9733	../1959	F	BIGGS-SHEET	Sheet records '≤1959'.
+SSA:0010295	individual		T093	NCBITaxon:9733	../1964	M	BIGGS-SHEET	Sheet records '≤1964'.
+SSA:0010296	individual		T097	NCBITaxon:9733	1980	M	BIGGS-SHEET	
+SSA:0010297	individual		T099	NCBITaxon:9733	../1984	F	BIGGS-SHEET	Sheet records '≤1984'.
+SSA:0010298	individual		T099A	NCBITaxon:9733	2003		BIGGS-SHEET	
+SSA:0010299	individual		T099B	NCBITaxon:9733	2007	F	BIGGS-SHEET	
+SSA:0010300	individual		T099B1	NCBITaxon:9733	2024		BIGGS-SHEET	The sheet records this designation as provisional (T099B1?); the animal is registered, the name is not yet settled.
+SSA:0010301	individual		T099C	NCBITaxon:9733	2009	M	BIGGS-SHEET	
+SSA:0010302	individual		T099D	NCBITaxon:9733	2015	M	BIGGS-SHEET	
+SSA:0010303	individual		T099E	NCBITaxon:9733	2021	F	BIGGS-SHEET	
+SSA:0010304	individual		T100	NCBITaxon:9733	../1979	F	BIGGS-SHEET	Sheet records '≤1979'.
+SSA:0010305	individual		T100B	NCBITaxon:9733	1997	F	BIGGS-SHEET	
+SSA:0010306	individual		T100B1	NCBITaxon:9733	2010		BIGGS-SHEET	
+SSA:0010307	individual		T100B2	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010308	individual		T100B3	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010309	individual		T100C	NCBITaxon:9733	2002	M	BIGGS-SHEET	
+SSA:0010310	individual		T100E	NCBITaxon:9733	2009	F	BIGGS-SHEET	
+SSA:0010311	individual		T100F	NCBITaxon:9733	2014		BIGGS-SHEET	
+SSA:0010312	individual		T101	NCBITaxon:9733	../1968	F	BIGGS-SHEET	Sheet records '<1969'.
+SSA:0010313	individual		T101A	NCBITaxon:9733	1993	M	BIGGS-SHEET	
+SSA:0010314	individual		T101B	NCBITaxon:9733	1997	M	BIGGS-SHEET	
+SSA:0010315	individual		T102	NCBITaxon:9733	1984	M	BIGGS-SHEET	
+SSA:0010316	individual		T103	NCBITaxon:9733	../1968	M	BIGGS-SHEET	Sheet records '≤1968'.
+SSA:0010317	individual		T109	NCBITaxon:9733	../1977	F	BIGGS-SHEET	Sheet records '≤1977'.
+SSA:0010318	individual		T109A	NCBITaxon:9733	1990	F	BIGGS-SHEET	
+SSA:0010319	individual		T109A2	NCBITaxon:9733	2005	F	BIGGS-SHEET	
+SSA:0010320	individual		T109A2A	NCBITaxon:9733	2016	M	BIGGS-SHEET	
+SSA:0010321	individual		T109A2B	NCBITaxon:9733	2018	F	BIGGS-SHEET	
+SSA:0010322	individual		T109A2C	NCBITaxon:9733	2021	F	BIGGS-SHEET	
+SSA:0010323	individual		T109A2D	NCBITaxon:9733	2023	M	BIGGS-SHEET	
+SSA:0010324	individual		T109A3	NCBITaxon:9733	2009	F	BIGGS-SHEET	
+SSA:0010325	individual		T109A3A	NCBITaxon:9733	2022	U	BIGGS-SHEET	Sex recorded in the sheet as 'F?'.
+SSA:0010326	individual		T109A4	NCBITaxon:9733	2012	M	BIGGS-SHEET	
+SSA:0010327	individual		T109A5	NCBITaxon:9733	2014		BIGGS-SHEET	
+SSA:0010328	individual		T109A6	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010329	individual		T109A7	NCBITaxon:9733	2021		BIGGS-SHEET	
+SSA:0010330	individual		T109A8	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010331	individual		T109B	NCBITaxon:9733	1996	F	BIGGS-SHEET	
+SSA:0010332	individual		T109B3	NCBITaxon:9733	2013	F	BIGGS-SHEET	
+SSA:0010333	individual		T109B4	NCBITaxon:9733	2015		BIGGS-SHEET	
+SSA:0010334	individual		T109B5	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010335	individual		T109B6	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010336	individual		T109C	NCBITaxon:9733	2002	F	BIGGS-SHEET	
+SSA:0010337	individual		T109C1	NCBITaxon:9733	2012		BIGGS-SHEET	
+SSA:0010338	individual		T109C2	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010339	individual		T109C3	NCBITaxon:9733	2022		BIGGS-SHEET	
+SSA:0010340	individual		T109D	NCBITaxon:9733	2007	F	BIGGS-SHEET	
+SSA:0010341	individual		T109D1	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010342	individual		T109D2	NCBITaxon:9733	2021		BIGGS-SHEET	
+SSA:0010343	individual		T109E	NCBITaxon:9733	2013	M	BIGGS-SHEET	
+SSA:0010344	individual		T111	NCBITaxon:9733	../1975	F	BIGGS-SHEET	Sheet records '≤1975'.
+SSA:0010345	individual		T111A	NCBITaxon:9733	1990	F	BIGGS-SHEET	
+SSA:0010346	individual		T111A1	NCBITaxon:9733	2006		BIGGS-SHEET	
+SSA:0010347	individual		T111B	NCBITaxon:9733	2000	F	BIGGS-SHEET	
+SSA:0010348	individual		T111B2	NCBITaxon:9733			BIGGS-SHEET	Birth year recorded as '?'; not parseable.
+SSA:0010349	individual		T111B3	NCBITaxon:9733			BIGGS-SHEET	Birth year recorded as '?'; not parseable.
+SSA:0010350	individual		T111C	NCBITaxon:9733	2007		BIGGS-SHEET	
+SSA:0010351	individual		T112	NCBITaxon:9733	../1974	F	BIGGS-SHEET	Sheet records '≤1974'.
+SSA:0010352	individual		T113	NCBITaxon:9733	../1975	M	BIGGS-SHEET	Sheet records '≤1975'.
+SSA:0010353	individual		T114	NCBITaxon:9733	1975	M	BIGGS-SHEET	
+SSA:0010354	individual		T115	NCBITaxon:9733	../1973	F	BIGGS-SHEET	Sheet records '<1974'.
+SSA:0010355	individual		T116	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010356	individual		T116A	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010357	individual		T116B	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010358	individual		T117	NCBITaxon:9733	../1975	F	BIGGS-SHEET	Sheet records '<1976'.
+SSA:0010359	individual		T117A	NCBITaxon:9733	1992	M	BIGGS-SHEET	
+SSA:0010360	individual		T117B	NCBITaxon:9733	2005	F	BIGGS-SHEET	
+SSA:0010361	individual		T117B1	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010362	individual		T118	NCBITaxon:9733	../1959	F	BIGGS-SHEET	Sheet records '<1960'.
+SSA:0010363	individual		T120	NCBITaxon:9733	1986	M	BIGGS-SHEET	
+SSA:0010364	individual		T121A	NCBITaxon:9733	1998	F	BIGGS-SHEET	
+SSA:0010365	individual		T121A1	NCBITaxon:9733	2015		BIGGS-SHEET	
+SSA:0010366	individual		T121A2	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010367	individual		T121A3	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010368	individual		T122	NCBITaxon:9733	../1982	F	BIGGS-SHEET	Sheet records '≤1982'.
+SSA:0010369	individual		T123	NCBITaxon:9733	1985	F	BIGGS-SHEET	
+SSA:0010370	individual		T123A	NCBITaxon:9733	2000	M	BIGGS-SHEET	
+SSA:0010371	individual		T123C	NCBITaxon:9733	2012	F	BIGGS-SHEET	
+SSA:0010372	individual		T123D	NCBITaxon:9733	2018	F	BIGGS-SHEET	
+SSA:0010373	individual		T124	NCBITaxon:9733	../1967	F	BIGGS-SHEET	Sheet records '≤1967'.
+SSA:0010374	individual		T124A	NCBITaxon:9733	1984	F	BIGGS-SHEET	
+SSA:0010375	individual		T124A1	NCBITaxon:9733	1996	F	BIGGS-SHEET	
+SSA:0010376	individual		T124A1A	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010377	individual		T124A2	NCBITaxon:9733	2001	F	BIGGS-SHEET	
+SSA:0010378	individual		T124A2A	NCBITaxon:9733	2013	M	BIGGS-SHEET	
+SSA:0010379	individual		T124A2B	NCBITaxon:9733	2016	F	BIGGS-SHEET	
+SSA:0010380	individual		T124A3	NCBITaxon:9733	2006	F	BIGGS-SHEET	
+SSA:0010381	individual		T124A3A	NCBITaxon:9733	2019	M	BIGGS-SHEET	
+SSA:0010382	individual		T124A4	NCBITaxon:9733	2010	F	BIGGS-SHEET	
+SSA:0010383	individual		T124A4A	NCBITaxon:9733	2021	F	BIGGS-SHEET	
+SSA:0010384	individual		T124A6	NCBITaxon:9733	2016	M	BIGGS-SHEET	
+SSA:0010385	individual		T124A7	NCBITaxon:9733	2021	F	BIGGS-SHEET	
+SSA:0010386	individual		T124C	NCBITaxon:9733	1992	M	BIGGS-SHEET	
+SSA:0010387	individual		T124D	NCBITaxon:9733	1996	F	BIGGS-SHEET	
+SSA:0010388	individual		T124D1	NCBITaxon:9733	2014		BIGGS-SHEET	
+SSA:0010389	individual		T124D2	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010390	individual		T124D3	NCBITaxon:9733	2021		BIGGS-SHEET	
+SSA:0010391	individual		T124D4	NCBITaxon:9733	2024		BIGGS-SHEET	
+SSA:0010392	individual		T124E	NCBITaxon:9733	1999	M	BIGGS-SHEET	
+SSA:0010393	individual		T125	NCBITaxon:9733	../1978	F	BIGGS-SHEET	Sheet records '<1979'.
+SSA:0010394	individual		T125A	NCBITaxon:9733	1998		BIGGS-SHEET	
+SSA:0010395	individual		T127	NCBITaxon:9733	1984	M	BIGGS-SHEET	
+SSA:0010396	individual		T128	NCBITaxon:9733	1988	M	BIGGS-SHEET	
+SSA:0010397	individual		T129	NCBITaxon:9733	../1971	M	BIGGS-SHEET	Sheet records '≤1971'.
+SSA:0010398	individual		T130	NCBITaxon:9733	../1971	M	BIGGS-SHEET	Sheet records '≤1971'.
+SSA:0010399	individual		T131	NCBITaxon:9733	../1982	F	BIGGS-SHEET	Sheet records '≤1982'.
+SSA:0010400	individual		T132	NCBITaxon:9733	../1968	M	BIGGS-SHEET	Sheet records '<1969'.
+SSA:0010401	individual		T133	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010402	individual		T134	NCBITaxon:9733	../1959		BIGGS-SHEET	Sheet records '≤1959'.
+SSA:0010403	individual		T135	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010404	individual		T137	NCBITaxon:9733	1984	F	BIGGS-SHEET	
+SSA:0010405	individual		T137A	NCBITaxon:9733	2002	M	BIGGS-SHEET	
+SSA:0010406	individual		T137B	NCBITaxon:9733	2006	F	BIGGS-SHEET	
+SSA:0010407	individual		T137D	NCBITaxon:9733	2012	F	BIGGS-SHEET	
+SSA:0010408	individual		T139	NCBITaxon:9733	../1972	F	BIGGS-SHEET	Sheet records '<1973'.
+SSA:0010409	individual		T140	NCBITaxon:9733	../1983	F	BIGGS-SHEET	Sheet records '≤1983'.
+SSA:0010410	individual		T140B	NCBITaxon:9733	2004	M	BIGGS-SHEET	
+SSA:0010411	individual		T140C	NCBITaxon:9733	2008		BIGGS-SHEET	
+SSA:0010412	individual		T141	NCBITaxon:9733	1989	F	BIGGS-SHEET	
+SSA:0010413	individual		T141A	NCBITaxon:9733	2004		BIGGS-SHEET	
+SSA:0010414	individual		T141B	NCBITaxon:9733	2012		BIGGS-SHEET	
+SSA:0010415	individual		T141C	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010416	individual		T142	NCBITaxon:9733	../1967	M	BIGGS-SHEET	Sheet records '≤1967'.
+SSA:0010417	individual		T143	NCBITaxon:9733	../1977	F	BIGGS-SHEET	Sheet records '<1978'.
+SSA:0010418	individual		T146	NCBITaxon:9733	1987	F	BIGGS-SHEET	
+SSA:0010419	individual		T146A	NCBITaxon:9733	1999	F	BIGGS-SHEET	
+SSA:0010420	individual		T146A1	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010421	individual		T146A2	NCBITaxon:9733	2023		BIGGS-SHEET	
+SSA:0010422	individual		T146B	NCBITaxon:9733	2002	M	BIGGS-SHEET	
+SSA:0010423	individual		T146C	NCBITaxon:9733	2004	F	BIGGS-SHEET	
+SSA:0010424	individual		T146C1	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010425	individual		T146D	NCBITaxon:9733	2008		BIGGS-SHEET	
+SSA:0010426	individual		T146E	NCBITaxon:9733	2011		BIGGS-SHEET	
+SSA:0010427	individual		T147	NCBITaxon:9733	../1964	F	BIGGS-SHEET	Sheet records '<1965'.
+SSA:0010428	individual		T148	NCBITaxon:9733	../1975	M	BIGGS-SHEET	Sheet records '≤1975'.
+SSA:0010429	individual		T149	NCBITaxon:9733	1992		BIGGS-SHEET	
+SSA:0010430	individual		T150	NCBITaxon:9733	1990	M	BIGGS-SHEET	
+SSA:0010431	individual		T151	NCBITaxon:9733	../1979	F	BIGGS-SHEET	Sheet records '<1980'.
+SSA:0010432	individual		T151A	NCBITaxon:9733	2005	F	BIGGS-SHEET	
+SSA:0010433	individual		T151A1	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010434	individual		T151B	NCBITaxon:9733	2010		BIGGS-SHEET	
+SSA:0010435	individual		T151C	NCBITaxon:9733	2014		BIGGS-SHEET	
+SSA:0010436	individual		T151D	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010437	individual		T152	NCBITaxon:9733	1995	F	BIGGS-SHEET	
+SSA:0010438	individual		T152A	NCBITaxon:9733	2012		BIGGS-SHEET	
+SSA:0010439	individual		T152B	NCBITaxon:9733	2018		BIGGS-SHEET	
+SSA:0010440	individual		T152C	NCBITaxon:9733	2022		BIGGS-SHEET	
+SSA:0010441	individual		T157	NCBITaxon:9733	1990	F	BIGGS-SHEET	
+SSA:0010442	individual		T160	NCBITaxon:9733	../1972	M	BIGGS-SHEET	Sheet records '≤1972'.
+SSA:0010443	individual		T161	NCBITaxon:9733		F	BIGGS-SHEET	
+SSA:0010444	individual		T162	NCBITaxon:9733	../1972	M	BIGGS-SHEET	Sheet records '≤1972'.
+SSA:0010445	individual		T165	NCBITaxon:9733	../1976	M	BIGGS-SHEET	Sheet records '≤1976'.
+SSA:0010446	individual		T166	NCBITaxon:9733	../1966	F	BIGGS-SHEET	Sheet records '≤1966'.
+SSA:0010447	individual		T166A	NCBITaxon:9733	1994	F	BIGGS-SHEET	
+SSA:0010448	individual		T166A1	NCBITaxon:9733	2012		BIGGS-SHEET	
+SSA:0010449	individual		T167	NCBITaxon:9733	1992	F	BIGGS-SHEET	
+SSA:0010450	individual		T167A	NCBITaxon:9733	2010	M	BIGGS-SHEET	
+SSA:0010451	individual		T167B	NCBITaxon:9733	2015		BIGGS-SHEET	
+SSA:0010452	individual		T167C	NCBITaxon:9733	2020	F	BIGGS-SHEET	
+SSA:0010453	individual		T168A	NCBITaxon:9733	1992	F	BIGGS-SHEET	
+SSA:0010454	individual		T168A1	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010455	individual		T168A2	NCBITaxon:9733	2021		BIGGS-SHEET	
+SSA:0010456	individual		T169	NCBITaxon:9733	1978	M	BIGGS-SHEET	
+SSA:0010457	individual		T170	NCBITaxon:9733	../1974	M	BIGGS-SHEET	Sheet records '≤1974'.
+SSA:0010458	individual		T171	NCBITaxon:9733	../1983	F	BIGGS-SHEET	Sheet records '<1984'.
+SSA:0010459	individual		T172	NCBITaxon:9733	1989	F	BIGGS-SHEET	
+SSA:0010460	individual		T173	NCBITaxon:9733	../1971	F	BIGGS-SHEET	Sheet records '<1972'.
+SSA:0010461	individual		T174	NCBITaxon:9733	../1988	F	BIGGS-SHEET	Sheet records '≤1988'.
+SSA:0010462	individual		T174A	NCBITaxon:9733	1998	F	BIGGS-SHEET	
+SSA:0010463	individual		T174A1	NCBITaxon:9733	2015		BIGGS-SHEET	
+SSA:0010464	individual		T174A2	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010465	individual		T174B	NCBITaxon:9733	2005	F	BIGGS-SHEET	
+SSA:0010466	individual		T174B1	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010467	individual		T174C	NCBITaxon:9733	2015		BIGGS-SHEET	
+SSA:0010468	individual		T175	NCBITaxon:9733	1982	M	BIGGS-SHEET	
+SSA:0010469	individual		T176	NCBITaxon:9733	1994	F	BIGGS-SHEET	
+SSA:0010470	individual		T176A	NCBITaxon:9733	2007		BIGGS-SHEET	
+SSA:0010471	individual		T176B	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010472	individual		T177	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010473	individual		T178	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010474	individual		T179	NCBITaxon:9733	1984	F	BIGGS-SHEET	
+SSA:0010475	individual		T179A	NCBITaxon:9733	1999		BIGGS-SHEET	
+SSA:0010476	individual		T179B	NCBITaxon:9733	2010		BIGGS-SHEET	
+SSA:0010477	individual		T180	NCBITaxon:9733	1989	M	BIGGS-SHEET	
+SSA:0010478	individual		T181	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010479	individual		T181A	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010480	individual		T182	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010481	individual		T183	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010482	individual		T183A	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010483	individual		T184	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010484	individual		T185	NCBITaxon:9733	../1983	F	BIGGS-SHEET	Sheet records '≤1983'.
+SSA:0010485	individual		T185A	NCBITaxon:9733	2007		BIGGS-SHEET	
+SSA:0010486	individual		T186	NCBITaxon:9733	1995	M	BIGGS-SHEET	
+SSA:0010487	individual		T187	NCBITaxon:9733	1999		BIGGS-SHEET	
+SSA:0010488	individual		T188	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010489	individual		T188A	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010490	individual		T196	NCBITaxon:9733		F	BIGGS-SHEET	Birth year recorded as 'UNK'; not parseable.
+SSA:0010491	individual		T197	NCBITaxon:9733		M	BIGGS-SHEET	Birth year recorded as 'UNK'; not parseable.
+SSA:0010492	individual		T199	NCBITaxon:9733	1993	F	BIGGS-SHEET	
+SSA:0010493	individual		T199A	NCBITaxon:9733	2008		BIGGS-SHEET	
+SSA:0010494	individual		T199B	NCBITaxon:9733			BIGGS-SHEET	Birth year recorded as '?'; not parseable.
+SSA:0010495	individual		T199C	NCBITaxon:9733			BIGGS-SHEET	Birth year recorded as '?'; not parseable.
+SSA:0010496	individual		T221B	NCBITaxon:9733	1997	M	BIGGS-SHEET	
+SSA:0010497	individual		T223	NCBITaxon:9733	../1966	F	BIGGS-SHEET	Sheet records '≤1966'.
+SSA:0010498	individual		T224	NCBITaxon:9733	1998	F	BIGGS-SHEET	
+SSA:0010499	individual		T224A	NCBITaxon:9733	2013		BIGGS-SHEET	
+SSA:0010500	individual		T224B	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010501	individual		T225	NCBITaxon:9733	2003		BIGGS-SHEET	
+SSA:0010502	individual		T227	NCBITaxon:9733	../1984	M	BIGGS-SHEET	Sheet records '≤1984'.
+SSA:0010503	individual		T250	NCBITaxon:9733	1989	F	BIGGS-SHEET	
+SSA:0010504	individual		T250C	NCBITaxon:9733	2017		BIGGS-SHEET	
+SSA:0010505	individual		T250D	NCBITaxon:9733			BIGGS-SHEET	
+SSA:0010506	individual		T251	NCBITaxon:9733	1982	M	BIGGS-SHEET	
+SSA:0010507	individual		T252	NCBITaxon:9733	../1972	F	BIGGS-SHEET	Sheet records '≤1972'.
+SSA:0010508	individual		T253	NCBITaxon:9733	2001	F	BIGGS-SHEET	
+SSA:0010509	individual		T253A	NCBITaxon:9733	2019		BIGGS-SHEET	
