@@ -115,34 +115,6 @@ What remains for the scientific reviewers is narrower: is there anything **in sc
 this register** — an animal, a designation, a grouping — that should not appear in a public
 repository at all?
 
-### Q22 — Is a T-number lineage the right grouping, or does the sheet group differently?
-*Owner: S. Veirs, D. Bain.*
-**The least confident thing in the register.** The import derives matrilines from the
-designation prefix: `T023`, `T023D`, `T023D3`, `T023C`, `T023C3` all land in one group
-labelled `T023s`.
-
-The sheet groups differently. Blank rows separate sub-blocks — `T023` with the T023D line
-in one, the T023C line in another — while a `Known as the Motley Crew` heading spans both.
-So the sheet appears to record two levels: a lineage, and travelling sub-groups within it.
-The register currently flattens them to one.
-
-Three questions: (a) is `T023s` a matriline, or a lineage containing several? (b) if both
-levels are real, which one does a moderator tag when they hear a group? (c) are the "Known
-as" names attached to the right level? They are currently `common` names on the derived
-group, which is a guess.
-
-132 groups were derived this way, so getting it wrong is 132 wrong groups — though the
-individuals underneath are unaffected.
-
-### Q23 — What are the Alaska/California designations, and where do they belong?
-*Owner: S. Veirs.*
-The sheet's second column carries designations like `AM3`, `AM5`, `AM34` alongside the
-BC/WA T-numbers. They are currently imported as `hidden` names so they resolve in search,
-which is a holding position: they are really identifiers in *another catalogue*, and the
-right home is `mappings.tsv` with that catalogue's namespace and a match predicate.
-
-What is that catalogue, and does it have a citable identifier scheme?
-
 ### Q13 — Is the plural the canonical written form for a matriline?
 *Owner: S. Veirs, D. Bain.*
 The register records `J17s` and `T090s` as the **preferred name** for matrilines,
@@ -180,6 +152,34 @@ Note that SalishSea.io's catalogue took the opposite position in code, with a
 
 ---
 
+### Q22 — Is a T-number lineage the right grouping, or does the sheet group differently?
+*Owner: S. Veirs, D. Bain.*
+**The least confident thing in the register.** The import derives matrilines from the
+designation prefix: `T023`, `T023D`, `T023D3`, `T023C`, `T023C3` all land in one group
+labelled `T023s`.
+
+The sheet groups differently. Blank rows separate sub-blocks — `T023` with the T023D line
+in one, the T023C line in another — while a `Known as the Motley Crew` heading spans both.
+So the sheet appears to record two levels: a lineage, and travelling sub-groups within it.
+The register currently flattens them to one.
+
+Three questions: (a) is `T023s` a matriline, or a lineage containing several? (b) if both
+levels are real, which one does a moderator tag when they hear a group? (c) are the "Known
+as" names attached to the right level? They are currently `common` names on the derived
+group, which is a guess.
+
+132 groups were derived this way, so getting it wrong is 132 wrong groups — though the
+individuals underneath are unaffected.
+
+### Q23 — What are the Alaska/California designations, and where do they belong?
+*Owner: S. Veirs.*
+The sheet's second column carries designations like `AM3`, `AM5`, `AM34` alongside the
+BC/WA T-numbers. They are currently imported as `hidden` names so they resolve in search,
+which is a holding position: they are really identifiers in *another catalogue*, and the
+right home is `mappings.tsv` with that catalogue's namespace and a match predicate.
+
+What is that catalogue, and does it have a citable identifier scheme?
+
 ## For the informatics reviewers
 
 ### Q8 — Who is the named editor, and who reviews the domain content?
@@ -200,49 +200,30 @@ should change: publish an `as_of` date on every artefact and advertise staleness
 rather than imply a currency the register does not have. That is a good idea regardless,
 and cheap.
 
-### Q25 — Who else can cut a release, and what makes that safe?
-*Owner: P. Abrahamsen, to resolve with S. Veirs.*
-
-A release is a CalVer tag push ([ADR-0013](../decisions/0013-distribution.md)), and today
-only this repository's author can make one. During active development the register may be
-tagged several times a day, so a consumer waiting on an edition is waiting on one person's
-availability. S. Veirs is the obvious second.
-
-Widening it is not merely a permissions change. The tag is what a consumer pins and what
-`register_edition` records
-([ADR-0006](../decisions/0006-valid-time-in-data-assertion-time-in-git.md)), so whoever
-can push a tag can publish an artefact under the register's name. Making that safe is
-presumably some combination of protected tags, artefacts only ever built by CI from a
-reviewed commit on `main`, and an agreement about what a release *asserts* — which today
-is nothing beyond "the validator passed".
-
-Distinct from Q8, and deliberately so: the person who can publish an edition and the
-person who reviews its domain content need not be the same, and probably should not be.
-
 ### Q10 — Is `SSA:` a safe prefix?
 *Owner: P. Abrahamsen.*
 Chosen for "Salish Sea Animals". Not checked against
 [Bioregistry](https://bioregistry.io/) or any other prefix registry. Cheap to change
 now, expensive after the first external system stores one.
 
-### Q24 — Does releasing the register republish the Bigg's sheet?
+### Q12 — How do the two repositories reference each other?
+*Owner: P. Abrahamsen, S. Veirs.*
+`signals-srkw` currently copies ecotype and pod labels rather than referencing them.
+Fixing that requires a convention for cross-repository identifier references and a
+decision about whether the signals vocabulary declares a dependency on a specific
+edition of this register.
+
+---
+
+### Q14 — How are preferred names localised?
 *Owner: P. Abrahamsen.*
-D-21 in `salishsea-io/docs/rights-policy.md` §7.1 concludes that the sheet's factual
-content is uncopyrightable and freely usable, but that **the selection and arrangement is
-the maintainer's compilation**, and that "we do not republish the sheet wholesale as a
-product; the mirror is an internal baseline for change-detection and seeding."
-
-That determination was made for a mirror inside an application. This register *publishes
-release artefacts* — `register.db`, a TSV tarball, permanent download URLs — containing
-510 individuals derived from that sheet. Whether that is a different arrangement of
-uncopyrightable facts or a republication of the compilation is a genuine question, and it
-is the author of both who has to answer it.
-
-Until it is answered, [LICENSE](../LICENSE) already says the data is unlicensed and must
-not be redistributed as a dataset, so importing is safe and *releasing* is the gated step.
-Note also that D-21 requires the maintainer to be credited wherever nickname facts are
-surfaced; `sources.tsv` does that, and any consumer displaying a nickname inherits the
-obligation.
+`names.tsv` has a `language` column; `entities.tsv.label` does not, so the preferred name
+is implicitly English. Scott has raised the possibility of Spanish-language signal labels
+for a future humpback vocabulary, and the same pressure would apply here. Options: add a
+language dimension to `label`, or move preferred names into `names.tsv` as a typed row
+and accept the hit to diff readability. Not urgent, but it is a schema change and worth
+deciding before there is much data. See
+[ADR-0011](../decisions/0011-label-is-a-preferred-name.md).
 
 ### Q17 — Whose job is designation normalization?
 *Owner: P. Abrahamsen.*
@@ -287,26 +268,63 @@ suspected to have come from a humpback. This is a data-quality risk to the regis
 though it is not a register question, because the bad tags land in annotations that cite
 register identifiers.
 
-### Q14 — How are preferred names localised?
+### Q24 — Does releasing the register republish the Bigg's sheet?
 *Owner: P. Abrahamsen.*
-`names.tsv` has a `language` column; `entities.tsv.label` does not, so the preferred name
-is implicitly English. Scott has raised the possibility of Spanish-language signal labels
-for a future humpback vocabulary, and the same pressure would apply here. Options: add a
-language dimension to `label`, or move preferred names into `names.tsv` as a typed row
-and accept the hit to diff readability. Not urgent, but it is a schema change and worth
-deciding before there is much data. See
-[ADR-0011](../decisions/0011-label-is-a-preferred-name.md).
+D-21 in `salishsea-io/docs/rights-policy.md` §7.1 concludes that the sheet's factual
+content is uncopyrightable and freely usable, but that **the selection and arrangement is
+the maintainer's compilation**, and that "we do not republish the sheet wholesale as a
+product; the mirror is an internal baseline for change-detection and seeding."
 
-### Q12 — How do the two repositories reference each other?
-*Owner: P. Abrahamsen, S. Veirs.*
-`signals-srkw` currently copies ecotype and pod labels rather than referencing them.
-Fixing that requires a convention for cross-repository identifier references and a
-decision about whether the signals vocabulary declares a dependency on a specific
-edition of this register.
+That determination was made for a mirror inside an application. This register *publishes
+release artefacts* — `register.db`, a TSV tarball, permanent download URLs — containing
+510 individuals derived from that sheet. Whether that is a different arrangement of
+uncopyrightable facts or a republication of the compilation is a genuine question, and it
+is the author of both who has to answer it.
 
----
+Until it is answered, [LICENSE](../LICENSE) already says the data is unlicensed and must
+not be redistributed as a dataset, so importing is safe and *releasing* is the gated step.
+Note also that D-21 requires the maintainer to be credited wherever nickname facts are
+surfaced; `sources.tsv` does that, and any consumer displaying a nickname inherits the
+obligation.
+
+### Q25 — Who else can cut a release, and what makes that safe?
+*Owner: P. Abrahamsen, to resolve with S. Veirs.*
+
+A release is a CalVer tag push ([ADR-0013](../decisions/0013-distribution.md)), and today
+only this repository's author can make one. During active development the register may be
+tagged several times a day, so a consumer waiting on an edition is waiting on one person's
+availability. S. Veirs is the obvious second.
+
+Widening it is not merely a permissions change. The tag is what a consumer pins and what
+`register_edition` records
+([ADR-0006](../decisions/0006-valid-time-in-data-assertion-time-in-git.md)), so whoever
+can push a tag can publish an artefact under the register's name. Making that safe is
+presumably some combination of protected tags, artefacts only ever built by CI from a
+reviewed commit on `main`, and an agreement about what a release *asserts* — which today
+is nothing beyond "the validator passed".
+
+Distinct from Q8, and deliberately so: the person who can publish an edition and the
+person who reviews its domain content need not be the same, and probably should not be.
 
 ## Answered
+
+### Q5 — Do consumers store redundant ancestors, or derive them?
+**Resolved 2026-07-28, by declining it.** The question named its own owner and it was not
+this repository: "should *OrcaSound* store what the moderator picked". How an occurrence
+records the individuals and groups a moderator tagged is that consumer's annotation
+design, and there is a separate process for that work.
+
+The register's part is already discharged. `dist/ancestor.tsv` publishes the transitive
+closure precomputed ([ADR-0013](../decisions/0013-distribution.md)), so deriving a parent
+costs a lookup. Having made the choice free, the register has no stake in which way it
+goes.
+
+Worth carrying into that other process: the two options were framed here as a size
+trade-off, and that is the least interesting difference between them. **They promise
+different things over time.** Storing what the moderator picked is a faithful record of an
+act of identification and stays true as one. Deriving instead tracks the register, so the
+ecotype shown against a 2026 bout will change when Q1 reparents the Southern Residents.
+Neither is wrong — they answer different questions.
 
 ### Q6 — Should the register publish group sizes?
 **Resolved 2026-07-28. No.** Not as a column, not as a view, not in prose. The roster is
@@ -328,6 +346,37 @@ for reopening: the objection is empirical, and would weaken if a population's ro
 ever complete and verified. What would count as complete enough is recorded as the ADR's
 open question.
 
+### Q7 — How do we model a bout where the animal and the sound belong to different species?
+**Resolved 2026-07-28, by declining it.** The question was an artefact of how the bout was
+written up, not a property of the bout. `Humpback mimics Bigg's?` is a hypothesis — a
+signal characteristic of Bigg's, suspected to have come from a humpback. **A call type
+being characteristic of Bigg's is a regularity about who usually produces it, not a
+property of the sound**; sounds carry no species. Promoting "characteristic of" to
+"belongs to" is what manufactured a second species, and with it the appearance of a
+modelling problem. What was recorded is one animal, identified with low
+confidence — [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) — plus a call
+type, which is the signals vocabulary's business. The register was never asked to identify
+sound sources, so nothing here bears on it.
+
+One real requirement survives, and it is the annotation schema's, not the register's: a
+signal must be taggable with no animal tag, so that a moderator who knows the call type
+and not the producer is not forced to name an animal. Folded into Q18.
+
+### Q11 — What is the release artefact, and does it need a stable URL?
+**Resolved 2026-07-28.** GitHub releases, with the permanent asset URLs GitHub already
+serves:
+
+```
+https://github.com/salish-sea/animals/releases/latest/download/register.db
+https://github.com/salish-sea/animals/releases/download/2026.07.1/register-tsv.tar.gz
+```
+
+That *is* the stable address, it needs no client and no API call, and it carries no
+hosting commitment — which is what made the dereferenceable-identifier version of this
+question look expensive. Not GitHub Packages: it has no generic file registry and no
+ecosystem that serves Elixir, which is what OrcaSound's server runs. See
+[ADR-0013](../decisions/0013-distribution.md).
+
 ### Q16 — Should the register hold parentage?
 **Resolved 2026-07-28.** Yes, in `data/parentage.tsv`, as edges rather than as
 `mother_id` / `father_id` columns. Parentage is identity rather than encounter, and it
@@ -347,40 +396,6 @@ The false claim that parentage was "implied by matriline membership" is gone fro
 `scope.md` and `competency-questions.md`, where "who is this animal's mother?" is now C13
 rather than an entry on the deliberately-unanswerable list.
 
-### Q5 — Do consumers store redundant ancestors, or derive them?
-**Resolved 2026-07-28, by declining it.** The question named its own owner and it was not
-this repository: "should *OrcaSound* store what the moderator picked". How an occurrence
-records the individuals and groups a moderator tagged is that consumer's annotation
-design, and there is a separate process for that work.
-
-The register's part is already discharged. `dist/ancestor.tsv` publishes the transitive
-closure precomputed ([ADR-0013](../decisions/0013-distribution.md)), so deriving a parent
-costs a lookup. Having made the choice free, the register has no stake in which way it
-goes.
-
-Worth carrying into that other process: the two options were framed here as a size
-trade-off, and that is the least interesting difference between them. **They promise
-different things over time.** Storing what the moderator picked is a faithful record of an
-act of identification and stays true as one. Deriving instead tracks the register, so the
-ecotype shown against a 2026 bout will change when Q1 reparents the Southern Residents.
-Neither is wrong — they answer different questions.
-
-### Q7 — How do we model a bout where the animal and the sound belong to different species?
-**Resolved 2026-07-28, by declining it.** The question was an artefact of how the bout was
-written up, not a property of the bout. `Humpback mimics Bigg's?` is a hypothesis — a
-signal characteristic of Bigg's, suspected to have come from a humpback. **A call type
-being characteristic of Bigg's is a regularity about who usually produces it, not a
-property of the sound**; sounds carry no species. Promoting "characteristic of" to
-"belongs to" is what manufactured a second species, and with it the appearance of a
-modelling problem. What was recorded is one animal, identified with low
-confidence — [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) — plus a call
-type, which is the signals vocabulary's business. The register was never asked to identify
-sound sources, so nothing here bears on it.
-
-One real requirement survives, and it is the annotation schema's, not the register's: a
-signal must be taggable with no animal tag, so that a moderator who knows the call type
-and not the producer is not forced to name an animal. Folded into Q18.
-
 ### Q19 — Is bulk import a supported operation, and how are identifiers assigned?
 **Resolved 2026-07-28.** Yes, as a stated exception to ADR-0001's reviewable-diff premise:
 a bulk import is reviewed as a *transformation*, with the importing script committed and
@@ -390,21 +405,19 @@ comments every judgement it makes. Identifiers come from dedicated blocks, assig
 sorted designation and reused on re-run. See
 [ADR-0015](../decisions/0015-bulk-import.md).
 
-### Q11 — What is the release artefact, and does it need a stable URL?
-**Resolved 2026-07-28.** GitHub releases, with the permanent asset URLs GitHub already
-serves:
+### Q20 — `status.tsv` is append-only with no way to retract a claim
+**Resolved 2026-07-27.** `status.tsv` gains a `recorded` column — when *we* wrote the row
+down, distinct from `effective` (when it became true) and `asserted_on` (when the source
+said so). Current status is the row with the greatest `(recorded, effective)`; ties are a
+validation error; retraction without a replacement is an appended `unknown`.
 
-```
-https://github.com/salish-sea/animals/releases/latest/download/register.db
-https://github.com/salish-sea/animals/releases/download/2026.07.1/register-tsv.tar.gz
-```
+Ordering by `effective` alone was the trap: a correction usually carries an *earlier*
+valid-time than the claim it corrects. And `recorded` is a column rather than git history
+because raw-URL consumers — which ADR-0001 explicitly supports — have no git, so a
+precedence rule requiring `git log` is one most consumers cannot follow.
 
-That *is* the stable address, it needs no client and no API call, and it carries no
-hosting commitment — which is what made the dereferenceable-identifier version of this
-question look expensive. Not GitHub Packages: it has no generic file registry and no
-ecosystem that serves Elixir, which is what OrcaSound's server runs. See
-[ADR-0013](../decisions/0013-distribution.md).
-
+See [ADR-0006](../decisions/0006-valid-time-in-data-assertion-time-in-git.md), section
+"Precedence".
 ### Q21 — Absence and false-positive claims block a consumer today
 **Resolved 2026-07-27, mostly by declining it.** Reading the live bouts, the requested
 `unconfirmed` / `false-positive` vocabulary turned out to be three separate problems:
@@ -421,16 +434,3 @@ So "unconfirmed" was never a missing modality — it was a missing *entity*. The
 only remaining contribution is a warning, now in [scope.md](scope.md): a biophony bout may
 be about no animal at all, so the absence of tags is not the absence of animals.
 
-### Q20 — `status.tsv` is append-only with no way to retract a claim
-**Resolved 2026-07-27.** `status.tsv` gains a `recorded` column — when *we* wrote the row
-down, distinct from `effective` (when it became true) and `asserted_on` (when the source
-said so). Current status is the row with the greatest `(recorded, effective)`; ties are a
-validation error; retraction without a replacement is an appended `unknown`.
-
-Ordering by `effective` alone was the trap: a correction usually carries an *earlier*
-valid-time than the claim it corrects. And `recorded` is a column rather than git history
-because raw-URL consumers — which ADR-0001 explicitly supports — have no git, so a
-precedence rule requiring `git log` is one most consumers cannot follow.
-
-See [ADR-0006](../decisions/0006-valid-time-in-data-assertion-time-in-git.md), section
-"Precedence".
