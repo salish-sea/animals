@@ -116,34 +116,3 @@ Things that only became visible by tracing a real record:
   Southern Resident. What a consumer stores is its own annotation design's business, not
   the register's; the register's part is to publish the closure so that deriving a parent
   is cheap (`dist/ancestor.tsv`). See [Q5](open-questions.md), resolved by declining it.
-
-## A second, harder bout
-
-```
-name: Humpback mimics Bigg's?
-id:   bout_030hfXTlTutthslHi3KfNs
-```
-
-The title is a hypothesis, question mark and all: someone heard a signal characteristic of
-Bigg's and suspects a humpback produced it.
-
-This looked at first like a modelling crisis — two species on one bout — and it was
-written up here as one. It is not, and the mistake is worth keeping visible because it is
-easy to make. **A call type being characteristic of Bigg's is a regularity about who
-usually produces it, not a property of the sound.** Sounds do not have a species. Promote
-"characteristic of" to "belongs to" and you appear to have two species attached to one
-bout; undo the promotion and you have what was actually recorded: one animal, identified
-with low confidence, plus a call type. The register's job on this bout is the same as on
-any other, and [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) already
-covers the uncertainty.
-
-What the bout does teach is a requirement on the annotation schema rather than on the
-register: a moderator here may know the call type and genuinely not know the animal, so a
-signal must be taggable with **no** animal tag. Without that, the honest answer is
-unavailable and the nearest one is wrong — tagging `Bigg's` for a sound suspected to come
-from a humpback asserts a species nobody meant to assert. See
-[Q18](open-questions.md).
-
-The animal register and the sound vocabulary do have to be independently applicable to
-one bout. That is true because they describe different kinds of thing, though — not
-because of this recording.

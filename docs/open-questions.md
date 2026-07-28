@@ -370,9 +370,9 @@ Neither is wrong — they answer different questions.
 written up, not a property of the bout. `Humpback mimics Bigg's?` is a hypothesis — a
 signal characteristic of Bigg's, suspected to have come from a humpback. **A call type
 being characteristic of Bigg's is a regularity about who usually produces it, not a
-property of the sound**; sounds carry no species. The walkthrough had promoted
-"characteristic of" to "belongs to", which manufactured a second species and with it the
-appearance of a modelling problem. What was recorded is one animal, identified with low
+property of the sound**; sounds carry no species. Promoting "characteristic of" to
+"belongs to" is what manufactured a second species, and with it the appearance of a
+modelling problem. What was recorded is one animal, identified with low
 confidence — [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) — plus a call
 type, which is the signals vocabulary's business. The register was never asked to identify
 sound sources, so nothing here bears on it.

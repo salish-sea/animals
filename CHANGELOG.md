@@ -9,6 +9,8 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Design
+- Dropped the walkthrough's second bout. It was carried as a hard case, and once Q7
+  dissolved there was nothing left in it that the first bout does not already show.
 - **The register publishes no counts of animals** (ADR-0017), resolving Q6 as "no". A
   count would read the roster's silence as data while it is knowingly incomplete, and the
   derivable count is one of descent rather than of a travelling group. Consumers may
