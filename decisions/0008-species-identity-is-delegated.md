@@ -80,6 +80,31 @@ vocabulary, exactly as [ADR-0009](0009-uncertainty-on-the-annotation.md) require
 - Ecotype→species relationships are `skos:broadMatch` in `mappings.tsv`, not
   `exactMatch`.
 
+### Why the register is a forest, not a tree
+
+The membership graph has one root per `taxon` entity — five today — rather than a single
+root at Animalia. That looks unfinished and is deliberate.
+
+**Membership here is genealogical and social** ([ADR-0005](0005-membership-is-genealogical.md)):
+J35 is in the J17s, the J17s are in J pod. "*Orcinus orca* is in Delphinidae" is a
+different relation — subsumption, not membership — and putting both in one table means
+`ancestor.tsv` would answer "what groups is J35 a member of?" with `Mammalia`. Two kinds of
+claim in one closure is the classic way to make a hierarchy stop meaning anything.
+
+The register is therefore a **forest: one tree per species**, which is correct rather than
+incomplete. Populations of different species have no social relationship to each other,
+so there is nothing for a shared root to represent. The relationship that *does* exist
+between them is taxonomic kinship, and that is NCBI's to publish.
+
+The well-formedness property this gives up is minor and is already asserted a different
+way: `bin/validate.py` checks that every entity is reachable from *some* taxon, and
+reports what falls out when it is not.
+
+If a single root is ever wanted anyway — say the register grows to hold fish and birds
+from bout data and someone wants one diagram — the honest way is a separate
+`taxonomic_parent` relation rather than overloading membership, and it would still mean
+importing and maintaining a backbone we deliberately do not own.
+
 ## Consequences
 
 - No species curation burden, and no risk of our species list drifting from consensus.
@@ -89,6 +114,18 @@ vocabulary, exactly as [ADR-0009](0009-uncertainty-on-the-annotation.md) require
   [competency question O1](../docs/competency-questions.md).
 - The register now holds entities that are *kinds*, not collections of individuals.
   Anything iterating over entities must handle three kinds, not two.
+- **A contested species boundary costs the register nothing**, which is the point of
+  delegating. `SSA:0000001` (Southern Resident) and `SSA:0000002` (Bigg's) are first-class
+  identifiers that exist whatever taxonomy calls them, and `taxon_id` is a *crosswalk* —
+  it records where the authorities currently place a thing, not what this register
+  believes. Resident and Bigg's killer whales have been proposed as *Orcinus ater* and
+  *Orcinus rectipinnus*, and at least one reviewer associated with this work holds that
+  the split is scientifically correct. Neither NCBI Taxonomy nor WoRMS has adopted it —
+  both checked 2026-07-28; WoRMS has only `Orcinus orca`, AphiaID 137102, status
+  `accepted`. So the crosswalk cannot even be written yet: no authority has minted an
+  identifier to point at. If the split is adopted it is a `taxon_id` edit on two rows plus
+  new `mappings.tsv` entries; if it is not, nothing breaks. The register does not have to
+  hold an opinion, and should not.
 - iNaturalist is deliberately *not* the taxonomic authority here, despite being named
   first in the originating discussion. It is a good audience and a reasonable crosswalk
   target, but it is crowd-edited and its taxonomy shifts. A crosswalk to iNat taxon

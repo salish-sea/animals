@@ -65,13 +65,22 @@ The register does not need a fixed hierarchy
 structurally. This is a question about what the words should mean, which is why it is
 yours.
 
-*One thing to know before answering:* resident and Bigg's killer whales have been proposed
-as separate species (*Orcinus ater* and *Orcinus rectipinnus*). NCBI Taxonomy has not
-adopted them — checked 2026-07-28, only `NCBITaxon:9733 Orcinus orca` exists — so nothing
-changes today. [ADR-0008](../decisions/0008-species-identity-is-delegated.md) anticipated
-this: if ecotypes become formal taxa it is a crosswalk change, not a restructuring. Choice
-(a) would age slightly better if the split is eventually adopted, since the ecotype level
-is where the taxa would attach.
+*Two things to know before answering.*
+
+**The species question does not have to be settled first.** Resident and Bigg's killer
+whales have been proposed as *Orcinus ater* and *Orcinus rectipinnus*, and D. Bain holds
+that keeping them as one species is not scientifically justifiable. Neither NCBI Taxonomy
+nor WoRMS has adopted the split — both checked 2026-07-28; WoRMS has only *Orcinus orca*,
+AphiaID 137102, `accepted` — so there is not yet an identifier to point a crosswalk at.
+The register does not need an opinion:
+[ADR-0008](../decisions/0008-species-identity-is-delegated.md) makes `taxon_id` a record of
+where the authorities place a thing, not a belief, and the ecotype entities are
+first-class regardless. Adoption later is a two-row edit, not a restructuring.
+
+**But it is evidence for (a).** Under a species split, "resident" is the species and SRKW
+and NRKW are populations within it — which is option (a)'s shape. Option (b), treating
+SRKW as an ecotype parallel to Bigg's, is merely colloquial today and would be actively
+wrong if the split were adopted. So (a) is robust to both outcomes and (b) is not.
 
 ### Q2 — Are the Southern Residents one acoustic clan or more?
 *Owner: S. Veirs.*
