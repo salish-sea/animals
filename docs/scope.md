@@ -21,6 +21,15 @@ that was expensive to produce: the moderator's judgement.
 The fix is a shared, stable set of identifiers for the animals and groups both systems
 talk about — and a small amount of agreement about what those identifiers mean.
 
+**The goal is one roster where there are currently two and a half**: this register, the
+catalogue inside SalishSea.io, and OrcaSound's free-text tags. The two consumers are not
+alike, though. This repository and SalishSea.io are two interfaces onto the same data —
+the data and the interactive interface — kept in separate repositories only because
+curating a register by pull request and developing an application are such different
+processes. OrcaSound is a genuinely separate project with its own audience and purpose,
+organizationally adjacent, consuming a released artefact. See
+[ADR-0012](../decisions/0012-relationship-to-the-salishsea-io-catalogue.md).
+
 ## What this repository is
 
 A **register**: a list of the individual animals and the groups they belong to, each

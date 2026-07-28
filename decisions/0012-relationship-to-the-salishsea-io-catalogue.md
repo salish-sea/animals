@@ -11,12 +11,15 @@ SalishSea.io already ships a marine-mammal catalogue in production: `individuals
 from a 649-row Bigg's identification file, with public profile pages for individuals,
 matrilines and ecotypes.
 
-**Both are the work of the same author.** This is not two projects negotiating; it is one
-person's quick first pass at the problem and their later, more deliberate one. The
-catalogue was built without a design process; this register was designed without reference
-to the catalogue. Neither is a counterparty to the other, and framing the reconciliation
-as a negotiation would be a category error — the only real question is which model is
-better, one piece at a time.
+**Both are the work of the same author, and they are two interfaces onto one dataset** —
+this repository is the data, SalishSea.io is the interactive interface. They are separate
+repositories because the processes for maintaining them are so different: curation by pull
+request against reviewable text, versus application development. That is a process
+boundary, not a system boundary.
+
+This is not two projects negotiating. It is one person's quick first pass at the problem
+and their later, more deliberate one. Framing the reconciliation as a negotiation would be
+a category error — the only real question is which model is better, one piece at a time.
 
 The two models disagree:
 
@@ -31,12 +34,29 @@ The two models disagree:
 
 ## Decision
 
-**This register is the authority for animal identity in the Salish Sea, and the
-SalishSea.io catalogue reconciles toward it.** The catalogue is a consumer, and its schema
-is expected to migrate rather than to be crosswalked to indefinitely.
+**This register is the authority for animal identity in the Salish Sea. The SalishSea.io
+catalogue stops holding independent identity and becomes a materialization of it.**
 
-Recorded so the direction is not rediscovered or reversed by accident — the author holds
+Not a crosswalk, and not a mirror-plus-translation: the same identifiers, the same
+membership model, the same definitions, loaded into Postgres and presented. The catalogue
+keeps everything that is genuinely its own — occurrences, provenance, profile pages, the
+map — and gives up having a second opinion about which animals exist.
+
+Recorded so the direction is not rediscovered or reversed by accident. The author holds
 both repositories, so nothing external enforces it.
+
+### The two consumers are not alike
+
+| | SalishSea.io | OrcaSound |
+|---|---|---|
+| Relationship | The same data, presented. No translation boundary. | A separate project: distinct audience and purpose, organizationally adjacent. |
+| Coupling | Tight, permanently. Separate repos for process reasons only. | Loose. Consumes a released artefact at a pinned version. |
+| Animal identity of its own | None — materialized from here. | None, and that is the ask in [orcasound/orcasite#1001](https://github.com/orcasound/orcasite/issues/1001), not yet agreed. |
+| Who decides | The author of both. | OrcaSound's contributors. |
+
+Unifying the two on one roster is the goal of this effort. OrcaSound currently carries
+free-text tags (`tag.ex`, `item_tag.ex` in `server/lib/orcasite/radio/`) and no roster;
+the intent is that it never acquires one.
 
 ## What this means for the data
 
@@ -99,6 +119,26 @@ notice and adopt it — not to defend the newer model.
 - Being the authority means being maintained. This sharpens
   [Q8](../docs/open-questions.md) rather than answering it.
 
+### Why SalishSea.io's decision 008 does not apply here
+
+That repository's decision 008 establishes an anti-corruption layer: per-source schemas
+are verbatim mirrors of external APIs, their semantics must never reach `public.*`, and
+native concepts are coined and translated at the boundary.
+
+Read carelessly, it would apply here — and would reproduce exactly the divergence this
+record exists to prevent, by having `public.*` coin its own animal concepts beside the
+register's.
+
+It does not apply, because **the register is not external to SalishSea.io.** Decision 008
+governs sources whose vocabulary that project does not control and cannot stabilize —
+`maplify`, `inaturalist`, `happywhale`. This register is the same project's own data tier,
+maintained by the same person under a defined change process, with permanent identifiers
+and deprecation semantics. There is no foreign vocabulary to be protected from.
+
+So `public.*` carries `SSA:` identifiers directly. No `animals` mirror schema, no
+translation layer. Decision 008 stands unchanged for the sources it was written about, and
+this should be recorded on that side rather than only here.
+
 ## Alternatives considered
 
 - **Reframe this repository as a crosswalk and definitions layer over the SalishSea.io
@@ -109,23 +149,6 @@ notice and adopt it — not to defend the newer model.
   record exists to prevent, and it is the expensive one.
 
 ## Open questions
-
-- **Does this register count as an "upstream source" under SalishSea.io's decision 008?**
-  That record establishes an anti-corruption layer: per-source schemas are verbatim
-  mirrors, their semantics must never reach `public.*`, and native concepts are coined and
-  translated at the boundary. Applied literally to this register, it reproduces exactly
-  the divergence this ADR exists to prevent — a native catalogue with its own semantics
-  beside the register.
-
-  The argument that it does *not* apply: everything decision 008 defends against —
-  undocumented fields, unstable vocabulary, no change process, no deprecation story — is
-  the set of properties this register is being built to have. A governed publication with
-  permanent identifiers and `replaced_by` semantics is structurally closer to that repo's
-  `dwc` export contract than to a scraped API. That suggests a third category alongside
-  mirrors and native domain: **shared contracts**, of which `dwc` is already one.
-
-  This is a change to SalishSea.io's governing principle rather than a schema migration,
-  and it is a prerequisite for the decision above rather than a consequence of it.
 
 - What is the migration sequence, and does the catalogue migrate before or after the
   first OrcaSound bout is tagged? Tagging against identifiers that later change would
