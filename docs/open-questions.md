@@ -57,6 +57,15 @@ Some individual names come from naming programmes with donor relationships or cu
 significance. Some catalogues withhold detail deliberately. Is there anything in scope
 that should not be in a public repository?
 
+### Q13 — Is the plural the right label form for matrilines?
+*Owner: S. Veirs, D. Bain.*
+The register labels matrilines `J17s` and `T090s`, following ordinary spoken and written
+usage, with the bare designation kept as a searchable hidden name. Is that the form a
+curator expects to see in a pick list, or would a catalogue-style `T090 matriline` read
+as more correct? Purely a display question — identity does not depend on it
+([ADR-0003](../decisions/0003-one-identifier-space.md)) — so it is cheap to change now
+and cheap to change later.
+
 ---
 
 ## For the informatics reviewers

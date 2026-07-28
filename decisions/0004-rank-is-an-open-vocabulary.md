@@ -2,7 +2,7 @@
 
 - **Status:** Proposed
 - **Date:** 2026-07-27
-- **Audience:** Science — this decision changes what the data *means*. Needs domain expertise, not software judgement.
+- **Audience:** Scientific reviewers — this decision changes what the data *means*. Needs domain expertise, not software judgement.
 
 ## Context
 

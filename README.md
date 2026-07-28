@@ -44,7 +44,7 @@ end to end, and **[docs/open-questions.md](docs/open-questions.md)** has a secti
 addressed specifically to you. Answering those questions is the single most useful thing
 available.
 
-Decision records marked `Audience: Informatics` are implementation detail. Skip them.
+Decision records addressed to `Informatics reviewers` are implementation detail. Skip them.
 
 ### If you're reviewing the design
 
@@ -89,7 +89,7 @@ SSA:0000001  Southern Resident (ecotype)
   └─ SSA:0000010  Southern Resident community
        └─ SSA:0000011  J clan
             ├─ SSA:0000020  J pod
-            │    └─ SSA:0000030  J17 (matriline)
+            │    └─ SSA:0000030  J17s (matriline)
             │         ├─ SSA:0000105  J17   ← the whale, not the matriline
             │         ├─ SSA:0000101  J35
             │         └─ SSA:0000102  J57
