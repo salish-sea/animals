@@ -1,6 +1,6 @@
 # matriline
 
-**Status:** working
+**Status:** working (usable and in force, but not yet confirmed by a domain expert).
 
 ## Working definition
 

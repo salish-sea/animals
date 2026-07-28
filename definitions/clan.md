@@ -1,6 +1,6 @@
 # clan
 
-**Status:** working — may not be a useful rank, see Q2
+**Status:** working (usable and in force, but not yet confirmed by a domain expert) — may not be a useful rank, see Q2.
 
 ## Working definition
 

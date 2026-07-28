@@ -1,6 +1,6 @@
 # membership
 
-**Status:** working — and the most consequential definition here.
+**Status:** working (usable and in force, but not yet confirmed by a domain expert) — and the most consequential definition here.
 
 ## Working definition
 

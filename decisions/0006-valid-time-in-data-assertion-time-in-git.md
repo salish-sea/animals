@@ -2,7 +2,7 @@
 
 - **Status:** Proposed
 - **Date:** 2026-07-27
-- **Audience:** Informatics
+- **Audience:** Informatics — implementation detail. Safe to skip if you're reviewing the science.
 
 ## Context
 

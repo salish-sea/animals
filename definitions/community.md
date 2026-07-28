@@ -1,6 +1,6 @@
 # community
 
-**Status:** working — possibly redundant, see Q1
+**Status:** working (usable and in force, but not yet confirmed by a domain expert) — possibly redundant with ecotype, see Q1.
 
 ## Working definition
 

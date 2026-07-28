@@ -2,7 +2,7 @@
 
 - **Status:** Proposed
 - **Date:** 2026-07-27
-- **Audience:** Both
+- **Audience:** Both — the sections below are split, so each reviewer can read their half.
 
 ## Context
 
