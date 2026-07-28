@@ -56,6 +56,20 @@ tagged, because tagging against them and then changing our minds means re-taggin
 | [Q13](open-questions.md) | Is `J17s` the canonical written form for a matriline, or would a catalogue write `T090 matriline`? | Display is the consumer's business; this is asking what the community actually writes. |
 | [Q23](open-questions.md) | What are the `AM3`-style Alaska/California designations, and what catalogue are they from? | They are searchable names now; they belong in `mappings.tsv` as a crosswalk. |
 
+## What it looks like right now
+
+[`dist/structure.md`](../dist/structure.md) renders the register's shape inline on
+GitHub. Two things are worth noticing in it:
+
+- **The two ecotypes have different depths.** Bigg's runs individual → matriline →
+  ecotype. Southern Residents run individual → matriline → pod → clan → community. That
+  is expected — Bigg's have no pods — and it is why the register does not assume a fixed
+  hierarchy ([ADR-0004](../decisions/0004-rank-is-an-open-vocabulary.md)).
+- **The Southern Resident branch is currently disconnected.** `community` has nothing
+  above it, so all twelve entities beneath it — J, K and L pods, the matrilines, the
+  individuals — do not roll up to *Orcinus orca*. That is [Q1](open-questions.md), and
+  the diagram is the clearest statement of why it matters.
+
 ## Things to know before you judge the data
 
 - **The Bigg's data is imported, not curated.** 510 individuals and 132 matrilines came

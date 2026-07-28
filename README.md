@@ -100,6 +100,9 @@ sqlite3 register.db 'SELECT sql FROM sqlite_master'
 
 ## The shape of it
 
+[`dist/structure.md`](dist/structure.md) draws it, generated from the data and rendered
+inline by GitHub. In outline:
+
 ```
 SSA:0000001  Southern Resident (ecotype)
   └─ SSA:0000010  Southern Resident community
