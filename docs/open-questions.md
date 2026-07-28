@@ -182,23 +182,6 @@ Unanswered: is a scripted import an acceptable `source_id`? Who mints several hu
 identifiers, and how do two concurrent import branches avoid colliding on `SSA:0000106`?
 ADR-0002's sequential blocks by kind run out at nine matrilines.
 
-### Q20 — `status.tsv` is append-only with no way to retract a claim
-*Owner: P. Abrahamsen.*
-[ADR-0006](../decisions/0006-valid-time-in-data-assertion-time-in-git.md) makes
-`status.tsv` strictly append-only and CI rejects any modified or removed row. There is no
-`supersedes` column, no retraction, and no stated rule for which of two contradictory
-rows wins.
-
-Whales presumed dead do get resighted. Append `alive` after `presumed_dead` and no
-consumer can determine current status — "latest `effective` wins" fails whenever a
-correction carries an earlier valid-time than the claim it corrects, which is the normal
-case for a re-dated death. That breaks [C4](competency-questions.md), asked by
-SalishSea.io and by data QA.
-
-Recommendation: a `supersedes` column naming the row being retracted, plus one sentence
-of precedence rule, plus a validator check. Small, but it changes a table's semantics, so
-it should be your call rather than a drive-by fix.
-
 ### Q21 — Absence and false-positive claims block a consumer today
 *Owner: P. Abrahamsen, S. Veirs.*
 [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) bans `unconfirmed` and
@@ -236,5 +219,16 @@ edition of this register.
 
 ## Answered
 
-*Nothing yet. When a question is resolved, move it here with the answer and, if it
-warranted one, a link to the ADR it produced.*
+### Q20 — `status.tsv` is append-only with no way to retract a claim
+**Resolved 2026-07-27.** `status.tsv` gains a `recorded` column — when *we* wrote the row
+down, distinct from `effective` (when it became true) and `asserted_on` (when the source
+said so). Current status is the row with the greatest `(recorded, effective)`; ties are a
+validation error; retraction without a replacement is an appended `unknown`.
+
+Ordering by `effective` alone was the trap: a correction usually carries an *earlier*
+valid-time than the claim it corrects. And `recorded` is a column rather than git history
+because raw-URL consumers — which ADR-0001 explicitly supports — have no git, so a
+precedence rule requiring `git log` is one most consumers cannot follow.
+
+See [ADR-0006](../decisions/0006-valid-time-in-data-assertion-time-in-git.md), section
+"Precedence".

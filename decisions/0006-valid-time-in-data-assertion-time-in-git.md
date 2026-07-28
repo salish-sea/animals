@@ -29,9 +29,16 @@ Split by the *kind* of change:
   refined birth year, a corrected label — are plain columns, edited in place. **Git
   history is the assertion-time axis.**
 
-`status.tsv` additionally carries `asserted_on`, for when the *upstream source* made the
-claim — which is distinct from both of the above, and is the only one of the three that
-git cannot recover.
+`status.tsv` additionally carries two columns, because three distinct clocks run through
+a life-status claim:
+
+| Column | Answers |
+|---|---|
+| `effective` | When did this become true in the world? |
+| `asserted_on` | When did the upstream source say so? |
+| `recorded` | When did *we* write it down? |
+
+`recorded` is not redundant with git. See "Precedence" below.
 
 ## Implementation
 
@@ -43,6 +50,48 @@ git cannot recover.
   protection is not a nicety here.
 - `status.tsv` is append-only. A correction to a status claim is a new row, not an edit;
   validation rejects deletions of existing status rows in a diff.
+
+### Precedence: which of two competing claims is current
+
+An append-only table needs a stated rule, or a retraction is unresolvable.
+
+> **The current status of an entity is the row with the greatest `(recorded, effective)`,
+> compared in that order.** Ties are a validation error.
+
+Ordering by `effective` alone is wrong, and it is the obvious mistake: a correction very
+often carries an *earlier* valid-time than the claim it corrects. Whales presumed dead do
+get resighted, and a re-dated death moves backwards.
+
+Worked example — J50 is presumed dead, then resighted three years later:
+
+```
+entity_id    status         effective  asserted_on  recorded
+SSA:0000103  alive          2014-12                 2026-07-27
+SSA:0000103  presumed_dead  2018-09    2018-09-13   2026-07-27
+SSA:0000103  alive          2018-09    2029-04-02   2029-04-05   ← wins on `recorded`
+```
+
+The first two rows were entered in one sitting from a single census reading, so they tie
+on `recorded` and are separated by `effective` — which is why the comparison needs both
+keys. The third supersedes on `recorded` despite sharing an `effective` date with the row
+it retracts.
+
+To retract a claim without a replacement, append `unknown`. There is no delete.
+
+### Why `recorded` is a column and not just git
+
+This looks like it contradicts the decision above — assertion time is supposed to live in
+git. The distinction:
+
+- **In-place corrections** are ordered by git, because there is only ever one current
+  value and history is the audit trail.
+- **Append-only rows compete with each other**, so their ordering has to be readable from
+  the data. ADR-0001 commits `dist/` precisely so consumers can fetch a raw URL without a
+  build step — and those consumers have no git at all. A precedence rule that requires
+  `git log` is a rule most consumers cannot follow.
+
+`recorded` must be an exact `YYYY-MM-DD`; a bare year or a range cannot order two claims,
+which is this column's only job.
 - Three timestamps end up available for a status claim: `effective` (world),
   `asserted_on` (source), and the commit date (us). That is the full picture and only
   two of them cost a column.
@@ -54,8 +103,9 @@ git cannot recover.
   consumers record `register_edition` on each annotation.
 - Querying history means shelling out to git rather than issuing a query. Acceptable —
   it is a rare, offline operation, not something a page render does.
-- Anyone who clones without full history loses the assertion-time axis. Shallow clones
-  are fine for consumers reading current state, not for auditing.
+- Anyone who clones without full history loses the assertion-time axis *for in-place
+  corrections*. Shallow clones and raw-URL consumers are fine for current state, and —
+  because of `recorded` — for resolving status precedence too. They cannot audit.
 - If the register ever migrates off git, this axis has to be materialised first. Worth
   remembering before any such migration, not after.
 

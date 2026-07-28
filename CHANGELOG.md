@@ -14,6 +14,8 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 - All decision records are `Proposed`. No definition is `agreed`.
 
 ### Register
+- `status.tsv` gains a `recorded` column and a stated precedence rule, so a retracted
+  life-status claim is resolvable. Consumers must order by `(recorded, effective)`.
 - Reviewed by two independent passes (consistency, gaps); corrections applied and the
   remaining design questions filed as Q15–Q21 rather than resolved silently.
 - Seed data only. Every row carries `source_id = SEED`, meaning **unverified** — the

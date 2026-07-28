@@ -216,8 +216,10 @@ def main() -> int:
     for node in list(parents):
         walk(node, ())
 
-    # --- status: append-only enum with two clocks (ADR-0006) ---
+    # --- status: append-only, three clocks, resolvable precedence (ADR-0006) ---
     STATUSES = ("alive", "presumed_dead", "dead", "unknown")
+    FULL_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+    by_entity: dict = {}
     for s in status:
         check_id(s, "entity_id", entity_ids)
         eid = s["entity_id"].strip()
@@ -229,6 +231,23 @@ def main() -> int:
         check_edtf(s, "asserted_on")
         if not s.get("effective", "").strip():
             err(s["__file"], s["__line"], "effective is required — when did this become true?")
+
+        # `recorded` is the precedence key. It must be exact: a range or a bare year
+        # cannot order two claims, which is the whole job of this column.
+        rec = s.get("recorded", "").strip()
+        if not rec:
+            err(s["__file"], s["__line"],
+                "recorded is required — it is how consumers order competing claims (ADR-0006)")
+        elif not FULL_DATE.match(rec):
+            err(s["__file"], s["__line"],
+                f"recorded={rec!r} must be an exact YYYY-MM-DD; it orders claims")
+        else:
+            key = (rec, s.get("effective", "").strip())
+            if key in by_entity.setdefault(eid, {}):
+                err(s["__file"], s["__line"],
+                    f"ties with line {by_entity[eid][key]} on (recorded, effective) for {eid}; "
+                    "current status would be ambiguous")
+            by_entity[eid][key] = s["__line"]
         check_source(s, source_ids)
 
     # --- mappings: SSSOM-shaped crosswalks (ADR-0008) ---
