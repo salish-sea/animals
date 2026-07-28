@@ -4,6 +4,11 @@
 - **Date:** 2026-07-27
 - **Audience:** Informatics reviewers — implementation detail. Safe to skip if you're reviewing the science.
 
+> **Amended by [ADR-0013](0013-distribution.md).** This record argued "TSV versus a
+> database" as if it were one decision. It is two — what we *edit and review*, and what we
+> *ship* — and everything below concerns only the first. TSV in git remains the source of
+> truth; the shipped artefacts are SQLite and generated TSV.
+
 ## Context
 
 The register has to be edited by a small number of people, reviewed by a mix of
@@ -27,9 +32,9 @@ it.
 - One file per relation. No file has an embedded list, JSON blob, or delimiter-within-a-
   field.
 - A literal tab may never appear in a field. `bin/validate.py` enforces this.
-- `dist/` is committed so consumers can fetch a raw URL without a build step. *Planned,
-  not built:* a generator, and a CI step failing when the committed output differs from a
-  fresh build. Neither exists yet — see `dist/README.md`.
+- `dist/` is committed so consumers can fetch a raw URL without a build step, and CI
+  fails when it differs from a fresh build. Built in
+  [ADR-0013](0013-distribution.md).
 - Editing is by pull request. Provisional entries may be merged with
   `source_id = SEED`, which validation flags as unverified but does not reject — the
   escape hatch matters more than purity. See "Provisional entries" below.

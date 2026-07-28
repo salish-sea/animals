@@ -9,6 +9,11 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Design
+- `schema.sql` now states the constraints declaratively and the build is the validation;
+  `bin/validate.py` keeps only what SQL can't express, plus curator-facing diagnostics.
+- `dist/` carries the derived views as TSV — closure, current status, searchable names,
+  deprecations — so consumers don't reimplement them.
+- Releases carry `register.db`, the TSVs, `schema.sql` and `SHA256SUMS`.
 - Initial scaffold: scope, competency questions, walkthrough, glossary, background,
   open questions, twelve decision records, six definitions, and a validator.
 - All decision records are `Proposed`. No definition is `agreed`.

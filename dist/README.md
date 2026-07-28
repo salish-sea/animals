@@ -1,15 +1,27 @@
 # Generated artefacts
 
-Nothing in this directory is hand-edited. It is built from `data/` and committed so that
-consumers can fetch a raw URL without running a build.
+Nothing here is hand-edited. It is generated from `data/` by:
 
-Not yet implemented. Planned:
+```sh
+python3 bin/validate.py --write-dist
+```
 
-- `register.json` — the whole register in one file
-- `closure.tsv` — precomputed ancestors, so a consumer tagging a matriline can filter by
-  ecotype without walking the graph themselves. Published as data rather than left to
-  each consumer, because otherwise every consumer implements it slightly differently.
-- `register.skos.ttl` — SKOS serialisation for anyone who wants it
+and CI fails if these files differ from a fresh build.
 
-Each artefact should embed the commit it was built from, so an exported snapshot is
-self-describing.
+These are the **derived facts**, published so that no consumer reimplements them and two
+consumers cannot disagree. Each answers a competency question — see
+[docs/competency-questions.md](../docs/competency-questions.md).
+
+| File | Answers |
+|---|---|
+| `ancestor.tsv` | C5, C6 — the transitive closure of membership, precomputed |
+| `current_status.tsv` | C4 — current life status, applying the `(recorded, effective)` precedence rule from ADR-0006 |
+| `searchable_name.tsv` | C2 — preferred names and every alternate, in one place |
+| `retired.tsv` | C9 — deprecated identifiers, marked `automatic` or `needs-human` |
+
+`current_status.tsv` is the one that most earns its place: ordering by `effective` alone
+is wrong, and shipping the answer means nobody has to discover that.
+
+`register.db` — the SQLite build, with the same views live — is **not** committed here. It
+is a release asset, because a binary in git is heavy and unreviewable. See
+[ADR-0013](../decisions/0013-distribution.md).

@@ -63,12 +63,23 @@ with different meanings.
 
 ```
 data/           The register. Tab-separated, normative. See ADR-0001.
+schema.sql      The constraints, declaratively. Normative. See ADR-0013.
 definitions/    What the terms mean. Normative.
 decisions/      Architecture decision records.
 docs/           Scope, competency questions, walkthrough, glossary, background,
                 open questions.
-bin/validate.py The executable form of the schema.
-dist/           Generated artefacts. Never hand-edited.
+bin/validate.py Loads data/ into SQLite built from schema.sql — the build is the
+                validation — then runs the graph checks SQL can't state.
+dist/           Generated derived views. Never hand-edited.
+```
+
+`dist/` is where the work of *consuming* the register is done once instead of per
+consumer: `ancestor.tsv` is the precomputed closure, `current_status.tsv` applies the
+life-status precedence rule, `searchable_name.tsv` merges preferred and alternate names.
+A release also carries `register.db`, the same data as SQLite, which explains itself:
+
+```sh
+sqlite3 register.db 'SELECT sql FROM sqlite_master'
 ```
 
 | File | Holds |
@@ -126,13 +137,17 @@ flags it as unverified and nothing breaks. A slow process is the most likely way
 register fails.
 
 ```sh
-python3 bin/validate.py           # errors fail, unverified rows warn
-python3 bin/validate.py --strict  # warnings fail too
+python3 bin/validate.py               # errors fail, unverified rows warn
+python3 bin/validate.py --write-dist  # regenerate dist/ (CI checks it is current)
+python3 bin/validate.py --strict      # warnings fail too
 ```
 
 ## Versioning
 
-Informal for now: git, with consumers pinning a commit or tag. Releases will be CalVer
+Informal for now: git, with consumers pinning a commit or tag. Released artefacts hang
+off permanent URLs — `releases/latest/download/register.db`, or a tag for a pinned edition
+— with `SHA256SUMS` alongside, so a consumer records the tag *and* the digest it verified
+([ADR-0013](decisions/0013-distribution.md)). Releases will be CalVer
 (`2026.07.1`) rather than SemVer — under the rule that an identifier's meaning never
 changes ([ADR-0010](decisions/0010-identifiers-are-never-reused.md)), a breaking change
 essentially cannot occur, so a major-version signal has nothing to signal. What consumers

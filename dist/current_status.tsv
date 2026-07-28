@@ -1,0 +1,6 @@
+entity_id	status	effective	asserted_on	recorded	source_id
+SSA:0000101	alive	1998		2026-07-27	SEED
+SSA:0000102	alive	2020-09		2026-07-27	SEED
+SSA:0000103	presumed_dead	2018-09	2018-09-13	2026-07-27	SEED
+SSA:0000104	alive	1992		2026-07-27	SEED
+SSA:0000105	alive	1977		2026-07-27	SEED

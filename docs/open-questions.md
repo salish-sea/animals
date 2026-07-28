@@ -144,13 +144,6 @@ Chosen for "Salish Sea Animals". Not checked against
 [Bioregistry](https://bioregistry.io/) or any other prefix registry. Cheap to change
 now, expensive after the first external system stores one.
 
-### Q11 — What is the release artefact, and does it need a stable URL?
-*Owner: P. Abrahamsen.*
-Git tags plus generated files in `dist/` is the current plan, with consumers pinning a
-tag. If identifiers should ever be dereferenceable as URLs
-(`https://salishsea.io/animals/SSA:0000101`), that is a permanent hosting commitment and
-should be decided before anything is published, not after.
-
 ### Q17 — Whose job is designation normalization?
 *Owner: P. Abrahamsen.*
 [Competency question C2](competency-questions.md) ("a moderator typed `T090s` / `J-35` /
@@ -212,6 +205,21 @@ edition of this register.
 ---
 
 ## Answered
+
+### Q11 — What is the release artefact, and does it need a stable URL?
+**Resolved 2026-07-28.** GitHub releases, with the permanent asset URLs GitHub already
+serves:
+
+```
+https://github.com/salish-sea/animals/releases/latest/download/register.db
+https://github.com/salish-sea/animals/releases/download/2026.07.1/register-tsv.tar.gz
+```
+
+That *is* the stable address, it needs no client and no API call, and it carries no
+hosting commitment — which is what made the dereferenceable-identifier version of this
+question look expensive. Not GitHub Packages: it has no generic file registry and no
+ecosystem that serves Elixir, which is what OrcaSound's server runs. See
+[ADR-0013](../decisions/0013-distribution.md).
 
 ### Q21 — Absence and false-positive claims block a consumer today
 **Resolved 2026-07-27, mostly by declining it.** Reading the live bouts, the requested

@@ -1,0 +1,35 @@
+# Cuts a release when a CalVer tag is pushed. The permanent asset URLs
+# (releases/latest/download/<asset>) are the register's distribution interface —
+# see decisions/0013-distribution.md.
+name: release
+
+on:
+  push:
+    tags: ['[0-9][0-9][0-9][0-9].[0-9][0-9].*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Build artefacts
+        run: |
+          python3 bin/validate.py --write-dist --db register.db
+          git diff --exit-code dist/ || {
+            echo "dist/ is stale — run: python3 bin/validate.py --write-dist"; exit 1; }
+          tar czf register-tsv.tar.gz data/ dist/
+          sha256sum register.db register-tsv.tar.gz schema.sql > SHA256SUMS
+          cat SHA256SUMS
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            --title "${{ github.ref_name }}" \
+            --notes "Register edition ${{ github.ref_name }}. Verify with SHA256SUMS; record the tag and digest as \`register_edition\` (ADR-0006)." \
+            register.db register-tsv.tar.gz schema.sql SHA256SUMS
