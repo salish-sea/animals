@@ -148,8 +148,8 @@ Documentation, schema, and code: [CC BY 4.0](LICENSE) and MIT respectively, per
 [LICENSE](LICENSE).
 
 **The data is a separate question and is not yet settled.** Rows derived from external
-catalogues carry their source in `data/sources.tsv`, where `license_status` is currently
-`not-yet-requested` for every one of them. Redistribution permission has not been
+catalogues carry their source in `data/sources.tsv`, where `license_status` is
+`not-yet-requested` for every catalogue we mirror rows from. Redistribution permission has not been
 discussed with the Center for Whale Research, MERS, or finwave. Nothing here should be
 redistributed as a dataset until that is resolved.
 

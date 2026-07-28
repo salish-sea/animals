@@ -74,4 +74,4 @@ seen* would be an occurrence, and is not recorded.
 
 - Humpback and pinniped identity may only be resolvable *through* occurrence context.
   If so, in-scope species may need a different treatment than orcas — see
-  [open-questions.md](../docs/open-questions.md) O1.
+  [competency-questions.md](../docs/competency-questions.md) O1.

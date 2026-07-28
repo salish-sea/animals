@@ -34,7 +34,7 @@ and a category (`biophony`, `anthrophony`, `geophony`). The unit this register i
 consumed by.
 
 ### 💾 Closure (transitive closure)
-The full set of ancestors of an entity, precomputed. If J35 is in matriline J17, in J
+The full set of ancestors of an entity, precomputed. If J35 is in matriline J17s, in J
 pod, in J clan, then J35's closure includes all of them — so a search for "J pod"
 finds a bout tagged only with a matriline. Generated into `dist/`, never hand-edited.
 
@@ -53,8 +53,11 @@ at their replacement. See [ADR-0010](../decisions/0010-identifiers-are-never-reu
 
 ### 💾 EDTF (Extended Date/Time Format)
 A date notation that can express uncertainty and ranges: `1998`, `2020-09`,
-`1995/1998` ("sometime between"), `1998?` ("probably"). Used for `born` because whale
-birth years are frequently estimates.
+`1995/1998` ("sometime between"), `../1966` ("no later than"), `1968/..` ("no earlier
+than"). Two distinct qualifiers, easily confused: `1998?` is *uncertain* (we're not sure
+it's 1998) and `1979~` is *approximate* (about 1979). Used for `born`, because catalogues
+record most birth years as estimates or open-ended bounds for animals first seen as
+adults.
 
 ### 🐋 Ecotype
 A genetically and behaviourally distinct population within a species. Not a formal
@@ -101,6 +104,13 @@ identifiers become lies when the thing they describe changes. See
 ### 🐋 Pod
 A stable group of related matrilines that travel together, used for resident killer
 whales. Bigg's do not use this rank. See [definitions/pod.md](../definitions/pod.md).
+
+### ⚖️ Rank
+The level of a group in this register: ecotype, community, clan, pod, matriline. **Not a
+taxonomic rank** — an ecotype is explicitly not a formal taxon
+([ADR-0008](../decisions/0008-species-identity-is-delegated.md)), and the levels are
+social, not Linnaean. The list is open and not every population uses every level; Bigg's
+have no pods. See [ADR-0004](../decisions/0004-rank-is-an-open-vocabulary.md).
 
 ### ⚖️ Register
 A curated list of individually identified things, each with a permanent identifier.

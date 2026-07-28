@@ -39,10 +39,12 @@ Validation enforces:
 
 - Exactly one of `replaced_by` / `consider` is populated.
 - Every referenced identifier exists in `entities.tsv`.
-- A deprecated identifier is never itself a `replaced_by` target (no chains into dead
-  ends). Chains through *live* identifiers are permitted and consumers must follow them.
-- No identifier present in git history is absent from `entities.tsv` without a
-  corresponding deprecation row.
+- A deprecated identifier is never itself a `replaced_by` or `consider` target, so a
+  successor is always live and a consumer never has to chase a chain.
+- No identifier present in git history is ever absent from `entities.tsv` — removal is
+  never permitted, with or without a deprecation row. Enforced in CI rather than in
+  `bin/validate.py`, and only against the pull-request base, so branch protection is what
+  actually makes this hold.
 
 Deprecated entities **stay in `entities.tsv`** and keep resolving to a label. They are
 excluded from autocomplete and from new annotations, but a 2025 record referencing one

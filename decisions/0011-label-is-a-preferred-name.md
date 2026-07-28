@@ -1,7 +1,7 @@
 # ADR-0011: The label is a preferred name, not a display string
 
 - **Status:** Proposed
-- **Date:** 2026-07-28
+- **Date:** 2026-07-27
 - **Audience:** Scientific and informatics reviewers — the sections below are split, so each can read their half.
 
 ## Context

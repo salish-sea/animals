@@ -28,9 +28,9 @@ refuses to absorb as what it holds.
 
 ## Step 1 — What the moderator does
 
-The moderator types as they do now. Autocomplete matches against `names.tsv`, including
-`hidden` names, so typing `SRKW` finds the Southern Resident ecotype even though `SRKW`
-is never displayed as a label.
+The moderator types as they do now. Autocomplete matches against preferred names in
+`entities.tsv` and every alternate in `names.tsv`, including `hidden` ones — so typing
+`SRKW` finds the Southern Resident ecotype even though `SRKW` is not offered as its name.
 
 For the hedge, they pick `L pod` and set certainty to `possible`. They do **not** pick a
 different term. There is no `L?` entity and there never will be — see

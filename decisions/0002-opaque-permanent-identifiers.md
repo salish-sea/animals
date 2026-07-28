@@ -46,7 +46,9 @@ The cost is real: you cannot read `SSA:0000020` and know what it is. Which is wh
   Note that diff readability is a *by-product* of the preferred name being there, not the
   reason the column exists — see [ADR-0011](0011-label-is-a-preferred-name.md).
 - In `membership.tsv`, where both columns are identifiers, the `note` field carries the
-  human reading. Validation does not check it — it's a comment.
+  human reading. It is prose, not a field with semantics — though validation does make one
+  best-effort keyword check against it, see
+  [ADR-0005](0005-membership-is-genealogical.md).
 - Numbers are assigned sequentially from blocks by kind, purely for legibility when
   scanning a file: `0000001+` ecotypes, `0000010+` communities and clans, `0000020+`
   pods, `0000030+` matrilines, `0000101+` individuals. **These blocks carry no
@@ -62,8 +64,10 @@ The cost is real: you cannot read `SSA:0000020` and know what it is. Which is wh
 - Consumers must join to display anything, so every consumer needs the register loaded,
   not just referenced.
 - Debugging is harder. A log line with `SSA:0000104` in it requires a lookup.
-- Nobody will ever type an identifier by hand, which means autocomplete over
-  `names.tsv` is not a nicety — it is the only usable interface.
+- Nobody will ever type an identifier by hand, which means autocomplete is not a nicety
+  — it is the only usable interface. It must read **both** `entities.tsv` (preferred
+  names) and `names.tsv` (alternates); searching only the latter misses every preferred
+  name, including `T090s`.
 
 ## Alternatives considered
 

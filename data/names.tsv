@@ -1,18 +1,18 @@
 entity_id	name	type	language	source_id	note
 SSA:0000001	SRKW	hidden	en	SEED	Common abbreviation; matches in search, never displayed.
-SSA:0000001	Southern Resident killer whale	common	en	SEED
+SSA:0000001	Southern Resident killer whale	common	en	SEED	
 SSA:0000002	Transient	historical	en	SEED	Superseded term; retained so historical text still resolves.
 SSA:0000002	Biggs	hidden	en	SEED	Apostrophe-free spelling, for autocomplete.
-SSA:0000002	Bigg's killer whale	common	en	SEED
+SSA:0000002	Bigg's killer whale	common	en	SEED	
 SSA:0000020	Js	hidden	en	SEED	As used in bout name "Faint Js".
-SSA:0000101	Tahlequah	common	en	SEED
+SSA:0000101	Tahlequah	common	en	SEED	
 SSA:0000101	J-35	hidden	en	SEED	Hyphenated spelling.
-SSA:0000102	Phoenix	common	en	SEED
-SSA:0000103	Scarlet	common	en	SEED
-SSA:0000104	Onyx	common	en	SEED
-SSA:0000105	Princess Angeline	common	en	SEED
+SSA:0000102	Phoenix	common	en	SEED	
+SSA:0000103	Scarlet	common	en	SEED	
+SSA:0000104	Onyx	common	en	SEED	
+SSA:0000105	Princess Angeline	common	en	SEED	
 SSA:0000030	J17	hidden	en	SEED	Bare designation, as used in catalogues.
-SSA:0000030	J17 matriline	hidden	en	SEED
+SSA:0000030	J17 matriline	hidden	en	SEED	
 SSA:0000031	L32	hidden	en	SEED	Bare designation, as used in catalogues.
 SSA:0000040	T090	hidden	en	SEED	Bare designation, as used in catalogues.
-SSA:0000040	T090 matriline	hidden	en	SEED
+SSA:0000040	T090 matriline	hidden	en	SEED	

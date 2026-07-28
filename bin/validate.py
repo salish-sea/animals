@@ -21,8 +21,14 @@ DATA = ROOT / "data"
 
 ID_RE = re.compile(r"^SSA:\d{7}$")
 CURIE_RE = re.compile(r"^[A-Za-z][A-Za-z0-9_.]*:[A-Za-z0-9_.\-]+$")
-# EDTF subset we accept: 1998 | 1998? | 1998-09 | 1998-09-13 | 1995/1998
-EDTF_RE = re.compile(r"^\d{4}(-\d{2}(-\d{2})?)?\??$|^\d{4}/\d{4}$")
+# EDTF subset. Qualifiers: ? uncertain, ~ approximate, % both.
+# Accepts 1998 | 1998? | 1979~ | 1998-09 | 1998-09-13 | 1995/1998 | ../1966 | 1968/..
+# The open-ended forms matter: source catalogues record birth years as "<=1966" and
+# "<1969" for animals first seen as adults, and those are the majority of unknown dates.
+_EDTF_DATE = r"\d{4}(?:-\d{2}(?:-\d{2})?)?[?~%]?"
+EDTF_RE = re.compile(
+    rf"^(?:{_EDTF_DATE}|{_EDTF_DATE}/{_EDTF_DATE}|\.\./{_EDTF_DATE}|{_EDTF_DATE}/\.\.)$"
+)
 HEDGE_RE = re.compile(r"\?\s*$|^(unconfirmed|unknown|false[- ]positive|maybe)$", re.I)
 
 errors: list[str] = []
@@ -38,7 +44,11 @@ def warn(f: str, line: int, msg: str) -> None:
 
 
 def read(name: str) -> list[dict]:
-    """Read a TSV. Rejects embedded tabs and ragged rows before parsing (ADR-0001)."""
+    """Read a TSV. Rejects ragged rows in both directions before parsing (ADR-0001).
+
+    Short rows are an error, not something to pad: a row with an embedded tab AND an
+    omitted trailing column would otherwise parse cleanly with every field shifted.
+    """
     path = DATA / name
     if not path.exists():
         err(name, 0, "file is missing")
@@ -55,10 +65,10 @@ def read(name: str) -> list[dict]:
             err(name, i, "blank line")
             continue
         cells = line.split("\t")
-        if len(cells) > width:
-            err(name, i, f"{len(cells)} fields, header has {width}; embedded tab?")
+        if len(cells) != width:
+            err(name, i, f"{len(cells)} fields, header has {width}"
+                         + ("; embedded tab?" if len(cells) > width else "; pad with tabs"))
             continue
-        cells += [""] * (width - len(cells))
         row = dict(zip(header, cells))
         row["__line"] = i
         row["__file"] = name

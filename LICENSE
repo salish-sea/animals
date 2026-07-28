@@ -28,8 +28,10 @@ CODE (bin/, .github/) — MIT.
 DATA (data/) — NOT YET LICENSED.
 
 Rows in data/ are derived from external catalogues maintained by other organisations.
-Redistribution permission has not been requested from any of them; data/sources.tsv
-records license_status = not-yet-requested for every external source.
+Redistribution permission has not been requested from any of the catalogues we mirror
+rows from; data/sources.tsv records license_status = not-yet-requested for each of them.
+(NCBI and WoRMS are marked cleared, but we reference their identifiers rather than
+redistributing their content.)
 
 Facts are not copyrightable in the United States, but the selection and arrangement of
 a catalogue can be, database rights differ in other jurisdictions, and some individual

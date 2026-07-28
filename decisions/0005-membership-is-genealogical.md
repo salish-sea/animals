@@ -64,8 +64,10 @@ before death. Three reasons, in order of importance:
   `interval ∩ lifespan`.
 - **`end` is never used to record a death.** That is `status.tsv`'s job, and duplicating
   it in two files creates a consistency hazard where one copy can be corrected and the
-  other silently not. Validation rejects a non-empty `end` on an individual edge whose
-  note indicates death.
+  other silently not. Validation makes a *best-effort* check — it rejects a non-empty
+  `end` whose note contains a death keyword. This is a backstop against the obvious
+  mistake, not a real constraint: it is prose matching, evaded by "passed away" or a
+  blank note, and a curator is the actual enforcement.
 - A non-empty `end` on an individual edge therefore means dispersal, and nothing else.
 - Dates are EDTF, so an approximate dispersal year is expressible.
 

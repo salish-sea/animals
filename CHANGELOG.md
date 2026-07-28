@@ -10,10 +10,12 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ### Design
 - Initial scaffold: scope, competency questions, walkthrough, glossary, background,
-  open questions, ten decision records, six definitions, and a validator.
+  open questions, twelve decision records, six definitions, and a validator.
 - All decision records are `Proposed`. No definition is `agreed`.
 
 ### Register
+- Reviewed by two independent passes (consistency, gaps); corrections applied and the
+  remaining design questions filed as Q15–Q21 rather than resolved silently.
 - Seed data only. Every row carries `source_id = SEED`, meaning **unverified** — the
   seed exists to make the schema concrete and to give the walkthrough something to
   point at. It must be replaced or confirmed by a curator before any consumer relies

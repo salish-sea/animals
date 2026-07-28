@@ -37,6 +37,6 @@ time, but the register does not depend on it — see ADR-0003.
   become a new group? This determines whether fission is a temporal change or a
   deprecation. See [membership.md](membership.md).
 - How are Bigg's matrilines named when the matriarch is unidentified?
-- Is the plural the right display form in every context, or does it read as informal
-  where a catalogue would write "T090 matriline"? Naming-convention question for the
-  scientific reviewers — see [open-questions.md](../docs/open-questions.md) Q13.
+- Is the plural the canonical written form, or does it read as informal where a
+  catalogue would write "T090 matriline"? A question about the community's usage, not
+  about UI — see [open-questions.md](../docs/open-questions.md) Q13.

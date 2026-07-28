@@ -19,7 +19,24 @@ A record may name either, or both. Moderators who apply the vocabulary, and peop
 implementing a downstream consumer, are plausible future audiences; neither has a record
 addressed to it yet.
 
-**All records are currently `Proposed`.** Nothing has been ratified.
+## How a record becomes Accepted
+
+Without a stated rule, nothing is ever ratified — and "the change process is too slow" is
+failure mode #3 in [background.md](../docs/background.md). So:
+
+- A record is **Proposed** when merged. Merging a proposal is cheap and commits nobody.
+- It becomes **Accepted** when the reviewers named in its Audience line have had a stated
+  window to object and have not — two weeks, or sooner if they say so explicitly. The
+  window starts when the record is announced to them, not when it is merged.
+- Silence from an audience that was never actually asked does not count. If nobody with
+  the relevant expertise has looked, the record stays Proposed and that is informative.
+- **Superseded** records keep their file and gain a pointer.
+
+Definitions follow the same shape with `working` → `agreed`; see
+[definitions/README.md](../definitions/README.md).
+
+**All records are currently `Proposed`.** Nothing has been ratified, and nothing has yet
+been formally put to the scientific reviewers.
 
 | # | Decision | Audience |
 |---|---|---|
@@ -34,6 +51,7 @@ addressed to it yet.
 | [0009](0009-uncertainty-on-the-annotation.md) | Uncertainty belongs on the annotation, not in the vocabulary | Scientific + informatics |
 | [0010](0010-identifiers-are-never-reused.md) | Identifiers are never deleted or reused | Informatics reviewers |
 | [0011](0011-label-is-a-preferred-name.md) | The label is a preferred name, not a display string | Scientific + informatics |
+| [0012](0012-relationship-to-the-salishsea-io-catalogue.md) | This register is authoritative; the SalishSea.io catalogue reconciles toward it | Scientific + informatics |
 
 ## Template
 

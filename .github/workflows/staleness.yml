@@ -1,0 +1,39 @@
+# Neglect is failure mode #1 (docs/background.md). A repository nobody touches emits no
+# signal, which is exactly the condition being guarded against — so this runs on a
+# schedule rather than on push, and is the only job here that can fail while nothing
+# has changed.
+name: staleness
+
+on:
+  schedule:
+    - cron: "0 15 * * 1"   # Mondays, 15:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Warn on sources not checked in 6 months
+        run: |
+          stale=0
+          cutoff=$(date -u -d '6 months ago' +%Y-%m-%d)
+          while IFS=$'\t' read -r id name url scope license status retrieved note; do
+            [ "$id" = "source_id" ] && continue
+            [ "$id" = "SEED" ] || [ "$id" = "EDITORS" ] && continue
+            if [ -z "$retrieved" ]; then
+              echo "::warning::$id has never been retrieved (retrieved_on is empty)"
+              stale=1
+            elif [ "$retrieved" \< "$cutoff" ]; then
+              echo "::warning::$id last retrieved $retrieved, older than $cutoff"
+              stale=1
+            fi
+          done < data/sources.tsv
+          if [ "$stale" = 1 ]; then
+            echo "Sources are stale or unverified. See docs/open-questions.md Q8."
+            exit 1
+          fi

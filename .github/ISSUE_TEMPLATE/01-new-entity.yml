@@ -14,7 +14,7 @@ body:
     id: label
     attributes:
       label: Label
-      description: How it should be displayed, e.g. "T090" or "J60"
+      description: The canonical name for this entity, e.g. "T090s" (a matriline) or "J60" (a whale). Not a display string — consumers compose their own. See ADR-0011.
     validations: {required: true}
   - type: dropdown
     id: kind

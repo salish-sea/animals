@@ -1,7 +1,7 @@
 entity_id	status	effective	asserted_on	source_id	note
-SSA:0000101	alive	1998		SEED
-SSA:0000102	alive	2020-09		SEED
-SSA:0000103	alive	2014-12		SEED
+SSA:0000101	alive	1998		SEED	
+SSA:0000102	alive	2020-09		SEED	
+SSA:0000103	alive	2014-12		SEED	
 SSA:0000103	presumed_dead	2018-09	2018-09-13	SEED	Dates unverified. Illustrates the effective/asserted split: the animal was last seen in early September and declared deceased some days later.
-SSA:0000104	alive	1992		SEED
-SSA:0000105	alive	1977		SEED
+SSA:0000104	alive	1992		SEED	
+SSA:0000105	alive	1977		SEED	

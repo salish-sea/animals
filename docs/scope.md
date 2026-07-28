@@ -44,10 +44,13 @@ into a competing database that will drift from the sources it depends on.
   this register.
 - **Not a photo-ID catalogue.** No images, no fin matching. We record that the Center
   for Whale Research says J35 exists; we do not duplicate their catalogue.
-- **Not a replacement for CWR, MERS, DFO, or finwave.** Those are the authorities. This
-  register mirrors the parts two named systems need and points back.
-- **Not a health, genealogy, or life-history database.** Membership and life status
-  only. Parentage is implied by matriline membership and not recorded separately.
+- **Not a replacement for CWR, MERS, DFO, or finwave.** Those are the upstream
+  authorities. This register mirrors the parts two named systems need and points back.
+  (SalishSea.io's own catalogue is *downstream*, not an authority — see below.)
+- **Not a health or life-history database.** Membership and life status only.
+  Whether parentage belongs here is unresolved — see [Q16](open-questions.md). Note that
+  it is *not* recoverable from membership: a matriline spans generations, so membership
+  implies descent from the matriarch, not from a mother.
 - **Not the sound vocabulary.** Signal types (calls, whistles, clicks, S01–S42) live in
   [orcasound/signals-srkw](https://github.com/orcasound/signals-srkw). See "Relationship
   to signals-srkw" below.
@@ -62,6 +65,21 @@ initially:
 - *Megaptera novaeangliae* (humpback) — individuals where a catalogue exists.
 - Pinnipeds and other species at the species level only, via `taxon_id`, with no
   register entities of their own until someone needs them.
+
+## Relationship to the SalishSea.io catalogue
+
+SalishSea.io already ships a marine-mammal catalogue in production — individuals, social
+groups, designations, memberships and nicknames, seeded from a 649-row Bigg's file, with
+public profile pages. This register was designed without reference to it.
+
+**This register is authoritative for animal identity; that catalogue reconciles toward
+it.** It is a consumer with an existing schema to migrate, not a peer authority. See
+[ADR-0012](../decisions/0012-relationship-to-the-salishsea-io-catalogue.md).
+
+The differences are not simply errors, though. Each exists because real data demanded it
+— associational rosters, parentage-derived matrilines, designation normalization, named
+groups with no rank — and each is a requirement this register must meet before the
+migration is possible. They are tracked as Q15–Q19.
 
 ## Relationship to signals-srkw
 

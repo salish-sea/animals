@@ -33,16 +33,17 @@ The matriline takes the **plural** form — `J17s`, `T090s` — which is how the
 ordinarily writes it. The bare designation (`J17`, `T090 matriline`) is recorded in
 `names.tsv` as a `hidden` name, so a curator typing either form finds the right entity.
 
-**The plural convention is a display choice, not the thing that keeps them apart.** This
-distinction matters, because it is tempting to conclude that distinct labels solve the
-problem. They do not, for three reasons:
+**The plural is a naming convention, not the thing that keeps them apart.** It is a claim
+about what the matriline is *called* — a preferred name in the sense of
+[ADR-0011](0011-label-is-a-preferred-name.md), not a display string. It is tempting to
+conclude that distinct names solve the problem. They do not, for three reasons:
 
 - The convention is not universal. Catalogues write `T090 matriline`; a curator may
   reasonably enter the bare form.
 - It does not extend to other ranks. A pod is `J pod`, not `Js` — though "the Js" does
   appear in bout names and is recorded as a hidden name.
-- Labels are mutable by design ([ADR-0002](0002-opaque-permanent-identifiers.md)). If
-  the naming convention changed tomorrow, identity must not change with it.
+- Preferred names are mutable by design ([ADR-0002](0002-opaque-permanent-identifiers.md)).
+  If the naming convention changed tomorrow, identity must not change with it.
 
 The matriline and the matriarch are separate entities because they are separate things:
 "J17 was born in 1977" and "J17s travel with J pod" are claims about different subjects,
@@ -58,9 +59,10 @@ distinction in the string, and every consumer would have to parse it correctly f
   individuals.
 - `membership.tsv` is uniform: any entity may appear in either column. Validation
   enforces that `group_id` refers to a row with `kind = group`.
-- Validation warns when two entities share a label at the same `kind` and `rank`, which
-  is almost always a mistake. It does not warn across kinds, because a matriline and its
-  matriarch legitimately share a designation even when the display labels differ.
+- Validation warns when two entities share a preferred name at the same `kind` and
+  `rank`, which is almost always a mistake. It does not warn across kinds, because a
+  matriline and its matriarch legitimately share a designation even when their preferred
+  names differ.
 
 ## Consequences
 
@@ -69,11 +71,11 @@ distinction in the string, and every consumer would have to parse it correctly f
 - Type confusion becomes possible: nothing structurally prevents tagging a bout with a
   matriline where an individual was meant. Consumers should filter by `kind` in their
   UI rather than relying on the register to prevent it.
-- Autocomplete must still show `kind` and `rank` alongside the label. The plural
-  convention separates the two entities on *display*, but not in *search*: `J17` is the
-  individual's primary label and also a hidden name on the matriline, so a curator typing
-  it sees both and needs the rank to choose. That is the desired behaviour — they may
-  well have meant either — but it means the picker cannot present a bare label alone.
+- Autocomplete must still show `kind` and `rank` alongside the name. The plural
+  convention separates the two entities by *preferred name*, but not by *what a curator
+  types*: `J17` is the individual's preferred name and also a hidden name on the
+  matriline, so typing it surfaces both. That is the desired behaviour — they may well
+  have meant either — but it means a consumer cannot present a bare name alone.
 
 ## Alternatives considered
 
