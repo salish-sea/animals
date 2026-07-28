@@ -152,10 +152,12 @@ python3 bin/validate.py --strict      # warnings fail too
 
 ## Versioning
 
-Informal for now: git, with consumers pinning a commit or tag. Released artefacts hang
-off permanent URLs — `releases/latest/download/register.db`, or a tag for a pinned edition
-— with `SHA256SUMS` alongside, so a consumer records the tag *and* the digest it verified
-([ADR-0013](decisions/0013-distribution.md)). Releases will be CalVer
+A release is a CalVer tag push, cut on demand — during active development, possibly
+several a day. Consumers pin a tag rather than a commit, so tagging often drags nobody
+along. Released artefacts hang off permanent URLs — `releases/latest/download/register.db`
+for the tip, or a tag for a pinned edition — with `SHA256SUMS` alongside, so a consumer
+records the tag *and* the digest it verified
+([ADR-0013](decisions/0013-distribution.md)). Releases are CalVer
 (`2026.07.1`) rather than SemVer — under the rule that an identifier's meaning never
 changes ([ADR-0010](decisions/0010-identifiers-are-never-reused.md)), a breaking change
 essentially cannot occur, so a major-version signal has nothing to signal. What consumers

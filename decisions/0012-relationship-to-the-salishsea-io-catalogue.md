@@ -50,9 +50,22 @@ both repositories, so nothing external enforces it.
 | | SalishSea.io | OrcaSound |
 |---|---|---|
 | Relationship | The same data, presented. No translation boundary. | A separate project: distinct audience and purpose, organizationally adjacent. |
-| Coupling | Tight, permanently. Separate repos for process reasons only. | Loose. Consumes a released artefact at a pinned version. |
+| Coupling | Tight, permanently. Separate repos for process reasons only. | Loose: a separate project's own model, referencing ours. |
+| How it consumes | A released artefact at a pinned tag. | The same. |
 | Animal identity of its own | None — materialized from here. | None, and that is the ask in [orcasound/orcasite#1001](https://github.com/orcasound/orcasite/issues/1001), not yet agreed. |
 | Who decides | The author of both. | In practice S. Veirs, whose initiative the whole effort is, plus this repository's author. See below. |
+
+**Tight coupling is a claim about the model, not about the transport.** SalishSea.io is
+tightly coupled in that it holds no animal identity of its own and cannot disagree with
+this register. It is not tightly coupled in the sense of reading this working tree: it
+fetches a released artefact at a pinned tag and records the tag and the digest it
+verified, exactly as OrcaSound does
+([ADR-0013](0013-distribution.md), [ADR-0006](0006-valid-time-in-data-assertion-time-in-git.md)).
+
+Tracking the repository directly would tie deployments to whatever `main` happened to
+hold rather than to a published edition, and would leave the register with two
+distribution paths where only one is exercised. Being the same author's other project is
+a reason to trust the data, not a reason to skip the front door.
 
 Unifying the two on one roster is the goal of this effort. OrcaSound currently carries
 free-text tags (`tag.ex`, `item_tag.ex` in `server/lib/orcasite/radio/`) and no roster;

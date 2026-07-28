@@ -64,9 +64,12 @@ Four reasons that matters, in rough order of weight:
 
 ## Consequences
 
-- Consumers are stale between editions, by design. The release cadence has to match the
-  cadence at which the world actually changes, which for a census-driven roster is a few
-  times a year rather than continuously.
+- Consumers are stale between editions, by design. *How* stale is a function of release
+  cadence, which is demand-driven rather than fixed: several a day while the register is
+  under active development, and in steady state as often as something changes — a
+  census-driven roster moves a few times a year, plus corrections whenever they arrive.
+  Cadence is stated in [ADR-0013](0013-distribution.md); what matters here is only that
+  staleness between editions is a design property and not a defect.
 - A newly confirmed calf is not taggable until an edition ships. This is the sharpest cost
   and the reason for the provisional tier in
   [ADR-0001](0001-tsv-in-git-as-source-of-truth.md): a curator can merge a `SEED` row and

@@ -145,16 +145,45 @@ A package manager would have given integrity hashes and pinning for free, which 
 have consumers record the tag **and the digest they verified**. That is more honest than a
 lockfile anyway, since it survives the file being fetched from anywhere.
 
+### Cadence, and who cuts a release
+
+**A release is a tag push, never a push to `main`.** `release.yml` triggers on a CalVer
+tag; `validate.yml` runs on every push and pull request and publishes nothing. Cadence is
+therefore a decision someone makes, not a consequence of merging.
+
+**Releases are cut on demand, and during active development that may be several a day.**
+CalVer's third component is a sequence within the month, so `2026.07.1` … `2026.07.14` is
+an ordinary month rather than a pathological one. In steady state the rate falls to
+whatever the roster does — census-driven, so a few times a year, plus corrections. Cadence
+tracks demand in both directions; it is not a schedule. [ADR-0014](0014-a-publication-not-a-service.md)
+depends only on there being editions to be stale between, not on how often they arrive.
+
+Frequent tagging costs consumers nothing, and this is the reason the question of release
+churn dissolves rather than needing a `release` branch to answer it: **nothing is dragged
+along by a tag.** Both consumers pin a tag and record a digest, so each moves when it
+decides to. Only `releases/latest/download/` tracks the tip, and that is for third
+parties and notebooks that asked for exactly that. A release branch would also have
+nothing to hold — it earns its keep when fixes must be backported to a maintained old
+line, and corrections here are append-only and forward-only
+([ADR-0006](0006-valid-time-in-data-assertion-time-in-git.md),
+[ADR-0010](0010-identifiers-are-never-reused.md)), so no old edition is ever patched.
+
+**P. Abrahamsen cuts releases today**, which works only because tagging and curation are
+currently the same person. Widening that — S. Veirs is the obvious second — means making
+the authority delegable without also handing over the ability to publish an arbitrary
+artefact under the register's name. Unresolved; see [Q25](../docs/open-questions.md).
+
 ## Consequences
 
 - Both consumers are Postgres — OrcaSound runs `ash_postgres`, SalishSea.io runs Supabase
   — so neither will ever *query* the SQLite file. The TSVs are the integration path and
   the `.db` is a byproduct that happens to be useful to others. Building it is still
   worthwhile because it is *how the constraints get checked*.
-- The two consumers consume differently, per
-  [ADR-0012](0012-relationship-to-the-salishsea-io-catalogue.md): SalishSea.io is tightly
-  coupled and may track the repository directly at a pinned commit; OrcaSound fetches a
-  released artefact at a tag.
+- **Both consumers consume the same way**: a released artefact at a pinned tag, with the
+  tag and digest recorded. SalishSea.io's tight coupling
+  ([ADR-0012](0012-relationship-to-the-salishsea-io-catalogue.md)) is a statement about
+  the model — it holds no identity of its own — not about the transport. One distribution
+  path means one path to keep working.
 - `schema.sql` is not a schema either consumer adopts. Both have their own migration
   systems and neither wants a foreign one imposed. It is a contract to translate.
 - The build is now load-bearing: a broken build means no artefacts. The TSVs remain
@@ -178,6 +207,11 @@ lockfile anyway, since it survives the file being fetched from anywhere.
 
 - Should `dist/` artefacts embed the commit they were built from? Yes, almost certainly —
   it makes an exported snapshot self-describing. Not yet done.
-- Is `--strict` ever runnable? It fails on all 69 SEED warnings today, which is correct,
-  but it means no release can be cut until the seed data is verified. That may be the
-  right forcing function or an obstacle; it has not been tested against a real release.
+- Should `--strict` gate a release? It is not wired to one today — `release.yml` runs the
+  ordinary validator — so the forcing function this ADR wondered about is not currently
+  in force. It also sums two unlike warnings: 69 `SEED` rows, which are provenance debt
+  retired by citing a source, and 13 unreachable entities, which are a modelling gap
+  ([Q1](../docs/open-questions.md)) that no amount of verification will close. Gating on
+  the total would block every release on an unrelated question. The alternative to a gate
+  is to have each edition state its own warning counts, so a consumer can see how much of
+  it is unverified instead of being promised that none of it is.
