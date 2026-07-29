@@ -239,35 +239,6 @@ perhaps a `dist/` lookup of normalized form → identifier), or it states that m
 a consumer concern and C2 is downgraded. Two implementations that disagree is precisely
 the failure this register exists to prevent.
 
-### Q18 — Adopt the confidence/verification split in the annotation shape
-*Owner: P. Abrahamsen.*
-[ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) sketches an annotation
-carrying `certainty` and `evidence`. An earlier pass at the same problem — the
-SalishSea.io catalogue, same author — shipped a different shape:
-`identification_evidence`, `identification_method`, and `identification_status`
-(candidate / validated / rejected).
-
-That model separates *evidence* from *method*, and separates the **asserter's confidence**
-from the **dataset's verification status**. ADR-0009's table collapses the last two, so a
-moderator's `possible` that a curator later confirms has nowhere to land. The earlier
-model is better on this point.
-
-**This is agreed, not disputed.** ADR-0009 says so itself, and in the same breath declines
-the ownership this question used to accuse it of: the annotation "constrains **consumers**,
-not this repository", and the ADR "does **not** make this repository the owner of
-annotation semantics". So what is left is not a reconciliation between two positions but a
-piece of work — carrying the split into the sketch — and it should be done before either
-system has data. Where the resulting shape is *implemented*, and who decides its final
-form, is the consuming system's business.
-
-**A signal must also be taggable with no animal tag** (from Q7, resolved). A moderator may
-know the call type and not the producer: `Humpback mimics Bigg's?` is exactly that case.
-If every signal annotation requires an animal, the honest answer is unavailable and the
-nearest available one is a species claim nobody intended — tagging `Bigg's` for a sound
-suspected to have come from a humpback. This is a data-quality risk to the register even
-though it is not a register question, because the bad tags land in annotations that cite
-register identifiers.
-
 ### Q24 — Does releasing the register republish the Bigg's sheet?
 *Owner: P. Abrahamsen.*
 D-21 in `salishsea-io/docs/rights-policy.md` §7.1 concludes that the sheet's factual
@@ -395,6 +366,34 @@ not. See [ADR-0016](../decisions/0016-parentage.md).
 The false claim that parentage was "implied by matriline membership" is gone from
 `scope.md` and `competency-questions.md`, where "who is this animal's mother?" is now C13
 rather than an entry on the deliberately-unanswerable list.
+
+### Q18 — Adopt the confidence/verification split in the annotation shape
+**Closed 2026-07-29 by relocation, not by answer.** The work is real and still to be done;
+it is not this repository's, and holding it open here was the last place this repo was
+still acting as owner of a shape it disclaims owning four times over. See
+[ADR-0018](../decisions/0018-annotation-semantics-belong-to-consumers.md).
+
+The substance, carried over so nothing is lost in the move:
+
+- SalishSea.io's `public.identifications` separates *evidence* (what the claim rests on)
+  from *method* (how it was captured), and separates the **asserter's confidence** from the
+  **dataset's verification status** (`candidate` / `validated` / `rejected`).
+  [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md)'s sketch collapses the
+  last two, so a moderator's `possible` that a curator later confirms has nowhere to land.
+  The shipped model is better and the sketch now defers to it.
+- **A signal must be recordable with no animal named** (from Q7). A moderator may know the
+  call type and not the producer. In the shipped model that is an occurrence with zero
+  identifications rather than a nullable subject — structurally available, but worth
+  confirming the *interface* permits it, because a form that demands a tag produces the
+  same bad data as a schema that does.
+- The one genuine disagreement is `confidence`: numeric there, a three-value enum in the
+  sketch. Possibly not a conflict at all — a CV match has a real score and a listening
+  moderator does not.
+
+Where it goes: an amendment to SalishSea.io's decision
+[013](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/013-orcasound-acoustic-occurrences.md),
+or a successor there. ADR-0018 carries the risk that it never gets filed as its own open
+question.
 
 ### Q19 — Is bulk import a supported operation, and how are identifiers assigned?
 **Resolved 2026-07-28.** Yes, as a stated exception to ADR-0001's reviewable-diff premise:

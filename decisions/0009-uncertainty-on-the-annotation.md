@@ -28,9 +28,20 @@ The register contains **entities only**. Confidence, hedging, and evidence are
 properties of the *act of identification* and live on the annotation in the consuming
 system.
 
-An annotation carries at minimum:
+There will never be an `L?` entity, an `unconfirmed` entity, or a `false-positive`
+entity.
 
-| Column | Values |
+Banning the hedge is only defensible if the hedge has somewhere to go, so this record
+has to show one. **The sketch below is illustrative, not a specification** — the
+annotation shape is the consuming system's to design
+([ADR-0018](0018-annotation-semantics-belong-to-consumers.md)), and the working one is
+SalishSea.io's `public.identifications` under its decision
+[013](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/013-orcasound-acoustic-occurrences.md).
+Implement from that, not from this.
+
+Something of roughly this shape suffices to hold the `+L?`:
+
+| Column | Illustrative values |
 |---|---|
 | `entity_id` | An identifier from this register |
 | `certainty` | `certain` \| `probable` \| `possible` |
@@ -38,8 +49,12 @@ An annotation carries at minimum:
 | `asserted_by`, `asserted_at` | Who and when |
 | `register_edition` | Which edition of this register they were reading |
 
-There will never be an `L?` entity, an `unconfirmed` entity, or a `false-positive`
-entity.
+Only the first row is something the register genuinely asks for, and it asks for it as a
+requirement rather than as a column: cite an identifier rather than a name. The middle three
+are the hedge finding a home, drawn to make the argument concrete. `register_edition` is
+drawn because consumers will often want it, but it belongs on *derived* facts rather than on
+the claim — see [ADR-0018](0018-annotation-semantics-belong-to-consumers.md), which corrects
+an earlier over-broad version of that requirement.
 
 ## What this means for the data
 
@@ -78,14 +93,16 @@ Two related patterns fall out of the same principle:
 - This ADR constrains **consumers**, not this repository — there is nothing to enforce
   here. It is recorded here because the vocabulary's shape depends on it: banning hedge
   terms is only defensible if the hedge has somewhere else to go.
-- It does **not** make this repository the owner of annotation semantics. An earlier pass
-  at the same problem, in the SalishSea.io catalogue, separates the asserter's confidence
-  from the dataset's verification status — a distinction the table above collapses, and a
-  real gap: a moderator's `possible` that a curator later confirms has nowhere to land.
-  The earlier model is better on that point and this one should adopt it. See
-  [Q18](../docs/open-questions.md).
-- `certainty` is a three-value enum on purpose. A numeric probability implies a
-  precision a listening moderator does not have.
+- It does **not** make this repository the owner of annotation semantics, and
+  [ADR-0018](0018-annotation-semantics-belong-to-consumers.md) now says where ownership
+  sits. SalishSea.io's shipped model separates the asserter's confidence from the
+  dataset's verification status — a distinction the sketch above collapses, and a real
+  gap: a moderator's `possible` that a curator later confirms has nowhere to land. That
+  model is better on the point and this record defers to it.
+- The sketch makes `certainty` a three-value enum because a numeric probability implies a
+  precision a listening moderator does not have. The shipped model carries a numeric
+  `confidence` instead. Both can be right — a CV match has a real score and a listener does
+  not — and settling it is the aggregator's call, not this record's.
 - Validation rejects any entity label matching `\?$` or resembling a hedge, as a
   backstop.
 
@@ -112,6 +129,17 @@ Two related patterns fall out of the same principle:
 
 ## Open questions
 
-- Is three certainty levels the right number, and are those the right three? Should be
-  tested against how Scott actually hedges in existing bout names before being fixed.
-- How are negative and absence claims recorded? Deliberately unanswered above.
+Both of the questions this record used to hold open are annotation questions, so under
+[ADR-0018](0018-annotation-semantics-belong-to-consumers.md) they are no longer this
+repository's to answer. Recorded here because they were raised here, and because the
+second one turns out to be answered already:
+
+- Is three certainty levels the right number, and are those the right three? Worth testing
+  against how Scott actually hedges in existing bout names before anyone fixes a
+  vocabulary. Whoever designs the annotation owns it.
+- How are negative and absence claims recorded? SalishSea.io's `identifications` carries an
+  `is_present` boolean, for cases like "the T065As minus A5". That should be adopted rather
+  than re-derived.
+
+What remains genuinely open *here* is nothing: banning hedge terms from the vocabulary
+needs no further input.

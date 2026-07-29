@@ -105,8 +105,10 @@ must answer** before the migration can happen:
   ("Motley Crew"). This register's validator *requires* a rank on every group.
 - **`identification_status` separate from evidence** exists because a moderator's
   confidence and a curator's later verification are different facts.
-  [ADR-0009](0009-uncertainty-on-the-annotation.md) conflates them. See
-  [Q18](../docs/open-questions.md).
+  [ADR-0009](0009-uncertainty-on-the-annotation.md) conflates them. **Discharged by
+  relocation** ([ADR-0018](0018-annotation-semantics-belong-to-consumers.md)): annotation
+  semantics are the consuming system's, so this register owes no expressiveness here and
+  the catalogue's model stands. Unlike the other four, this one does not migrate.
 
 Treating these as requirements rather than as divergence is the point of this record. A
 model that cannot express what the earlier attempt already expresses is not more
@@ -140,7 +142,10 @@ notice and adopt it — not to defend the newer model.
   is currently stated as a hypothetical risk; it is a present fact and the migration has
   to address it.
 - This register acquires an obligation it did not have yesterday: it must be at least as
-  expressive as the catalogue it is displacing. The five findings above are the bill.
+  expressive as the catalogue it is displacing *on identity and membership*. Four of the
+  five findings above are the bill; the fifth is void, because on annotation semantics the
+  register displaces nothing
+  ([ADR-0018](0018-annotation-semantics-belong-to-consumers.md)).
 - Being the authority means being maintained. This sharpens
   [Q8](../docs/open-questions.md) rather than answering it.
 

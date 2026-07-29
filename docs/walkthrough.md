@@ -44,7 +44,13 @@ The original name is kept, verbatim, forever. Nothing below replaces it.
 bout.name = "SRKW signals at PT (J+K +L? pods)"
 ```
 
-Alongside it, four annotation rows:
+Alongside it, four annotation rows. **These columns are illustrative** — a trace has to
+pass through an annotation to reach a consumer, but the annotation's shape is the
+consuming system's to design, not this register's
+([ADR-0018](../decisions/0018-annotation-semantics-belong-to-consumers.md)). The working
+model is SalishSea.io's `public.identifications`, which splits the asserter's confidence
+from the dataset's verification status and carries an `is_present` flag for absence
+claims — both improvements on what is drawn here.
 
 | entity_id | certainty | evidence | asserted_by | asserted_at | register_edition |
 |---|---|---|---|---|---|
@@ -56,14 +62,27 @@ Alongside it, four annotation rows:
 `PT` is discarded here because the bout already has a `feed_id`, which is where location
 lives.
 
-Note what each column buys:
+Note what each column buys — and which two the register actually asks for:
 
-- `certainty` is the `+L?`. Without it the moderator either drops the hedge or invents a
-  term, and both corrupt the record.
+- `certainty` is the `+L?`. Without somewhere to put it the moderator either drops the
+  hedge or invents a term, and both corrupt the record. That the hedge has a home is what
+  lets the register ban `L?` as an entity
+  ([ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md)); *how* it is spelled is
+  not the register's business.
 - `evidence` is *how we know* — heard it, or confirmed against a photo-ID sighting, or a
   detector said so. Borrowed from the Gene Ontology's evidence codes; see
   [background.md](background.md).
-- `register_edition` is what makes this row re-interpretable in 2030.
+- `entity_id` is the one the register genuinely asks for: **cite an identifier rather than
+  a name.** That is also what makes the row re-interpretable in 2030 — not the edition
+  beside it. Under [ADR-0010](../decisions/0010-identifiers-are-never-reused.md) an
+  identifier's meaning never changes, so `SSA:0000020` in 2030 denotes what it denoted in
+  2025 without help.
+- `register_edition` is drawn here because a consumer will often want it, but it earns its
+  place on *derived* facts rather than on the claim: if this row's ecotype were
+  denormalised from the closure, the edition is what lets that be rebuilt after
+  [Q1](open-questions.md) reparents the Southern Residents. On the moderator's pick itself
+  it is close to redundant. See
+  [ADR-0018](../decisions/0018-annotation-semantics-belong-to-consumers.md).
 
 ## Step 3 — What SalishSea.io ingests
 
@@ -110,8 +129,10 @@ Things that only became visible by tracing a real record:
 - **The register needs no location concept at all.** Both consuming systems already have
   one. Confirms a scope boundary that was otherwise theoretical.
 - **`certainty` and `evidence` are annotation columns, not register columns.** They
-  describe an *act of identification*, not an animal. They belong in OrcaSound's schema
-  and are documented here only so both consumers implement them the same way.
+  describe an *act of identification*, not an animal. Tracing the bout is what made that
+  boundary visible — and also made visible that this repository had been drifting across
+  it, sketching a shape it does not own. See
+  [ADR-0018](../decisions/0018-annotation-semantics-belong-to-consumers.md).
 - **Ecotype and pod were both asserted on one bout**, redundantly — J pod implies
   Southern Resident. What a consumer stores is its own annotation design's business, not
   the register's; the register's part is to publish the closure so that deriving a parent

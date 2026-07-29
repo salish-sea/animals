@@ -40,8 +40,17 @@ Four reasons that matters, in rough order of weight:
 
 1. **A bout tagged in 2025 must still mean what it meant in 2025.** If the taxonomy is
    fetched live, the meaning of an old annotation changes silently under it whenever an
-   upstream source revises. Editions make an annotation reinterpretable years later, which
-   is the whole point of recording `register_edition` alongside every tag.
+   upstream source revises — a service returns current labels and a current hierarchy, and
+   there is no state of it to cite. An edition is a thing a consumer can pin, verify by
+   digest, and rebuild a derived fact from years later.
+
+   The load-bearing word is *derived*. A stored identifier is already stable on its own
+   under [ADR-0010](0010-identifiers-are-never-reused.md); what needs an edition to be
+   reproducible is everything computed from it — the closure, an ancestor, an index. An
+   earlier version of this reason claimed the point was recording `register_edition`
+   alongside every tag, which over-claimed; see
+   [ADR-0018](0018-annotation-semantics-belong-to-consumers.md). The decision is unaffected,
+   because a live service can offer no citable state to derive from at all.
 2. **Nothing goes down.** A service is a runtime dependency: if it is slow, or its API
    key rotates, or its host lapses, the moderator interface degrades. A file that has
    already been fetched does not.

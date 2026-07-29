@@ -9,6 +9,24 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Design
+- **Annotation semantics belong to the consuming systems** (ADR-0018), closing Q18 by
+  relocating it. This repository had disclaimed owning the annotation shape four times
+  while remaining the only place it was written down at length — a five-column table in
+  ADR-0009, four rendered rows in the walkthrough, and an open question filed against this
+  author. It has a home: SalishSea.io's decision 013 and the `public.identifications` table
+  under it, which already ships the confidence/verification split Q18 asked for, plus an
+  `is_present` flag answering the absence question ADR-0009 left open. ADR-0009 keeps its
+  negative half — no hedge terms in the vocabulary — and its table is now marked
+  illustrative. The register's whole claim on an annotation is two requirements: cite an
+  identifier rather than a name, and record the edition anything *derived* was derived from.
+- **Narrowed the edition requirement**, which several records had over-claimed. ADR-0006,
+  ADR-0014, ADR-0009's sketch and the walkthrough all said or implied that an annotation
+  records `register_edition` so it stays interpretable later. It does not need to: ADR-0010
+  already guarantees an identifier's meaning never changes, so a stored pick is
+  self-sufficient and asking for the edition beside it double-counts that guarantee. What is
+  edition-dependent is a *derived* fact — an ancestor, a closure, an index — so the edition
+  belongs on the materialization. ADR-0014's publication-not-a-service decision is
+  unaffected; a live service offers no citable state to derive from at all.
 - Dropped the walkthrough's second bout. It was carried as a hard case, and once Q7
   dissolved there was nothing left in it that the first bout does not already show.
 - **The register publishes no counts of animals** (ADR-0017), resolving Q6 as "no". A

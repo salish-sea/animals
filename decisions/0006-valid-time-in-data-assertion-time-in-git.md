@@ -99,8 +99,12 @@ which is this column's only job.
 ## Consequences
 
 - "What did the register say on date D" is `git checkout` at date D — exact, and free.
-- "What did identifier X mean when this bout was tagged" is answerable, which is why
-  consumers record `register_edition` on each annotation.
+- "What did identifier X mean when this bout was tagged" is answerable — though the
+  question is rarer than it looks, because under
+  [ADR-0010](0010-identifiers-are-never-reused.md) the answer is "the same thing it means
+  now". What genuinely varies by edition is what was *derived* from X — its ancestors, its
+  closure — so it is a materialization that needs to record an edition, not every
+  annotation. See [ADR-0018](0018-annotation-semantics-belong-to-consumers.md).
 - Querying history means shelling out to git rather than issuing a query. Acceptable —
   it is a rare, offline operation, not something a page render does.
 - Anyone who clones without full history loses the assertion-time axis *for in-place

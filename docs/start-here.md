@@ -78,7 +78,7 @@ GitHub. Two things are worth noticing in it:
 - **The Southern Resident data is illustrative.** Those rows are marked `SEED` and exist
   so the schema is concrete and the walkthrough has something to point at. Errors in them
   are expected; errors in the *shape* are what to look for.
-- **Nothing is ratified.** All fifteen decision records are `Proposed`. They are written
+- **Nothing is ratified.** All eighteen decision records are `Proposed`. They are written
   as arguments to disagree with, not as conclusions.
 - **Identifiers look unfriendly on purpose.** `SSA:0000101` rather than `J35`, because a
   meaningful identifier becomes a lie when the thing it names changes. The name sits right
