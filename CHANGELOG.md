@@ -9,6 +9,13 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Design
+- Glossary entry for **catalogue**, marked ⚖️. It was the last load-bearing term both
+  communities use differently with no entry, and the divergence is wide: in the whale
+  world "the catalogue" means CWR's photo-ID catalogue. The register is not one and the
+  word is never used for it — the catalogues are upstream (CWR, MERS, finwave) and
+  downstream (SalishSea.io) of the register, which ADR-0012 depends on. *Register* is
+  also sharpened to say what distinguishes it, and to note it is not a *registry*: a
+  registry keeps a register, and this is a publication rather than a service (ADR-0014).
 - **Annotation semantics belong to the consuming systems** (ADR-0018), closing Q18 by
   relocating it. This repository had disclaimed owning the annotation shape four times
   while remaining the only place it was written down at length — a five-column table in
