@@ -9,6 +9,13 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Design
+- **CURIE prefixes are capitalised when they name an identifier registry**, lowercase
+  when they name a vocabulary of predicates. `SSA:` and `NCBITaxon:` already followed the
+  OBO convention; `finwave:T090` did not, and is now `Finwave:T090` — the only row using
+  it. The organisation brands itself lowercase, but a prefix is a normalised token for a
+  namespace rather than a rendering of a name, which is why `CHEBI:` and `NCBITaxon:` are
+  not brand-faithful either. Prose still writes finwave. Nothing enforces this on
+  `mapping.object_id`, which is bare `TEXT`.
 - Glossary entry for **catalogue**, marked ⚖️. It was the last load-bearing term both
   communities use differently with no entry, and the divergence is wide: in the whale
   world "the catalogue" means CWR's photo-ID catalogue. The register is not one and the

@@ -1,4 +1,4 @@
 subject_id	predicate_id	object_id	object_label	mapping_justification	confidence	source_id	note
 SSA:0000001	skos:broadMatch	NCBITaxon:9733	Orcinus orca	semapv:ManualMappingCuration	1.0	SEED	An ecotype is narrower than the species.
 SSA:0000002	skos:broadMatch	NCBITaxon:9733	Orcinus orca	semapv:ManualMappingCuration	1.0	SEED	
-SSA:0000040	skos:closeMatch	finwave:T090	T090	semapv:ManualMappingCuration		SEED	Deliberately NOT exactMatch: SSA:0000040 is the matriline T090s, while finwave:T090 is almost certainly the individual. Conflating them is the error ADR-0003 exists to prevent. Needs an individual T090 entity, or removal.
+SSA:0000040	skos:closeMatch	Finwave:T090	T090	semapv:ManualMappingCuration		SEED	Deliberately NOT exactMatch: SSA:0000040 is the matriline T090s, while Finwave:T090 is almost certainly the individual. Conflating them is the error ADR-0003 exists to prevent. Needs an individual T090 entity, or removal.

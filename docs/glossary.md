@@ -105,7 +105,14 @@ from the matriarch", not "child of". Recorded for very few animals so far — ab
 
 ### 💾 Namespace / prefix
 The `SSA:` in `SSA:0000101`. Distinguishes our identifiers from `NCBITaxon:9733` or
-`finwave:T090` so they can be mixed in one column without collision.
+`Finwave:T090` so they can be mixed in one column without collision.
+
+Prefixes naming an **identifier registry** are capitalised — `SSA:`, `NCBITaxon:`,
+`Finwave:`. Prefixes naming a **vocabulary of predicates** are lowercase — `skos:`,
+`semapv:`. Both appear in one row of `mappings.tsv`, and the contrast is what lets a
+reader tell subject and object from predicate at a glance. The capitalised form is
+canonical and is what the register emits; a consumer that also accepts the lowercase
+form on input will be reading what people actually type.
 
 ### ⚖️ Occurrence
 A record that an animal was at a place at a time. Deliberately **not** in this register.
