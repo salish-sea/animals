@@ -45,9 +45,10 @@ Start with the two documents that need domain expertise and no software knowledg
    can repair later.
 
 Then, if you have time: [docs/walkthrough.md](docs/walkthrough.md) traces one real bout
-end to end, and **[docs/open-questions.md](docs/open-questions.md)** has a section
-addressed specifically to you. Answering those questions is the single most useful thing
-available.
+end to end, and the **[open questions](https://github.com/salish-sea/animals/issues?q=is%3Aissue+is%3Aopen+label%3Ascience-review)**
+labelled `science-review` are addressed specifically to you — reply on the issue, no pull
+request needed. Answering those questions is the single most useful thing available.
+[docs/open-questions.md](docs/open-questions.md) is the index.
 
 Decision records addressed to `Informatics reviewers` are implementation detail. Skip them.
 

@@ -35,7 +35,8 @@ going to.
 2. **[docs/competency-questions.md](competency-questions.md)** — the questions the
    register must be able to answer. If one is missing or wrong, everything downstream is
    wrong.
-3. **[docs/open-questions.md](open-questions.md)** — the questions *for you*, below.
+3. **The [open questions](https://github.com/salish-sea/animals/issues?q=is%3Aissue+is%3Aopen+label%3Ascience-review)** — the questions *for you*, below. Each is a
+   GitHub issue; reply there, no pull request needed.
 
 ## The questions only a domain expert can answer
 
@@ -44,15 +45,15 @@ tagged, because tagging against them and then changing our minds means re-taggin
 
 | | Question | Why it blocks |
 |---|---|---|
-| **[Q1](open-questions.md)** | Is "Southern Resident" an ecotype, or a community of the *Resident* ecotype? | The register has it entered twice, once at each rank. In the standard reading the ecotype is *Resident* and SRKW is a community within it — but #1001 called SRKW an ecotype, which is common usage. This is why nothing in the Southern Resident branch rolls up to *Orcinus orca*. |
-| **[Q2](open-questions.md)** | Are the Southern Residents one acoustic clan, or more? | Asserted with low confidence. If moderators would never tag at clan level, the rank should be dropped rather than maintained. |
-| **[Q3](open-questions.md)** | Which source is authoritative for Bigg's — MERS, finwave, DFO? And what happens when two disagree? | Until the second half has an answer, the register cannot take in more than one Bigg's source. |
-| **[Q15](open-questions.md)** | How does CWR's published census list L87 during the years he travelled with J pod? | The register defines membership as genealogical, so L87 is L pod permanently. If CWR prints him under J pod, curators need a stated rule for transcribing an associational roster — otherwise two curators will diverge silently. |
-| [Q4](open-questions.md) | Populate Northern Residents and offshores now, or later? | Curation effort against moderator coverage. |
-| [Q9](open-questions.md) | Is there anything in scope that should not be in a public repository? | Naming programmes, cultural significance, catalogues that withhold detail. |
-| **[Q22](open-questions.md)** | Is a T-number lineage the right grouping? The sheet seems to record two levels — a lineage, and travelling sub-groups within it — and the import flattens them to one. | 132 derived groups depend on the answer. |
-| [Q13](open-questions.md) | Is `J17s` the canonical written form for a matriline, or would a catalogue write `T090 matriline`? | Display is the consumer's business; this is asking what the community actually writes. |
-| [Q23](open-questions.md) | What are the `AM3`-style Alaska/California designations, and what catalogue are they from? | They are searchable names now; they belong in `mappings.tsv` as a crosswalk. |
+| **[Q1](https://github.com/salish-sea/animals/issues/1)** | Is "Southern Resident" an ecotype, or a community of the *Resident* ecotype? | The register has it entered twice, once at each rank. In the standard reading the ecotype is *Resident* and SRKW is a community within it — but #1001 called SRKW an ecotype, which is common usage. This is why nothing in the Southern Resident branch rolls up to *Orcinus orca*. |
+| **[Q2](https://github.com/salish-sea/animals/issues/2)** | Are the Southern Residents one acoustic clan, or more? | Asserted with low confidence. If moderators would never tag at clan level, the rank should be dropped rather than maintained. |
+| **[Q3](https://github.com/salish-sea/animals/issues/3)** | Which source is authoritative for Bigg's — MERS, finwave, DFO? And what happens when two disagree? | Until the second half has an answer, the register cannot take in more than one Bigg's source. |
+| **[Q15](https://github.com/salish-sea/animals/issues/11)** | How does CWR's published census list L87 during the years he travelled with J pod? | The register defines membership as genealogical, so L87 is L pod permanently. If CWR prints him under J pod, curators need a stated rule for transcribing an associational roster — otherwise two curators will diverge silently. |
+| [Q4](https://github.com/salish-sea/animals/issues/4) | Populate Northern Residents and offshores now, or later? | Curation effort against moderator coverage. |
+| [Q9](https://github.com/salish-sea/animals/issues/6) | Is there anything in scope that should not be in a public repository? | Naming programmes, cultural significance, catalogues that withhold detail. |
+| **[Q22](https://github.com/salish-sea/animals/issues/13)** | Is a T-number lineage the right grouping? The sheet seems to record two levels — a lineage, and travelling sub-groups within it — and the import flattens them to one. | 132 derived groups depend on the answer. |
+| [Q13](https://github.com/salish-sea/animals/issues/9) | Is `J17s` the canonical written form for a matriline, or would a catalogue write `T090 matriline`? | Display is the consumer's business; this is asking what the community actually writes. |
+| [Q23](https://github.com/salish-sea/animals/issues/14) | What are the `AM3`-style Alaska/California designations, and what catalogue are they from? | They are searchable names now; they belong in `mappings.tsv` as a crosswalk. |
 
 ## What it looks like right now
 
@@ -65,7 +66,7 @@ GitHub. Two things are worth noticing in it:
   hierarchy ([ADR-0004](../decisions/0004-rank-is-an-open-vocabulary.md)).
 - **The Southern Resident branch is currently disconnected.** `community` has nothing
   above it, so all twelve entities beneath it — J, K and L pods, the matrilines, the
-  individuals — do not roll up to *Orcinus orca*. That is [Q1](open-questions.md), and
+  individuals — do not roll up to *Orcinus orca*. That is [Q1](https://github.com/salish-sea/animals/issues/1), and
   the diagram is the clearest statement of why it matters.
 
 ## Things to know before you judge the data
@@ -74,7 +75,7 @@ GitHub. Two things are worth noticing in it:
   from the community designation sheet by script
   ([ADR-0015](../decisions/0015-bulk-import.md)). Nobody has checked them against a
   catalogue. The individuals are a fairly direct transcription; **the groupings are
-  derived and are the least confident thing here** — see [Q22](open-questions.md).
+  derived and are the least confident thing here** — see [Q22](https://github.com/salish-sea/animals/issues/13).
 - **The Southern Resident data is illustrative.** Those rows are marked `SEED` and exist
   so the schema is concrete and the walkthrough has something to point at. Errors in them
   are expected; errors in the *shape* are what to look for.
