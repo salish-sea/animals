@@ -19,6 +19,13 @@ SSA:0000901	taxon		Megaptera novaeangliae	NCBITaxon:9773			SEED
 SSA:0000902	taxon		Eumetopias jubatus	NCBITaxon:34886			SEED	
 SSA:0000903	taxon		Zalophus californianus	NCBITaxon:9704			SEED	
 SSA:0000904	taxon		Phoca vitulina	NCBITaxon:9720			SEED	
+SSA:0000905	taxon		Eschrichtius robustus	NCBITaxon:9764			SEED	
+SSA:0000906	taxon		Lontra canadensis	NCBITaxon:76717			SEED	Heard as splashing and short squeaks or chirps near shore stations.
+SSA:0000907	taxon		Aves	NCBITaxon:8782			SEED	Tag this when a bird is heard but cannot be resolved further.
+SSA:0000908	taxon		Laridae	NCBITaxon:8910			SEED	NCBI has no gull-only taxon below this family, which also includes terns; a gull heard on a hydrophone is rarely resolvable further anyway.
+SSA:0000909	taxon		Cepphus columba	NCBITaxon:28696			SEED	
+SSA:0000910	taxon		Pandion haliaetus	NCBITaxon:56262			SEED	
+SSA:0000911	taxon		Passer domesticus	NCBITaxon:48849			SEED	
 SSA:0002000	group	matriline	T002s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T002 descendants across several blocks. Grouping unconfirmed — see Q22.
 SSA:0002001	group	matriline	T007s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T007 descendants across several blocks. Grouping unconfirmed — see Q22.
 SSA:0002002	group	matriline	T010s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T010 descendants across several blocks. Grouping unconfirmed — see Q22.

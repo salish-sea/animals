@@ -73,8 +73,10 @@ into a competing database that will drift from the sources it depends on.
 
 ## In scope, geographically and taxonomically
 
-Marine mammals whose identity matters to a Salish Sea hydrophone moderator. In practice,
-initially:
+Animals whose identity matters to a Salish Sea hydrophone moderator. Marine mammals
+first — but a shore-mounted hydrophone also hears birds, and OrcaHello moderators
+already tag them (orcahello#550, the Orcasound label dictionary), so soniferous birds
+are in scope at taxon level. In practice, initially:
 
 - *Orcinus orca* — Southern Residents and Bigg's, resolved to ecotype, pod, matriline
   and individual. Northern Residents and offshores are in scope but unpopulated.
@@ -83,6 +85,11 @@ initially:
   for "an animal of this species, not resolved further", including an orca heard too
   faintly to place in an ecotype. See
   [ADR-0008](../decisions/0008-species-identity-is-delegated.md).
+- Birds, as `kind = taxon` entities under the same delegation. The level follows what a
+  moderator can actually hear: pigeon guillemot resolves to species; "gull" is the
+  family; "bird" is the class *Aves*, the acoustic analogue of the unplaceable orca.
+  No individuals, no groups — birds get no register-side structure unless tagging
+  practice demands it.
 
 ## Relationship to the SalishSea.io catalogue
 

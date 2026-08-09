@@ -45,6 +45,23 @@ SSA:0000903	Zalophus californianus	preferred	en
 SSA:0000904	Harbour seal	common	en
 SSA:0000904	Phoca vitulina	preferred	en
 SSA:0000904	harbor seal	hidden	en
+SSA:0000905	Eschrichtius robustus	preferred	en
+SSA:0000905	Gray whale	common	en
+SSA:0000905	Grey whale	hidden	en
+SSA:0000906	Lontra canadensis	preferred	en
+SSA:0000906	River otter	common	en
+SSA:0000906	otter	hidden	en
+SSA:0000907	Aves	preferred	en
+SSA:0000907	Bird	common	en
+SSA:0000908	Gull	common	en
+SSA:0000908	Laridae	preferred	en
+SSA:0000909	Cepphus columba	preferred	en
+SSA:0000909	PIGU	hidden	en
+SSA:0000909	Pigeon guillemot	common	en
+SSA:0000910	Osprey	common	en
+SSA:0000910	Pandion haliaetus	preferred	en
+SSA:0000911	House sparrow	common	en
+SSA:0000911	Passer domesticus	preferred	en
 SSA:0002000	T002	hidden	en
 SSA:0002000	T002s	preferred	en
 SSA:0002001	Secret Agents	common	en

@@ -25,6 +25,16 @@ SSA:0000903	California sea lion	common	en	SEED
 SSA:0000903	CA sea lion	hidden	en	SEED	As used in bout name "CA sea lion barks at Orcasound Lab".
 SSA:0000904	Harbour seal	common	en	SEED	
 SSA:0000904	harbor seal	hidden	en	SEED	US spelling.
+SSA:0000905	Gray whale	common	en	SEED	
+SSA:0000905	Grey whale	hidden	en	SEED	Canadian spelling, as in the HALLO labels.
+SSA:0000906	River otter	common	en	SEED	
+SSA:0000906	otter	hidden	en	SEED	As tagged in OrcaHello bouts.
+SSA:0000907	Bird	common	en	SEED	
+SSA:0000908	Gull	common	en	SEED	
+SSA:0000909	Pigeon guillemot	common	en	SEED	
+SSA:0000909	PIGU	hidden	en	SEED	Birder four-letter code, used as a tag by OrcaHello moderators.
+SSA:0000910	Osprey	common	en	SEED	
+SSA:0000911	House sparrow	common	en	SEED	
 SSA:0002000	T002	hidden	en	BIGGS-SHEET	Bare designation.
 SSA:0002001	Secret Agents	common	en	BIGGS-SHEET	Recorded in the sheet as a "Known as" heading.
 SSA:0002001	T007	hidden	en	BIGGS-SHEET	Bare designation.
