@@ -44,7 +44,6 @@ Filter: [`informatics-review`](https://github.com/salish-sea/animals/issues?q=is
 | Q14 | How are preferred names localised? | P. Abrahamsen | [#10](https://github.com/salish-sea/animals/issues/10) |
 | Q17 | Whose job is designation normalization? | P. Abrahamsen | [#12](https://github.com/salish-sea/animals/issues/12) |
 | Q24 | Does releasing the register republish the Bigg's sheet? | P. Abrahamsen | [#15](https://github.com/salish-sea/animals/issues/15) |
-| Q25 | Who else can cut a release, and what makes that safe? | P. Abrahamsen, S. Veirs | [#16](https://github.com/salish-sea/animals/issues/16) |
 
 ## Answered
 
@@ -205,3 +204,16 @@ See [ADR-0006](../decisions/0006-valid-time-in-data-assertion-time-in-git.md), s
 So "unconfirmed" was never a missing modality — it was a missing *entity*. The register's
 only remaining contribution is a warning, now in [scope.md](scope.md): a biophony bout may
 be about no animal at all, so the absence of tags is not the absence of animals.
+
+### Q25 — Who else can cut a release, and what makes that safe?
+**Resolved 2026-08-09. No one else, for now**
+([#16](https://github.com/salish-sea/animals/issues/16)). Only this repository's author
+cuts releases, and the cost the question named — a consumer waiting on an edition is
+waiting on one person's availability — is accepted for the moment.
+
+That makes the "what makes that safe" half moot rather than answered. The machinery
+sketched in the question — protected tags, artefacts built only by CI from a reviewed
+commit on `main`, an agreement about what a release asserts — is the price of admission
+for a second releaser, whenever one is wanted; it is work deferred, not work declined.
+Reopen this when adding one, likely alongside Q8, which still owns the separate question
+of who reviews the domain content.
