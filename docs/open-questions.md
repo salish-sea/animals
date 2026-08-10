@@ -40,7 +40,6 @@ Filter: [`informatics-review`](https://github.com/salish-sea/animals/issues?q=is
 |---|----------|-------|------------|
 | Q8 | Who is the named editor, and who reviews the domain content? | P. Abrahamsen, S. Veirs | [#5](https://github.com/salish-sea/animals/issues/5) |
 | Q10 | Is `SSA:` a safe prefix? | P. Abrahamsen | [#7](https://github.com/salish-sea/animals/issues/7) |
-| Q12 | How do the two repositories reference each other? | P. Abrahamsen, S. Veirs | [#8](https://github.com/salish-sea/animals/issues/8) |
 | Q24 | Does releasing the register republish the Bigg's sheet? | P. Abrahamsen | [#15](https://github.com/salish-sea/animals/issues/15) |
 
 ## Answered
@@ -116,6 +115,28 @@ hosting commitment — which is what made the dereferenceable-identifier version
 question look expensive. Not GitHub Packages: it has no generic file registry and no
 ecosystem that serves Elixir, which is what OrcaSound's server runs. See
 [ADR-0013](../decisions/0013-distribution.md).
+
+### Q12 — How do the two repositories reference each other?
+**Resolved 2026-08-09, by declining it.** The plural in the title was the error: the
+reference only ever runs one way. This register will never cite the signals vocabulary,
+and whether — and how — `signals-srkw` references register identifiers is that
+repository's decision, to be made when that work is planned. It has not begun, and
+[scope.md](scope.md) had already said as much: "whether to do that, and when, belongs to
+that repository." Holding the question open here was this repo acting as owner of a
+convention it had disclaimed, which is the same failure Q18's closure named.
+
+The register's half is already discharged, which is why nothing remains to decide here:
+identifiers stable enough to be worth referencing
+([ADR-0002](../decisions/0002-opaque-permanent-identifiers.md),
+[ADR-0010](../decisions/0010-identifiers-are-never-reused.md)) and editions to pin
+([ADR-0013](../decisions/0013-distribution.md)) — "declaring a dependency on a specific
+edition" is the same act for the signals vocabulary as for any consumer: pin the tag.
+What carries over to the signals work when it starts: the copied ecotype and pod labels
+in `labels.md` are the thing to retire, and the `JK` / `JKL` set-labels are migration
+work, both stated in scope.md.
+
+Closed by P. Abrahamsen alone though co-owned with S. Veirs, because nothing here is a
+domain judgement — the question filed work against the wrong repository.
 
 ### Q14 — How are preferred names localised?
 **Resolved 2026-08-09, largely by rejecting the premise.** The question assumed `label`

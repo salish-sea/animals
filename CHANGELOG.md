@@ -9,6 +9,12 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Design
+- Q12 retired by declining it: this register never references the signals vocabulary,
+  so there is no mutual convention to design. The register's half was already
+  discharged — identifiers stable enough to reference (ADR-0002, ADR-0010) and editions
+  to pin (ADR-0013) — and whether `signals-srkw` replaces its copied ecotype and pod
+  labels with identifier references is that repository's decision, when that work is
+  planned.
 - **Localised preferred names are `names.tsv` rows, added when they exist** (ADR-0020),
   closing Q14 largely by rejecting its premise: `label` is not "implicitly English" but
   notation for ~650 of 668 entities, so it stays language-neutral and gains no language
