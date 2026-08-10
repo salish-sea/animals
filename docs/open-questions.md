@@ -42,7 +42,6 @@ Filter: [`informatics-review`](https://github.com/salish-sea/animals/issues?q=is
 | Q10 | Is `SSA:` a safe prefix? | P. Abrahamsen | [#7](https://github.com/salish-sea/animals/issues/7) |
 | Q12 | How do the two repositories reference each other? | P. Abrahamsen, S. Veirs | [#8](https://github.com/salish-sea/animals/issues/8) |
 | Q14 | How are preferred names localised? | P. Abrahamsen | [#10](https://github.com/salish-sea/animals/issues/10) |
-| Q17 | Whose job is designation normalization? | P. Abrahamsen | [#12](https://github.com/salish-sea/animals/issues/12) |
 | Q24 | Does releasing the register republish the Bigg's sheet? | P. Abrahamsen | [#15](https://github.com/salish-sea/animals/issues/15) |
 
 ## Answered
@@ -137,6 +136,33 @@ not. See [ADR-0016](../decisions/0016-parentage.md).
 The false claim that parentage was "implied by matriline membership" is gone from
 `scope.md` and `competency-questions.md`, where "who is this animal's mother?" is now C13
 rather than an entry on the deliberately-unanswerable list.
+
+### Q17 — Whose job is designation normalization?
+**Resolved 2026-08-09. The register's — but as a comparison rule, not normalization.**
+The word had fused two questions, and separating them was most of the answer: nothing the
+register publishes is ever rewritten (`T090` keeps its zero, `Bigg's` its apostrophe);
+what consumers need is a rule for when two *spellings* name the same entity. The register
+now publishes that rule — the **fold**: lowercase, drop apostrophes and hyphens, collapse
+whitespace, strip leading zeros in each digit run — with executable test cases in
+`dist/fold_test.tsv` that a conforming implementation must reproduce exactly. See
+[ADR-0019](../decisions/0019-names-are-compared-by-folding.md).
+
+Two findings from testing the rule against the live register shaped it:
+
+- **A trailing `s` must never fold.** `T090s` names the matriline and `T090` its
+  matriarch — 126 such pairs exist — so folding the plural resolves a name to the wrong
+  animal. This is the one clause SalishSea.io's `normalize_designation()` must drop when
+  it reconciles (ADR-0012); its zero-and-case handling already agrees with the fold on
+  every equivalence class, differing only in direction (it pads where the fold strips).
+- **The safety guarantee is not uniqueness.** The vocabulary is honestly ambiguous —
+  every matriline's bare designation is also its matriarch's label, and `Gull` names both
+  T097 and Laridae — so the validator instead enforces that *folding may not merge what
+  exact spelling keeps apart*. C2's honest answer is sometimes two candidates.
+
+C2's "answerable: yes" is now a tested claim: the `T090s` / `J-35` / `Biggs` trio is
+pinned to permanent identifiers in `bin/validate.py`, and the enumeration burden the
+question complained about is gone — case, padding, hyphen and apostrophe variants need
+no `names.tsv` rows.
 
 ### Q18 — Adopt the confidence/verification split in the annotation shape
 **Closed 2026-07-29 by relocation, not by answer.** The work is real and still to be done;

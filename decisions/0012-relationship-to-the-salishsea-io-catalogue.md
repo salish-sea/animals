@@ -99,8 +99,12 @@ must answer** before the migration can happen:
   sparse, and Bigg's have none — so the two are asserted independently and checked
   against each other instead.
 - **`normalize_designation()`** exists because 649 T-codes have inconsistent zero-padding
-  (`T065A5` vs `T65A5`), hyphenation and plural forms. This register assumes exact string
-  matching against hand-enumerated names. See [Q17](../docs/open-questions.md).
+  (`T065A5` vs `T65A5`), hyphenation and plural forms. This register assumed exact string
+  matching against hand-enumerated names. **Answered**: the register publishes a
+  comparison rule with executable test cases ([ADR-0019](0019-names-are-compared-by-folding.md),
+  `dist/fold_test.tsv`) and rewrites nothing. The catalogue's zero-and-case handling
+  already agrees with it on every equivalence class; the one clause that must not survive
+  reconciliation is folding the trailing `s`, which merges a matriline with its matriarch.
 - **`named_group`** exists because real travelling groups have names and no rank
   ("Motley Crew"). This register's validator *requires* a rank on every group.
 - **`identification_status` separate from evidence** exists because a moderator's

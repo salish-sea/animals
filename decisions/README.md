@@ -58,6 +58,7 @@ been formally put to the scientific reviewers.
 | [0016](0016-parentage.md) | The register records parentage, as edges rather than columns | Scientific + informatics |
 | [0017](0017-no-counts.md) | The register publishes no counts of animals | Scientific + informatics |
 | [0018](0018-annotation-semantics-belong-to-consumers.md) | Annotation semantics belong to the consuming systems | Scientific + informatics |
+| [0019](0019-names-are-compared-by-folding.md) | Names are compared by folding, never rewritten | Scientific + informatics |
 
 ## Template
 

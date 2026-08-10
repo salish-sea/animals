@@ -9,6 +9,15 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Design
+- **Names are compared by folding, never rewritten** (ADR-0019), closing Q17. The
+  register publishes the matching rule C2 needs — lowercase, drop apostrophes and
+  hyphens, collapse whitespace, strip leading zeros per digit run — with executable test
+  cases in `dist/fold_test.tsv`, so no two consumers can implement it differently. A
+  trailing `s` deliberately never folds: `T090s` names the matriline and `T090` its
+  matriarch, 126 such pairs exist, and merging them resolves a name to the wrong animal.
+  The validator now enforces the guarantee that makes the rule safe to publish — folding
+  may not merge entities that exact spelling keeps apart — and pins the C2 trio
+  (`T090s` / `J-35` / `Biggs`) to permanent identifiers as an acceptance test.
 - **Annotation semantics belong to the consuming systems** (ADR-0018), closing Q18 by
   relocating it. This repository had disclaimed owning the annotation shape four times
   while remaining the only place it was written down at length — a five-column table in

@@ -5,7 +5,8 @@ The constraints live in `schema.sql`, not here. This script loads `data/*.tsv` i
 SQLite database built from that schema — so **the build is the validation**: a row that
 violates a foreign key, a CHECK, or a uniqueness rule is rejected by the database.
 
-What remains here is the part SQL cannot state declaratively (graph reachability, cycles)
+What remains here is the part SQL cannot state declaratively (graph reachability,
+cycles, name folding)
 and the part a curator needs that a constraint engine does not give: which file, which
 line, and what to do about it. See ADR-0013.
 
@@ -46,6 +47,34 @@ DIST_VIEWS = ["ancestor", "current_status", "searchable_name", "retired"]
 
 # GitHub renders Mermaid in Markdown; it does not render Graphviz.
 MERMAID_ID = str.maketrans({":": "_", "-": "_", " ": "_", "'": ""})
+
+# ADR-0019: names are matched by comparing folded forms; nothing stored is ever
+# rewritten. The cases are published as dist/fold_test.tsv — a conforming consumer
+# reproduces the `folded` column exactly.
+FOLD_STRIP = str.maketrans("", "", "'’-")
+
+FOLD_CASES = [
+    ("T090", "t90"),
+    ("T090s", "t90s"),  # the trailing s survives: it names the matriline, not T090
+    ("T065A5", "t65a5"),
+    ("T65A5", "t65a5"),
+    ("T000", "t0"),
+    ("J-35", "j35"),
+    ("J35", "j35"),
+    ("J17s", "j17s"),
+    ("Bigg's", "biggs"),
+    ("Bigg’s", "biggs"),
+    ("Biggs", "biggs"),
+    ("SRKW", "srkw"),
+    ("  Southern   Resident ", "southern resident"),
+]
+
+
+def fold(name: str) -> str:
+    """The comparison form of a name (ADR-0019). Four steps, in order."""
+    s = name.lower().translate(FOLD_STRIP)
+    s = " ".join(s.split())
+    return re.sub(r"\d+", lambda m: str(int(m.group())), s)
 
 errors: list[str] = []
 warnings: list[str] = []
@@ -239,6 +268,41 @@ def graph_checks(db: sqlite3.Connection) -> None:
             err(f"ranks.tsv: definition_file {f} does not exist")
 
 
+def fold_checks(db: sqlite3.Connection) -> None:
+    """ADR-0019: the fold itself, then the guarantee that makes it safe to publish."""
+    for raw, want in FOLD_CASES:
+        if fold(raw) != want:
+            err(f"fold({raw!r}) = {fold(raw)!r}, but dist/fold_test.tsv "
+                f"promises {want!r}")
+
+    # Folding may not merge what exact spelling keeps apart. Two entities sharing the
+    # identical string is a fact about the vocabulary — every matriline's bare
+    # designation is also its matriarch's label — and C2 honestly answers with both
+    # candidates. Two entities meeting only under the fold is an accident, caught here
+    # before a consumer resolves a spelling variant to the wrong animal.
+    classes: dict[str, dict[str, set[str]]] = {}
+    for eid, name in db.execute("SELECT entity_id, name FROM searchable_name"):
+        classes.setdefault(fold(name), {}).setdefault(name, set()).add(eid)
+    for folded, by_raw in sorted(classes.items()):
+        all_ids = set().union(*by_raw.values())
+        if len(all_ids) < 2 or any(ids == all_ids for ids in by_raw.values()):
+            continue
+        spellings = "; ".join(f"{name!r} → {', '.join(sorted(ids))}"
+                              for name, ids in sorted(by_raw.items()))
+        err(f"names.tsv: {spellings} all fold to {folded!r} yet name different "
+            "entities — folding may not merge what exact spelling keeps apart "
+            "(ADR-0019)")
+
+    # C2's acceptance test — the trio from docs/competency-questions.md, pinned to
+    # permanent identifiers (ADR-0010) so the "answerable" claim cannot silently rot.
+    for typed, expect in [("T090s", "SSA:0000040"), ("J-35", "SSA:0000101"),
+                          ("Biggs", "SSA:0000002")]:
+        hits = set().union(set(), *classes.get(fold(typed), {}).values())
+        if hits != {expect}:
+            err(f"C2: {typed!r} should resolve to {expect}, "
+                f"got {sorted(hits) or 'nothing'}")
+
+
 def write_dist(db: sqlite3.Connection) -> None:
     """Export the views as TSV, deterministically.
 
@@ -256,6 +320,13 @@ def write_dist(db: sqlite3.Connection) -> None:
             w = csv.writer(f, delimiter="\t", lineterminator="\n")
             w.writerow(cols)
             w.writerows(rows)
+
+    # ADR-0019: the fold's test cases, as data. Not a view — the promise is about the
+    # function, not about any edition's rows.
+    with open(DIST / "fold_test.tsv", "w", newline="") as f:
+        w = csv.writer(f, delimiter="\t", lineterminator="\n")
+        w.writerow(["input", "folded"])
+        w.writerows(FOLD_CASES)
 
 
 def write_structure(db: sqlite3.Connection) -> None:
@@ -335,11 +406,12 @@ def main() -> int:
     build(db)
     if not errors:
         graph_checks(db)
+        fold_checks(db)
         if "--write-dist" in sys.argv:
             write_dist(db)
             write_structure(db)
-            print(f"wrote {len(DIST_VIEWS)} views and structure.md to dist/",
-                  file=sys.stderr)
+            print(f"wrote {len(DIST_VIEWS)} views, fold_test.tsv and structure.md "
+                  "to dist/", file=sys.stderr)
 
     for line in warnings:
         print(f"warning: {line}", file=sys.stderr)

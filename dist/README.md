@@ -18,6 +18,7 @@ consumers cannot disagree. Each answers a competency question — see
 | `current_status.tsv` | C4 — current life status, applying the `(recorded, effective)` precedence rule from ADR-0006 |
 | `searchable_name.tsv` | C2 — preferred names and every alternate, in one place |
 | `retired.tsv` | C9 — deprecated identifiers, marked `automatic` or `needs-human` |
+| `fold_test.tsv` | C2 — the name-comparison fold of [ADR-0019](../decisions/0019-names-are-compared-by-folding.md), as executable test cases; a conforming implementation reproduces the `folded` column exactly |
 | `structure.md` | A picture of the register's shape, as Mermaid — which GitHub renders inline |
 
 [`structure.md`](structure.md) is the fastest way to see what the register currently
