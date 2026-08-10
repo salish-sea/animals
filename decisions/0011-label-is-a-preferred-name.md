@@ -54,8 +54,10 @@ It also sets the bar for `names.tsv`: everything that is *a* name for the entity
 - **Not an integration key.** Nothing may join, match, or key on `label` — it is mutable
   by design, which is the entire point of [ADR-0002](0002-opaque-permanent-identifiers.md).
   Integrators key on `entity_id`, always.
-- **Not localised.** `names.tsv` has a `language` column; `label` does not, so it is
-  implicitly English. This is a real gap rather than a decision — see Open questions.
+- **Not localised.** `names.tsv` has a `language` column; `label` does not — and that is
+  now a decision rather than a gap: `label` is deliberately language-neutral (most are
+  notation, not English), and a localised preferred name is a sparse `names.tsv` row.
+  See [ADR-0020](0020-localised-preferred-names-are-name-rows.md).
 - **Not guaranteed unique.** Two entities may share a designation legitimately (a
   matriline and its matriarch, [ADR-0003](0003-one-identifier-space.md)). Anything that
   assumes uniqueness is wrong.
@@ -104,7 +106,9 @@ have to review it.
 - **Localisation.** `label` has no language dimension. If a Spanish-language vocabulary
   ever appears — which has been raised for humpback signal labels — the register has no
   way to express a preferred name per language. Adding a `language` column to `label`,
-  or promoting preferred names into `names.tsv` with a language, are both possible. See
-  [open-questions.md](../docs/open-questions.md) Q14.
+  or promoting preferred names into `names.tsv` with a language, are both possible.
+  **Answered** ([ADR-0020](0020-localised-preferred-names-are-name-rows.md)): neither —
+  `label` is language-neutral, and a localised preferred name is a sparse
+  `type = preferred` row in `names.tsv`, added when one exists.
 - Should validation warn when a consumer-facing artefact in `dist/` is generated in a
   form that looks like a display string? Probably over-thinking it.

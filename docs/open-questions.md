@@ -41,7 +41,6 @@ Filter: [`informatics-review`](https://github.com/salish-sea/animals/issues?q=is
 | Q8 | Who is the named editor, and who reviews the domain content? | P. Abrahamsen, S. Veirs | [#5](https://github.com/salish-sea/animals/issues/5) |
 | Q10 | Is `SSA:` a safe prefix? | P. Abrahamsen | [#7](https://github.com/salish-sea/animals/issues/7) |
 | Q12 | How do the two repositories reference each other? | P. Abrahamsen, S. Veirs | [#8](https://github.com/salish-sea/animals/issues/8) |
-| Q14 | How are preferred names localised? | P. Abrahamsen | [#10](https://github.com/salish-sea/animals/issues/10) |
 | Q24 | Does releasing the register republish the Bigg's sheet? | P. Abrahamsen | [#15](https://github.com/salish-sea/animals/issues/15) |
 
 ## Answered
@@ -117,6 +116,28 @@ hosting commitment — which is what made the dereferenceable-identifier version
 question look expensive. Not GitHub Packages: it has no generic file registry and no
 ecosystem that serves Elixir, which is what OrcaSound's server runs. See
 [ADR-0013](../decisions/0013-distribution.md).
+
+### Q14 — How are preferred names localised?
+**Resolved 2026-08-09, largely by rejecting the premise.** The question assumed `label`
+is implicitly English. It is not — it is *notation* for roughly 650 of 668 entities
+(`J35` is the same in every language, and so, mostly, are nicknames), so a language
+dimension on `label` would be empty or meaningless almost everywhere. The labels that
+are genuinely language-bound are the handful of ecotypes, communities and taxa.
+
+So: `label` stays language-neutral, and **a localised preferred name, when one exists,
+is a sparse `names.tsv` row** — `type = preferred` plus the existing `language` column,
+at most one per `(entity, language)`, with `label` as the fallback for every language
+without a row. Consumers display the viewer's-language row if present, else the label.
+Neither of the issue's two options: no language column on `label`, and no wholesale move
+of preferred names into `names.tsv` (the diff-readability hit ADR-0011 already
+rejected). See [ADR-0020](../decisions/0020-localised-preferred-names-are-name-rows.md).
+
+Implementation is deferred until the first real row, which is safe *because* the shape
+is decided — the change is additive, so there is no migration to get ahead of, which was
+the only urgency the question claimed. Worth noting: the Spanish pressure that prompted
+this attaches to humpback *signal* labels, which are the signals repository's; the
+likelier demand here is Coast Salish names (qwe'lhol'mechen), and those can be recorded
+today as `common` + language. Q14 only ever gated marking one *preferred*.
 
 ### Q16 — Should the register hold parentage?
 **Resolved 2026-07-28.** Yes, in `data/parentage.tsv`, as edges rather than as

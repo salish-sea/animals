@@ -9,6 +9,13 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Design
+- **Localised preferred names are `names.tsv` rows, added when they exist** (ADR-0020),
+  closing Q14 largely by rejecting its premise: `label` is not "implicitly English" but
+  notation for ~650 of 668 entities, so it stays language-neutral and gains no language
+  dimension. A genuinely language-bound preferred name becomes a sparse
+  `type = preferred` row beside the existing `language` column, with `label` as the
+  fallback; implementation is additive and deferred until the first real row. Coast
+  Salish names can be recorded today as `common` + language.
 - **Names are compared by folding, never rewritten** (ADR-0019), closing Q17. The
   register publishes the matching rule C2 needs — lowercase, drop apostrophes and
   hyphens, collapse whitespace, strip leading zeros per digit run — with executable test
