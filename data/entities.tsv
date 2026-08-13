@@ -26,6 +26,13 @@ SSA:0000908	taxon		Laridae	NCBITaxon:8910			SEED	NCBI has no gull-only taxon bel
 SSA:0000909	taxon		Cepphus columba	NCBITaxon:28696			SEED	
 SSA:0000910	taxon		Pandion haliaetus	NCBITaxon:56262			SEED	
 SSA:0000911	taxon		Passer domesticus	NCBITaxon:48849			SEED	
+SSA:0000912	taxon		Phocoena phocoena	NCBITaxon:9742			SEED	
+SSA:0000913	taxon		Phocoenoides dalli	NCBITaxon:9744			SEED	
+SSA:0000914	taxon		Sagmatias obliquidens	NCBITaxon:3371155			SEED	Genus unsettled. WoRMS accepts Sagmatias (AphiaID 1571909, checked 2026-08-13), NCBI labels the same record Aethalodelphis, and Lagenorhynchus is the familiar older name; all three are in names.tsv. The label follows WoRMS because it tracks the Society for Marine Mammalogy list; the taxon_id still points at NCBI per ADR-0008. A curator arbitrates in Q26; until then the label is a holding position and nothing keys on it.
+SSA:0000915	taxon		Balaenoptera acutorostrata	NCBITaxon:9767			SEED	Species level. North Pacific animals are the subspecies B. a. scammoni, which no hydrophone distinguishes.
+SSA:0000916	taxon		Balaenoptera physalus	NCBITaxon:9770			SEED	
+SSA:0000917	taxon		Mirounga angustirostris	NCBITaxon:9716			SEED	
+SSA:0000918	taxon		Enhydra lutris	NCBITaxon:34882			SEED	Unlikely to be heard on a hydrophone, but sighted: iNaturalist holds ~200 verifiable Salish Sea observations, which SalishSea.io ingests. See docs/scope.md.
 SSA:0002000	group	matriline	T002s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T002 descendants across several blocks. Grouping unconfirmed — see Q22.
 SSA:0002001	group	matriline	T007s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T007 descendants across several blocks. Grouping unconfirmed — see Q22.
 SSA:0002002	group	matriline	T010s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T010 descendants across several blocks. Grouping unconfirmed — see Q22.

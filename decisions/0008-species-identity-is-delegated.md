@@ -128,8 +128,14 @@ importing and maintaining a backbone we deliberately do not own.
   hold an opinion, and should not.
 - iNaturalist is deliberately *not* the taxonomic authority here, despite being named
   first in the originating discussion. It is a good audience and a reasonable crosswalk
-  target, but it is crowd-edited and its taxonomy shifts. A crosswalk to iNat taxon
-  identifiers can be added to `mappings.tsv` if a consumer needs one.
+  target, but it is crowd-edited and its taxonomy shifts. **That crosswalk now exists**:
+  SalishSea.io ingests iNaturalist sightings, so as of 2026-08-13 every `kind = taxon`
+  entity carries a `skos:exactMatch` to an `inaturalist.taxon:` identifier in
+  `mappings.tsv`, sourced as `INAT`. The distinction this bullet draws is exactly what
+  makes that safe: a crosswalk records where iNaturalist currently puts a concept, while
+  `taxon_id` stays on NCBI. When iNaturalist moves a species, one mapping row changes and
+  nothing else does. `inaturalist.taxon` is the Bioregistry prefix, which resolves to
+  `https://www.inaturalist.org/taxa/$1`.
 
 ## Alternatives considered
 

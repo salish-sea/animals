@@ -73,10 +73,13 @@ into a competing database that will drift from the sources it depends on.
 
 ## In scope, geographically and taxonomically
 
-Animals whose identity matters to a Salish Sea hydrophone moderator. Marine mammals
-first — but a shore-mounted hydrophone also hears birds, and OrcaHello moderators
-already tag them (orcahello#550, the Orcasound label dictionary), so soniferous birds
-are in scope at taxon level. In practice, initially:
+Animals whose identity matters to **either consumer**: heard by a Salish Sea hydrophone
+moderator, or observed and mapped by SalishSea.io. Those two admit different animals and
+the register needs both — an animal that is never heard is still sighted, and
+SalishSea.io ingests iNaturalist, which carries far more species than a hydrophone ever
+will. Marine mammals first — but a shore-mounted hydrophone also hears birds, and
+OrcaHello moderators already tag them (orcahello#550, the Orcasound label dictionary), so
+soniferous birds are in scope at taxon level. In practice, initially:
 
 - *Orcinus orca* — Southern Residents and Bigg's, resolved to ecotype, pod, matriline
   and individual. Northern Residents and offshores are in scope but unpopulated.
@@ -85,6 +88,18 @@ are in scope at taxon level. In practice, initially:
   for "an animal of this species, not resolved further", including an orca heard too
   faintly to place in an ecotype. See
   [ADR-0008](../decisions/0008-species-identity-is-delegated.md).
+
+  The marine-mammal half of that list is **the species monitored by the PSEMP
+  [Marine Mammals Work Group](https://psemp-marinemammalsworkgroup-wa-psp.hub.arcgis.com/)**,
+  which convenes the people who monitor marine mammals in the Salish Sea. Adopting a
+  roster somebody else maintains, rather than inventing one, means a moderator and a
+  PSEMP committee are talking about the same set of animals, and it settles the
+  otherwise endless question of where to stop. It is a *monitoring* criterion rather than
+  an acoustic one, which is why it lands the sea otter and the northern elephant seal —
+  unlikely hydrophone tags, but iNaturalist holds roughly 200 verifiable sea otter
+  observations inside the Salish Sea, so SalishSea.io has something to resolve against a
+  register entity today. That is the second consumer earning its half of the criterion
+  above.
 - Birds, as `kind = taxon` entities under the same delegation. The level follows what a
   moderator can actually hear: pigeon guillemot resolves to species; "gull" is the
   family; "bird" is the class *Aves*, the acoustic analogue of the unplaceable orca.
