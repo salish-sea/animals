@@ -28,13 +28,25 @@ SSA:0000904	harbor seal	hidden	en	SEED	US spelling.
 SSA:0000905	Gray whale	common	en	SEED	
 SSA:0000905	Grey whale	hidden	en	SEED	Canadian spelling, as in the HALLO labels.
 SSA:0000906	River otter	common	en	SEED	
-SSA:0000906	otter	hidden	en	SEED	As tagged in OrcaHello bouts.
+SSA:0000906	otter	hidden	en	SEED	As tagged in OrcaHello bouts. Ambiguous since SSA:0000918 (sea otter) entered the register; a bare "otter" near a hydrophone is almost always this one.
 SSA:0000907	Bird	common	en	SEED	
 SSA:0000908	Gull	common	en	SEED	
 SSA:0000909	Pigeon guillemot	common	en	SEED	
 SSA:0000909	PIGU	hidden	en	SEED	Birder four-letter code, used as a tag by OrcaHello moderators.
 SSA:0000910	Osprey	common	en	SEED	
 SSA:0000911	House sparrow	common	en	SEED	
+SSA:0000912	Harbour porpoise	common	en	SEED	
+SSA:0000912	harbor porpoise	hidden	en	SEED	US spelling.
+SSA:0000913	Dall's porpoise	common	en	SEED	
+SSA:0000913	Dalls porpoise	hidden	en	SEED	Apostrophe-free spelling, for autocomplete.
+SSA:0000914	Pacific white-sided dolphin	common	en	SEED	
+SSA:0000914	Lagenorhynchus obliquidens	historical	en	SEED	The genus this species sat in until recently; still in wide use, including by PSEMP and WDFW.
+SSA:0000914	Aethalodelphis obliquidens	hidden	en	SEED	The name NCBI gives NCBITaxon:3371155. Searchable, but not offered as a name; see the entity note.
+SSA:0000915	Minke whale	common	en	SEED	No bare "minke" row: T064A (SSA:0010183) is nicknamed Minke, and the two fold together (ADR-0019).
+SSA:0000916	Fin whale	common	en	SEED	
+SSA:0000917	Northern elephant seal	common	en	SEED	
+SSA:0000917	elephant seal	hidden	en	SEED	No other elephant seal occurs here.
+SSA:0000918	Sea otter	common	en	SEED	
 SSA:0002000	T002	hidden	en	BIGGS-SHEET	Bare designation.
 SSA:0002001	Secret Agents	common	en	BIGGS-SHEET	Recorded in the sheet as a "Known as" heading.
 SSA:0002001	T007	hidden	en	BIGGS-SHEET	Bare designation.

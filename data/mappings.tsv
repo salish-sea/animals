@@ -2,3 +2,22 @@ subject_id	predicate_id	object_id	object_label	mapping_justification	confidence	
 SSA:0000001	skos:broadMatch	NCBITaxon:9733	Orcinus orca	semapv:ManualMappingCuration	1.0	SEED	An ecotype is narrower than the species.
 SSA:0000002	skos:broadMatch	NCBITaxon:9733	Orcinus orca	semapv:ManualMappingCuration	1.0	SEED	
 SSA:0000040	skos:closeMatch	finwave:T090	T090	semapv:ManualMappingCuration		SEED	Deliberately NOT exactMatch: SSA:0000040 is the matriline T090s, while finwave:T090 is almost certainly the individual. Conflating them is the error ADR-0003 exists to prevent. Needs an individual T090 entity, or removal.
+SSA:0000900	skos:exactMatch	inaturalist.taxon:41521	Orcinus orca	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000901	skos:exactMatch	inaturalist.taxon:41566	Megaptera novaeangliae	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000902	skos:exactMatch	inaturalist.taxon:41755	Eumetopias jubatus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000903	skos:exactMatch	inaturalist.taxon:41740	Zalophus californianus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000904	skos:exactMatch	inaturalist.taxon:41708	Phoca vitulina	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000905	skos:exactMatch	inaturalist.taxon:41478	Eschrichtius robustus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000906	skos:exactMatch	inaturalist.taxon:41777	Lontra canadensis	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000907	skos:exactMatch	inaturalist.taxon:3	Aves	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000908	skos:exactMatch	inaturalist.taxon:4342	Laridae	semapv:ManualMappingCuration	1.0	INAT	iNaturalist also has a gull-only subfamily, Larinae (inaturalist.taxon:447155), which NCBI lacks and which is the reason SSA:0000908 sits at family level. If the register ever narrows the entity to gulls, that is the mapping to switch to.
+SSA:0000909	skos:exactMatch	inaturalist.taxon:4415	Cepphus columba	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000910	skos:exactMatch	inaturalist.taxon:116999	Pandion haliaetus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000911	skos:exactMatch	inaturalist.taxon:13858	Passer domesticus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000912	skos:exactMatch	inaturalist.taxon:41440	Phocoena phocoena	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000913	skos:exactMatch	inaturalist.taxon:41446	Phocoenoides dalli	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000914	skos:exactMatch	inaturalist.taxon:1664971	Aethalodelphis obliquidens	semapv:ManualMappingCuration	1.0	INAT	Same species concept under a different genus name — iNaturalist follows NCBI here, not WoRMS. exactMatch is still right: the concept matches, only the name differs. See Q26.
+SSA:0000915	skos:exactMatch	inaturalist.taxon:41550	Balaenoptera acutorostrata	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000916	skos:exactMatch	inaturalist.taxon:41562	Balaenoptera physalus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000917	skos:exactMatch	inaturalist.taxon:41728	Mirounga angustirostris	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000918	skos:exactMatch	inaturalist.taxon:41860	Enhydra lutris	semapv:ManualMappingCuration	1.0	INAT	The crosswalk this whole set exists for: SalishSea.io ingests iNaturalist sea otter sightings and needs a register entity to resolve them to.

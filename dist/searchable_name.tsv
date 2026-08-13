@@ -62,6 +62,25 @@ SSA:0000910	Osprey	common	en
 SSA:0000910	Pandion haliaetus	preferred	en
 SSA:0000911	House sparrow	common	en
 SSA:0000911	Passer domesticus	preferred	en
+SSA:0000912	Harbour porpoise	common	en
+SSA:0000912	Phocoena phocoena	preferred	en
+SSA:0000912	harbor porpoise	hidden	en
+SSA:0000913	Dall's porpoise	common	en
+SSA:0000913	Dalls porpoise	hidden	en
+SSA:0000913	Phocoenoides dalli	preferred	en
+SSA:0000914	Aethalodelphis obliquidens	hidden	en
+SSA:0000914	Lagenorhynchus obliquidens	historical	en
+SSA:0000914	Pacific white-sided dolphin	common	en
+SSA:0000914	Sagmatias obliquidens	preferred	en
+SSA:0000915	Balaenoptera acutorostrata	preferred	en
+SSA:0000915	Minke whale	common	en
+SSA:0000916	Balaenoptera physalus	preferred	en
+SSA:0000916	Fin whale	common	en
+SSA:0000917	Mirounga angustirostris	preferred	en
+SSA:0000917	Northern elephant seal	common	en
+SSA:0000917	elephant seal	hidden	en
+SSA:0000918	Enhydra lutris	preferred	en
+SSA:0000918	Sea otter	common	en
 SSA:0002000	T002	hidden	en
 SSA:0002000	T002s	preferred	en
 SSA:0002001	Secret Agents	common	en

@@ -104,6 +104,29 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 - All decision records are `Proposed`. No definition is `agreed`.
 
 ### Register
+- **The taxon list now covers every marine mammal PSEMP's
+  [Marine Mammals Work Group](https://psemp-marinemammalsworkgroup-wa-psp.hub.arcgis.com/)
+  monitors.** Seven new `kind = taxon` entities, `SSA:0000912`–`SSA:0000918`: harbour
+  porpoise, Dall's porpoise, Pacific white-sided dolphin, minke whale, fin whale,
+  northern elephant seal and sea otter. Adopting PSEMP's roster instead of inventing one
+  means the register and the region's monitoring community bound the same set of animals;
+  `docs/scope.md` now says so. The dolphin's genus is contested — WoRMS says *Sagmatias*,
+  NCBI and iNaturalist say *Aethalodelphis*, everyone else still says *Lagenorhynchus* —
+  so the label follows WoRMS as a holding position, the other two are `names.tsv` rows,
+  and a curator arbitrates in Q26.
+- **An iNaturalist crosswalk**, the first new namespace in `mappings.tsv` since the
+  register began: every `kind = taxon` entity now carries a `skos:exactMatch` to an
+  `inaturalist.taxon:` identifier, 19 rows under a new `INAT` source. SalishSea.io
+  ingests iNaturalist sightings and had no way to resolve an observation's taxon to a
+  register entity; it does now. ADR-0008 had reserved this ("if a consumer needs one")
+  and is updated to record that one does. `taxon_id` is untouched and stays on NCBI —
+  the crosswalk records where iNaturalist puts a concept, not what the register believes.
+- **Birds enter the register at taxon level**, `SSA:0000905`–`SSA:0000911`: gray whale
+  and river otter, plus pigeon guillemot, osprey, house sparrow, `Laridae` for "gull" and
+  `Aves` for "a bird, not resolved further" — the acoustic analogue of the unplaceable
+  orca. A shore-mounted hydrophone hears birds and OrcaHello moderators were already
+  tagging them (orcahello#550). The level follows what a moderator can actually hear; no
+  individuals and no groups. *(Backfilled — this shipped in 334134c without an entry.)*
 - `parentage.tsv` added, with one row: J57's mother is J35. That fact was previously
   carried in a free-text note on `entities.tsv` that the validator ignored.
 - **Imported the Bigg's designation sheet**: 510 individuals and 132 derived matrilines,
