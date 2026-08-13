@@ -40,7 +40,6 @@ Filter: [`informatics-review`](https://github.com/salish-sea/animals/issues?q=is
 | # | Question | Owner | Discussion |
 |---|----------|-------|------------|
 | Q8 | Who is the named editor, and who reviews the domain content? | P. Abrahamsen, S. Veirs | [#5](https://github.com/salish-sea/animals/issues/5) |
-| Q10 | Is `SSA:` a safe prefix? | P. Abrahamsen | [#7](https://github.com/salish-sea/animals/issues/7) |
 | Q24 | Does releasing the register republish the Bigg's sheet? | P. Abrahamsen | [#15](https://github.com/salish-sea/animals/issues/15) |
 
 ## Answered
@@ -101,6 +100,23 @@ sound sources, so nothing here bears on it.
 One real requirement survives, and it is the annotation schema's, not the register's: a
 signal must be taggable with no animal tag, so that a moderator who knows the call type
 and not the producer is not forced to name an animal. Folded into Q18.
+
+### Q10 — Is `SSA:` a safe prefix?
+**Resolved 2026-08-13. Free, and now claimed.** Checked against four registries:
+Bioregistry (2,759 prefixes — no `ssa`, and no prefix or synonym even beginning with
+"ssa"), N2T (4,110), identifiers.org, and prefix.cc. Nothing collides. The only clashes
+are semantic — anti-SSA/Ro is routine in biomedicine — and those cannot collide
+mechanically with a CURIE prefix.
+
+But "free" decays, so the answer is not just the check: `SSA` is being **registered in
+the Bioregistry**, with no URI format, which 1,151 of its 2,759 entries also lack and
+which keeps [ADR-0014](../decisions/0014-a-publication-not-a-service.md)'s
+publication-not-a-service promise intact. The trigger for resolving it now was
+[orcasound/orcasite#1001](https://github.com/orcasound/orcasite/issues/1001) asking
+OrcaSound to store register identifiers in a new column — the first external system, which
+is precisely the deadline this question set itself. See
+[ADR-0021](../decisions/0021-ssa-is-a-registered-prefix.md); renaming (`ssanimals`) and
+`w3id.org` IRIs are the alternatives it weighed.
 
 ### Q11 — What is the release artefact, and does it need a stable URL?
 **Resolved 2026-07-28.** GitHub releases, with the permanent asset URLs GitHub already

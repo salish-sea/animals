@@ -60,6 +60,7 @@ been formally put to the scientific reviewers.
 | [0018](0018-annotation-semantics-belong-to-consumers.md) | Annotation semantics belong to the consuming systems | Scientific + informatics |
 | [0019](0019-names-are-compared-by-folding.md) | Names are compared by folding, never rewritten | Scientific + informatics |
 | [0020](0020-localised-preferred-names-are-name-rows.md) | Localised preferred names are `names.tsv` rows, added when they exist | Scientific + informatics |
+| [0021](0021-ssa-is-a-registered-prefix.md) | `SSA` is kept, and claimed as a Bioregistry prefix | Informatics reviewers |
 
 ## Template
 

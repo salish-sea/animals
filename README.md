@@ -54,7 +54,7 @@ Decision records addressed to `Informatics reviewers` are implementation detail.
 
 ### If you're reviewing the design
 
-[docs/scope.md](docs/scope.md), then [decisions/](decisions/) — twenty records covering the
+[docs/scope.md](docs/scope.md), then [decisions/](decisions/) — twenty-one records covering the
 choices that are expensive to reverse. [docs/background.md](docs/background.md) explains
 what we're borrowing from the Gene Ontology and OBO Foundry, what we're deliberately not
 taking, and why most projects like this one die.
