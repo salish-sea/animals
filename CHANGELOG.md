@@ -104,13 +104,18 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 - All decision records are `Proposed`. No definition is `agreed`.
 
 ### Register
-- **The taxon list now covers every marine mammal PSEMP's
+- **The marine-mammal taxon list is now PSEMP's committee list.** Seven new
+  `kind = taxon` entities, `SSA:0000912`–`SSA:0000918`: harbour porpoise, Dall's
+  porpoise, Pacific white-sided dolphin, minke whale, fin whale, northern elephant seal
+  and sea otter. With those, the register holds all sixteen species listed by committee
+  on the PSEMP
   [Marine Mammals Work Group](https://psemp-marinemammalsworkgroup-wa-psp.hub.arcgis.com/)
-  monitors.** Seven new `kind = taxon` entities, `SSA:0000912`–`SSA:0000918`: harbour
-  porpoise, Dall's porpoise, Pacific white-sided dolphin, minke whale, fin whale,
-  northern elephant seal and sea otter. Adopting PSEMP's roster instead of inventing one
-  means the register and the region's monitoring community bound the same set of animals;
-  `docs/scope.md` now says so. The dolphin's genus is contested — WoRMS says *Sagmatias*,
+  site as retrieved 2026-08-13. That is a *bound*, not a guarantee of completeness: the
+  work group's stated remit is "all marine mammals that inhabit or migrate through Puget
+  Sound", and the committee list is the "most-common species" within it, so an animal
+  they monitor may still be missing here. Adopting somebody else's published list beats
+  inventing one anyway, and `docs/scope.md` now says which list and as of when. The
+  dolphin's genus is contested — WoRMS says *Sagmatias*,
   NCBI and iNaturalist say *Aethalodelphis*, everyone else still says *Lagenorhynchus* —
   so the label follows WoRMS as a holding position, the other two are `names.tsv` rows,
   and a curator arbitrates in Q26.
@@ -121,12 +126,14 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
   register entity; it does now. ADR-0008 had reserved this ("if a consumer needs one")
   and is updated to record that one does. `taxon_id` is untouched and stays on NCBI —
   the crosswalk records where iNaturalist puts a concept, not what the register believes.
-- **Birds enter the register at taxon level**, `SSA:0000905`–`SSA:0000911`: gray whale
-  and river otter, plus pigeon guillemot, osprey, house sparrow, `Laridae` for "gull" and
-  `Aves` for "a bird, not resolved further" — the acoustic analogue of the unplaceable
-  orca. A shore-mounted hydrophone hears birds and OrcaHello moderators were already
-  tagging them (orcahello#550). The level follows what a moderator can actually hear; no
-  individuals and no groups. *(Backfilled — this shipped in 334134c without an entry.)*
+- **Gray whale and river otter** (`SSA:0000905`, `SSA:0000906`) as `kind = taxon`
+  entities, alongside the pinnipeds already there.
+- **Birds enter the register at taxon level**, `SSA:0000907`–`SSA:0000911`: pigeon
+  guillemot, osprey, house sparrow, `Laridae` for "gull", and `Aves` for "a bird, not
+  resolved further" — the acoustic analogue of the unplaceable orca. A shore-mounted
+  hydrophone hears birds and OrcaHello moderators were already tagging them
+  (orcahello#550). The level follows what a moderator can actually hear; no individuals
+  and no groups. *(Both entries backfilled — these shipped in 334134c without one.)*
 - `parentage.tsv` added, with one row: J57's mother is J35. That fact was previously
   carried in a free-text note on `entities.tsv` that the validator ignored.
 - **Imported the Bigg's designation sheet**: 510 individuals and 132 derived matrilines,
