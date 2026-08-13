@@ -89,17 +89,26 @@ soniferous birds are in scope at taxon level. In practice, initially:
   faintly to place in an ecotype. See
   [ADR-0008](../decisions/0008-species-identity-is-delegated.md).
 
-  The marine-mammal half of that list is **the species monitored by the PSEMP
-  [Marine Mammals Work Group](https://psemp-marinemammalsworkgroup-wa-psp.hub.arcgis.com/)**,
-  which convenes the people who monitor marine mammals in the Salish Sea. Adopting a
-  roster somebody else maintains, rather than inventing one, means a moderator and a
-  PSEMP committee are talking about the same set of animals, and it settles the
-  otherwise endless question of where to stop. It is a *monitoring* criterion rather than
-  an acoustic one, which is why it lands the sea otter and the northern elephant seal —
-  unlikely hydrophone tags, but iNaturalist holds roughly 200 verifiable sea otter
-  observations inside the Salish Sea, so SalishSea.io has something to resolve against a
-  register entity today. That is the second consumer earning its half of the criterion
-  above.
+  The marine-mammal half of that list is **the species the PSEMP
+  [Marine Mammals Work Group](https://psemp-marinemammalsworkgroup-wa-psp.hub.arcgis.com/)
+  lists by committee** — sixteen of them, as the site read on 2026-08-13. Adopting a list
+  somebody else maintains, rather than inventing one, means a moderator and a PSEMP
+  committee are talking about the same set of animals, and it settles the otherwise
+  endless question of where to stop.
+
+  Read the bound honestly, though. The work group's remit is *"all marine mammals that
+  inhabit or migrate through Puget Sound"*; the committee list is the *"most-common
+  species"* within it. So matching that list means the register is not obviously missing
+  anything, **not** that it is complete — and the list is a snapshot of a page that will
+  change without telling us. Re-checking it is curation work nobody has scheduled. What
+  the register can say is which list it took and when, which is what the date above is
+  for.
+
+  It is also a *monitoring* criterion rather than an acoustic one, which is why it lands
+  the sea otter and the northern elephant seal — unlikely hydrophone tags, but
+  iNaturalist holds roughly 200 verifiable sea otter observations inside the Salish Sea,
+  so SalishSea.io has something to resolve against a register entity today. That is the
+  second consumer earning its half of the criterion above.
 - Birds, as `kind = taxon` entities under the same delegation. The level follows what a
   moderator can actually hear: pigeon guillemot resolves to species; "gull" is the
   family; "bird" is the class *Aves*, the acoustic analogue of the unplaceable orca.
