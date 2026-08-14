@@ -295,12 +295,29 @@ def fold_checks(db: sqlite3.Connection) -> None:
 
     # C2's acceptance test — the trio from docs/competency-questions.md, pinned to
     # permanent identifiers (ADR-0010) so the "answerable" claim cannot silently rot.
-    for typed, expect in [("T090s", "SSA:0000040"), ("J-35", "SSA:0000101"),
-                          ("Biggs", "SSA:0000002")]:
+    # `T090` pins C2's other half: the honest answer is sometimes *two* candidates, and
+    # a regression that quietly resolved it to one would read as an improvement.
+    for typed, expect in [("T090s", {"SSA:0000040"}), ("J-35", {"SSA:0000101"}),
+                          ("Biggs", {"SSA:0000002"}),
+                          ("T090", {"SSA:0000040", "SSA:0010290"})]:
         hits = set().union(set(), *classes.get(fold(typed), {}).values())
-        if hits != {expect}:
-            err(f"C2: {typed!r} should resolve to {expect}, "
+        if hits != expect:
+            err(f"C2: {typed!r} should resolve to {', '.join(sorted(expect))}, "
                 f"got {sorted(hits) or 'nothing'}")
+
+    # And two candidates are only worth returning if a consumer can tell them apart.
+    # `searchable_name` carries each entity's label, kind and rank for exactly this;
+    # candidates that describe themselves identically are an honest answer nobody can
+    # act on, so the promise is checked rather than asserted.
+    described = {eid: rest for eid, *rest in db.execute(
+        "SELECT DISTINCT entity_id, entity_label, entity_kind, "
+        "coalesce(entity_rank, '') FROM searchable_name")}
+    for folded, by_raw in sorted(classes.items()):
+        ids = set().union(*by_raw.values())
+        if len(ids) > 1 and len({tuple(described[i]) for i in ids}) < len(ids):
+            err(f"searchable_name: the candidates for {folded!r} describe themselves "
+                f"identically ({', '.join(sorted(ids))}), so a consumer cannot offer "
+                "the choice C2 says to offer")
 
 
 def write_dist(db: sqlite3.Connection) -> None:
