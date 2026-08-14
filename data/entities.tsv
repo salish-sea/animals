@@ -674,3 +674,6 @@ SSA:0010506	individual		T251	NCBITaxon:9733	1982	M	BIGGS-SHEET
 SSA:0010507	individual		T252	NCBITaxon:9733	../1972	F	BIGGS-SHEET	Sheet records '≤1972'.
 SSA:0010508	individual		T253	NCBITaxon:9733	2001	F	BIGGS-SHEET	
 SSA:0010509	individual		T253A	NCBITaxon:9733	2019		BIGGS-SHEET	
+SSA:0010510	individual		T419	NCBITaxon:9733			BAYCETOLOGY	Designated by Bay Cetology in March 2026, after three unrecognised mammal-eaters appeared in Vancouver Harbour and travelled south into Puget Sound. Not a West Coast Transient — morphology and a March 2025 Anchorage match point to the Gulf of Alaska / Aleutian / Bering transient stock — which is why the Bigg's sheet does not reach them. Reported in the press as female; sex and birth year are left blank until they come from a citable record.
+SSA:0010511	individual		T420	NCBITaxon:9733			BAYCETOLOGY	One of the trio designated with T419 (SSA:0010510); see that note.
+SSA:0010512	individual		T421	NCBITaxon:9733			BAYCETOLOGY	One of the trio designated with T419 (SSA:0010510); see that note.
