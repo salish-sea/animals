@@ -86,7 +86,7 @@ curator's afternoon for an engineer's tidiness.
 |---|---|
 | `ancestor.tsv` | C5, C6 — the transitive closure, precomputed |
 | `current_status.tsv` | C4 — the `(recorded, effective)` precedence rule from ADR-0006 |
-| `searchable_name.tsv` | C2 — preferred names and every alternate, in one place |
+| `searchable_name.tsv` | C2 — preferred names and every alternate, in one place, each carrying the entity's label, kind and rank so two candidates can be told apart |
 | `retired.tsv` | C9 — deprecations, marked `automatic` or `needs-human` |
 
 Generated files are sorted in Python, not with `ORDER BY`. They are committed and CI

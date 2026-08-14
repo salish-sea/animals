@@ -9,6 +9,17 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Register
+- **`dist/searchable_name.tsv` gained three columns** — `entity_label`, `entity_kind`,
+  `entity_rank` — closing the half of the designation-matching question that was actually
+  still open. Zero-padding was already answered: ADR-0019's fold resolves `T34s`, `T38C`
+  and `T65A5` against the padded labels, verified against all 94 live OrcaSound tags. What
+  was missing was the other half of the same promise. C2 says the honest answer is
+  sometimes two candidates and a consumer should "show both", and ADR-0019 says they are
+  distinguished by rank — but the file holding every name carried no rank, so a picker
+  could not describe the choice it was offering. Worse for hidden names, which match in
+  search and must never be displayed: a consumer matching `J` had an identifier and
+  nothing to show. Same denormalisation, and the same reason, as `ancestor.tsv`. Additive,
+  so existing readers keep working.
 - **Three new individuals: `SSA:0010510` T419, `SSA:0010511` T420, `SSA:0010512` T421.**
   Designated by Bay Cetology in March 2026 after an unrecognised trio appeared in
   Vancouver Harbour and travelled into Puget Sound, and tagged on OrcaSound bouts since.
