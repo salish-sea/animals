@@ -19,7 +19,11 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
   could not describe the choice it was offering. Worse for hidden names, which match in
   search and must never be displayed: a consumer matching `J` had an identifier and
   nothing to show. Same denormalisation, and the same reason, as `ancestor.tsv`. Additive,
-  so existing readers keep working.
+  so existing readers keep working. C2's acceptance test grew to match: `T090` is pinned
+  to *both* `SSA:0000040` and `SSA:0010290`, so a regression that quietly resolved the
+  ambiguity to one candidate fails the build instead of reading as an improvement, and
+  every folded form naming more than one entity is checked to describe its candidates
+  distinguishably.
 - **Three new individuals: `SSA:0010510` T419, `SSA:0010511` T420, `SSA:0010512` T421.**
   Designated by Bay Cetology in March 2026 after an unrecognised trio appeared in
   Vancouver Harbour and travelled into Puget Sound, and tagged on OrcaSound bouts since.
