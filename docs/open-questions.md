@@ -32,6 +32,7 @@ Filter: [`science-review`](https://github.com/salish-sea/animals/issues?q=is%3Ai
 | Q22 | Is a T-number lineage the right grouping, or does the sheet group differently? | S. Veirs, D. Bain | [#13](https://github.com/salish-sea/animals/issues/13) |
 | Q23 | What are the Alaska/California designations, and where do they belong? | S. Veirs | [#14](https://github.com/salish-sea/animals/issues/14) |
 | Q26 | Which genus does the Pacific white-sided dolphin get labelled with? | S. Veirs, D. Bain | [#17](https://github.com/salish-sea/animals/issues/17) |
+| Q27 | Is an ecotype a population, and where do transients from another stock belong? | S. Veirs, D. Bain | [#22](https://github.com/salish-sea/animals/issues/22) |
 
 ## For the informatics reviewers
 
