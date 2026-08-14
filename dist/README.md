@@ -16,7 +16,7 @@ consumers cannot disagree. Each answers a competency question — see
 |---|---|
 | `ancestor.tsv` | C5, C6 — the transitive closure of membership, precomputed |
 | `current_status.tsv` | C4 — current life status, applying the `(recorded, effective)` precedence rule from ADR-0006 |
-| `searchable_name.tsv` | C2 — preferred names and every alternate, in one place |
+| `searchable_name.tsv` | C2 — preferred names and every alternate, in one place, each carrying the entity's label, kind and rank so two candidates can be told apart |
 | `retired.tsv` | C9 — deprecated identifiers, marked `automatic` or `needs-human` |
 | `fold_test.tsv` | C2 — the name-comparison fold of [ADR-0019](../decisions/0019-names-are-compared-by-folding.md), as executable test cases; a conforming implementation reproduces the `folded` column exactly |
 | `structure.md` | A picture of the register's shape, as Mermaid — which GitHub renders inline |

@@ -81,7 +81,8 @@ dist/           Generated derived views. Never hand-edited.
 
 `dist/` is where the work of *consuming* the register is done once instead of per
 consumer: `ancestor.tsv` is the precomputed closure, `current_status.tsv` applies the
-life-status precedence rule, `searchable_name.tsv` merges preferred and alternate names.
+life-status precedence rule, `searchable_name.tsv` merges preferred and alternate names
+and describes the entity behind each one.
 A release also carries `register.db`, the same data as SQLite, which explains itself:
 
 ```sh

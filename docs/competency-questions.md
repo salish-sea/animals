@@ -24,7 +24,7 @@ generating this table rather than maintaining it by hand.
 | # | Question | Asked by | Answerable today |
 |---|---|---|---|
 | C1 | What is the current preferred label for this identifier? | Both, every display | Yes |
-| C2 | A moderator typed "T090s" / "J-35" / "Biggs" — which entity is that? | OrcaSound autocomplete | Yes — fold the query and compare against `dist/searchable_name.tsv` ([ADR-0019](../decisions/0019-names-are-compared-by-folding.md)); this trio is pinned as an acceptance test in `bin/validate.py`. Sometimes the honest answer is two candidates (`T090` is a matriline's bare designation *and* its matriarch's label) — show both |
+| C2 | A moderator typed "T090s" / "J-35" / "Biggs" — which entity is that? | OrcaSound autocomplete | Yes — fold the query and compare against `dist/searchable_name.tsv` ([ADR-0019](../decisions/0019-names-are-compared-by-folding.md)); this trio is pinned as an acceptance test in `bin/validate.py`. Sometimes the honest answer is two candidates (`T090` is a matriline's bare designation *and* its matriarch's label) — show both, using the `entity_label` / `entity_kind` / `entity_rank` columns that come with each row |
 | C3 | Which individuals belonged to J pod at the time of this bout? | SalishSea.io map | Yes |
 | C4 | Was this individual alive on this date? | SalishSea.io, data QA | Yes |
 | C5 | Is this entity a Southern Resident? (at any depth below the ecotype) | Both, filtering | **Partly** — pods and below reach the community, not yet the ecotype, pending [Q1](open-questions.md) |

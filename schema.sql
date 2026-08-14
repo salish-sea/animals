@@ -229,10 +229,21 @@ FROM walk w JOIN entity e ON e.entity_id = w.ancestor_id;
 
 -- C2: everything a moderator might type, in one place. Autocomplete must read the
 -- preferred name AND the alternates; searching only `name` misses every label.
+--
+-- The entity's label, kind and rank ride along because C2's honest answer is sometimes
+-- *two* candidates (ADR-0019: `T037` is a matriline's bare designation and its
+-- matriarch's label, 126 such pairs), and a picker cannot offer a choice it has no way
+-- to describe. A hidden name makes the need sharper still: it matches in search and must
+-- never be displayed, so a consumer that matched `J` has nothing to show without the
+-- label. Same denormalisation, same reason, as `ancestor`.
 CREATE VIEW searchable_name AS
-SELECT entity_id, label AS name, 'preferred' AS type, 'en' AS language FROM entity
+SELECT entity_id, label AS name, 'preferred' AS type, 'en' AS language,
+       label AS entity_label, kind AS entity_kind, rank AS entity_rank
+FROM entity
 UNION ALL
-SELECT entity_id, name, type, language FROM name;
+SELECT n.entity_id, n.name, n.type, n.language,
+       e.label AS entity_label, e.kind AS entity_kind, e.rank AS entity_rank
+FROM name n JOIN entity e ON e.entity_id = n.entity_id;
 
 -- C9: what a consumer should do with an identifier it can no longer offer.
 CREATE VIEW retired AS
