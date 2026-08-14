@@ -8,7 +8,33 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+### Register
+- **Three new individuals: `SSA:0010510` T419, `SSA:0010511` T420, `SSA:0010512` T421.**
+  Designated by Bay Cetology in March 2026 after an unrecognised trio appeared in
+  Vancouver Harbour and travelled into Puget Sound, and tagged on OrcaSound bouts since.
+  They are Bigg's by ecotype but not West Coast Transients — attributed to the Gulf of
+  Alaska / Aleutian / Bering stock — which is why the Bigg's sheet does not reach them.
+  Membership is recorded at the ecotype, because their matriline is not established and
+  `definitions/membership.md` says not to invent an intermediate group. Sex and birth
+  years are left blank: the press reports them, no citable record does yet.
+- **Five names added**, all `hidden`, all sourced to use rather than to an authority:
+  bare `J` / `K` / `L` on the three pods, `KW` on `SSA:0000900` *Orcinus orca*, and
+  `seagull` on `SSA:0000908` *Laridae*. Every one is a tag a moderator has actually
+  applied — `J` to 29 bouts — that previously resolved to nothing. `Gull` stays the
+  common name for Laridae; `seagull` is hidden because it is colloquial, not because it
+  is unused.
+- **Two new sources.** `BAYCETOLOGY` — the body that mints T designations, maintaining
+  the catalogue Michael Bigg started, which `FINWAVE` turns out to be the platform for;
+  relevant to Q3. And `ORCASOUND`, which is not an authority on animals at all but
+  evidence that a name is *in use* — the only claim a hidden name makes.
+
 ### Design
+- **Scope gained two boundaries that were being rediscovered.** `WCT01`–`WCT08` look like
+  West Coast Transient catalogue designations and are Bigg's **call types** — the bout
+  `Short rising WCT07 call x2` settles it — so they belong to `signals-srkw` and the
+  register mints nothing for them. A consumer therefore cannot classify a tag by its
+  shape: `T090s` is an animal, `WCT07` is a sound. And `fish` is deliberately outside the
+  taxonomic bound, so the tag is meant to end up with no identifier.
 - Q12 retired by declining it: this register never references the signals vocabulary,
   so there is no mutual convention to design. The register's half was already
   discharged — identifiers stable enough to reference (ADR-0002, ADR-0010) and editions

@@ -5,6 +5,9 @@ SSA:0000002	Transient	historical	en	SEED	Superseded term; retained so historical
 SSA:0000002	Biggs	hidden	en	SEED	Apostrophe-free spelling, for autocomplete.
 SSA:0000002	Bigg's killer whale	common	en	SEED	
 SSA:0000020	Js	hidden	en	SEED	As used in bout name "Faint Js".
+SSA:0000020	J	hidden	en	ORCASOUND	Bare pod letter. Applied to 29 bouts; also the context label copied into signals-srkw.
+SSA:0000021	K	hidden	en	ORCASOUND	Bare pod letter. Applied to 10 bouts.
+SSA:0000022	L	hidden	en	ORCASOUND	Bare pod letter. Applied to 5 bouts.
 SSA:0000101	Tahlequah	common	en	SEED	
 SSA:0000101	J-35	hidden	en	SEED	Hyphenated spelling.
 SSA:0000102	Phoenix	common	en	SEED	
@@ -18,6 +21,7 @@ SSA:0000040	T090	hidden	en	SEED	Bare designation, as used in catalogues.
 SSA:0000040	T090 matriline	hidden	en	SEED	
 SSA:0000900	Killer whale	common	en	SEED	
 SSA:0000900	orca	hidden	en	SEED	
+SSA:0000900	KW	hidden	en	ORCASOUND	Moderator abbreviation for "killer whale", applied when the ecotype is undetermined or alongside one that is.
 SSA:0000901	Humpback whale	common	en	SEED	
 SSA:0000901	humpback	hidden	en	SEED	
 SSA:0000902	Steller sea lion	common	en	SEED	
@@ -31,6 +35,7 @@ SSA:0000906	River otter	common	en	SEED
 SSA:0000906	otter	hidden	en	SEED	As tagged in OrcaHello bouts. Ambiguous since SSA:0000918 (sea otter) entered the register; a bare "otter" near a hydrophone is almost always this one.
 SSA:0000907	Bird	common	en	SEED	
 SSA:0000908	Gull	common	en	SEED	
+SSA:0000908	seagull	hidden	en	ORCASOUND	Colloquial and imprecise, so hidden rather than offered; "Gull" stays the common name.
 SSA:0000909	Pigeon guillemot	common	en	SEED	
 SSA:0000909	PIGU	hidden	en	SEED	Birder four-letter code, used as a tag by OrcaHello moderators.
 SSA:0000910	Osprey	common	en	SEED	

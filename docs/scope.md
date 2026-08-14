@@ -67,9 +67,10 @@ into a competing database that will drift from the sources it depends on.
   descent from the matriarch, not from a mother. See
   [ADR-0016](../decisions/0016-parentage.md). Health, condition and reproductive state
   stay out.
-- **Not the sound vocabulary.** Signal types (calls, whistles, clicks, S01–S42) live in
+- **Not the sound vocabulary.** Signal types (calls, whistles, clicks, S01–S42, and the
+  Bigg's `WCT` call types) live in
   [orcasound/signals-srkw](https://github.com/orcasound/signals-srkw). See "Relationship
-  to signals-srkw" below.
+  to signals-srkw" below — `WCT07` looks like an animal designation and is not one.
 
 ## In scope, geographically and taxonomically
 
@@ -115,6 +116,13 @@ soniferous birds are in scope at taxon level. In practice, initially:
   No individuals, no groups — birds get no register-side structure unless tagging
   practice demands it.
 
+Fish are **out**, and this is worth stating because a hydrophone hears them: `fish` is a
+live OrcaSound tag on two biophony bouts, described there as "groans or grunts or other
+sounds (likely) associated with Salish Sea fish". Marine mammals and soniferous birds are
+the bound above, and a tag that falls outside it is meant to end up with no identifier —
+that is the vocabulary honestly reporting its edge, not a gap to close. Adding fish means
+adopting a different list from a different committee, and nobody has asked for one.
+
 ## Relationship to the SalishSea.io catalogue
 
 SalishSea.io already ships a marine-mammal catalogue in production — individuals, social
@@ -144,6 +152,15 @@ failure this register exists to prevent. Referencing entity identifiers would cl
 Whether to do that, and when, belongs to that repository; what this register can do is
 make identifiers stable enough to be worth referencing, and say plainly that the copy
 exists.
+
+The boundary is also less obvious than it looks from either side. OrcaSound's live tags
+include `WCT01`, `WCT02`, `WCT06`, `WCT07` and `WCT08`, which read like catalogue
+designations for animals — `WCT` is the West Coast Transients, and the register holds 132
+of their matrilines. They are **call types**, and the bout `Short rising WCT07 call x2
+(Andrews Bay)` is what settles it: they are the Bigg's counterpart to `S01`–`S42`,
+carried alongside `Bigg's` and `call` rather than instead of them. So the register mints
+nothing for them, and a consumer classifying a tag cannot do it by shape — `T090s` is an
+animal and `WCT07` is a sound, and only the vocabulary each belongs to can say which.
 
 Note also that `JK` and `JKL` encode a *set* as a single label, which this register will
 not do — see [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md) for the

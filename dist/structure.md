@@ -13,12 +13,13 @@ graph BT
   clan["clan<br/>1"]
   community["community<br/>1"]
   ecotype["ecotype<br/>2"]
-  individual["individual<br/>515"]
+  individual["individual<br/>518"]
   matriline["matriline<br/>134"]
   pod["pod<br/>3"]
   taxon["taxon<br/>19"]
   individual -->|514| matriline
   matriline -->|132| ecotype
+  individual -->|3| ecotype
   pod -->|3| clan
   ecotype -->|2| taxon
   matriline -->|2| pod

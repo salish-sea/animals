@@ -8,9 +8,12 @@ SSA:0000002	Biggs	hidden	en
 SSA:0000002	Transient	historical	en
 SSA:0000010	Southern Resident community	preferred	en
 SSA:0000011	J clan	preferred	en
+SSA:0000020	J	hidden	en
 SSA:0000020	J pod	preferred	en
 SSA:0000020	Js	hidden	en
+SSA:0000021	K	hidden	en
 SSA:0000021	K pod	preferred	en
+SSA:0000022	L	hidden	en
 SSA:0000022	L pod	preferred	en
 SSA:0000030	J17	hidden	en
 SSA:0000030	J17 matriline	hidden	en
@@ -31,6 +34,7 @@ SSA:0000104	L87	preferred	en
 SSA:0000104	Onyx	common	en
 SSA:0000105	J17	preferred	en
 SSA:0000105	Princess Angeline	common	en
+SSA:0000900	KW	hidden	en
 SSA:0000900	Killer whale	common	en
 SSA:0000900	Orcinus orca	preferred	en
 SSA:0000900	orca	hidden	en
@@ -55,6 +59,7 @@ SSA:0000907	Aves	preferred	en
 SSA:0000907	Bird	common	en
 SSA:0000908	Gull	common	en
 SSA:0000908	Laridae	preferred	en
+SSA:0000908	seagull	hidden	en
 SSA:0000909	Cepphus columba	preferred	en
 SSA:0000909	PIGU	hidden	en
 SSA:0000909	Pigeon guillemot	common	en
@@ -1319,3 +1324,6 @@ SSA:0010507	CA173	hidden	en
 SSA:0010507	T252	preferred	en
 SSA:0010508	T253	preferred	en
 SSA:0010509	T253A	preferred	en
+SSA:0010510	T419	preferred	en
+SSA:0010511	T420	preferred	en
+SSA:0010512	T421	preferred	en
