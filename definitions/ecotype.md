@@ -38,6 +38,11 @@ may in fact be redundant in this register.
 
 ## Open questions
 
+- Is an ecotype a *population*, as the definition above says, or something that contains
+  several? The register now holds three animals from the Alaskan transient stock
+  (`SSA:0010510`–`SSA:0010512`) under Bigg's, beside 132 West Coast Transient matrilines,
+  so the strict reading makes that membership false and the loose reading makes this
+  definition wrong. (Q27)
 - Should the register distinguish ecotype from community at all? (Q1)
 - Do humpbacks or other in-scope species have populations that warrant the same
   treatment, or is this rank orca-only?
