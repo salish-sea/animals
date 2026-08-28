@@ -32,7 +32,7 @@ SSA:0000904	harbor seal	hidden	en	SEED	US spelling.
 SSA:0000905	Gray whale	common	en	SEED	
 SSA:0000905	Grey whale	hidden	en	SEED	Canadian spelling, as in the HALLO labels.
 SSA:0000906	River otter	common	en	SEED	
-SSA:0000906	otter	hidden	en	SEED	As tagged in OrcaHello bouts. Ambiguous since SSA:0000918 (sea otter) entered the register; a bare "otter" near a hydrophone is almost always this one.
+SSA:0000906	otter	hidden	en	SEED	As tagged in OrcaHello bouts. Genuinely ambiguous: sea otter (SSA:0000918) and the unidentified-otter entity (SSA:0000939) share the spelling, so C2 answers with both candidates. Near a hydrophone this one is almost always meant.
 SSA:0000907	Bird	common	en	SEED	
 SSA:0000907	UNBI	hidden	en	IBP	The list's code for a bird not resolved further, entered as "Aves (gen, sp)" — the rank this entity already sits at.
 SSA:0000908	Gull	common	en	SEED	No alpha code, deliberately: the nearest is UNLG, "Unidentified Larus Gull" — Larus, a genus — and this entity is the family, which also holds terns, kittiwakes, noddies and skimmers. Attaching it would narrow the entity through a name, and nothing in the data would contradict it. If a Larus-rank entity is ever minted, UNLG is its name.
@@ -55,6 +55,37 @@ SSA:0000916	Fin whale	common	en	SEED
 SSA:0000917	Northern elephant seal	common	en	SEED	
 SSA:0000917	elephant seal	hidden	en	SEED	No other elephant seal occurs here.
 SSA:0000918	Sea otter	common	en	SEED	
+SSA:0000919	Blue whale	common	en	SEED	
+SSA:0000920	Sei whale	common	en	SEED	
+SSA:0000921	Sperm whale	common	en	SEED	
+SSA:0000921	cachalot	hidden	en	SEED	
+SSA:0000922	Pygmy sperm whale	common	en	SEED	
+SSA:0000923	Dwarf sperm whale	common	en	SEED	
+SSA:0000924	Baird's beaked whale	common	en	SEED	
+SSA:0000925	Cuvier's beaked whale	common	en	SEED	
+SSA:0000926	Risso's dolphin	common	en	SEED	
+SSA:0000927	Common bottlenose dolphin	common	en	SEED	
+SSA:0000927	bottlenose dolphin	hidden	en	SEED	
+SSA:0000928	Common dolphin	common	en	SEED	
+SSA:0000928	short-beaked common dolphin	hidden	en	SEED	
+SSA:0000929	Northern right whale dolphin	common	en	SEED	
+SSA:0000929	right whale dolphin	hidden	en	SEED	
+SSA:0000930	Striped dolphin	common	en	SEED	
+SSA:0000931	Short-finned pilot whale	common	en	SEED	
+SSA:0000931	pilot whale	hidden	en	SEED	
+SSA:0000932	Guadalupe fur seal	common	en	SEED	
+SSA:0000933	Northern fur seal	common	en	SEED	
+SSA:0000934	Cetacean	common	en	SEED	
+SSA:0000934	whale	hidden	en	SEED	
+SSA:0000934	dolphin	hidden	en	SEED	
+SSA:0000935	Baleen whale	common	en	SEED	
+SSA:0000936	Eared seal	common	en	SEED	
+SSA:0000937	True seal	common	en	SEED	
+SSA:0000937	earless seal	hidden	en	SEED	
+SSA:0000938	Pinniped	common	en	SEED	
+SSA:0000938	seal or sea lion	hidden	en	SEED	
+SSA:0000939	Otter	common	en	SEED	
+SSA:0000939	otter	hidden	en	SEED	The shared spelling, declared on both this entity and SSA:0000906 so the two-candidate answer is intentional (ADR-0019).
 SSA:0002000	T002	hidden	en	BIGGS-SHEET	Bare designation.
 SSA:0002001	Secret Agents	common	en	BIGGS-SHEET	Recorded in the sheet as a "Known as" heading.
 SSA:0002001	T007	hidden	en	BIGGS-SHEET	Bare designation.

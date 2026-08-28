@@ -21,3 +21,24 @@ SSA:0000915	skos:exactMatch	inaturalist.taxon:41550	Balaenoptera acutorostrata	s
 SSA:0000916	skos:exactMatch	inaturalist.taxon:41562	Balaenoptera physalus	semapv:ManualMappingCuration	1.0	INAT	
 SSA:0000917	skos:exactMatch	inaturalist.taxon:41728	Mirounga angustirostris	semapv:ManualMappingCuration	1.0	INAT	
 SSA:0000918	skos:exactMatch	inaturalist.taxon:41860	Enhydra lutris	semapv:ManualMappingCuration	1.0	INAT	The crosswalk this whole set exists for: SalishSea.io ingests iNaturalist sea otter sightings and needs a register entity to resolve them to.
+SSA:0000919	skos:exactMatch	inaturalist.taxon:41553	Balaenoptera musculus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000920	skos:exactMatch	inaturalist.taxon:41559	Balaenoptera borealis	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000921	skos:exactMatch	inaturalist.taxon:74890	Physeter macrocephalus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000922	skos:exactMatch	inaturalist.taxon:41464	Kogia breviceps	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000923	skos:exactMatch	inaturalist.taxon:41465	Kogia sima	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000924	skos:exactMatch	inaturalist.taxon:41426	Berardius bairdii	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000925	skos:exactMatch	inaturalist.taxon:41428	Ziphius cavirostris	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000926	skos:exactMatch	inaturalist.taxon:41541	Grampus griseus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000927	skos:exactMatch	inaturalist.taxon:41482	Tursiops truncatus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000928	skos:exactMatch	inaturalist.taxon:41526	Delphinus delphis	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000929	skos:exactMatch	inaturalist.taxon:41537	Lissodelphis borealis	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000930	skos:exactMatch	inaturalist.taxon:41494	Stenella coeruleoalba	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000931	skos:exactMatch	inaturalist.taxon:41532	Globicephala macrorhynchus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000932	skos:exactMatch	inaturalist.taxon:41746	Arctocephalus townsendi	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000933	skos:exactMatch	inaturalist.taxon:41757	Callorhinus ursinus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000934	skos:exactMatch	inaturalist.taxon:152871	Cetacea	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000935	skos:exactMatch	inaturalist.taxon:424321	Mysticeti	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000936	skos:exactMatch	inaturalist.taxon:41736	Otariidae	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000937	skos:exactMatch	inaturalist.taxon:41687	Phocidae	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000938	skos:closeMatch	inaturalist.taxon:372843	Phocoidea	semapv:ManualMappingCuration	1.0	INAT	See the entity note: iNaturalist's Phocoidea is labelled 'Pinnipeds' and used as such, but names a narrower clade.
+SSA:0000939	skos:exactMatch	inaturalist.taxon:526556	Lutrinae	semapv:ManualMappingCuration	1.0	INAT	
