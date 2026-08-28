@@ -9,6 +9,46 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Register
+
+## 2026.08.1 — 2026-08-28
+
+The first release. Everything below has accumulated since the first commit; from here a
+consumer can pin a tag rather than a commit ([ADR-0013](decisions/0013-distribution.md)).
+
+**Nothing in `data/` has been verified by a curator.** Every row is `SEED` or sourced but
+unratified, and `bin/validate.py` reports 157 unverified rows. The register is still
+proposed, and this tag is a way to consume a moving thing reproducibly, not a claim that
+it is settled.
+
+### Register
+- **Twenty-one taxon entities**, `SSA:0000919`–`SSA:0000939`: fifteen species (blue, sei,
+  sperm, pygmy and dwarf sperm, Baird's and Cuvier's beaked, Risso's, common bottlenose,
+  common, northern right whale, striped, short-finned pilot, Guadalupe fur seal, northern
+  fur seal) and six stand-ins for "sighted, but not resolvable further" — the role *Aves*
+  and *Laridae* already played for audio. Coverage of the SalishSea.io corpus goes from
+  97.5% to 99.6% of 61,411 occurrences.
+- **`SSA:0000938` is `Pinnipedia`, not `Phocoidea`.** iNaturalist's `372843` is labelled
+  "Pinnipeds" and used that way, but the name denotes the true-seal superfamily, and NCBI
+  has no `Phocoidea` at all — so [ADR-0008](decisions/0008-species-identity-is-delegated.md)'s
+  requirement that a taxon entity carry a `taxon_id` cannot be met by that concept.
+  `Pinnipedia` is the clade meant and NCBI has it. The mapping is `skos:closeMatch`, not
+  `exactMatch`: the two overlap in practice and differ in principle, which is what
+  `closeMatch` says. salishsea-io decision 027 records the same misnomer from the GBIF
+  side.
+- **"Otter" now names two entities on purpose.** `SSA:0000939` *Lutrinae* is added because
+  river otter and sea otter are both present, so a bare "otter" is genuinely ambiguous
+  rather than shorthand. `validate.py` rejected the first attempt under
+  [ADR-0019](decisions/0019-names-are-compared-by-folding.md) — `SSA:0000906` already
+  carried a hidden `otter`, and two entities meeting *only* under the fold is an accident.
+  The spelling is now declared on **both**, which is the difference between an accidental
+  collision and C2's honest two-candidate answer.
+- **Deliberately still uncovered:** 26 genus- and family-level stubs, 195 SalishSea.io
+  occurrences. Most resolve to a single local species the register already holds, which
+  raises a question rather than a gap — whether "Megaptera, species undetermined" wants an
+  entity, or whether [ADR-0009](decisions/0009-uncertainty-on-the-annotation.md) means the
+  consumer tags the species and carries the uncertainty on the annotation. A few
+  (`Delphinidae`, `Delphinoidea`, `Phocoenidae`) are genuinely multi-species and are a
+  straightforward gap.
 - **Three birder alpha codes added**, all `hidden`: `UNBI` on `SSA:0000907` *Aves*,
   `OSPR` on `SSA:0000910` *Pandion haliaetus*, `HOSP` on `SSA:0000911` *Passer
   domesticus*. `UNBI` is the interesting one: the list carries group-level entries for
@@ -66,6 +106,18 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
   evidence that a name is *in use* — the only claim a hidden name makes.
 
 ### Design
+- **Crosswalks are checked against the authorities they point at.**
+  `bin/check_crosswalks.py`, run weekly and on any pull request touching `mappings.tsv` or
+  `entities.tsv`. ADR-0008 buys us out of curating taxonomy at the price of pointing at
+  identifiers we do not control, and nothing here ever asked whether they still resolved.
+  An audit of SalishSea.io's taxon mirror found **nine iNaturalist taxa deactivated
+  upstream**, four from one genus split (*Sagmatias* → *Aethalodelphis*); every mapping in
+  this register was correct throughout, but there was no way to know that without asking.
+  Drift — deactivated, merged or renamed — reports and never fails, because upstream is
+  allowed to change and we are only obliged to notice; each finding names the replacement
+  identifier. What *does* fail is an identifier that never resolved, or a mapping added in
+  a pull request that was already dead when written. A single `crosswalk-drift` issue
+  holds the worklist and closes when nothing drifts.
 - **Scope gained two boundaries that were being rediscovered.** `WCT01`–`WCT08` look like
   West Coast Transient catalogue designations and are Bigg's **call types** — the bout
   `Short rising WCT07 call x2` settles it — so they belong to `signals-srkw` and the
