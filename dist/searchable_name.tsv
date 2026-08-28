@@ -57,14 +57,17 @@ SSA:0000906	River otter	common	en	Lontra canadensis	taxon
 SSA:0000906	otter	hidden	en	Lontra canadensis	taxon	
 SSA:0000907	Aves	preferred	en	Aves	taxon	
 SSA:0000907	Bird	common	en	Aves	taxon	
+SSA:0000907	UNBI	hidden	en	Aves	taxon	
 SSA:0000908	Gull	common	en	Laridae	taxon	
 SSA:0000908	Laridae	preferred	en	Laridae	taxon	
 SSA:0000908	seagull	hidden	en	Laridae	taxon	
 SSA:0000909	Cepphus columba	preferred	en	Cepphus columba	taxon	
 SSA:0000909	PIGU	hidden	en	Cepphus columba	taxon	
 SSA:0000909	Pigeon guillemot	common	en	Cepphus columba	taxon	
+SSA:0000910	OSPR	hidden	en	Pandion haliaetus	taxon	
 SSA:0000910	Osprey	common	en	Pandion haliaetus	taxon	
 SSA:0000910	Pandion haliaetus	preferred	en	Pandion haliaetus	taxon	
+SSA:0000911	HOSP	hidden	en	Passer domesticus	taxon	
 SSA:0000911	House sparrow	common	en	Passer domesticus	taxon	
 SSA:0000911	Passer domesticus	preferred	en	Passer domesticus	taxon	
 SSA:0000912	Harbour porpoise	common	en	Phocoena phocoena	taxon	

@@ -9,6 +9,28 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Register
+- **Three birder alpha codes added**, all `hidden`: `UNBI` on `SSA:0000907` *Aves*,
+  `OSPR` on `SSA:0000910` *Pandion haliaetus*, `HOSP` on `SSA:0000911` *Passer
+  domesticus*. `UNBI` is the interesting one: the list carries group-level entries for
+  exactly the case this register's *Aves* covers, and the scientific-name entry reads
+  *Aves (gen, sp)* — the rank the entity already sits at. `PIGU` is unchanged but
+  re-sourced from `SEED` to `IBP`, which is what actually assigns it.
+- **`SSA:0000908` *Laridae* deliberately has no code**, and the `Gull` row now says so.
+  The nearest entry is `UNLG`, "Unidentified Larus Gull" — *Larus*, a genus — while this
+  entity is the family, which also holds terns, kittiwakes, noddies and skimmers. Adding
+  it would narrow the entity through a name, and validation would not catch it, because
+  nothing else in the data contradicts a name. This is the failure ADR-0019's guarantee
+  is written against, arriving by a route that guarantee does not cover: not a fold
+  collision, but a curator adding a name at the wrong rank. Written down so the gap is
+  not "fixed" later by someone noticing it.
+- **One new source, `IBP`.** Unlike `ORCASOUND`, it is an authority: an alpha code is the
+  code the Institute for Bird Populations assigns to a taxon — a species, or one of the
+  141 non-species entries the list also carries, which is what `UNBI` is — true whether
+  or not a moderator ever types it. That is why these are `IBP` rows and not
+  use-evidence rows. Not a departure from ADR-0019, which rejected variant-rows for
+  *typographic* variation — `OSPR` does not fold to `osprey`; it is a name from a
+  separate naming system that denotes the same animal, so a row is the right mechanism,
+  and the burden is bounded at one row per bird entity the list actually covers.
 - **`dist/searchable_name.tsv` gained three columns** — `entity_label`, `entity_kind`,
   `entity_rank` — closing the half of the designation-matching question that was actually
   still open. Zero-padding was already answered: ADR-0019's fold resolves `T34s`, `T38C`
