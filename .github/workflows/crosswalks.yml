@@ -29,29 +29,49 @@ permissions:
   contents: read
 
 jobs:
-  check:
+  # Split from the scheduled job so that `issues: write` is never held by a run that
+  # executes code from a pull-request branch. `permissions:` takes no expressions, so
+  # scoping it by event means separate jobs rather than a conditional.
+  pull-request:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      issues: write   # the scheduled run keeps a single drift worklist open
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          # Pull-request mode compares against the base branch's mappings.tsv to tell
+          # Nothing here pushes, and the checked-out branch is the thing under test —
+          # one of the trigger paths is the checker itself. Leaving a token in
+          # .git/config would put it within reach of the code being reviewed.
+          persist-credentials: false
+          # Comparing against the base branch's mappings.tsv is what tells
           # "added in this change" from "was already there".
           fetch-depth: 0
 
       # A pull request may only add mappings that are live today. Drift on a row that
       # predates the change is still reported, but does not fail the build.
-      - name: Check crosswalks (pull request)
-        if: github.event_name == 'pull_request'
+      - name: Check crosswalks
+        env:
+          # Through the environment, not interpolated into the script: a ref name is
+          # attacker-influenced text and the shell should never parse it as code.
+          BASE_REF: ${{ github.base_ref }}
         run: |
-          git fetch --quiet origin "${{ github.base_ref }}"
-          git show "origin/${{ github.base_ref }}:data/mappings.tsv" > /tmp/base-mappings.tsv
+          git fetch --quiet origin "$BASE_REF"
+          git show "origin/$BASE_REF:data/mappings.tsv" > /tmp/base-mappings.tsv
           python3 bin/check_crosswalks.py --github --added-since /tmp/base-mappings.tsv
 
-      - name: Check crosswalks (scheduled)
-        if: github.event_name != 'pull_request'
+  scheduled:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write   # keeps a single drift worklist open
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Check crosswalks
         id: check
         run: |
           set +e
@@ -77,10 +97,16 @@ jobs:
       # worklist, and each finding already carries the replacement identifier, so the
       # fix is a one-line edit per row.
       - name: File or update the drift worklist
-        if: github.event_name != 'pull_request' && steps.check.outputs.drift == '1'
+        if: steps.check.outputs.drift == '1'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # Idempotent, and the reason this is here rather than assumed: the label was
+          # created by hand once. A fork, or a repo restored from source, would have
+          # had the first `gh issue create` fail on a missing label.
+          gh label create crosswalk-drift --force \
+            --color D4C5F9 \
+            --description "Upstream identifiers this register points at have moved (filed by crosswalks.yml)"
           cat > body.md <<'PREAMBLE'
           The authorities this register points at have changed. Each finding names its
           replacement, so most fixes are a one-line edit to `data/mappings.tsv` or
@@ -107,7 +133,7 @@ jobs:
 
       # An empty worklist left open is how a check stops being believed.
       - name: Close the worklist when clean
-        if: github.event_name != 'pull_request' && steps.check.outputs.drift != '1'
+        if: steps.check.outputs.drift != '1'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -122,7 +148,7 @@ jobs:
       # loud on purpose: the first is a defect, and the second means this week's check
       # did not actually happen, which is worse than a failure that says so.
       - name: Fail on broken identifiers
-        if: github.event_name != 'pull_request' && steps.check.outputs.status != '0'
+        if: steps.check.outputs.status != '0'
         run: |
           echo "The crosswalk check reported an error rather than drift; see above."
           exit 1

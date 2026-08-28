@@ -67,22 +67,40 @@ class Finding:
     """A single problem, with enough context for a curator to fix it in one edit."""
 
     def __init__(self, kind: str, subject: str, message: str, fix: str = "") -> None:
-        self.kind = kind  # "drift" | "bad"
+        """`kind` is "drift" (upstream moved) or "bad" (this was always wrong).
+
+        The distinction decides severity and, in CI, whether the finding lands on a
+        curator's worklist or fails the build.
+        """
+        self.kind = kind
         self.subject = subject
         self.message = message
         self.fix = fix
 
     def __str__(self) -> str:
+        """One line, plus an indented `fix:` line when there is something to do.
+
+        The indent is load-bearing: crosswalks.yml keeps a finding and its fix together
+        by treating leading whitespace as a continuation of the line above. Changing
+        this format means changing that awk.
+        """
         line = f"{self.subject}: {self.message}"
         return f"{line}\n    fix: {self.fix}" if self.fix else line
 
 
 def read_tsv(name: str) -> list[dict[str, str]]:
+    """Read `data/<name>.tsv`. Header row supplies the keys; every value is a string."""
     with (DATA / f"{name}.tsv").open(newline="", encoding="utf-8") as fh:
         return list(csv.DictReader(fh, delimiter="\t"))
 
 
 def fetch_json(url: str) -> dict:
+    """GET a JSON document, identifying ourselves so the API owners can see who calls.
+
+    Raises rather than returning a sentinel: callers distinguish "the authority says this
+    identifier is dead" from "we could not ask", and conflating them would report the
+    whole register as broken whenever the network is.
+    """
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=30) as resp:
         return json.load(resp)
@@ -98,7 +116,11 @@ def check_inaturalist(offline: bool) -> list[Finding]:
     though nothing is broken.
     """
     findings: list[Finding] = []
-    wanted: dict[str, dict[str, str]] = {}
+    # Keyed by taxon id, but holding every row that points at it. Two entities may
+    # legitimately crosswalk to the same iNaturalist taxon — an ecotype and the species
+    # it sits inside, say — and keeping only the last would silently stop checking the
+    # others while still reporting success.
+    wanted: dict[str, list[dict[str, str]]] = {}
 
     for row in read_tsv("mappings"):
         obj = row["object_id"]
@@ -112,7 +134,7 @@ def check_inaturalist(offline: bool) -> list[Finding]:
                 "iNaturalist taxon identifiers are integers.",
             ))
             continue
-        wanted[taxon_id] = row
+        wanted.setdefault(taxon_id, []).append(row)
 
     if offline or not wanted:
         return findings
@@ -136,41 +158,41 @@ def check_inaturalist(offline: bool) -> list[Finding]:
         for taxon in payload.get("results", []):
             tid = str(taxon["id"])
             seen.add(tid)
-            row = wanted[tid]
-            subject = f"{row['subject_id']} -> inaturalist.taxon:{tid}"
+            for row in wanted[tid]:
+                subject = f"{row['subject_id']} -> inaturalist.taxon:{tid}"
 
-            if not taxon.get("is_active"):
-                replacements = taxon.get("current_synonymous_taxon_ids") or []
-                target = (
-                    f"inaturalist.taxon:{replacements[0]}" if len(replacements) == 1
-                    else f"one of {replacements}" if replacements
-                    else "no replacement offered by iNaturalist"
-                )
-                findings.append(Finding(
-                    "drift", subject,
-                    f"'{taxon.get('name')}' is INACTIVE upstream",
-                    f"Repoint mappings.tsv at {target}, and check whether names.tsv "
-                    f"should keep the old name as type=historical.",
-                ))
-            elif taxon.get("name") != row["object_label"]:
-                findings.append(Finding(
-                    "drift", subject,
-                    f"renamed upstream: object_label says '{row['object_label']}', "
-                    f"iNaturalist now says '{taxon.get('name')}'",
-                    "Update object_label. The id is still correct, so nothing else "
-                    "changes.",
-                ))
+                if not taxon.get("is_active"):
+                    replacements = taxon.get("current_synonymous_taxon_ids") or []
+                    target = (
+                        f"inaturalist.taxon:{replacements[0]}" if len(replacements) == 1
+                        else f"one of {replacements}" if replacements
+                        else "no replacement offered by iNaturalist"
+                    )
+                    findings.append(Finding(
+                        "drift", subject,
+                        f"'{taxon.get('name')}' is INACTIVE upstream",
+                        f"Repoint mappings.tsv at {target}, and check whether names.tsv "
+                        f"should keep the old name as type=historical.",
+                    ))
+                elif taxon.get("name") != row["object_label"]:
+                    findings.append(Finding(
+                        "drift", subject,
+                        f"renamed upstream: object_label says '{row['object_label']}', "
+                        f"iNaturalist now says '{taxon.get('name')}'",
+                        "Update object_label. The id is still correct, so nothing else "
+                        "changes.",
+                    ))
 
         time.sleep(INAT_PAUSE_S)
 
     for missing in sorted(set(ids) - seen):
-        row = wanted[missing]
-        findings.append(Finding(
-            "bad", f"{row['subject_id']} -> inaturalist.taxon:{missing}",
-            "does not resolve at iNaturalist",
-            "Check the identifier. iNaturalist does not reuse taxon ids, so a "
-            "non-resolving one was probably never right.",
-        ))
+        for row in wanted[missing]:
+            findings.append(Finding(
+                "bad", f"{row['subject_id']} -> inaturalist.taxon:{missing}",
+                "does not resolve at iNaturalist",
+                "Check the identifier. iNaturalist does not reuse taxon ids, so a "
+                "non-resolving one was probably never right.",
+            ))
 
     return findings
 
@@ -261,6 +283,7 @@ def check_new_mappings(base_file: Path) -> list[Finding]:
 
 
 def main() -> int:
+    """Run the checks and report. Exit 1 on a broken identifier, or on drift if --strict."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--strict", action="store_true",
                         help="treat drift as an error, not a warning")
