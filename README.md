@@ -76,6 +76,9 @@ docs/           Scope, competency questions, walkthrough, glossary, background,
                 open questions.
 bin/validate.py Loads data/ into SQLite built from schema.sql — the build is the
                 validation — then runs the graph checks SQL can't state.
+bin/check_crosswalks.py
+                Asks iNaturalist and NCBI whether the identifiers we point at
+                still mean what we recorded. Weekly, and on any PR touching them.
 dist/           Generated derived views. Never hand-edited.
 ```
 
@@ -152,6 +155,24 @@ python3 bin/validate.py               # errors fail, unverified rows warn
 python3 bin/validate.py --write-dist  # regenerate dist/ (CI checks it is current)
 python3 bin/validate.py --strict      # warnings fail too
 ```
+
+`validate.py` proves the register is consistent with itself. It cannot prove that
+`inaturalist.taxon:1368491` still names a live concept, because that fact lives on
+someone else's server — and [ADR-0008](decisions/0008-species-identity-is-delegated.md)
+deliberately made us depend on it. So a second script asks:
+
+```sh
+python3 bin/check_crosswalks.py           # drift warns, broken identifiers fail
+python3 bin/check_crosswalks.py --strict  # drift fails too
+python3 bin/check_crosswalks.py --offline # identifier syntax only, no network
+```
+
+Drift — a taxon deactivated, merged or renamed upstream — is **not** an error. Upstream
+is allowed to change; we are only obliged to notice, and each finding names the
+replacement identifier so the fix is usually one line. A weekly run keeps a single
+`crosswalk-drift` issue as the worklist and closes it when nothing drifts. What *does*
+fail is an identifier that never resolved, or a mapping added in a pull request that
+was already dead when it was written.
 
 ## Versioning
 
