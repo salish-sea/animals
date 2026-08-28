@@ -34,12 +34,15 @@ SSA:0000905	Grey whale	hidden	en	SEED	Canadian spelling, as in the HALLO labels.
 SSA:0000906	River otter	common	en	SEED	
 SSA:0000906	otter	hidden	en	SEED	As tagged in OrcaHello bouts. Ambiguous since SSA:0000918 (sea otter) entered the register; a bare "otter" near a hydrophone is almost always this one.
 SSA:0000907	Bird	common	en	SEED	
-SSA:0000908	Gull	common	en	SEED	
+SSA:0000907	UNBI	hidden	en	IBP	The list's code for a bird not resolved further, entered as "Aves (gen, sp)" — the rank this entity already sits at.
+SSA:0000908	Gull	common	en	SEED	No alpha code, deliberately: the nearest is UNLG, "Unidentified Larus Gull" — Larus, a genus — and this entity is the family, which also holds terns, kittiwakes, noddies and skimmers. Attaching it would narrow the entity through a name, and nothing in the data would contradict it. If a Larus-rank entity is ever minted, UNLG is its name.
 SSA:0000908	seagull	hidden	en	ORCASOUND	Colloquial and imprecise, so hidden rather than offered; "Gull" stays the common name.
 SSA:0000909	Pigeon guillemot	common	en	SEED	
-SSA:0000909	PIGU	hidden	en	SEED	Birder four-letter code, used as a tag by OrcaHello moderators.
+SSA:0000909	PIGU	hidden	en	IBP	Birder four-letter code, and the one bird code an OrcaHello moderator is known to have typed.
 SSA:0000910	Osprey	common	en	SEED	
+SSA:0000910	OSPR	hidden	en	IBP	
 SSA:0000911	House sparrow	common	en	SEED	
+SSA:0000911	HOSP	hidden	en	IBP	
 SSA:0000912	Harbour porpoise	common	en	SEED	
 SSA:0000912	harbor porpoise	hidden	en	SEED	US spelling.
 SSA:0000913	Dall's porpoise	common	en	SEED	
