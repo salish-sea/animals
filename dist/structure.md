@@ -16,7 +16,7 @@ graph BT
   individual["individual<br/>518"]
   matriline["matriline<br/>134"]
   pod["pod<br/>3"]
-  taxon["taxon<br/>19"]
+  taxon["taxon<br/>40"]
   individual -->|514| matriline
   matriline -->|132| ecotype
   individual -->|3| ecotype

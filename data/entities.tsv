@@ -33,6 +33,27 @@ SSA:0000915	taxon		Balaenoptera acutorostrata	NCBITaxon:9767			SEED	Species leve
 SSA:0000916	taxon		Balaenoptera physalus	NCBITaxon:9770			SEED	
 SSA:0000917	taxon		Mirounga angustirostris	NCBITaxon:9716			SEED	
 SSA:0000918	taxon		Enhydra lutris	NCBITaxon:34882			SEED	Unlikely to be heard on a hydrophone, but sighted: iNaturalist holds ~200 verifiable Salish Sea observations, which SalishSea.io ingests. See docs/scope.md.
+SSA:0000919	taxon		Balaenoptera musculus	NCBITaxon:9771			SEED	
+SSA:0000920	taxon		Balaenoptera borealis	NCBITaxon:9768			SEED	
+SSA:0000921	taxon		Physeter macrocephalus	NCBITaxon:9755			SEED	
+SSA:0000922	taxon		Kogia breviceps	NCBITaxon:27615			SEED	Not reliably distinguishable at sea from K. sima (SSA:0000923); a sighting identified only as Kogia is a genus-level record this register cannot yet receive. See the open question in the pull request that added this row.
+SSA:0000923	taxon		Kogia sima	NCBITaxon:9752			SEED	See SSA:0000922.
+SSA:0000924	taxon		Berardius bairdii	NCBITaxon:48742			SEED	
+SSA:0000925	taxon		Ziphius cavirostris	NCBITaxon:9760			SEED	
+SSA:0000926	taxon		Grampus griseus	NCBITaxon:83653			SEED	
+SSA:0000927	taxon		Tursiops truncatus	NCBITaxon:9739			SEED	
+SSA:0000928	taxon		Delphinus delphis	NCBITaxon:9728			SEED	iNaturalist and NCBI both place the long-beaked form as a subspecies of this species rather than as D. bairdii; SalishSea.io holds records under both the species and D. d. bairdii.
+SSA:0000929	taxon		Lissodelphis borealis	NCBITaxon:103588			SEED	
+SSA:0000930	taxon		Stenella coeruleoalba	NCBITaxon:9737			SEED	
+SSA:0000931	taxon		Globicephala macrorhynchus	NCBITaxon:38241			SEED	
+SSA:0000932	taxon		Arctocephalus townsendi	NCBITaxon:161921			SEED	
+SSA:0000933	taxon		Callorhinus ursinus	NCBITaxon:34884			SEED	
+SSA:0000934	taxon		Cetacea	NCBITaxon:9721			SEED	Tag when an animal is known to be a whale, dolphin or porpoise but nothing narrower is supportable.
+SSA:0000935	taxon		Mysticeti	NCBITaxon:9761			SEED	
+SSA:0000936	taxon		Otariidae	NCBITaxon:9702			SEED	Sea lions and fur seals together. Not interchangeable with 'sea lion': Callorhinus ursinus (SSA:0000933) and Arctocephalus townsendi (SSA:0000932) are here too.
+SSA:0000937	taxon		Phocidae	NCBITaxon:9709			SEED	
+SSA:0000938	taxon		Pinnipedia	NCBITaxon:3072905			SEED	Crosswalked to iNaturalist's 372843 as a closeMatch, not an exactMatch, and deliberately. iNaturalist labels that taxon 'Pinnipeds' and returns Otariidae beneath it, but the name Phocoidea strictly denotes the true-seal superfamily, and NCBI has no Phocoidea at all. Pinnipedia is the clade actually meant; salishsea-io decision 027 records the same misnomer. The two concepts overlap in practice and differ in principle, which is what closeMatch says.
+SSA:0000939	taxon		Lutrinae	NCBITaxon:169417			SEED	River otter (SSA:0000906) and sea otter (SSA:0000918) are both present in the region, so a bare 'otter' is genuinely ambiguous rather than shorthand.
 SSA:0002000	group	matriline	T002s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T002 descendants across several blocks. Grouping unconfirmed — see Q22.
 SSA:0002001	group	matriline	T007s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T007 descendants across several blocks. Grouping unconfirmed — see Q22.
 SSA:0002002	group	matriline	T010s	NCBITaxon:9733			BIGGS-SHEET	Derived from the designation prefix; the sheet groups T010 descendants across several blocks. Grouping unconfirmed — see Q22.
