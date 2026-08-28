@@ -1,0 +1,154 @@
+# ADR-0008 delegates species identity to NCBI and records a parallel crosswalk to
+# iNaturalist. Delegation buys us out of curating taxonomy, at the price of pointing at
+# identifiers we do not control — so something has to notice when one moves.
+#
+# On 2026-08-27 an audit of SalishSea.io's taxon mirror found nine iNaturalist taxa
+# deactivated upstream, four from a single genus split. The register's mappings were
+# correct throughout, but nothing here would ever have said so. This is that something.
+#
+# Two modes, because the two failures are different:
+#
+#   schedule       drift. Upstream moved after we wrote the row. Not our error, so it
+#                  reports rather than fails, and files one tracking issue rather than
+#                  a wall of them.
+#   pull_request   a mapping that is stale on the day it is added. That is a defect,
+#                  and review is the cheapest place to catch it.
+name: crosswalks
+
+on:
+  schedule:
+    - cron: "0 16 * * 1"   # Mondays, 16:00 UTC — an hour after staleness.yml
+  pull_request:
+    paths:
+      - 'data/mappings.tsv'
+      - 'data/entities.tsv'
+      - 'bin/check_crosswalks.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # Split from the scheduled job so that `issues: write` is never held by a run that
+  # executes code from a pull-request branch. `permissions:` takes no expressions, so
+  # scoping it by event means separate jobs rather than a conditional.
+  pull-request:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Nothing here pushes, and the checked-out branch is the thing under test —
+          # one of the trigger paths is the checker itself. Leaving a token in
+          # .git/config would put it within reach of the code being reviewed.
+          persist-credentials: false
+          # Comparing against the base branch's mappings.tsv is what tells
+          # "added in this change" from "was already there".
+          fetch-depth: 0
+
+      # A pull request may only add mappings that are live today. Drift on a row that
+      # predates the change is still reported, but does not fail the build.
+      - name: Check crosswalks
+        env:
+          # Through the environment, not interpolated into the script: a ref name is
+          # attacker-influenced text and the shell should never parse it as code.
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          git fetch --quiet origin "$BASE_REF"
+          git show "origin/$BASE_REF:data/mappings.tsv" > /tmp/base-mappings.tsv
+          python3 bin/check_crosswalks.py --github --added-since /tmp/base-mappings.tsv
+
+  scheduled:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write   # keeps a single drift worklist open
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Check crosswalks
+        id: check
+        run: |
+          set +e
+          python3 bin/check_crosswalks.py --github 2>report.txt
+          echo "status=$?" >> "$GITHUB_OUTPUT"
+          cat report.txt
+          # Only drift goes on the worklist. An ::error:: is either a malformed
+          # identifier or an unreachable API — neither is a curation task, and both
+          # fail the run at the last step instead.
+          #
+          # A finding is two lines: the ::warning:: itself and an indented "fix:" that
+          # names the replacement identifier. Keep both, or the worklist says what
+          # broke without saying what to do about it.
+          awk '
+            /^::warning::/ { keep = 1; sub(/^::warning::/, ""); print; next }
+            /^::error::/   { keep = 0; next }
+            /^[[:space:]]+/ { if (keep) print; next }
+            { keep = 0 }
+          ' report.txt > findings.txt
+          if [ -s findings.txt ]; then echo "drift=1" >> "$GITHUB_OUTPUT"; fi
+
+      # One tracking issue, updated — not one issue per drifted row. A curator wants a
+      # worklist, and each finding already carries the replacement identifier, so the
+      # fix is a one-line edit per row.
+      - name: File or update the drift worklist
+        if: steps.check.outputs.drift == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Idempotent, and the reason this is here rather than assumed: the label was
+          # created by hand once. A fork, or a repo restored from source, would have
+          # had the first `gh issue create` fail on a missing label.
+          gh label create crosswalk-drift --force \
+            --color D4C5F9 \
+            --description "Upstream identifiers this register points at have moved (filed by crosswalks.yml)"
+          cat > body.md <<'PREAMBLE'
+          The authorities this register points at have changed. Each finding names its
+          replacement, so most fixes are a one-line edit to `data/mappings.tsv` or
+          `data/entities.tsv`.
+
+          ```
+          PREAMBLE
+          # The heredoc above is indented for readability inside the YAML block; strip
+          # that indent so the Markdown is not read as a code block.
+          sed -i 's/^          //' body.md
+          cat findings.txt >> body.md
+          # shellcheck disable=SC2016  # the backticks are Markdown, not substitution
+          printf '```\n\nRegenerated by `crosswalks.yml` on %s. Closed automatically when nothing drifts.\n' \
+            "$(date -u +%Y-%m-%d)" >> body.md
+          existing=$(gh issue list --label crosswalk-drift --state open \
+                       --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --body-file body.md
+            echo "updated #$existing"
+          else
+            gh issue create --label crosswalk-drift --body-file body.md \
+              --title "Crosswalk drift: upstream identifiers have moved"
+          fi
+
+      # An empty worklist left open is how a check stops being believed.
+      - name: Close the worklist when clean
+        if: steps.check.outputs.drift != '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing=$(gh issue list --label crosswalk-drift --state open \
+                       --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue close "$existing" \
+              --comment "Every crosswalk resolves and is active as of $(date -u +%Y-%m-%d)."
+          fi
+
+      # Reached only for a malformed identifier or an unreachable authority. Both are
+      # loud on purpose: the first is a defect, and the second means this week's check
+      # did not actually happen, which is worse than a failure that says so.
+      - name: Fail on broken identifiers
+        if: steps.check.outputs.status != '0'
+        run: |
+          echo "The crosswalk check reported an error rather than drift; see above."
+          exit 1
