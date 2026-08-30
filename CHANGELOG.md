@@ -36,6 +36,10 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
   emptied the diagram without failing anything — the exact breakage
   [ADR-0011](decisions/0011-label-is-a-preferred-name.md) forbids a label lookup for. It
   is now rooted at the resident ecotype, so the rollup this change restored is visible.
+- `bin/validate.py` rejects a membership edge whose container is deprecated. A merged
+  entity holds no members, and enforcing that is what makes the filter below safe:
+  filtering out an entity that could still have descendants would report those
+  descendants with nothing named as the cause.
 - `bin/validate.py` no longer reports a deprecated entity as unreachable. Being
   unreachable is the correct state for something that has been merged away, and reporting
   it would train the reader to ignore the one warning that catches a whole branch dropping

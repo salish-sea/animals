@@ -179,6 +179,20 @@ def graph_checks(db: sqlite3.Connection) -> None:
     ):
         err(f"membership.tsv: {member} is transitively a member of itself")
 
+    # A deprecated entity has been merged or withdrawn, so nothing may still be a member
+    # of it. This is worth enforcing rather than reporting, and it is what makes the
+    # deprecation filter in the reachability query below safe: filtering out an entity
+    # that could still hold descendants would hide the break root and report the
+    # descendants with nowhere named as the cause.
+    for member, group in db.execute(
+        """SELECT m.member_id, m.group_id
+           FROM membership m JOIN deprecation d ON d.entity_id = m.group_id
+           ORDER BY m.member_id"""
+    ):
+        err(f"membership.tsv: {member} is a member of {group}, which is deprecated. "
+            "Move the edge to the replacement before deprecating a container "
+            "(deprecations.tsv, ADR-0010).")
+
     # Reachability, not just orphanhood. Foreign keys guarantee an edge points at
     # something real; they say nothing about whether the graph has a root. A single
     # missing edge disconnects everything beneath it, so report the consequence — the
