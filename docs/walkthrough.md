@@ -122,10 +122,9 @@ the certainty was preserved rather than flattened.**
 Suppose L pod is reorganised, and `SSA:0000022` is deprecated in favour of two new
 identifiers.
 
-```
-entity_id     reason  replaced_by  consider                    date
-SSA:0000022   split                SSA:0000090 SSA:0000091     2029-03-14
-```
+| entity_id | reason | replaced_by | consider | date |
+|---|---|---|---|---|
+| SSA:0000022 | split | *(empty)* | SSA:0000090 SSA:0000091 | 2029-03-14 |
 
 Because the reason is `split` and not a clean rename, there is no `replaced_by` — so
 OrcaSound does **not** silently rewrite the historical annotation. It surfaces the bout
