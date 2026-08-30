@@ -386,7 +386,16 @@ def write_structure(db: sqlite3.Connection) -> None:
     a handful of nodes, and it makes structural differences between branches obvious —
     including any place the graph is broken.
     """
+    # Deprecated entities are left out of both queries, for the same reason the
+    # unreachable count below leaves them out: this draws the shape of the register a
+    # consumer should build against. Counting Q1's tombstone reported three ecotypes
+    # where two are live, on the diagram the README points at.
+    #
+    # Both, and not just the counts: a node here is a *level*, so an edge whose endpoint
+    # is deprecated would silently declare that level in Mermaid with no label and no
+    # count — invisible today only because the one deprecation has no membership rows.
     level = "coalesce(rank, kind)"
+    live = "NOT IN (SELECT entity_id FROM deprecation)"
     edges = db.execute(
         f"""SELECT {level.replace('rank', 'c.rank').replace('kind', 'c.kind')},
                    {level.replace('rank', 'p.rank').replace('kind', 'p.kind')},
@@ -394,16 +403,11 @@ def write_structure(db: sqlite3.Connection) -> None:
             FROM membership m
             JOIN entity c ON c.entity_id = m.member_id
             JOIN entity p ON p.entity_id = m.group_id
+            WHERE m.member_id {live} AND m.group_id {live}
             GROUP BY 1, 2 ORDER BY 3 DESC"""
     ).fetchall()
-    # Deprecated entities are left out, for the same reason the unreachable count below
-    # leaves them out: this draws the shape of the register a consumer should build
-    # against. Counting Q1's tombstone would have reported three ecotypes where two are
-    # live, on the diagram the README points at.
     counts = dict(db.execute(
-        f"""SELECT {level}, count(*) FROM entity
-            WHERE entity_id NOT IN (SELECT entity_id FROM deprecation)
-            GROUP BY 1"""))
+        f"SELECT {level}, count(*) FROM entity WHERE entity_id {live} GROUP BY 1"))
 
     out = ["# The shape of the register",
            "",
