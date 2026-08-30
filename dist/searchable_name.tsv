@@ -1,12 +1,13 @@
 entity_id	name	type	language	entity_label	entity_kind	entity_rank
-SSA:0000001	SRKW	hidden	en	Southern Resident	group	ecotype
 SSA:0000001	Southern Resident	preferred	en	Southern Resident	group	ecotype
-SSA:0000001	Southern Resident killer whale	common	en	Southern Resident	group	ecotype
 SSA:0000002	Bigg's	preferred	en	Bigg's	group	ecotype
 SSA:0000002	Bigg's killer whale	common	en	Bigg's	group	ecotype
 SSA:0000002	Biggs	hidden	en	Bigg's	group	ecotype
 SSA:0000002	Transient	historical	en	Bigg's	group	ecotype
-SSA:0000010	Southern Resident community	preferred	en	Southern Resident community	group	community
+SSA:0000003	Resident	preferred	en	Resident	group	ecotype
+SSA:0000010	SRKW	hidden	en	Southern Resident	group	community
+SSA:0000010	Southern Resident	preferred	en	Southern Resident	group	community
+SSA:0000010	Southern Resident killer whale	common	en	Southern Resident	group	community
 SSA:0000011	J clan	preferred	en	J clan	group	clan
 SSA:0000020	J	hidden	en	J pod	group	pod
 SSA:0000020	J pod	preferred	en	J pod	group	pod

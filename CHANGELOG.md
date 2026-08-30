@@ -9,6 +9,37 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Register
+- **`SSA:0000003` — the *Resident* ecotype**, which the hierarchy was missing. The
+  Southern Residents now roll up through it to *Orcinus orca*.
+- **`SSA:0000001` is deprecated**, `merged` into **`SSA:0000010`**. Both identifiers
+  always denoted the same animals — one thing entered at two ranks — so substitution is
+  automatic and a consumer may follow `replaced_by` without asking a human. This is the
+  register's first deprecation, and the first row `deprecations.tsv` has ever carried.
+- **`SSA:0000010` is relabelled** from *Southern Resident community* to **Southern
+  Resident**, and takes over the names that were on `SSA:0000001` (*Southern Resident
+  killer whale*, and the hidden *SRKW*). Its rank stays `community`; repeating the rank in
+  the label was the [ADR-0011](decisions/0011-label-is-a-preferred-name.md) error of
+  writing display into a name.
+- Twelve entities that were unreachable from any taxon — the whole Southern Resident
+  branch, J clan through J35 — now roll up to a species. `bin/validate.py` reported twelve
+  before this change and none after.
+
+### Design
+- **[Q1](docs/open-questions.md#answered) is answered**: Southern Resident is a *community*
+  of the *Resident* ecotype, not an ecotype itself. `definitions/ecotype.md` and
+  `definitions/community.md` are updated, and `ecotype.md` now records what the Society for
+  Marine Mammalogy's 2024 taxonomy review actually decided about *Orcinus ater* and
+  *O. rectipinnus* — it declined species rank and adopted the names as subspecies,
+  provisionally.
+- `dist/structure.md`'s subtree diagram is keyed on an identifier rather than on
+  `label`. It said `WHERE label = 'Southern Resident community'`, so the relabel above
+  emptied the diagram without failing anything — the exact breakage
+  [ADR-0011](decisions/0011-label-is-a-preferred-name.md) forbids a label lookup for. It
+  is now rooted at the resident ecotype, so the rollup this change restored is visible.
+- `bin/validate.py` no longer reports a deprecated entity as unreachable. Being
+  unreachable is the correct state for something that has been merged away, and reporting
+  it would train the reader to ignore the one warning that catches a whole branch dropping
+  out of the rollup.
 
 ## 2026.08.1 — 2026-08-28
 

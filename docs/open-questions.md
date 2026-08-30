@@ -22,7 +22,6 @@ Filter: [`science-review`](https://github.com/salish-sea/animals/issues?q=is%3Ai
 
 | # | Question | Owner | Discussion |
 |---|----------|-------|------------|
-| Q1 | Is "Southern Resident" an ecotype, or a community of the Resident ecotype? | S. Veirs, D. Bain | [#1](https://github.com/salish-sea/animals/issues/1) |
 | Q2 | Are the Southern Residents one acoustic clan or more? | S. Veirs | [#2](https://github.com/salish-sea/animals/issues/2) |
 | Q3 | Which source is authoritative for Bigg's? | S. Veirs | [#3](https://github.com/salish-sea/animals/issues/3) |
 | Q4 | Should Northern Residents and offshores be populated now or later? | S. Veirs | [#4](https://github.com/salish-sea/animals/issues/4) |
@@ -48,6 +47,42 @@ Filter: [`informatics-review`](https://github.com/salish-sea/animals/issues?q=is
 Resolved questions stay here in full: the reasoning is part of the record, and the Q
 numbers are referenced throughout the repository.
 
+### Q1 — Is "Southern Resident" an ecotype, or a community of the Resident ecotype?
+**Resolved 2026-08-29. A community, of a Resident ecotype** — option (a), the strict
+reading, in which `ecotype ⊃ community ⊃ clan ⊃ pod ⊃ matriline ⊃ individual` and the
+ecotypes are resident, Bigg's and offshore.
+
+What changed in the data: the *Resident* ecotype was missing entirely, so `SSA:0000003`
+was added; `SSA:0000001` ("Southern Resident", ecotype) is deprecated to `SSA:0000010`,
+which was already the community and is now labelled *Southern Resident*; its names and its
+`skos:broadMatch` moved with it, and the Southern Residents now sit under the ecotype
+rather than under nothing.
+
+**The break was measurable, and closing it was the point.** Before this change twelve
+entities were unreachable from any taxon — the whole Southern Resident branch, J clan
+through J pod, J17s and L32s, and five individuals including J35 — because the community
+had no parent to roll up through. `bin/validate.py` now reports none.
+
+Why (a) rather than the colloquial reading that treats SRKW and NRKW as ecotypes: the
+question's own argument, that (a) is robust to the species split and (b) would be actively
+wrong under it. That argument got stronger after this question was written. The Society
+for Marine Mammalogy's [2024 taxonomy
+review](https://marinemammalscience.org/smm-news/taxonomy-committee-2024-annual-review/)
+declined Morin et al.'s proposal to raise resident and Bigg's to species — citing possible
+episodic gene flow and the need for a global comparative analysis — and adopted the names
+at subspecies rank instead, writing that "**the two ecotypes** are considered provisionally
+as distinct subspecies of *Orcinus orca*". The authority that declined the split describes
+resident and Bigg's as the two ecotypes, which is (a)'s shape.
+
+The cost the question predicted is real and now paid: "SRKW" is a community here, not an
+ecotype, and a consumer that renders rank as a category will show *Resident* where a
+moderator expects *SRKW*. That is a presentation problem for the consumer, which
+[ADR-0011](../decisions/0011-label-is-a-preferred-name.md) already assigns to them.
+
+Not decided here: which rank a moderator should land on when they mean "the Southern
+Residents" — see [community.md](../definitions/community.md). And Northern Residents were
+not added; whether to populate them is still Q4.
+
 ### Q5 — Do consumers store redundant ancestors, or derive them?
 **Resolved 2026-07-28, by declining it.** The question named its own owner and it was not
 this repository: "should *OrcaSound* store what the moderator picked". How an occurrence
@@ -63,7 +98,7 @@ Worth carrying into that other process: the two options were framed here as a si
 trade-off, and that is the least interesting difference between them. **They promise
 different things over time.** Storing what the moderator picked is a faithful record of an
 act of identification and stays true as one. Deriving instead tracks the register, so the
-ecotype shown against a 2026 bout will change when Q1 reparents the Southern Residents.
+ecotype shown against a 2026 bout changed when Q1 reparented the Southern Residents.
 Neither is wrong — they answer different questions.
 
 ### Q6 — Should the register publish group sizes?

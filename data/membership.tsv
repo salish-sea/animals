@@ -10,7 +10,8 @@ SSA:0000102	SSA:0000030			SEED
 SSA:0000103	SSA:0000020			SEED	Matriline not recorded; membership asserted at pod level only.
 SSA:0000104	SSA:0000031			SEED	Genealogical membership. L87's later travel with K and J pods is NOT recorded here — see ADR-0005.
 SSA:0000105	SSA:0000030			SEED	
-SSA:0000001	SSA:0000900			SEED	Southern Resident is an ecotype of Orcinus orca.
+SSA:0000003	SSA:0000900			EDITORS	Resident is an ecotype of Orcinus orca.
+SSA:0000010	SSA:0000003			EDITORS	The Southern Residents are a community within the resident ecotype (Q1).
 SSA:0000002	SSA:0000900			SEED	Bigg's is an ecotype of Orcinus orca.
 SSA:0002000	SSA:0000002			BIGGS-SHEET	T002s are Bigg's.
 SSA:0002001	SSA:0000002			BIGGS-SHEET	T007s are Bigg's.

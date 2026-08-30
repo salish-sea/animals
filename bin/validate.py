@@ -190,6 +190,11 @@ def graph_checks(db: sqlite3.Connection) -> None:
                    ON m.group_id = r.id)
            SELECT entity_id, label, kind, coalesce(rank, '') FROM entity
            WHERE entity_id NOT IN (SELECT id FROM reach)
+             -- A deprecated entity is SUPPOSED to be unreachable: it has been merged
+             -- away, so it asserts no membership and rolls up to nothing. Reporting it
+             -- would train the reader to ignore this warning, which is the one warning
+             -- that catches a whole branch falling out of the rollup.
+             AND entity_id NOT IN (SELECT entity_id FROM deprecation)
            ORDER BY kind, rank, label"""
     ).fetchall()
     if unreachable:
@@ -387,20 +392,30 @@ def write_structure(db: sqlite3.Connection) -> None:
         """WITH RECURSIVE reach(id) AS (
              SELECT entity_id FROM entity WHERE kind = 'taxon'
              UNION SELECT m.member_id FROM membership m JOIN reach r ON m.group_id = r.id)
-           SELECT count(*) FROM entity WHERE entity_id NOT IN (SELECT id FROM reach)"""
+           SELECT count(*) FROM entity WHERE entity_id NOT IN (SELECT id FROM reach)
+             -- Deprecated entities are supposed to be unreachable; excluded here for the
+             -- same reason graph_checks() excludes them, so the two never disagree.
+             AND entity_id NOT IN (SELECT entity_id FROM deprecation)"""
     ).fetchone()[0]
     if unreachable:
-        out += [f"> **{unreachable} entities are unreachable from any species.** Follow the",
+        is_are = "entity is" if unreachable == 1 else "entities are"
+        out += [f"> **{unreachable} {is_are} unreachable from any species.** Follow the",
                 "> arrows up: a level with no outgoing edge is where the graph breaks, and",
                 "> everything below it falls out of every rollup.", ""]
 
-    # One real subtree, small enough to read.
-    out += ["## Southern Residents", "",
+    # One real subtree, small enough to read. Rooted at the RESIDENT ECOTYPE so the
+    # rollup Q1 restored is visible: ecotype, community, clan, pods, matrilines, animals.
+    #
+    # Keyed on the identifier, not the label. This query used to say
+    # `WHERE label = 'Southern Resident community'`, and Q1's rename emptied the diagram
+    # without failing anything — exactly the breakage ADR-0011 forbids a label lookup for
+    # ("Nothing may join, match, or key on `label`"). Caught by eye, not by a test.
+    out += ["## Residents", "",
             "The seeded branch in full — small enough to render whole.", "",
             "```mermaid", "graph BT"]
     rows = db.execute(
         """WITH RECURSIVE sub(id) AS (
-             SELECT entity_id FROM entity WHERE label = 'Southern Resident community'
+             SELECT 'SSA:0000003'
              UNION SELECT m.member_id FROM membership m JOIN sub s ON m.group_id = s.id)
            SELECT e.entity_id, e.label, coalesce(e.rank, e.kind) FROM entity e
            JOIN sub ON sub.id = e.entity_id ORDER BY e.entity_id"""

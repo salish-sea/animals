@@ -12,7 +12,7 @@ level. A level with no path upward is a break in the graph.
 graph BT
   clan["clan<br/>1"]
   community["community<br/>1"]
-  ecotype["ecotype<br/>2"]
+  ecotype["ecotype<br/>3"]
   individual["individual<br/>518"]
   matriline["matriline<br/>134"]
   pod["pod<br/>3"]
@@ -24,20 +24,18 @@ graph BT
   ecotype -->|2| taxon
   matriline -->|2| pod
   clan -->|1| community
+  community -->|1| ecotype
   individual -->|1| pod
 ```
 
-> **12 entities are unreachable from any species.** Follow the
-> arrows up: a level with no outgoing edge is where the graph breaks, and
-> everything below it falls out of every rollup.
-
-## Southern Residents
+## Residents
 
 The seeded branch in full — small enough to render whole.
 
 ```mermaid
 graph BT
-  SSA_0000010["Southern Resident community<br/>(community)"]
+  SSA_0000003["Resident<br/>(ecotype)"]
+  SSA_0000010["Southern Resident<br/>(community)"]
   SSA_0000011["J clan<br/>(clan)"]
   SSA_0000020["J pod<br/>(pod)"]
   SSA_0000021["K pod<br/>(pod)"]
@@ -49,6 +47,7 @@ graph BT
   SSA_0000103["J50<br/>(individual)"]
   SSA_0000104["L87<br/>(individual)"]
   SSA_0000105["J17<br/>(individual)"]
+  SSA_0000010 --> SSA_0000003
   SSA_0000011 --> SSA_0000010
   SSA_0000020 --> SSA_0000011
   SSA_0000021 --> SSA_0000011

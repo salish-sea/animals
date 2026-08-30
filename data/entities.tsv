@@ -1,7 +1,8 @@
 entity_id	kind	rank	label	taxon_id	born	sex	source_id	note
 SSA:0000001	group	ecotype	Southern Resident	NCBITaxon:9733			SEED	
 SSA:0000002	group	ecotype	Bigg's	NCBITaxon:9733			SEED	Also called "transient" in older literature; see names.tsv.
-SSA:0000010	group	community	Southern Resident community	NCBITaxon:9733			SEED	Relationship between community and ecotype is unresolved; see open-questions.md Q1.
+SSA:0000003	group	ecotype	Resident	NCBITaxon:9733			EDITORS	The resident ecotype: fish-eating killer whales, containing the Northern and Southern Resident communities among others. Added by Q1.
+SSA:0000010	group	community	Southern Resident	NCBITaxon:9733			SEED	The community of J, K and L pods, within the Resident ecotype (SSA:0000003). Was also carried as an ecotype at SSA:0000001 until Q1 resolved the duplication; that identifier is deprecated to this one.
 SSA:0000011	group	clan	J clan	NCBITaxon:9733			SEED	Southern Residents are believed to comprise a single acoustic clan. Needs expert confirmation.
 SSA:0000020	group	pod	J pod	NCBITaxon:9733			SEED	
 SSA:0000021	group	pod	K pod	NCBITaxon:9733			SEED	
