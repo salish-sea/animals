@@ -33,7 +33,7 @@ Every definition file has:
 | Term | Status | Needs |
 |---|---|---|
 | [ecotype](ecotype.md) | working | Expert confirmation |
-| [community](community.md) | working | Q1 — may be redundant with ecotype |
+| [community](community.md) | working | Expert confirmation. Q1 settled that it is *not* redundant with ecotype; which rank a moderator picks is still open |
 | [clan](clan.md) | working | Q2 — may not be a useful rank at all |
 | [pod](pod.md) | working | Expert confirmation |
 | [matriline](matriline.md) | working | Expert confirmation |

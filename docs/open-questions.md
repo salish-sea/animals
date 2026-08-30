@@ -79,6 +79,14 @@ ecotype, and a consumer that renders rank as a category will show *Resident* whe
 moderator expects *SRKW*. That is a presentation problem for the consumer, which
 [ADR-0011](../decisions/0011-label-is-a-preferred-name.md) already assigns to them.
 
+One consequence worth stating, because relabelling is what forces it: the tombstone keeps
+the string. `SSA:0000001` will always carry *Southern Resident*, so the most natural query
+a moderator can type now matches a withdrawn identifier and a live one. That is the right
+trade — had `SSA:0000010` stayed *Southern Resident community*, the same query would have
+resolved **only** to the retired identifier — but it is why `searchable_name` gained
+`retired` and `replaced_by` in the same change. The view describes the row rather than
+dropping it, as it already does for a `hidden` name.
+
 Not decided here: which rank a moderator should land on when they mean "the Southern
 Residents" — see [community.md](../definitions/community.md). And Northern Residents were
 not added; whether to populate them is still Q4.

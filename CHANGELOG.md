@@ -23,6 +23,15 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 - Twelve entities that were unreachable from any taxon — the whole Southern Resident
   branch, J clan through J35 — now roll up to a species. `bin/validate.py` reported twelve
   before this change and none after.
+- **`dist/searchable_name.tsv` gains two columns, `retired` and `replaced_by`.** Existing
+  columns and their order are unchanged, so a consumer reading by name keeps working; one
+  reading by position does not. The deprecation above is why they exist: a retired
+  identifier keeps its names, so *Southern Resident* now matches both the withdrawn
+  `SSA:0000001` and the live `SSA:0000010`, and until now nothing in the view said which.
+  **A picker must filter on `retired`**; a consumer resolving old free text can follow
+  `replaced_by` on the same row instead of joining to `retired.tsv`. A null `replaced_by`
+  on a retired row means the substitution needs a human — never that the identifier is
+  live.
 
 ### Design
 - **[Q1](docs/open-questions.md#answered) is answered**: Southern Resident is a *community*
@@ -44,6 +53,19 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
   unreachable is the correct state for something that has been merged away, and reporting
   it would train the reader to ignore the one warning that catches a whole branch dropping
   out of the rollup.
+- `bin/validate.py` pins *Southern Resident* as a C2 acceptance test, alongside the
+  existing `T090s` / `J-35` / `Biggs` trio: it must return both identifiers, not one. And
+  `searchable_name`'s `retired` / `replaced_by` are checked against `deprecations.tsv`
+  rather than assumed, for every deprecation and not just this one — a view that lost the
+  join would leave a plausible-looking pair and no way to choose between them. The check
+  that two candidates describe themselves distinguishably now counts `retired` as part of
+  that description.
+- C5 and C6 are answerable in full, and the competency-question table says so rather than
+  **Partly**. Stale forward references to Q1 are swept from `dist/README.md`,
+  `docs/walkthrough.md`, `definitions/README.md`, [ADR-0008](decisions/0008-species-identity-is-delegated.md)
+  and [ADR-0013](decisions/0013-distribution.md) — the last of which recorded an objection
+  to gating releases on `--strict` that Q1 has now retired: the warning count no longer
+  mixes provenance debt with a modelling gap.
 
 ## 2026.08.1 — 2026-08-28
 

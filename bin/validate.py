@@ -318,19 +318,32 @@ def fold_checks(db: sqlite3.Connection) -> None:
     # a regression that quietly resolved it to one would read as an improvement.
     for typed, expect in [("T090s", {"SSA:0000040"}), ("J-35", {"SSA:0000101"}),
                           ("Biggs", {"SSA:0000002"}),
-                          ("T090", {"SSA:0000040", "SSA:0010290"})]:
+                          ("T090", {"SSA:0000040", "SSA:0010290"}),
+                          ("Southern Resident", {"SSA:0000001", "SSA:0000010"})]:
         hits = set().union(set(), *classes.get(fold(typed), {}).values())
         if hits != expect:
             err(f"C2: {typed!r} should resolve to {', '.join(sorted(expect))}, "
                 f"got {sorted(hits) or 'nothing'}")
 
+    # The other kind of two-candidate answer, and the one a picker must not treat as a
+    # choice: a retired identifier keeps its names, so Q1's tombstone SSA:0000001 still
+    # matches "Southern Resident" beside the live SSA:0000010. `retired` is what tells
+    # them apart, and it is checked rather than asserted — a view that lost the join
+    # would leave a plausible-looking pair and no way to choose between them.
+    flagged = {eid: sub for eid, r, sub in db.execute(
+        "SELECT DISTINCT entity_id, retired, replaced_by FROM searchable_name") if r}
+    deprecated = dict(db.execute("SELECT entity_id, replaced_by FROM deprecation"))
+    if flagged != deprecated:
+        err("searchable_name: `retired` and `replaced_by` should carry exactly what "
+            f"deprecations.tsv says, got {flagged} for {deprecated}")
+
     # And two candidates are only worth returning if a consumer can tell them apart.
-    # `searchable_name` carries each entity's label, kind and rank for exactly this;
-    # candidates that describe themselves identically are an honest answer nobody can
-    # act on, so the promise is checked rather than asserted.
+    # `searchable_name` carries each entity's label, kind, rank and retirement for
+    # exactly this; candidates that describe themselves identically are an honest answer
+    # nobody can act on, so the promise is checked rather than asserted.
     described = {eid: rest for eid, *rest in db.execute(
         "SELECT DISTINCT entity_id, entity_label, entity_kind, "
-        "coalesce(entity_rank, '') FROM searchable_name")}
+        "coalesce(entity_rank, ''), retired FROM searchable_name")}
     for folded, by_raw in sorted(classes.items()):
         ids = set().union(*by_raw.values())
         if len(ids) > 1 and len({tuple(described[i]) for i in ids}) < len(ids):

@@ -79,8 +79,8 @@ Note what each column buys — and which two the register actually asks for:
   2025 without help.
 - `register_edition` is drawn here because a consumer will often want it, but it earns its
   place on *derived* facts rather than on the claim: if this row's ecotype were
-  denormalised from the closure, the edition is what lets that be rebuilt after
-  [Q1](open-questions.md) reparents the Southern Residents. On the moderator's pick itself
+  denormalised from the closure, the edition is what let that be rebuilt when
+  [Q1](open-questions.md) reparented the Southern Residents. On the moderator's pick itself
   it is close to redundant. See
   [ADR-0018](../decisions/0018-annotation-semantics-belong-to-consumers.md).
 

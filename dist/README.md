@@ -16,7 +16,7 @@ consumers cannot disagree. Each answers a competency question — see
 |---|---|
 | `ancestor.tsv` | C5, C6 — the transitive closure of membership, precomputed |
 | `current_status.tsv` | C4 — current life status, applying the `(recorded, effective)` precedence rule from ADR-0006 |
-| `searchable_name.tsv` | C2 — preferred names and every alternate, in one place, each carrying the entity's label, kind and rank so two candidates can be told apart |
+| `searchable_name.tsv` | C2 — preferred names and every alternate, in one place, each carrying the entity's label, kind and rank so two candidates can be told apart, and `retired` / `replaced_by` so a withdrawn identifier is never offered as a live one (C9) |
 | `retired.tsv` | C9 — deprecated identifiers, marked `automatic` or `needs-human` |
 | `fold_test.tsv` | C2 — the name-comparison fold of [ADR-0019](../decisions/0019-names-are-compared-by-folding.md), as executable test cases; a conforming implementation reproduces the `folded` column exactly |
 | `structure.md` | A picture of the register's shape, as Mermaid — which GitHub renders inline |
@@ -30,9 +30,10 @@ is a break in the graph, visible at a glance.
 is wrong, and shipping the answer means nobody has to discover that.
 
 Everything here is derived from **one edition** of the register. Copying a derived fact
-into your own tables therefore caches something that moves: resolving
-[Q1](../docs/open-questions.md) will reparent every Southern Resident entity and
-`ancestor.tsv` will change with it. That is not a reason to avoid copying — it is a reason
+into your own tables therefore caches something that moves:
+[Q1](../docs/open-questions.md) reparented every Southern Resident entity on 2026-08-29
+and `ancestor.tsv` changed with it, adding an ecotype above the community that anything
+cached before that date is missing. That is not a reason to avoid copying — it is a reason
 to record the tag and digest you built against
 ([ADR-0006](../decisions/0006-valid-time-in-data-assertion-time-in-git.md),
 [ADR-0013](../decisions/0013-distribution.md)), so you can tell whether what you cached is

@@ -86,7 +86,7 @@ curator's afternoon for an engineer's tidiness.
 |---|---|
 | `ancestor.tsv` | C5, C6 — the transitive closure, precomputed |
 | `current_status.tsv` | C4 — the `(recorded, effective)` precedence rule from ADR-0006 |
-| `searchable_name.tsv` | C2 — preferred names and every alternate, in one place, each carrying the entity's label, kind and rank so two candidates can be told apart |
+| `searchable_name.tsv` | C2 — preferred names and every alternate, in one place, each carrying the entity's label, kind and rank so two candidates can be told apart, and `retired` / `replaced_by` so a withdrawn identifier is never offered as a live one (C9) |
 | `retired.tsv` | C9 — deprecations, marked `automatic` or `needs-human` |
 
 Generated files are sorted in Python, not with `ORDER BY`. They are committed and CI
@@ -209,9 +209,13 @@ artefact under the register's name. Unresolved; see [Q25](../docs/open-questions
   it makes an exported snapshot self-describing. Not yet done.
 - Should `--strict` gate a release? It is not wired to one today — `release.yml` runs the
   ordinary validator — so the forcing function this ADR wondered about is not currently
-  in force. It also sums two unlike warnings: 69 `SEED` rows, which are provenance debt
-  retired by citing a source, and 13 unreachable entities, which are a modelling gap
-  ([Q1](../docs/open-questions.md)) that no amount of verification will close. Gating on
-  the total would block every release on an unrelated question. The alternative to a gate
-  is to have each edition state its own warning counts, so a consumer can see how much of
-  it is unverified instead of being promised that none of it is.
+  in force. **The objection recorded here has since lapsed.** It was that `--strict` sums
+  two unlike warnings: `SEED` rows, which are provenance debt retired by citing a source,
+  and unreachable entities, which were a modelling gap ([Q1](../docs/open-questions.md))
+  that no amount of verification would close — so gating on the total would block every
+  release on an unrelated question. Q1 was answered on 2026-08-29 and the unreachable
+  count went to zero, leaving a warning count that is entirely provenance debt. Whether
+  to gate is now a straight question about how much unverified data may ship, with
+  nothing foreign mixed into the count. The alternative to a gate is unchanged: have each edition
+  state its own warning counts, so a consumer can see how much of it is unverified
+  instead of being promised that none of it is.

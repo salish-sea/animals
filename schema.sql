@@ -236,14 +236,29 @@ FROM walk w JOIN entity e ON e.entity_id = w.ancestor_id;
 -- to describe. A hidden name makes the need sharper still: it matches in search and must
 -- never be displayed, so a consumer that matched `J` has nothing to show without the
 -- label. Same denormalisation, same reason, as `ancestor`.
+--
+-- `retired` and `replaced_by` are that same argument applied to deprecation. A retired
+-- identifier keeps its names — Q1 left the tombstone SSA:0000001 carrying the string
+-- "Southern Resident" beside the live SSA:0000010 — so the view returns rows a picker
+-- must not offer, and the rank alone does not say which. This view describes rows rather
+-- than dropping them, as it does for `hidden`: a picker filters on `retired`, while a
+-- consumer resolving old free text still matches the string and reads C9's answer off
+-- the same row instead of joining to the `retired` view.
+--
+-- `replaced_by` is null for a `consider` deprecation, which is the correct signal: that
+-- is the case a consumer MUST NOT substitute automatically, and `retired` still tells it
+-- to stop. `retired` alone is never a reason to substitute.
 CREATE VIEW searchable_name AS
-SELECT entity_id, label AS name, 'preferred' AS type, 'en' AS language,
-       label AS entity_label, kind AS entity_kind, rank AS entity_rank
-FROM entity
+SELECT e.entity_id, e.label AS name, 'preferred' AS type, 'en' AS language,
+       e.label AS entity_label, e.kind AS entity_kind, e.rank AS entity_rank,
+       d.entity_id IS NOT NULL AS retired, d.replaced_by AS replaced_by
+FROM entity e LEFT JOIN deprecation d ON d.entity_id = e.entity_id
 UNION ALL
 SELECT n.entity_id, n.name, n.type, n.language,
-       e.label AS entity_label, e.kind AS entity_kind, e.rank AS entity_rank
-FROM name n JOIN entity e ON e.entity_id = n.entity_id;
+       e.label AS entity_label, e.kind AS entity_kind, e.rank AS entity_rank,
+       d.entity_id IS NOT NULL AS retired, d.replaced_by AS replaced_by
+FROM name n JOIN entity e ON e.entity_id = n.entity_id
+            LEFT JOIN deprecation d ON d.entity_id = e.entity_id;
 
 -- C9: what a consumer should do with an identifier it can no longer offer.
 CREATE VIEW retired AS

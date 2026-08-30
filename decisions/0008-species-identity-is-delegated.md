@@ -68,8 +68,10 @@ vocabulary, exactly as [ADR-0009](0009-uncertainty-on-the-annotation.md) require
   and a species is not one ([ADR-0004](0004-rank-is-an-open-vocabulary.md)). Validation
   enforces both.
 - Ecotypes are members of their species taxon, which roots the membership graph and lets a
-  matriline roll up to a species even while the ecotype/community question
-  ([Q1](../docs/open-questions.md)) is unresolved.
+  matriline roll up to a species. That held even while the ecotype/community question
+  ([Q1](../docs/open-questions.md)) was open, and it is what the answer was slotted into:
+  a *Resident* ecotype was added under the species and the Southern Residents hung
+  beneath it, with nothing above the ecotype needing to change.
 - Taxon entities have no life status. They are kinds, not animals.
 - `taxon_id` uses `NCBITaxon:` CURIEs. NCBI was chosen over WoRMS because OLS resolves
   it directly and it is what the OBO ecosystem uses; WoRMS is recorded in `sources.tsv`
