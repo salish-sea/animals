@@ -63,7 +63,7 @@ Requested as a new prefix on [biopragmatics/bioregistry](https://github.com/biop
 | Name | Salish Sea Animals |
 | Homepage | `https://github.com/salish-sea/animals` |
 | Description | A register of individual marine mammals and the social groups they belong to in the Salish Sea |
-| Example | `SSA:0000001` |
+| Example | `SSA:0000020` (J pod) — the same identifier this record uses below. Not `SSA:0000001`, which Q1 deprecated on 2026-08-29: a registry example outlives the submission and should not name a withdrawn identifier |
 | Pattern | `^\d{7}$` |
 | URI format | none — see below |
 | Contact | P. Abrahamsen |

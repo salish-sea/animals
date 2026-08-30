@@ -35,9 +35,9 @@ The register is doing two different jobs and it is worth seeing which is which:
 
 The second is where curation effort should go. The first should be nearly free.
 
-Note that **an ecotype is not a taxonomic rank**. `SSA:0000001` (Southern Resident) is
-recorded as `skos:broadMatch` to *Orcinus orca* — narrower than the species, but not a
-subspecies and not making any claim about formal taxonomy. That distinction matters if
+Note that **an ecotype is not a taxonomic rank**. `SSA:0000003` (Resident) is recorded as
+`skos:broadMatch` to *Orcinus orca* — narrower than the species, but not a subspecies and
+not making any claim about formal taxonomy. That distinction matters if
 anything here is ever exported to GBIF.
 
 ### Delegating an identifier is not the same as refusing an entity
@@ -117,7 +117,7 @@ importing and maintaining a backbone we deliberately do not own.
 - The register now holds entities that are *kinds*, not collections of individuals.
   Anything iterating over entities must handle three kinds, not two.
 - **A contested species boundary costs the register nothing**, which is the point of
-  delegating. `SSA:0000001` (Southern Resident) and `SSA:0000002` (Bigg's) are first-class
+  delegating. `SSA:0000003` (Resident) and `SSA:0000002` (Bigg's) are first-class
   identifiers that exist whatever taxonomy calls them, and `taxon_id` is a *crosswalk* —
   it records where the authorities currently place a thing, not what this register
   believes. Resident and Bigg's killer whales have been proposed as *Orcinus ater* and

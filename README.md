@@ -110,16 +110,17 @@ sqlite3 register.db 'SELECT sql FROM sqlite_master'
 inline by GitHub. In outline:
 
 ```
-SSA:0000001  Southern Resident (ecotype)
-  └─ SSA:0000010  Southern Resident community
-       └─ SSA:0000011  J clan
-            ├─ SSA:0000020  J pod
-            │    └─ SSA:0000030  J17s (matriline)
-            │         ├─ SSA:0000105  J17   ← the whale, not the matriline
-            │         ├─ SSA:0000101  J35
-            │         └─ SSA:0000102  J57
-            ├─ SSA:0000021  K pod
-            └─ SSA:0000022  L pod
+SSA:0000900  Orcinus orca (taxon)
+  └─ SSA:0000003  Resident (ecotype)
+       └─ SSA:0000010  Southern Resident (community)
+            └─ SSA:0000011  J clan
+                 ├─ SSA:0000020  J pod
+                 │    └─ SSA:0000030  J17s (matriline)
+                 │         ├─ SSA:0000105  J17   ← the whale, not the matriline
+                 │         ├─ SSA:0000101  J35
+                 │         └─ SSA:0000102  J57
+                 ├─ SSA:0000021  K pod
+                 └─ SSA:0000022  L pod
 ```
 
 Identifiers are opaque on purpose — a readable identifier becomes a lie when the thing

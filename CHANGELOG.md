@@ -60,12 +60,25 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
   join would leave a plausible-looking pair and no way to choose between them. The check
   that two candidates describe themselves distinguishably now counts `retired` as part of
   that description.
+- `dist/structure.md`'s rank counts leave out deprecated entities, as its unreachable
+  count already did. It reported **three** ecotypes where two are live — on the diagram
+  the README points at.
 - C5 and C6 are answerable in full, and the competency-question table says so rather than
-  **Partly**. Stale forward references to Q1 are swept from `dist/README.md`,
-  `docs/walkthrough.md`, `definitions/README.md`, [ADR-0008](decisions/0008-species-identity-is-delegated.md)
-  and [ADR-0013](decisions/0013-distribution.md) — the last of which recorded an objection
-  to gating releases on `--strict` that Q1 has now retired: the warning count no longer
-  mixes provenance debt with a modelling gap.
+  **Partly**. The rest of the branch's stale references to Q1 are swept up with them:
+  `README.md`'s outline still drew the old hierarchy (no species at the top, the community
+  under an ecotype of the same name); `docs/walkthrough.md` rolled J pod up through
+  `SSA:0000001` to reach a species, which is now a walk to `SSA:0000900` and not a mapping
+  lookup at all; [ADR-0008](decisions/0008-species-identity-is-delegated.md) illustrated
+  ecotype crosswalks with the identifier whose mapping moved; and
+  [ADR-0021](decisions/0021-ssa-is-a-registered-prefix.md) offered `SSA:0000001` as the
+  example on a Bioregistry submission that will outlive it. Also
+  [ADR-0013](decisions/0013-distribution.md), which recorded an objection to gating
+  releases on `--strict` that Q1 has retired: the warning count no longer mixes provenance
+  debt with a modelling gap.
+- `docs/walkthrough.md`'s traced annotation has aged into the thing it was illustrating.
+  The moderator's `SSA:0000001` pick, made against edition `2026.07.1`, is now the
+  register's first real C9 case — `merged`, with `replaced_by` populated, so the
+  substitution is automatic. Step 4's hypothetical `split` is the contrasting case.
 
 ## 2026.08.1 — 2026-08-28
 

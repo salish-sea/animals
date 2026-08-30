@@ -12,7 +12,7 @@ level. A level with no path upward is a break in the graph.
 graph BT
   clan["clan<br/>1"]
   community["community<br/>1"]
-  ecotype["ecotype<br/>3"]
+  ecotype["ecotype<br/>2"]
   individual["individual<br/>518"]
   matriline["matriline<br/>134"]
   pod["pod<br/>3"]

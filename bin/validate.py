@@ -396,7 +396,14 @@ def write_structure(db: sqlite3.Connection) -> None:
             JOIN entity p ON p.entity_id = m.group_id
             GROUP BY 1, 2 ORDER BY 3 DESC"""
     ).fetchall()
-    counts = dict(db.execute(f"SELECT {level}, count(*) FROM entity GROUP BY 1"))
+    # Deprecated entities are left out, for the same reason the unreachable count below
+    # leaves them out: this draws the shape of the register a consumer should build
+    # against. Counting Q1's tombstone would have reported three ecotypes where two are
+    # live, on the diagram the README points at.
+    counts = dict(db.execute(
+        f"""SELECT {level}, count(*) FROM entity
+            WHERE entity_id NOT IN (SELECT entity_id FROM deprecation)
+            GROUP BY 1"""))
 
     out = ["# The shape of the register",
            "",
