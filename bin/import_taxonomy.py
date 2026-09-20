@@ -37,6 +37,7 @@ Usage:
 
 import csv
 import datetime
+import re
 import sys
 import urllib.parse
 import urllib.request
@@ -59,9 +60,12 @@ def wanted():
     """Every distinct NCBI identifier an entity points at."""
     with (DATA / "entities.tsv").open() as f:
         ids = {r["taxon_id"] for r in csv.DictReader(f, delimiter="\t") if r["taxon_id"]}
-    foreign = sorted(i for i in ids if not i.startswith(PREFIX))
-    if foreign:
-        sys.exit(f"taxon_id outside {PREFIX} cannot be looked up here: {foreign}")
+    # ASCII digits and nothing else. `int()` is more generous than NCBI -- it takes `+1`
+    # and Unicode digits -- and this reads entities.tsv directly, before the schema has
+    # had a chance to refuse anything.
+    malformed = sorted(i for i in ids if not re.fullmatch(PREFIX + r"[0-9]+", i, re.ASCII))
+    if malformed:
+        sys.exit(f"taxon_id is not {PREFIX}<digits>, so it cannot be looked up here: {malformed}")
     return sorted(ids, key=lambda i: int(i[len(PREFIX):]))
 
 
@@ -131,27 +135,37 @@ def main():
     if "--apply" not in sys.argv:
         print("dry run; pass --apply to write", file=sys.stderr)
         return
+    # Everything that can refuse, refuses before anything is written: a sources.tsv this
+    # cannot stamp must not leave a new excerpt behind with an old date on it. Both files
+    # are tracked, so a crash between the two writes is a `git checkout`, not a loss, and
+    # nothing heavier than this ordering is warranted.
+    today, stamped = stamped_sources()
     with OUT.open("w", newline="") as f:
         w = csv.writer(f, delimiter="\t", lineterminator="\n")
         w.writerow(HEADER)
         w.writerows(rows)
-    print(f"wrote {OUT.relative_to(ROOT)}", file=sys.stderr)
-    stamp_source()
+    (DATA / "sources.tsv").write_text(stamped)
+    print(f"wrote {OUT.relative_to(ROOT)}; stamped {SOURCE}.retrieved_on = {today}",
+          file=sys.stderr)
 
 
-def stamp_source():
-    """Record today as the day the excerpt was taken, on the NCBI row of sources.tsv."""
-    path = DATA / "sources.tsv"
-    lines = path.read_text().split("\n")
-    col = lines[0].split("\t").index("retrieved_on")
+def stamped_sources():
+    """sources.tsv with today on the NCBI row, as text. Exits if it cannot be produced."""
+    lines = (DATA / "sources.tsv").read_text().split("\n")
+    header = lines[0].split("\t")
+    if "retrieved_on" not in header:
+        sys.exit("sources.tsv has no retrieved_on column")
+    col = header.index("retrieved_on")
     hits = [i for i, line in enumerate(lines) if line.split("\t")[0] == SOURCE]
     if len(hits) != 1:
         sys.exit(f"expected exactly one {SOURCE} row in sources.tsv, found {len(hits)}")
     cells = lines[hits[0]].split("\t")
-    cells[col] = datetime.date.today().isoformat()
+    if len(cells) != len(header):
+        sys.exit(f"the {SOURCE} row of sources.tsv has {len(cells)} fields, header has {len(header)}")
+    today = datetime.date.today().isoformat()
+    cells[col] = today
     lines[hits[0]] = "\t".join(cells)
-    path.write_text("\n".join(lines))
-    print(f"stamped {SOURCE}.retrieved_on = {cells[col]}", file=sys.stderr)
+    return today, "\n".join(lines)
 
 
 if __name__ == "__main__":
