@@ -8,6 +8,27 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+### Register
+- **`data/taxonomic_parent.tsv` — NCBI's lineage for every taxon the register points at**,
+  126 nodes for 40 taxa, in NCBI's own identifiers, ranks and names. Until now the taxon
+  entities were flat, and a consumer wanting to know that a harbour seal is a pinniped, or
+  what family a killer whale is in, had to get it from somewhere the register does not
+  treat as an authority. Fetched by `bin/import_taxonomy.py` and never edited; no `SSA:`
+  identifier is minted for anything in it
+  ([ADR-0022](decisions/0022-taxonomic-hierarchy-is-ncbis-excerpted.md)).
+- **Two new views in `dist/`.** `taxon_ancestor.tsv` is the closure, with each taxon its own
+  ancestor at depth 0. `classification.tsv` gives each taxon entity `kingdom`, `phylum`,
+  `class`, `order`, `family` and `genus`. **NCBI's kingdom for animals is `Metazoa`, not
+  `Animalia`**, and a whale's order is `Artiodactyla`; both are reported verbatim.
+- `entities.taxon_id` is now a foreign key into that table. No existing row changes; a
+  *new* `taxon_id` fails validation until the importer has fetched its lineage.
+
+### Design
+- [ADR-0022](decisions/0022-taxonomic-hierarchy-is-ncbis-excerpted.md) amends ADR-0008:
+  species identity is still delegated and nothing is curated, but the register now reports
+  what the authority it delegated to says about ancestry. Subsumption stays a separate
+  relation from membership, so `dist/ancestor.tsv` is unchanged.
+
 ## 2026.09.1 — 2026-09-20
 
 The second release. Two changes a consumer will notice, neither of which moves or reuses an

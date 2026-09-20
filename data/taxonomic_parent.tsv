@@ -1,0 +1,127 @@
+taxon_id	parent_id	rank	scientific_name	source_id
+NCBITaxon:2759	NCBITaxon:131567	domain	Eukaryota	NCBI
+NCBITaxon:6072	NCBITaxon:33208	clade	Eumetazoa	NCBI
+NCBITaxon:7711	NCBITaxon:33511	phylum	Chordata	NCBI
+NCBITaxon:7742	NCBITaxon:89593	clade	Vertebrata	NCBI
+NCBITaxon:7776	NCBITaxon:7742	clade	Gnathostomata	NCBI
+NCBITaxon:8287	NCBITaxon:117571	superclass	Sarcopterygii	NCBI
+NCBITaxon:8457	NCBITaxon:32524	clade	Sauropsida	NCBI
+NCBITaxon:8492	NCBITaxon:1329799	clade	Archosauria	NCBI
+NCBITaxon:8782	NCBITaxon:436492	class	Aves	NCBI
+NCBITaxon:8825	NCBITaxon:8782	infraclass	Neognathae	NCBI
+NCBITaxon:8906	NCBITaxon:3078114	order	Charadriiformes	NCBI
+NCBITaxon:8910	NCBITaxon:8906	family	Laridae	NCBI
+NCBITaxon:9126	NCBITaxon:3073809	order	Passeriformes	NCBI
+NCBITaxon:9158	NCBITaxon:175121	family	Passeridae	NCBI
+NCBITaxon:9159	NCBITaxon:9158	genus	Passer	NCBI
+NCBITaxon:9347	NCBITaxon:32525	clade	Eutheria	NCBI
+NCBITaxon:9655	NCBITaxon:3072906	family	Mustelidae	NCBI
+NCBITaxon:9702	NCBITaxon:3072905	family	Otariidae	NCBI
+NCBITaxon:9703	NCBITaxon:9702	genus	Zalophus	NCBI
+NCBITaxon:9704	NCBITaxon:9703	species	Zalophus californianus	NCBI
+NCBITaxon:9709	NCBITaxon:3072905	family	Phocidae	NCBI
+NCBITaxon:9714	NCBITaxon:3410122	genus	Mirounga	NCBI
+NCBITaxon:9716	NCBITaxon:9714	species	Mirounga angustirostris	NCBI
+NCBITaxon:9717	NCBITaxon:3410118	genus	Phoca	NCBI
+NCBITaxon:9720	NCBITaxon:9717	species	Phoca vitulina	NCBI
+NCBITaxon:9721	NCBITaxon:2653789	infraorder	Cetacea	NCBI
+NCBITaxon:9722	NCBITaxon:9721	parvorder	Odontoceti	NCBI
+NCBITaxon:9726	NCBITaxon:9722	family	Delphinidae	NCBI
+NCBITaxon:9727	NCBITaxon:9726	genus	Delphinus	NCBI
+NCBITaxon:9728	NCBITaxon:9727	species	Delphinus delphis	NCBI
+NCBITaxon:9729	NCBITaxon:9726	genus	Globicephala	NCBI
+NCBITaxon:9732	NCBITaxon:9726	genus	Orcinus	NCBI
+NCBITaxon:9733	NCBITaxon:9732	species	Orcinus orca	NCBI
+NCBITaxon:9734	NCBITaxon:9726	genus	Stenella	NCBI
+NCBITaxon:9737	NCBITaxon:9734	species	Stenella coeruleoalba	NCBI
+NCBITaxon:9738	NCBITaxon:9726	genus	Tursiops	NCBI
+NCBITaxon:9739	NCBITaxon:9738	species	Tursiops truncatus	NCBI
+NCBITaxon:9740	NCBITaxon:9722	family	Phocoenidae	NCBI
+NCBITaxon:9741	NCBITaxon:9740	genus	Phocoena	NCBI
+NCBITaxon:9742	NCBITaxon:9741	species	Phocoena phocoena	NCBI
+NCBITaxon:9743	NCBITaxon:9740	genus	Phocoenoides	NCBI
+NCBITaxon:9744	NCBITaxon:9743	species	Phocoenoides dalli	NCBI
+NCBITaxon:9750	NCBITaxon:9722	family	Physeteridae	NCBI
+NCBITaxon:9751	NCBITaxon:9750	genus	Kogia	NCBI
+NCBITaxon:9752	NCBITaxon:9751	species	Kogia sima	NCBI
+NCBITaxon:9753	NCBITaxon:9750	genus	Physeter	NCBI
+NCBITaxon:9755	NCBITaxon:9753	species	Physeter macrocephalus	NCBI
+NCBITaxon:9756	NCBITaxon:9722	family	Ziphiidae	NCBI
+NCBITaxon:9759	NCBITaxon:9756	genus	Ziphius	NCBI
+NCBITaxon:9760	NCBITaxon:9759	species	Ziphius cavirostris	NCBI
+NCBITaxon:9761	NCBITaxon:9721	parvorder	Mysticeti	NCBI
+NCBITaxon:9762	NCBITaxon:9761	family	Eschrichtiidae	NCBI
+NCBITaxon:9763	NCBITaxon:9762	genus	Eschrichtius	NCBI
+NCBITaxon:9764	NCBITaxon:9763	species	Eschrichtius robustus	NCBI
+NCBITaxon:9765	NCBITaxon:9761	family	Balaenopteridae	NCBI
+NCBITaxon:9766	NCBITaxon:9765	genus	Balaenoptera	NCBI
+NCBITaxon:9767	NCBITaxon:9766	species	Balaenoptera acutorostrata	NCBI
+NCBITaxon:9768	NCBITaxon:9766	species	Balaenoptera borealis	NCBI
+NCBITaxon:9770	NCBITaxon:9766	species	Balaenoptera physalus	NCBI
+NCBITaxon:9771	NCBITaxon:9766	species	Balaenoptera musculus	NCBI
+NCBITaxon:9772	NCBITaxon:9765	genus	Megaptera	NCBI
+NCBITaxon:9773	NCBITaxon:9772	species	Megaptera novaeangliae	NCBI
+NCBITaxon:27612	NCBITaxon:9726	genus	Lissodelphis	NCBI
+NCBITaxon:27615	NCBITaxon:9751	species	Kogia breviceps	NCBI
+NCBITaxon:28683	NCBITaxon:8906	family	Alcidae	NCBI
+NCBITaxon:28695	NCBITaxon:28683	genus	Cepphus	NCBI
+NCBITaxon:28696	NCBITaxon:28695	species	Cepphus columba	NCBI
+NCBITaxon:29083	NCBITaxon:9702	genus	Arctocephalus	NCBI
+NCBITaxon:32523	NCBITaxon:1338369	clade	Tetrapoda	NCBI
+NCBITaxon:32524	NCBITaxon:32523	clade	Amniota	NCBI
+NCBITaxon:32525	NCBITaxon:40674	clade	Theria	NCBI
+NCBITaxon:32561	NCBITaxon:8457	clade	Sauria	NCBI
+NCBITaxon:33154	NCBITaxon:2759	clade	Opisthokonta	NCBI
+NCBITaxon:33208	NCBITaxon:33154	kingdom	Metazoa	NCBI
+NCBITaxon:33213	NCBITaxon:6072	clade	Bilateria	NCBI
+NCBITaxon:33511	NCBITaxon:33213	clade	Deuterostomia	NCBI
+NCBITaxon:33554	NCBITaxon:314145	order	Carnivora	NCBI
+NCBITaxon:34881	NCBITaxon:169417	genus	Enhydra	NCBI
+NCBITaxon:34882	NCBITaxon:34881	species	Enhydra lutris	NCBI
+NCBITaxon:34883	NCBITaxon:9702	genus	Callorhinus	NCBI
+NCBITaxon:34884	NCBITaxon:34883	species	Callorhinus ursinus	NCBI
+NCBITaxon:34885	NCBITaxon:9702	genus	Eumetopias	NCBI
+NCBITaxon:34886	NCBITaxon:34885	species	Eumetopias jubatus	NCBI
+NCBITaxon:38241	NCBITaxon:9729	species	Globicephala macrorhynchus	NCBI
+NCBITaxon:40674	NCBITaxon:32524	class	Mammalia	NCBI
+NCBITaxon:48741	NCBITaxon:9756	genus	Berardius	NCBI
+NCBITaxon:48742	NCBITaxon:48741	species	Berardius bairdii	NCBI
+NCBITaxon:48849	NCBITaxon:9159	species	Passer domesticus	NCBI
+NCBITaxon:56260	NCBITaxon:2558200	family	Pandionidae	NCBI
+NCBITaxon:56261	NCBITaxon:56260	genus	Pandion	NCBI
+NCBITaxon:56262	NCBITaxon:56261	species	Pandion haliaetus	NCBI
+NCBITaxon:71112	NCBITaxon:169417	genus	Lontra	NCBI
+NCBITaxon:76717	NCBITaxon:71112	species	Lontra canadensis	NCBI
+NCBITaxon:83652	NCBITaxon:9726	genus	Grampus	NCBI
+NCBITaxon:83653	NCBITaxon:83652	species	Grampus griseus	NCBI
+NCBITaxon:89593	NCBITaxon:7711	subphylum	Craniata	NCBI
+NCBITaxon:91561	NCBITaxon:314145	order	Artiodactyla	NCBI
+NCBITaxon:103588	NCBITaxon:27612	species	Lissodelphis borealis	NCBI
+NCBITaxon:117570	NCBITaxon:7776	clade	Teleostomi	NCBI
+NCBITaxon:117571	NCBITaxon:117570	clade	Euteleostomi	NCBI
+NCBITaxon:131567		cellular root	cellular organisms	NCBI
+NCBITaxon:161921	NCBITaxon:29083	species	Arctocephalus townsendi	NCBI
+NCBITaxon:169417	NCBITaxon:9655	subfamily	Lutrinae	NCBI
+NCBITaxon:175121	NCBITaxon:9126	superfamily	Passeroidea	NCBI
+NCBITaxon:314145	NCBITaxon:1437010	superorder	Laurasiatheria	NCBI
+NCBITaxon:379584	NCBITaxon:33554	suborder	Caniformia	NCBI
+NCBITaxon:436486	NCBITaxon:8492	clade	Dinosauria	NCBI
+NCBITaxon:436489	NCBITaxon:436486	clade	Saurischia	NCBI
+NCBITaxon:436491	NCBITaxon:436489	clade	Theropoda	NCBI
+NCBITaxon:436492	NCBITaxon:436491	clade	Coelurosauria	NCBI
+NCBITaxon:1329799	NCBITaxon:32561	clade	Archelosauria	NCBI
+NCBITaxon:1338369	NCBITaxon:8287	clade	Dipnotetrapodomorpha	NCBI
+NCBITaxon:1437010	NCBITaxon:9347	clade	Boreoeutheria	NCBI
+NCBITaxon:2558200	NCBITaxon:3073811	order	Accipitriformes	NCBI
+NCBITaxon:2653789	NCBITaxon:91561	suborder	Whippomorpha	NCBI
+NCBITaxon:3072905	NCBITaxon:379584	clade	Pinnipedia	NCBI
+NCBITaxon:3072906	NCBITaxon:379584	superfamily	Musteloidea	NCBI
+NCBITaxon:3073808	NCBITaxon:3078114	clade	Telluraves	NCBI
+NCBITaxon:3073809	NCBITaxon:3073808	clade	Australaves	NCBI
+NCBITaxon:3073811	NCBITaxon:3073808	clade	Accipitrimorphae	NCBI
+NCBITaxon:3078114	NCBITaxon:8825	clade	Neoaves	NCBI
+NCBITaxon:3371155	NCBITaxon:3814641	species	Aethalodelphis obliquidens	NCBI
+NCBITaxon:3410118	NCBITaxon:9709	subfamily	Phocinae	NCBI
+NCBITaxon:3410119	NCBITaxon:9709	subfamily	Monachinae	NCBI
+NCBITaxon:3410122	NCBITaxon:3410119	tribe	Miroungini	NCBI
+NCBITaxon:3814641	NCBITaxon:9726	genus	Aethalodelphis	NCBI

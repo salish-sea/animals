@@ -79,13 +79,20 @@ bin/validate.py Loads data/ into SQLite built from schema.sql — the build is t
 bin/check_crosswalks.py
                 Asks iNaturalist and NCBI whether the identifiers we point at
                 still mean what we recorded. Weekly, and on any PR touching them.
+bin/import_taxonomy.py
+                Fetches NCBI's lineage for every taxon we point at and writes
+                data/taxonomic_parent.tsv. Nothing else may write that file: it is
+                an excerpt, not something we curate. See ADR-0022.
 dist/           Generated derived views. Never hand-edited.
 ```
 
 `dist/` is where the work of *consuming* the register is done once instead of per
 consumer: `ancestor.tsv` is the precomputed closure, `current_status.tsv` applies the
 life-status precedence rule, `searchable_name.tsv` merges preferred and alternate names
-and describes the entity behind each one.
+and describes the entity behind each one. `taxon_ancestor.tsv` and `classification.tsv` do
+the same for taxonomy: the first answers "is this a pinniped?", the second gives each
+taxon entity its `kingdom` … `genus` — NCBI's, not ours
+([ADR-0022](decisions/0022-taxonomic-hierarchy-is-ncbis-excerpted.md)).
 A release also carries `register.db`, the same data as SQLite, which explains itself:
 
 ```sh
