@@ -33,6 +33,15 @@ An Orcasound concept: a human-curated stretch of hydrophone audio with a start, 
 and a category (`biophony`, `anthrophony`, `geophony`). The unit this register is
 consumed by.
 
+### ⚖️ Catalogue
+**In these documents, always something else.** A catalogue is a descriptive enumeration
+of animals — fin images, matching evidence, encounter history — maintained so that a new
+sighting can be matched to a known animal. The Center for Whale Research, MERS and Bay
+Cetology keep catalogues — Bay Cetology's is the West Coast Transient catalogue Michael
+Bigg started, published through finwave — and so does SalishSea.io. This repository is
+not one, and the word is never used for it (see *Register*). In the whale world "the
+catalogue" usually means CWR's, which is exactly why the register needs a different word.
+
 ### 💾 Closure (transitive closure)
 The full set of ancestors of an entity, precomputed. If J35 is in matriline J17s, in J
 pod, in J clan, then J35's closure includes all of them — so a search for "J pod"
@@ -99,6 +108,15 @@ from the matriarch", not "child of". Recorded for very few animals so far — ab
 The `SSA:` in `SSA:0000101`. Distinguishes our identifiers from `NCBITaxon:9733` or
 `finwave:T090` so they can be mixed in one column without collision.
 
+**The case is not ours to choose.** Each prefix is written in its Bioregistry *preferred*
+form — `NCBITaxon`, `inaturalist.taxon`, `SSA` — which is why the mixture is consistent
+rather than sloppy. Bioregistry's own keys are all lowercase (`ncbitaxon`, `ssa`); the
+preferred form is the one it publishes for writing, and that is the distinction
+[ADR-0021](../decisions/0021-ssa-is-a-registered-prefix.md) registered `SSA` on. A prefix
+Bioregistry does not carry, like `finwave:`, follows its owner's styling. Predicate
+vocabularies (`skos:`, `semapv:`) are lowercase for the same reason: it is their
+published form.
+
 ### ⚖️ Occurrence
 A record that an animal was at a place at a time. Deliberately **not** in this register.
 The word is also a Darwin Core term with a precise meaning, which is roughly ours.
@@ -128,10 +146,17 @@ because it is a kind rather than an animal. See
 [ADR-0008](../decisions/0008-species-identity-is-delegated.md).
 
 ### ⚖️ Register
-A curated list of individually identified things, each with a permanent identifier.
-Distinct from a *taxonomy* (a classification of kinds) and a *vocabulary* (an agreed set
-of words). This repository is primarily a register; `definitions/` is the vocabulary
-part.
+A curated list of individually identified things, each with a permanent identifier, kept
+by someone with authority over who is on the list. Its value is the identity assignment
+itself, not the description: entries are deprecated rather than deleted, and identifiers
+outlive whatever they were first thought to name.
+
+Distinct from a *catalogue* (a description of animals, kept for matching — see above),
+a *taxonomy* (a classification of kinds) and a *vocabulary* (an agreed set of words).
+This repository is primarily a register; `definitions/` is the vocabulary part; the
+catalogues are upstream and downstream of it, never it. Note *register*, not *registry* —
+a registry is the office or service that keeps a register, and this is a publication
+rather than a service ([ADR-0014](../decisions/0014-a-publication-not-a-service.md)).
 
 ### 🐋 SRKW
 Southern Resident killer whale. A `hidden` name in the register — it matches in search

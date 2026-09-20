@@ -24,6 +24,25 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
   *new* `taxon_id` fails validation until the importer has fetched its lineage.
 
 ### Design
+- **Glossary states the prefix-case rule**, which turns out to be one rule and not the two
+  it looks like. `mappings.tsv` writes `NCBITaxon:` capitalised beside 40 rows of
+  lowercase `inaturalist.taxon:`, which reads as a drift worth fixing. It is not: both are
+  the *preferred prefix* Bioregistry publishes for that registry, as `SSA` is ours —
+  exactly the distinction [ADR-0021](decisions/0021-ssa-is-a-registered-prefix.md) drew
+  when it registered the lowercase key `ssa` with the preferred form `SSA`. Nothing in
+  `data/` changes; the rule is written down so the apparent inconsistency stops being
+  rediscovered and half-fixed.
+- Glossary entry for **catalogue**, marked ⚖️. It was the last load-bearing term both
+  communities use differently with no entry, and the divergence is wide: in the whale
+  world "the catalogue" means CWR's photo-ID catalogue, an enumeration kept so a new
+  sighting can be matched to a known animal. The register is not one and the word is
+  never used for it — the catalogues sit upstream (CWR, MERS, Bay Cetology) and
+  downstream (SalishSea.io) of the register, which is the relationship
+  [ADR-0012](decisions/0012-relationship-to-the-salishsea-io-catalogue.md) depends on.
+  *Register* is also sharpened to say what distinguishes it — the identity assignment
+  rather than the description — and to note it is not a *registry*: a registry
+  is the office that keeps a register, and this is a publication rather than a service
+  ([ADR-0014](decisions/0014-a-publication-not-a-service.md)).
 - [ADR-0022](decisions/0022-taxonomic-hierarchy-is-ncbis-excerpted.md) amends ADR-0008:
   species identity is still delegated and nothing is curated, but the register now reports
   what the authority it delegated to says about ancestry. Subsumption stays a separate
