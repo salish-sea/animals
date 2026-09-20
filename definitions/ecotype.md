@@ -25,6 +25,13 @@ for *Orcinus orca*. Needs a citation to a specific source and expert confirmatio
   identifier here — no external taxonomy will provide one. See
   [ADR-0008](../decisions/0008-species-identity-is-delegated.md).
 - Recorded as `skos:broadMatch` to the species in `mappings.tsv`, never `exactMatch`.
+- Resident and Bigg's are also `skos:closeMatch` to iNaturalist's *Orcinus orca ater* and
+  *O. o. rectipinnus*. Close rather than exact, because an ecotype and a subspecies are
+  different kinds of thing that here cover the same animals — and the equation is the
+  Society for Marine Mammalogy's, quoted in the rows themselves, not the register's. It is
+  what lets a consumer holding an iNaturalist record of a "Resident Killer Whale" find this
+  entity. **A community never gets this mapping**: *ater* is every resident, and the
+  Southern Residents are one population among them.
 
 ## What it is not
 

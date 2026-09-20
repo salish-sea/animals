@@ -9,6 +9,17 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Register
+- **Resident and Bigg's are crosswalked to iNaturalist's two killer-whale subspecies**:
+  `SSA:0000003` `skos:closeMatch` `inaturalist.taxon:1602531` (*Orcinus orca ater*), and
+  `SSA:0000002` to `1602533` (*O. o. rectipinnus*). A consumer holding an iNaturalist
+  record identified to subspecies could not reach either entity before, because neither
+  had any iNaturalist mapping — for SalishSea.io that was about one occurrence in twelve.
+  `closeMatch` and not `exactMatch`: an ecotype and a subspecies are different kinds of
+  thing with the same extension, and the equation is the Society for Marine Mammalogy's.
+  **A consumer that uses only `exactMatch` gains nothing until it also admits
+  `closeMatch`**, and should keep excluding `broadMatch`.
+- The validator now refuses an external identifier that is an exact or close match of
+  more than one entity, since a consumer could not tell which to use.
 - **`data/taxonomic_parent.tsv` — NCBI's lineage for every taxon the register points at**,
   126 nodes for 40 taxa, in NCBI's own identifiers, ranks and names. Until now the taxon
   entities were flat, and a consumer wanting to know that a harbour seal is a pinniped, or
