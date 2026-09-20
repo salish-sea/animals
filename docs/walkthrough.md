@@ -4,7 +4,7 @@
 something here looks wrong to you, it probably is — say so.
 
 Nothing exposes a modelling error faster than tracing one real record all the way
-through. This traces an actual OrcaSound bout, chosen because it is hard.
+through. This traces an actual Orcasound bout, chosen because it is hard.
 
 ## The bout
 
@@ -14,7 +14,7 @@ id:         bout_031YvAeJ4O13YgkbQlc8yJ
 category:   biophony
 ```
 
-A real bout from the OrcaSound API. It was chosen because the moderator packed four
+A real bout from the Orcasound API. It was chosen because the moderator packed four
 different kinds of claim into one string:
 
 1. **An ecotype**, confidently: Southern Residents.
@@ -36,7 +36,7 @@ For the hedge, they pick `L pod` and set certainty to `possible`. They do **not*
 different term. There is no `L?` entity and there never will be — see
 [ADR-0009](../decisions/0009-uncertainty-on-the-annotation.md).
 
-## Step 2 — What OrcaSound stores
+## Step 2 — What Orcasound stores
 
 The original name is kept, verbatim, forever. Nothing below replaces it.
 
@@ -127,7 +127,7 @@ identifiers.
 | SSA:0000022 | split | *(empty)* | SSA:0000090 SSA:0000091 | 2029-03-14 |
 
 Because the reason is `split` and not a clean rename, there is no `replaced_by` — so
-OrcaSound does **not** silently rewrite the historical annotation. It surfaces the bout
+Orcasound does **not** silently rewrite the historical annotation. It surfaces the bout
 for a human to re-decide, and until then the 2025 row still reads `SSA:0000022`, still
 resolves to a label, and is still honest about what the moderator actually asserted.
 

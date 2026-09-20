@@ -33,7 +33,7 @@ real dependency but a thin one. It is not GBIF-rejects-your-data.
 Two things cut the other way, and it would be dishonest to leave them out of an argument
 that leans this hard on the graveyard. This work **is** funded, which is the property the
 survivors above shared and the failures mostly lacked. And it is not a new idea imposed on
-an existing project — OrcaSound, SalishSea.io and this register are all one long-running
+an existing project — Orcasound, SalishSea.io and this register are all one long-running
 initiative, so the register is being built for consumers that already want it rather than
 in hope of adoption.
 

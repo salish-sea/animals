@@ -47,7 +47,7 @@ both repositories, so nothing external enforces it.
 
 ### The two consumers are not alike
 
-| | SalishSea.io | OrcaSound |
+| | SalishSea.io | Orcasound |
 |---|---|---|
 | Relationship | The same data, presented. No translation boundary. | A separate project: distinct audience and purpose, organizationally adjacent. |
 | Coupling | Tight, permanently. Separate repos for process reasons only. | Loose: a separate project's own model, referencing ours. |
@@ -59,7 +59,7 @@ both repositories, so nothing external enforces it.
 tightly coupled in that it holds no animal identity of its own and cannot disagree with
 this register. It is not tightly coupled in the sense of reading this working tree: it
 fetches a released artefact at a pinned tag and records the tag and the digest it
-verified, exactly as OrcaSound does
+verified, exactly as Orcasound does
 ([ADR-0013](0013-distribution.md), [ADR-0006](0006-valid-time-in-data-assertion-time-in-git.md)).
 
 Tracking the repository directly would tie deployments to whatever `main` happened to
@@ -67,13 +67,13 @@ hold rather than to a published edition, and would leave the register with two
 distribution paths where only one is exercised. Being the same author's other project is
 a reason to trust the data, not a reason to skip the front door.
 
-Unifying the two on one roster is the goal of this effort. OrcaSound currently carries
+Unifying the two on one roster is the goal of this effort. Orcasound currently carries
 free-text tags (`tag.ex`, `item_tag.ex` in `server/lib/orcasite/radio/`) and no roster;
 the intent is that it never acquires one.
 
 "Separate project" describes audience and purpose, not distance. All three efforts are
 S. Veirs's initiative over many years, funded partly by volunteer effort and partly
-through Beam Reach. The contributors who built and maintained OrcaSound's current
+through Beam Reach. The contributors who built and maintained Orcasound's current
 architecture have minimal availability this year, so the practical decision path for
 adopting the register there is narrow — which makes it *easier* to agree and *more*
 important to write down, because there is little standing review capacity to catch a bad
@@ -185,9 +185,9 @@ this should be recorded on that side rather than only here.
 ## Open questions
 
 - What is the migration sequence, and does the catalogue migrate before or after the
-  first OrcaSound bout is tagged? Tagging against identifiers that later change would
+  first Orcasound bout is tagged? Tagging against identifiers that later change would
   defeat the purpose.
-- **OrcaSound is the genuinely external party here** — a separate project with its own
+- **Orcasound is the genuinely external party here** — a separate project with its own
   contributors — and this record says nothing about what it should do. Whether it has
   latent modelling that nobody has read is a live question; discovering one such
   repository is what prompted this ADR.

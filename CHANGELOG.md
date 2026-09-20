@@ -144,7 +144,7 @@ it is settled.
 - **`dist/searchable_name.tsv` gained three columns** — `entity_label`, `entity_kind`,
   `entity_rank` — closing the half of the designation-matching question that was actually
   still open. Zero-padding was already answered: ADR-0019's fold resolves `T34s`, `T38C`
-  and `T65A5` against the padded labels, verified against all 94 live OrcaSound tags. What
+  and `T65A5` against the padded labels, verified against all 94 live Orcasound tags. What
   was missing was the other half of the same promise. C2 says the honest answer is
   sometimes two candidates and a consumer should "show both", and ADR-0019 says they are
   distinguished by rank — but the file holding every name carried no rank, so a picker
@@ -158,7 +158,7 @@ it is settled.
   distinguishably.
 - **Three new individuals: `SSA:0010510` T419, `SSA:0010511` T420, `SSA:0010512` T421.**
   Designated by Bay Cetology in March 2026 after an unrecognised trio appeared in
-  Vancouver Harbour and travelled into Puget Sound, and tagged on OrcaSound bouts since.
+  Vancouver Harbour and travelled into Puget Sound, and tagged on Orcasound bouts since.
   They are Bigg's by ecotype but not West Coast Transients — attributed to the Gulf of
   Alaska / Aleutian / Bering stock — which is why the Bigg's sheet does not reach them.
   Membership is recorded at the ecotype, because their matriline is not established and
@@ -258,7 +258,7 @@ it is settled.
   The two documents agree; Q18 is now the work of carrying the confidence/verification
   split into the sketch, not a dispute to settle.
 - Swept the repo for places where it prescribed to systems it does not own. ADR-0009 no
-  longer designs OrcaSound's certainty control (it states the risk and leaves the
+  longer designs Orcasound's certainty control (it states the risk and leaves the
   interface to them) and no longer reads as banning `signals-srkw`'s compound labels;
   `scope.md` and `definitions/pod.md` state the drift risk and the "J pod" ambiguity as
   facts rather than instructions; ADR-0011 keeps label non-uniqueness and drops the
@@ -282,7 +282,7 @@ it is settled.
 - Releases carry `register.db`, the TSVs, `schema.sql` and `SHA256SUMS`.
 - ADR-0013 now states release cadence — a tag push, on demand, possibly several a day —
   and ADR-0012 states how SalishSea.io consumes the register: a released artefact at a
-  pinned tag, the same way OrcaSound does. Its tight coupling is about the model, not the
+  pinned tag, the same way Orcasound does. Its tight coupling is about the model, not the
   transport. Who besides the author may cut a release is Q25.
 - Initial scaffold: scope, competency questions, walkthrough, glossary, background,
   open questions, twelve decision records, six definitions, and a validator.

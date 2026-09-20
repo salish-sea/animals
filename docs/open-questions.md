@@ -93,7 +93,7 @@ not added; whether to populate them is still Q4.
 
 ### Q5 — Do consumers store redundant ancestors, or derive them?
 **Resolved 2026-07-28, by declining it.** The question named its own owner and it was not
-this repository: "should *OrcaSound* store what the moderator picked". How an occurrence
+this repository: "should *Orcasound* store what the moderator picked". How an occurrence
 records the individuals and groups a moderator tagged is that consumer's annotation
 design, and there is a separate process for that work.
 
@@ -157,7 +157,7 @@ the Bioregistry**, with no URI format, which 1,151 of its 2,759 entries also lac
 which keeps [ADR-0014](../decisions/0014-a-publication-not-a-service.md)'s
 publication-not-a-service promise intact. The trigger for resolving it now was
 [orcasound/orcasite#1001](https://github.com/orcasound/orcasite/issues/1001) asking
-OrcaSound to store register identifiers in a new column — the first external system, which
+Orcasound to store register identifiers in a new column — the first external system, which
 is precisely the deadline this question set itself. See
 [ADR-0021](../decisions/0021-ssa-is-a-registered-prefix.md); renaming (`ssanimals`) and
 `w3id.org` IRIs are the alternatives it weighed.
@@ -174,7 +174,7 @@ https://github.com/salish-sea/animals/releases/download/2026.07.1/register-tsv.t
 That *is* the stable address, it needs no client and no API call, and it carries no
 hosting commitment — which is what made the dereferenceable-identifier version of this
 question look expensive. Not GitHub Packages: it has no generic file registry and no
-ecosystem that serves Elixir, which is what OrcaSound's server runs. See
+ecosystem that serves Elixir, which is what Orcasound's server runs. See
 [ADR-0013](../decisions/0013-distribution.md).
 
 ### Q12 — How do the two repositories reference each other?
@@ -323,7 +323,7 @@ See [ADR-0006](../decisions/0006-valid-time-in-data-assertion-time-in-git.md), s
 `unconfirmed` / `false-positive` vocabulary turned out to be three separate problems:
 
 - `OrcaHello FP at Bush Point` — a real bout. The detector fired on nothing. That is a
-  **bout-level flag in OrcaSound**, never a tag, because it names no animal.
+  **bout-level flag in Orcasound**, never a tag, because it names no animal.
 - `Passing boat noise`, category `biophony` — a **wrong value in an existing field**. Fix
   `bout.category`; not a vocabulary question.
 - `Mystery squeaks at Port Townsend` — there is a signal, nobody knows whose. **Tag at the

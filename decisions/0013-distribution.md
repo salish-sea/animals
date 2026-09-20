@@ -113,7 +113,7 @@ and reads the TSVs directly too, with no build step at all.
 
 GitHub Packages has **no generic file registry** — the API rejects `package_type=generic`,
 its ecosystems are npm, RubyGems, Maven, NuGet and ghcr.io, and `gh` has no `package`
-command. More to the point, OrcaSound's server is Elixir and no GitHub Packages ecosystem
+command. More to the point, Orcasound's server is Elixir and no GitHub Packages ecosystem
 serves Elixir at all.
 
 Releases do what was wanted, with permanent URLs that need no client:
@@ -175,7 +175,7 @@ artefact under the register's name. Unresolved; see [Q25](../docs/open-questions
 
 ## Consequences
 
-- Both consumers are Postgres — OrcaSound runs `ash_postgres`, SalishSea.io runs Supabase
+- Both consumers are Postgres — Orcasound runs `ash_postgres`, SalishSea.io runs Supabase
   — so neither will ever *query* the SQLite file. The TSVs are the integration path and
   the `.db` is a byproduct that happens to be useful to others. Building it is still
   worthwhile because it is *how the constraints get checked*.
@@ -197,7 +197,7 @@ artefact under the register's name. Unresolved; see [Q25](../docs/open-questions
   it remains the better *tool* and can attach what we ship.
 - **Publishing an npm package to GitHub Packages.** Would give lockfile pinning and
   integrity hashes — genuinely valuable — but the consumer that matters is Elixir, so it
-  would serve the wrong half of OrcaSound.
+  would serve the wrong half of Orcasound.
 - **Committing `register.db`.** Makes git history heavy and unreviewable for a file that
   is fully derived. Release assets are the right home for a binary.
 - **Keeping the hand-written validator.** Works, but the constraints stay private to this

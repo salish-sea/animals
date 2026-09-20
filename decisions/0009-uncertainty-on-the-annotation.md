@@ -6,7 +6,7 @@
 
 ## Context
 
-A real OrcaSound bout is named:
+A real Orcasound bout is named:
 
 ```
 SRKW signals at PT (J+K +L? pods)
@@ -79,7 +79,7 @@ Two related patterns fall out of the same principle:
 
   | Real bout | What it is | Where it belongs |
   |---|---|---|
-  | `OrcaHello FP at Bush Point` | The detector fired on nothing | A bout-level flag in OrcaSound. Never a tag — it names no animal. |
+  | `OrcaHello FP at Bush Point` | The detector fired on nothing | A bout-level flag in Orcasound. Never a tag — it names no animal. |
   | `Passing boat noise`, category `biophony` | A wrong value in a field that already exists | Fix `bout.category`. Not a vocabulary question at all. |
   | `Mystery squeaks at Port Townsend` | There is a signal; nobody knows whose | Tag at the level you are sure of — which needs a `taxon` entity, and those now exist ([ADR-0008](0008-species-identity-is-delegated.md)). |
 
@@ -108,7 +108,7 @@ Two related patterns fall out of the same principle:
 
 ## Consequences
 
-- OrcaSound's tag join needs columns, so the originating issue's claim that this needs
+- Orcasound's tag join needs columns, so the originating issue's claim that this needs
   "only slug conventions and a moderator habit" is not quite right: a schema change is
   required. How large it is, and what it costs them, is theirs to say.
 - **A certainty column is worth exactly as much as the affordance that fills it.** If

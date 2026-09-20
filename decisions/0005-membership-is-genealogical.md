@@ -18,7 +18,7 @@ J pod?
 
 **Membership in this register is genealogical.** An individual belongs to the matriline
 they were born into, for life. L87 is in L pod, permanently, and his travel with J pod
-is not recorded here at all — it is a property of encounters, and belongs in OrcaSound
+is not recorded here at all — it is a property of encounters, and belongs in Orcasound
 and SalishSea.io.
 
 ## What this means for the data
