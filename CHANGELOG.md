@@ -8,6 +8,17 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+## 2026.09.2 — 2026-09-20
+
+Two things a consumer can now ask the register that it could not before, and no identifier
+added, moved or retired. **What a taxon is descended from**: NCBI's lineage for every taxon
+the register points at, with `kingdom` … `genus` worked out per taxon entity — excerpted by
+script, not curated, and in NCBI's own words (its kingdom is `Metazoa`). **Which entity an
+iNaturalist "Resident" or "Bigg's Killer Whale" record belongs to**: the two ecotypes are
+now close matches of iNaturalist's two killer-whale subspecies. A consumer that matches on
+`skos:exactMatch` alone gains nothing from the second until it also admits
+`skos:closeMatch`.
+
 ### Register
 - **Resident and Bigg's are crosswalked to iNaturalist's two killer-whale subspecies**:
   `SSA:0000003` `skos:closeMatch` `inaturalist.taxon:1602531` (*Orcinus orca ater*), and
