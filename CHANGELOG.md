@@ -8,6 +8,16 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+## 2026.09.1 — 2026-09-20
+
+The second release. Two changes a consumer will notice, neither of which moves or reuses an
+identifier. **The register's first deprecation**: `SSA:0000001` is merged into
+`SSA:0000010`, and a consumer holding it may follow `replaced_by` without asking anyone.
+**73 new groups**: the Bigg's sub-lineages, so an observer can record "the T073As" rather
+than the whole T073 lineage. They are minted ahead of
+[Q22](https://github.com/salish-sea/animals/issues/13) and may yet be merged away, by the
+same automatic route.
+
 ### Register
 - **73 Bigg's sub-lineages, `SSA:0002131`–`SSA:0002203`**, nested inside the top-level
   lineages: `T073As` (`SSA:0002172`) is T073A and her descendants, and is a member of
