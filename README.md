@@ -1,6 +1,6 @@
 # Salish Sea animals
 
-A shared register of the marine mammals that [OrcaSound](https://live.orcasound.net) and
+A shared register of the marine mammals that [Orcasound](https://live.orcasound.net) and
 [SalishSea.io](https://salishsea.io) both need to talk about — individuals, the groups
 they belong to, and what the words for those groups mean.
 
@@ -144,7 +144,7 @@ argued in [docs/scope.md](docs/scope.md); the load-bearing one is
 
 Four issue templates cover the common cases: a new entity, a definition question, a data
 correction, and — most valuable — a **vocabulary gap**, when a moderator needed to say
-something the register couldn't express. Free text is never removed from OrcaSound
+something the register couldn't express. Free text is never removed from Orcasound
 bouts precisely so those gaps stay visible.
 
 If you need an identifier today, open a pull request with `source_id = SEED`. Validation

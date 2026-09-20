@@ -28,7 +28,7 @@ researcher would recognise. It is deliberately arbitrary, and it exists so that 
 
 The reason matters here, because it is counter-intuitive: **a meaningful identifier
 becomes a lie when the thing it describes changes.** If `matriline-t090` is stored in
-five thousand OrcaSound records and that matriline is later found to be two matrilines,
+five thousand Orcasound records and that matriline is later found to be two matrilines,
 or is renamed, the identifier now says something false — and correcting it means a
 migration across every system that ever stored it. An arbitrary number cannot become
 false, because it never claimed anything.

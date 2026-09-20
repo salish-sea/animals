@@ -43,7 +43,7 @@ anything here is ever exported to GBIF.
 ### Delegating an identifier is not the same as refusing an entity
 
 This decision was read, initially by its own author, as "the register holds nothing at
-species level". That reading blocks about 30% of the OrcaSound biophony corpus: humpbacks,
+species level". That reading blocks about 30% of the Orcasound biophony corpus: humpbacks,
 sea lions, fish, and — most often — **an orca heard too faintly to resolve to an ecotype**,
 which is a routine moderator outcome rather than an edge case.
 

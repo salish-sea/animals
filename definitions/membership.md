@@ -31,7 +31,7 @@ published source, and it deliberately narrows the everyday usage. Needs expert r
 **Not association.** L87 (Onyx) was born to L32 in L pod, and after his mother died he
 travelled with K pod and then for years with J pod. Under this definition L87 is an
 L pod animal, permanently. His travel with J pod is real and important, and it is
-recorded in OrcaSound and SalishSea.io as a property of encounters — not here.
+recorded in Orcasound and SalishSea.io as a property of encounters — not here.
 
 This is the distinction most likely to cause confusion, because in ordinary speech "L87
 is with J pod" and "J17 is in J pod" use the same words for different kinds of claim.

@@ -24,7 +24,7 @@ generating this table rather than maintaining it by hand.
 | # | Question | Asked by | Answerable today |
 |---|---|---|---|
 | C1 | What is the current preferred label for this identifier? | Both, every display | Yes |
-| C2 | A moderator typed "T090s" / "J-35" / "Biggs" — which entity is that? | OrcaSound autocomplete | Yes — fold the query and compare against `dist/searchable_name.tsv` ([ADR-0019](../decisions/0019-names-are-compared-by-folding.md)); this trio is pinned as an acceptance test in `bin/validate.py`. Sometimes the honest answer is two candidates (`T090` is a matriline's bare designation *and* its matriarch's label) — show both, told apart by the `entity_label` / `entity_kind` / `entity_rank` columns on each row. Two other columns say what *not* to offer: a `hidden` row's `name` is a match and never a name to offer (what that entity is *called* is `entity_label`), and a `retired` row is a withdrawn identifier — filter it out of a picker, and follow `replaced_by` when resolving old text (C9) |
+| C2 | A moderator typed "T090s" / "J-35" / "Biggs" — which entity is that? | Orcasound autocomplete | Yes — fold the query and compare against `dist/searchable_name.tsv` ([ADR-0019](../decisions/0019-names-are-compared-by-folding.md)); this trio is pinned as an acceptance test in `bin/validate.py`. Sometimes the honest answer is two candidates (`T090` is a matriline's bare designation *and* its matriarch's label) — show both, told apart by the `entity_label` / `entity_kind` / `entity_rank` columns on each row. Two other columns say what *not* to offer: a `hidden` row's `name` is a match and never a name to offer (what that entity is *called* is `entity_label`), and a `retired` row is a withdrawn identifier — filter it out of a picker, and follow `replaced_by` when resolving old text (C9) |
 | C3 | Which individuals belonged to J pod at the time of this bout? | SalishSea.io map | Yes |
 | C4 | Was this individual alive on this date? | SalishSea.io, data QA | Yes |
 | C5 | Is this entity a Southern Resident? (at any depth below the ecotype) | Both, filtering | Yes — `ancestor.tsv`. [Q1](open-questions.md#q1--is-southern-resident-an-ecotype-or-a-community-of-the-resident-ecotype) closed the gap on 2026-08-29: the community now hangs under the *Resident* ecotype, so the closure reaches every level. Ask at `SSA:0000010` for the Southern Residents specifically, at `SSA:0000003` for residents generally |
@@ -33,17 +33,17 @@ generating this table rather than maintaining it by hand.
 | C8 | Which entities changed since the last time we synced? | Both, incremental ingest | Yes, via git |
 | C9 | Identifier X is deprecated — what should we use instead, and can we substitute automatically? | Both, migration | Yes — `retired.tsv` for the full answer (`automatic` vs `needs-human`), and `searchable_name.tsv` carries `retired` / `replaced_by` so a consumer that matched a name already has it. A null `replaced_by` means the substitution needs a human, never that the identifier is live |
 | C10 | Who says so, and when did they say it? | Everyone, always | Yes, `source_id` |
-| C11 | A moderator heard an orca but couldn't place the ecotype. What do they tag? | OrcaSound, ~30% of biophony bouts | Yes — the `Orcinus orca` taxon entity, with no ecotype alongside |
-| C12 | This bout is a humpback / sea lion / harbour seal. What do they tag? | OrcaSound, SalishSea.io | Yes — `kind = taxon` entities |
+| C11 | A moderator heard an orca but couldn't place the ecotype. What do they tag? | Orcasound, ~30% of biophony bouts | Yes — the `Orcinus orca` taxon entity, with no ecotype alongside |
+| C12 | This bout is a humpback / sea lion / harbour seal. What do they tag? | Orcasound, SalishSea.io | Yes — `kind = taxon` entities |
 | C13 | Who is this animal's mother? | SalishSea.io profile pages, curators checking a roster | Yes, `parentage.tsv` — but recorded for very few animals so far. Absent means *not recorded*, never *no mother*. It is not recoverable from membership: a matriline spans generations, so membership implies descent from the matriarch. See [ADR-0016](../decisions/0016-parentage.md) |
 
 ## Open — the model does not answer these yet
 
 | # | Question | Asked by | Blocked on |
 |---|---|---|---|
-| O2 | Which hydrophone locations is this group plausibly detectable at? | OrcaSound UI hinting | Out of scope here — this is occurrence data |
+| O2 | Which hydrophone locations is this group plausibly detectable at? | Orcasound UI hinting | Out of scope here — this is occurrence data |
 | O3 | Two sources disagree about this animal's matriline. What do we publish? | Curators | [ADR pending](open-questions.md) Q3 |
-| O4 | Which signal types are valid for this animal? | OrcaSound moderator UI | Cross-repo dependency on signals-srkw |
+| O4 | Which signal types are valid for this animal? | Orcasound moderator UI | Cross-repo dependency on signals-srkw |
 
 ## Deliberately unanswerable
 

@@ -34,8 +34,8 @@ Applied:
 | J35 exists and is a Southern Resident | Register |
 | J35 is female, born ~1998 | Register |
 | J50 is presumed dead as of Sept 2018 | Register — a life-status change, not an encounter |
-| J pod was heard at Orcasound Lab on 2025-09-04 | OrcaSound |
-| L87 was travelling with J pod in 2015 | OrcaSound / SalishSea.io |
+| J pod was heard at Orcasound Lab on 2025-09-04 | Orcasound |
+| L87 was travelling with J pod in 2015 | Orcasound / SalishSea.io |
 | J35 was photographed near Lime Kiln | Neither — belongs to the photo-ID catalogue |
 
 Life status is the edge case worth understanding: a death is dated, but it is a change
@@ -59,7 +59,7 @@ seen* would be an occurrence, and is not recorded.
 - It stays cheap to maintain. Roster changes happen on a census cadence, a few times a
   year, not continuously.
 - Some questions become two-system joins. "Which bouts involved animals that were alive
-  at the time" needs both the register and OrcaSound. Acceptable.
+  at the time" needs both the register and Orcasound. Acceptable.
 - Requests to add occurrence data will keep coming and will need to be refused
   repeatedly. That is what this ADR is for — so the refusal cites a decision rather than
   a preference.

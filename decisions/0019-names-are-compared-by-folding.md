@@ -14,7 +14,7 @@
 against hand-enumerated rows in `names.tsv`, and for 649 Bigg's individuals with
 inconsistent zero-padding (`T065A5` vs `T65A5`), hyphenation and apostrophes, enumerating
 every spelling is unbounded. SalishSea.io already ships `normalize_designation()` in SQL
-doing this; OrcaSound would need the same rule. Two implementations that disagree is
+doing this; Orcasound would need the same rule. Two implementations that disagree is
 precisely the failure this register exists to prevent
 ([Q17](https://github.com/salish-sea/animals/issues/12)).
 

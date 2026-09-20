@@ -7,7 +7,7 @@ wrong, nothing downstream can be right.
 
 Two systems need to say the same things about the same animals.
 
-[OrcaSound](https://live.orcasound.net) records *bouts* — human-curated stretches of
+[Orcasound](https://live.orcasound.net) records *bouts* — human-curated stretches of
 hydrophone audio. A moderator listens, recognises what they hear, and types a name:
 `J pod NB in Haro`, `Humpback mimics Bigg's?`, `SRKW signals at PT (J+K +L? pods)`.
 
@@ -22,11 +22,11 @@ The fix is a shared, stable set of identifiers for the animals and groups both s
 talk about — and a small amount of agreement about what those identifiers mean.
 
 **The goal is one roster where there are currently two and a half**: this register, the
-catalogue inside SalishSea.io, and OrcaSound's free-text tags. The two consumers are not
+catalogue inside SalishSea.io, and Orcasound's free-text tags. The two consumers are not
 alike, though. This repository and SalishSea.io are two interfaces onto the same data —
 the data and the interactive interface — kept in separate repositories only because
 curating a register by pull request and developing an application are such different
-processes. OrcaSound is a genuinely separate project with its own audience and purpose,
+processes. Orcasound is a genuinely separate project with its own audience and purpose,
 organizationally adjacent, consuming a released artefact. See
 [ADR-0012](../decisions/0012-relationship-to-the-salishsea-io-catalogue.md).
 
@@ -49,7 +49,7 @@ These are hard boundaries, not "later" items. Each one, if crossed, turns the re
 into a competing database that will drift from the sources it depends on.
 
 - **Not a sightings or occurrence database.** Nothing here records that an animal was
-  somewhere at a time. Occurrences live in OrcaSound and SalishSea.io and point *at*
+  somewhere at a time. Occurrences live in Orcasound and SalishSea.io and point *at*
   this register.
 - **Not a record of what is *absent*.** A `biophony` bout may be about no animal at all —
   `OrcaHello FP at Bush Point` is a real one, and so is `Passing boat noise`. The register
@@ -117,7 +117,7 @@ soniferous birds are in scope at taxon level. In practice, initially:
   practice demands it.
 
 Fish are **out**, and this is worth stating because a hydrophone hears them: `fish` is a
-live OrcaSound tag on two biophony bouts, described there as "groans or grunts or other
+live Orcasound tag on two biophony bouts, described there as "groans or grunts or other
 sounds (likely) associated with Salish Sea fish". Marine mammals and soniferous birds are
 the bound above, and a tag that falls outside it is meant to end up with no identifier —
 that is the vocabulary honestly reporting its edge, not a gap to close. Adding fish means
@@ -153,7 +153,7 @@ Whether to do that, and when, belongs to that repository; what this register can
 make identifiers stable enough to be worth referencing, and say plainly that the copy
 exists.
 
-The boundary is also less obvious than it looks from either side. OrcaSound's live tags
+The boundary is also less obvious than it looks from either side. Orcasound's live tags
 include `WCT01`, `WCT02`, `WCT06`, `WCT07` and `WCT08`, which read like catalogue
 designations for animals — `WCT` is the West Coast Transients, and the register holds 132
 of their matrilines. They are **call types**, and the bout `Short rising WCT07 call x2
@@ -173,7 +173,7 @@ today.
 This effort has worked if, in a year:
 
 1. A moderator tagging a bout picks from this register and rarely needs free text.
-2. SalishSea.io ingests OrcaSound bouts without parsing a single name string.
+2. SalishSea.io ingests Orcasound bouts without parsing a single name string.
 3. When an animal dies or a matriline splits, one edit here propagates to both systems.
 4. Someone outside either project can read the register and understand it.
 

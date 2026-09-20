@@ -28,8 +28,8 @@ that pretends otherwise ends up holding another system's UI copy.
 for an entity, in the sense of SKOS `prefLabel`. It is **input to display, not display.**
 
 Consumers compose their own presentation from `label`, `kind`, `rank`, `names.tsv`, and
-membership context. OrcaSound deciding that its bout-tagging dropdown reads
-`J17s — matriline, J pod` is entirely OrcaSound's business, and the register neither
+membership context. Orcasound deciding that its bout-tagging dropdown reads
+`J17s — matriline, J pod` is entirely Orcasound's business, and the register neither
 supplies nor constrains that string.
 
 ## What this means for the data

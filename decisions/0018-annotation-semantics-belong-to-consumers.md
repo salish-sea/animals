@@ -120,7 +120,7 @@ none is a defect here:
   annotation shape has to follow a link into another repository. Accepted: the alternative
   is two specifications by the same author that will drift, which is the exact failure
   [ADR-0012](0012-relationship-to-the-salishsea-io-catalogue.md) exists to prevent.
-- **OrcaSound is external to both** and neither repository decides its schema. The most
+- **Orcasound is external to both** and neither repository decides its schema. The most
   either can publish is a recommendation, in
   [orcasound/orcasite#1001](https://github.com/orcasound/orcasite/issues/1001). ADR-0012's
   closing open question already says this; this record does not change it.
@@ -174,5 +174,5 @@ version.
   amendment to 013 or a successor. The findings file above is a holding place, not that;
   a note nobody has to act on is easier to keep than a decision. Filing it is this author's
   job wearing the other hat, which is precisely the kind of obligation that gets dropped.
-- Does OrcaSound get a written recommendation, and from which repository? Two projects
+- Does Orcasound get a written recommendation, and from which repository? Two projects
   independently telling a third what its annotation schema should be is worse than one.

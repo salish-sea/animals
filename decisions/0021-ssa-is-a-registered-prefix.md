@@ -13,7 +13,7 @@ admitted in its own open questions that the prefix had never been checked agains
 held that gap open, and stated its own deadline: *cheap to change now, expensive after the
 first external system stores one.*
 
-That moment has arrived. SalishSea.io is asking OrcaSound to store register identifiers on
+That moment has arrived. SalishSea.io is asking Orcasound to store register identifiers on
 bout tags — a column and a migration in orcasite, in
 [orcasound/orcasite#1001](https://github.com/orcasound/orcasite/issues/1001). Once that
 lands, `SSA:` is in a third party's database and renaming it is a coordinated migration

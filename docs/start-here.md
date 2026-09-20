@@ -5,7 +5,7 @@ elaboration.
 
 ## What is being proposed
 
-A shared list of the animals and groups that OrcaSound and SalishSea.io both need to name
+A shared list of the animals and groups that Orcasound and SalishSea.io both need to name
 — Southern Residents, Bigg's, pods, matrilines, individuals — each with a permanent
 identifier, so that what a moderator knows survives the trip between systems.
 

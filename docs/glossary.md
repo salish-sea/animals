@@ -29,7 +29,7 @@ retained as a `historical` name so older text still resolves. Unlike residents,
 individuals do disperse from their natal group.
 
 ### 🐋 Bout
-An OrcaSound concept: a human-curated stretch of hydrophone audio with a start, an end,
+An Orcasound concept: a human-curated stretch of hydrophone audio with a start, an end,
 and a category (`biophony`, `anthrophony`, `geophony`). The unit this register is
 consumed by.
 

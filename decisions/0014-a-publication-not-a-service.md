@@ -8,7 +8,7 @@
 
 This effort began with a proposal in
 [orcasound/orcasite#1001](https://github.com/orcasound/orcasite/issues/1001) that
-SalishSea.io act as a **source of taxonomic authority** for apps like OrcaSound:
+SalishSea.io act as a **source of taxonomic authority** for apps like Orcasound:
 
 > Salish Sea would take a request from an app for taxonomy of the Salish Sea ecoregion,
 > query all relevant sources for the latest standardized labels (understanding both source
