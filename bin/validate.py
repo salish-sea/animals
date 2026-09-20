@@ -182,6 +182,20 @@ def graph_checks(db: sqlite3.Connection) -> None:
     ):
         err(f"membership.tsv: {member} is transitively a member of itself")
 
+    # One external taxon, one entity. A consumer joins its own records to the register
+    # through these crosswalks, and SalishSea.io's view is unique per iNaturalist taxon
+    # only because no two entities claim the same one: a second claim would silently
+    # DOUBLE every occurrence of that animal on its map. exactMatch and closeMatch are
+    # checked together because both say "use this entity for that taxon"; broadMatch
+    # says something weaker and many entities may share a broader target.
+    for obj, subjects in db.execute(
+        """SELECT object_id, group_concat(subject_id, ', ') FROM mapping
+           WHERE predicate_id IN ('skos:exactMatch', 'skos:closeMatch')
+           GROUP BY object_id HAVING count(DISTINCT subject_id) > 1"""
+    ):
+        err(f"mappings.tsv: {obj} is an exact or close match of more than one entity "
+            f"({subjects}); a consumer cannot tell which to use")
+
     # taxonomic_parent is an excerpt of someone else's tree (ADR-0022), so these are
     # checks that the excerpt is WHOLE, not that the taxonomy is right. parent_id is not
     # a foreign key -- rows load in identifier order -- so existence is checked here.
