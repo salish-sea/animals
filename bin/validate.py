@@ -179,6 +179,20 @@ def graph_checks(db: sqlite3.Connection) -> None:
     ):
         err(f"membership.tsv: {member} is transitively a member of itself")
 
+    # A deprecated entity has been merged or withdrawn, so nothing may still be a member
+    # of it. This is worth enforcing rather than reporting, and it is what makes the
+    # deprecation filter in the reachability query below safe: filtering out an entity
+    # that could still hold descendants would hide the break root and report the
+    # descendants with nowhere named as the cause.
+    for member, group in db.execute(
+        """SELECT m.member_id, m.group_id
+           FROM membership m JOIN deprecation d ON d.entity_id = m.group_id
+           ORDER BY m.member_id"""
+    ):
+        err(f"membership.tsv: {member} is a member of {group}, which is deprecated. "
+            "Move the edge to the replacement before deprecating a container "
+            "(deprecations.tsv, ADR-0010).")
+
     # Reachability, not just orphanhood. Foreign keys guarantee an edge points at
     # something real; they say nothing about whether the graph has a root. A single
     # missing edge disconnects everything beneath it, so report the consequence — the
@@ -190,6 +204,11 @@ def graph_checks(db: sqlite3.Connection) -> None:
                    ON m.group_id = r.id)
            SELECT entity_id, label, kind, coalesce(rank, '') FROM entity
            WHERE entity_id NOT IN (SELECT id FROM reach)
+             -- A deprecated entity is SUPPOSED to be unreachable: it has been merged
+             -- away, so it asserts no membership and rolls up to nothing. Reporting it
+             -- would train the reader to ignore this warning, which is the one warning
+             -- that catches a whole branch falling out of the rollup.
+             AND entity_id NOT IN (SELECT entity_id FROM deprecation)
            ORDER BY kind, rank, label"""
     ).fetchall()
     if unreachable:
@@ -299,19 +318,32 @@ def fold_checks(db: sqlite3.Connection) -> None:
     # a regression that quietly resolved it to one would read as an improvement.
     for typed, expect in [("T090s", {"SSA:0000040"}), ("J-35", {"SSA:0000101"}),
                           ("Biggs", {"SSA:0000002"}),
-                          ("T090", {"SSA:0000040", "SSA:0010290"})]:
+                          ("T090", {"SSA:0000040", "SSA:0010290"}),
+                          ("Southern Resident", {"SSA:0000001", "SSA:0000010"})]:
         hits = set().union(set(), *classes.get(fold(typed), {}).values())
         if hits != expect:
             err(f"C2: {typed!r} should resolve to {', '.join(sorted(expect))}, "
                 f"got {sorted(hits) or 'nothing'}")
 
+    # The other kind of two-candidate answer, and the one a picker must not treat as a
+    # choice: a retired identifier keeps its names, so Q1's tombstone SSA:0000001 still
+    # matches "Southern Resident" beside the live SSA:0000010. `retired` is what tells
+    # them apart, and it is checked rather than asserted — a view that lost the join
+    # would leave a plausible-looking pair and no way to choose between them.
+    flagged = {eid: sub for eid, r, sub in db.execute(
+        "SELECT DISTINCT entity_id, retired, replaced_by FROM searchable_name") if r}
+    deprecated = dict(db.execute("SELECT entity_id, replaced_by FROM deprecation"))
+    if flagged != deprecated:
+        err("searchable_name: `retired` and `replaced_by` should carry exactly what "
+            f"deprecations.tsv says, got {flagged} for {deprecated}")
+
     # And two candidates are only worth returning if a consumer can tell them apart.
-    # `searchable_name` carries each entity's label, kind and rank for exactly this;
-    # candidates that describe themselves identically are an honest answer nobody can
-    # act on, so the promise is checked rather than asserted.
+    # `searchable_name` carries each entity's label, kind, rank and retirement for
+    # exactly this; candidates that describe themselves identically are an honest answer
+    # nobody can act on, so the promise is checked rather than asserted.
     described = {eid: rest for eid, *rest in db.execute(
         "SELECT DISTINCT entity_id, entity_label, entity_kind, "
-        "coalesce(entity_rank, '') FROM searchable_name")}
+        "coalesce(entity_rank, ''), retired FROM searchable_name")}
     for folded, by_raw in sorted(classes.items()):
         ids = set().union(*by_raw.values())
         if len(ids) > 1 and len({tuple(described[i]) for i in ids}) < len(ids):
@@ -354,7 +386,16 @@ def write_structure(db: sqlite3.Connection) -> None:
     a handful of nodes, and it makes structural differences between branches obvious —
     including any place the graph is broken.
     """
+    # Deprecated entities are left out of both queries, for the same reason the
+    # unreachable count below leaves them out: this draws the shape of the register a
+    # consumer should build against. Counting Q1's tombstone reported three ecotypes
+    # where two are live, on the diagram the README points at.
+    #
+    # Both, and not just the counts: a node here is a *level*, so an edge whose endpoint
+    # is deprecated would silently declare that level in Mermaid with no label and no
+    # count — invisible today only because the one deprecation has no membership rows.
     level = "coalesce(rank, kind)"
+    live = "NOT IN (SELECT entity_id FROM deprecation)"
     edges = db.execute(
         f"""SELECT {level.replace('rank', 'c.rank').replace('kind', 'c.kind')},
                    {level.replace('rank', 'p.rank').replace('kind', 'p.kind')},
@@ -362,9 +403,11 @@ def write_structure(db: sqlite3.Connection) -> None:
             FROM membership m
             JOIN entity c ON c.entity_id = m.member_id
             JOIN entity p ON p.entity_id = m.group_id
+            WHERE m.member_id {live} AND m.group_id {live}
             GROUP BY 1, 2 ORDER BY 3 DESC"""
     ).fetchall()
-    counts = dict(db.execute(f"SELECT {level}, count(*) FROM entity GROUP BY 1"))
+    counts = dict(db.execute(
+        f"SELECT {level}, count(*) FROM entity WHERE entity_id {live} GROUP BY 1"))
 
     out = ["# The shape of the register",
            "",
@@ -387,20 +430,30 @@ def write_structure(db: sqlite3.Connection) -> None:
         """WITH RECURSIVE reach(id) AS (
              SELECT entity_id FROM entity WHERE kind = 'taxon'
              UNION SELECT m.member_id FROM membership m JOIN reach r ON m.group_id = r.id)
-           SELECT count(*) FROM entity WHERE entity_id NOT IN (SELECT id FROM reach)"""
+           SELECT count(*) FROM entity WHERE entity_id NOT IN (SELECT id FROM reach)
+             -- Deprecated entities are supposed to be unreachable; excluded here for the
+             -- same reason graph_checks() excludes them, so the two never disagree.
+             AND entity_id NOT IN (SELECT entity_id FROM deprecation)"""
     ).fetchone()[0]
     if unreachable:
-        out += [f"> **{unreachable} entities are unreachable from any species.** Follow the",
+        is_are = "entity is" if unreachable == 1 else "entities are"
+        out += [f"> **{unreachable} {is_are} unreachable from any species.** Follow the",
                 "> arrows up: a level with no outgoing edge is where the graph breaks, and",
                 "> everything below it falls out of every rollup.", ""]
 
-    # One real subtree, small enough to read.
-    out += ["## Southern Residents", "",
+    # One real subtree, small enough to read. Rooted at the RESIDENT ECOTYPE so the
+    # rollup Q1 restored is visible: ecotype, community, clan, pods, matrilines, animals.
+    #
+    # Keyed on the identifier, not the label. This query used to say
+    # `WHERE label = 'Southern Resident community'`, and Q1's rename emptied the diagram
+    # without failing anything — exactly the breakage ADR-0011 forbids a label lookup for
+    # ("Nothing may join, match, or key on `label`"). Caught by eye, not by a test.
+    out += ["## Residents", "",
             "The seeded branch in full — small enough to render whole.", "",
             "```mermaid", "graph BT"]
     rows = db.execute(
         """WITH RECURSIVE sub(id) AS (
-             SELECT entity_id FROM entity WHERE label = 'Southern Resident community'
+             SELECT 'SSA:0000003'
              UNION SELECT m.member_id FROM membership m JOIN sub s ON m.group_id = s.id)
            SELECT e.entity_id, e.label, coalesce(e.rank, e.kind) FROM entity e
            JOIN sub ON sub.id = e.entity_id ORDER BY e.entity_id"""

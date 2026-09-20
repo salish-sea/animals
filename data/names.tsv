@@ -1,6 +1,6 @@
 entity_id	name	type	language	source_id	note
-SSA:0000001	SRKW	hidden	en	SEED	Common abbreviation; matches in search, never displayed.
-SSA:0000001	Southern Resident killer whale	common	en	SEED	
+SSA:0000010	SRKW	hidden	en	SEED	Common abbreviation; matches in search, never displayed.
+SSA:0000010	Southern Resident killer whale	common	en	SEED	
 SSA:0000002	Transient	historical	en	SEED	Superseded term; retained so historical text still resolves.
 SSA:0000002	Biggs	hidden	en	SEED	Apostrophe-free spelling, for autocomplete.
 SSA:0000002	Bigg's killer whale	common	en	SEED	

@@ -35,9 +35,9 @@ The register is doing two different jobs and it is worth seeing which is which:
 
 The second is where curation effort should go. The first should be nearly free.
 
-Note that **an ecotype is not a taxonomic rank**. `SSA:0000001` (Southern Resident) is
-recorded as `skos:broadMatch` to *Orcinus orca* — narrower than the species, but not a
-subspecies and not making any claim about formal taxonomy. That distinction matters if
+Note that **an ecotype is not a taxonomic rank**. `SSA:0000003` (Resident) is recorded as
+`skos:broadMatch` to *Orcinus orca* — narrower than the species, but not a subspecies and
+not making any claim about formal taxonomy. That distinction matters if
 anything here is ever exported to GBIF.
 
 ### Delegating an identifier is not the same as refusing an entity
@@ -68,8 +68,10 @@ vocabulary, exactly as [ADR-0009](0009-uncertainty-on-the-annotation.md) require
   and a species is not one ([ADR-0004](0004-rank-is-an-open-vocabulary.md)). Validation
   enforces both.
 - Ecotypes are members of their species taxon, which roots the membership graph and lets a
-  matriline roll up to a species even while the ecotype/community question
-  ([Q1](../docs/open-questions.md)) is unresolved.
+  matriline roll up to a species. That held even while the ecotype/community question
+  ([Q1](../docs/open-questions.md)) was open, and it is what the answer was slotted into:
+  a *Resident* ecotype was added under the species and the Southern Residents hung
+  beneath it, with nothing above the ecotype needing to change.
 - Taxon entities have no life status. They are kinds, not animals.
 - `taxon_id` uses `NCBITaxon:` CURIEs. NCBI was chosen over WoRMS because OLS resolves
   it directly and it is what the OBO ecosystem uses; WoRMS is recorded in `sources.tsv`
@@ -115,7 +117,7 @@ importing and maintaining a backbone we deliberately do not own.
 - The register now holds entities that are *kinds*, not collections of individuals.
   Anything iterating over entities must handle three kinds, not two.
 - **A contested species boundary costs the register nothing**, which is the point of
-  delegating. `SSA:0000001` (Southern Resident) and `SSA:0000002` (Bigg's) are first-class
+  delegating. `SSA:0000003` (Resident) and `SSA:0000002` (Bigg's) are first-class
   identifiers that exist whatever taxonomy calls them, and `taxon_id` is a *crosswalk* —
   it records where the authorities currently place a thing, not what this register
   believes. Resident and Bigg's killer whales have been proposed as *Orcinus ater* and

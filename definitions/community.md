@@ -1,6 +1,6 @@
 # community
 
-**Status:** working (usable and in force, but not yet confirmed by a domain expert) — possibly redundant with ecotype, see Q1.
+**Status:** working (usable and in force, but not yet confirmed by a domain expert). Q1 settled that this rank is *not* redundant with ecotype.
 
 ## Working definition
 
@@ -19,17 +19,16 @@ Working definition, editors of this repository, 2026-07. Needs expert confirmati
 
 ## What it is not
 
-**Not the same as an ecotype**, though the register currently muddles them. In the
-standard reading a community sits *below* an ecotype: the resident ecotype contains the
-Northern Resident and Southern Resident communities, among others. A community is defined
-by which pods associate with one another; an ecotype by prey specialisation, genetics and
-morphology.
+**Not the same as an ecotype.** A community sits *below* an ecotype: the resident
+ecotype (`SSA:0000003`) contains the Northern Resident and Southern Resident communities,
+among others. A community is defined by which pods associate with one another; an ecotype
+by prey specialisation, genetics and morphology.
 
-The register currently has "Southern Resident" as an ecotype *and* "Southern Resident
-community" as a community — one thing at two ranks, with the actual parent (a *Resident*
-ecotype) missing entirely. That is [Q1](../docs/open-questions.md), and it should be
-settled before anyone tags a bout, because tagging against a rank that later changes means
-re-tagging.
+The register used to hold "Southern Resident" as an ecotype *and* "Southern Resident
+community" as a community — one thing at two ranks, with the actual parent missing
+entirely. [Q1](../docs/open-questions.md) settled it in favour of the strict reading:
+`SSA:0000001` is deprecated to `SSA:0000010`, which is now labelled *Southern Resident*
+and sits under the resident ecotype.
 
 **Not a clan.** A community is defined by association, a clan by shared acoustic
 repertoire. The Northern Resident community contains three clans; the Southern Resident
@@ -37,6 +36,9 @@ community contains one.
 
 ## Open questions
 
-- Does the register follow the strict convention (Resident ecotype containing a Southern
-  Resident community) or the colloquial one (SRKW as an ecotype)? (Q1)
-- If both ranks are kept, what is the rule for which one a moderator picks?
+- ~~Does the register follow the strict convention (Resident ecotype containing a
+  Southern Resident community) or the colloquial one (SRKW as an ecotype)?~~ **Answered
+  by Q1: the strict convention.**
+- Both ranks are kept, so what is the rule for which one a moderator picks? Q1 did not
+  answer this, and it is now the live question: someone who means "the Southern Residents"
+  should land on `SSA:0000010`, not on the resident ecotype above it.

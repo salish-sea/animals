@@ -9,6 +9,76 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Register
+- **`SSA:0000003` — the *Resident* ecotype**, which the hierarchy was missing. The
+  Southern Residents now roll up through it to *Orcinus orca*.
+- **`SSA:0000001` is deprecated**, `merged` into **`SSA:0000010`**. Both identifiers
+  always denoted the same animals — one thing entered at two ranks — so substitution is
+  automatic and a consumer may follow `replaced_by` without asking a human. This is the
+  register's first deprecation, and the first row `deprecations.tsv` has ever carried.
+- **`SSA:0000010` is relabelled** from *Southern Resident community* to **Southern
+  Resident**, and takes over the names that were on `SSA:0000001` (*Southern Resident
+  killer whale*, and the hidden *SRKW*). Its rank stays `community`; repeating the rank in
+  the label was the [ADR-0011](decisions/0011-label-is-a-preferred-name.md) error of
+  writing display into a name.
+- Twelve entities that were unreachable from any taxon — the whole Southern Resident
+  branch, J clan through J35 — now roll up to a species. `bin/validate.py` reported twelve
+  before this change and none after.
+- **`dist/searchable_name.tsv` gains two columns, `retired` and `replaced_by`.** Existing
+  columns and their order are unchanged, so a consumer reading by name keeps working; one
+  reading by position does not. The deprecation above is why they exist: a retired
+  identifier keeps its names, so *Southern Resident* now matches both the withdrawn
+  `SSA:0000001` and the live `SSA:0000010`, and until now nothing in the view said which.
+  **A picker must filter on `retired`**; a consumer resolving old free text can follow
+  `replaced_by` on the same row instead of joining to `retired.tsv`. A null `replaced_by`
+  on a retired row means the substitution needs a human — never that the identifier is
+  live.
+
+### Design
+- **[Q1](docs/open-questions.md#answered) is answered**: Southern Resident is a *community*
+  of the *Resident* ecotype, not an ecotype itself. `definitions/ecotype.md` and
+  `definitions/community.md` are updated, and `ecotype.md` now records what the Society for
+  Marine Mammalogy's 2024 taxonomy review actually decided about *Orcinus ater* and
+  *O. rectipinnus* — it declined species rank and adopted the names as subspecies,
+  provisionally.
+- `dist/structure.md`'s subtree diagram is keyed on an identifier rather than on
+  `label`. It said `WHERE label = 'Southern Resident community'`, so the relabel above
+  emptied the diagram without failing anything — the exact breakage
+  [ADR-0011](decisions/0011-label-is-a-preferred-name.md) forbids a label lookup for. It
+  is now rooted at the resident ecotype, so the rollup this change restored is visible.
+- `bin/validate.py` rejects a membership edge whose container is deprecated. A merged
+  entity holds no members, and enforcing that is what makes the filter below safe:
+  filtering out an entity that could still have descendants would report those
+  descendants with nothing named as the cause.
+- `bin/validate.py` no longer reports a deprecated entity as unreachable. Being
+  unreachable is the correct state for something that has been merged away, and reporting
+  it would train the reader to ignore the one warning that catches a whole branch dropping
+  out of the rollup.
+- `bin/validate.py` pins *Southern Resident* as a C2 acceptance test, alongside the
+  existing `T090s` / `J-35` / `Biggs` trio: it must return both identifiers, not one. And
+  `searchable_name`'s `retired` / `replaced_by` are checked against `deprecations.tsv`
+  rather than assumed, for every deprecation and not just this one — a view that lost the
+  join would leave a plausible-looking pair and no way to choose between them. The check
+  that two candidates describe themselves distinguishably now counts `retired` as part of
+  that description.
+- `dist/structure.md`'s rank counts leave out deprecated entities, as its unreachable
+  count already did. It reported **three** ecotypes where two are live — on the diagram
+  the README points at.
+- C5 and C6 are answerable in full, and the competency-question table says so rather than
+  **Partly**. The rest of the branch's stale references to Q1 are swept up with them:
+  `README.md`'s outline still drew the old hierarchy (no species at the top, the community
+  under an ecotype of the same name); `docs/walkthrough.md` rolled J pod up through
+  `SSA:0000001` to reach a species, which is now a walk to `SSA:0000900` and not a mapping
+  lookup at all; [ADR-0008](decisions/0008-species-identity-is-delegated.md) illustrated
+  ecotype crosswalks with the identifier whose mapping moved; and
+  [ADR-0021](decisions/0021-ssa-is-a-registered-prefix.md) offered `SSA:0000001` as the
+  example on a Bioregistry submission that will outlive it. Also
+  [ADR-0013](decisions/0013-distribution.md), which recorded an objection to gating
+  releases on `--strict` that Q1 has retired: the warning count no longer mixes provenance
+  debt with a modelling gap.
+- `docs/walkthrough.md`'s traced annotation has aged into the thing it was illustrating.
+  The moderator's `SSA:0000001` pick, made against edition `2026.07.1`, is now the
+  register's first real C9 case — `merged`, with `replaced_by` populated, so the
+  substitution is automatic. Step 4's hypothetical `split` is the contrasting case.
 
 ## 2026.08.1 — 2026-08-28
 

@@ -63,10 +63,14 @@ Requested as a new prefix on [biopragmatics/bioregistry](https://github.com/biop
 | Name | Salish Sea Animals |
 | Homepage | `https://github.com/salish-sea/animals` |
 | Description | A register of individual marine mammals and the social groups they belong to in the Salish Sea |
-| Example | `SSA:0000001` |
+| Example | `SSA:0000020` (J pod) — the same identifier this record uses below |
 | Pattern | `^\d{7}$` |
 | URI format | none — see below |
 | Contact | P. Abrahamsen |
+
+*Amended 2026-08-29: the example was `SSA:0000001`, which Q1 deprecated. A registry entry
+outlives the submission that made it, so it should not name a withdrawn identifier. Nothing
+else in this record changes.*
 
 **No URI format, and that is not a defect.** [ADR-0014](0014-a-publication-not-a-service.md)
 says this register is a publication, not a service; there is no resolver to point at and we

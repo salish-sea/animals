@@ -62,6 +62,14 @@ claims — both improvements on what is drawn here.
 `PT` is discarded here because the bout already has a `feed_id`, which is where location
 lives.
 
+**This trace has since aged, which is the best thing that could have happened to it.** The
+rows above are as they were written against edition `2026.07.1`, and
+[Q1](open-questions.md#answered) deprecated `SSA:0000001` on 2026-08-29 — so the first row
+is now the register's first real C9 case rather than a hypothetical one. The reason is
+`merged` and `replaced_by` is populated, so a consumer may substitute `SSA:0000010`
+automatically and the annotation keeps meaning what the moderator meant. Compare Step 4,
+where a `split` gives no `replaced_by` and a human has to re-decide.
+
 Note what each column buys — and which two the register actually asks for:
 
 - `certainty` is the `+L?`. Without somewhere to put it the moderator either drops the
@@ -79,8 +87,8 @@ Note what each column buys — and which two the register actually asks for:
   2025 without help.
 - `register_edition` is drawn here because a consumer will often want it, but it earns its
   place on *derived* facts rather than on the claim: if this row's ecotype were
-  denormalised from the closure, the edition is what lets that be rebuilt after
-  [Q1](open-questions.md) reparents the Southern Residents. On the moderator's pick itself
+  denormalised from the closure, the edition is what let that be rebuilt when
+  [Q1](open-questions.md) reparented the Southern Residents. On the moderator's pick itself
   it is close to redundant. See
   [ADR-0018](../decisions/0018-annotation-semantics-belong-to-consumers.md).
 
@@ -94,11 +102,16 @@ displayable. Walking `membership.tsv`:
 ```
 SSA:0000020  J pod
   └─ SSA:0000011  J clan
-       └─ SSA:0000010  Southern Resident community
+       └─ SSA:0000010  Southern Resident   (community)
+            └─ SSA:0000003  Resident       (ecotype)
+                 └─ SSA:0000900  Orcinus orca
 ```
 
-and separately, via `mappings.tsv`, `SSA:0000001` → `NCBITaxon:9733` (*Orcinus orca*)
-for anything that needs a species.
+The top two levels arrived with [Q1](open-questions.md#answered) on 2026-08-29: before it
+the walk stopped at the community, and this step had to reach `NCBITaxon:9733` through a
+`mappings.tsv` lookup on a separate identifier. It no longer does — the walk reaches a
+taxon entity on its own, and `SSA:0000003 skos:broadMatch NCBITaxon:9733` is there for a
+consumer that wants the external species identifier rather than ours.
 
 The `possible` L pod row is ingested but rendered differently — or dropped, at the
 consumer's discretion. **That choice is the consumer's, and it is only available because
@@ -109,10 +122,9 @@ the certainty was preserved rather than flattened.**
 Suppose L pod is reorganised, and `SSA:0000022` is deprecated in favour of two new
 identifiers.
 
-```
-entity_id     reason  replaced_by  consider                    date
-SSA:0000022   split                SSA:0000090 SSA:0000091     2029-03-14
-```
+| entity_id | reason | replaced_by | consider | date |
+|---|---|---|---|---|
+| SSA:0000022 | split | *(empty)* | SSA:0000090 SSA:0000091 | 2029-03-14 |
 
 Because the reason is `split` and not a clean rename, there is no `replaced_by` — so
 OrcaSound does **not** silently rewrite the historical annotation. It surfaces the bout

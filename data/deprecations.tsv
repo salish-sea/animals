@@ -1,1 +1,2 @@
 entity_id	reason	replaced_by	consider	date	source_id	note
+SSA:0000001	merged	SSA:0000010		2026-08-29	EDITORS	One thing entered at two ranks. Q1 settled that Southern Resident is a community within the resident ecotype, not an ecotype itself, so the ecotype row merges into the community it duplicated. Substitution is safe: both identifiers always denoted the same animals.
