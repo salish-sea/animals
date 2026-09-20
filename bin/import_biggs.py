@@ -46,6 +46,15 @@ TOKENS = re.compile(r"T\d+|[A-Z]+|\d+")
 def enclosing(desig):
     """Every designation `desig` descends from, nearest first: T073A1 -> T073A, T073."""
     tokens = TOKENS.findall(desig)
+    # One letter per generation is the convention, and every designation in the sheet
+    # keeps it. DESIGNATION is looser and would admit `T073AB1`, which could be read as
+    # a calf of T073A or as something else entirely. Rather than pick a reading, claim
+    # only what is certain -- it belongs to the T073 lineage -- and say so, so that a
+    # person looks at it. Nothing nests under a designation nobody can parse.
+    if any(len(t) > 1 for t in tokens[1:] if t.isalpha()):
+        print(f"consecutive letters in {desig!r}: placed in {tokens[0]}s only, "
+              "no sub-lineage derived", file=sys.stderr)
+        return [tokens[0]]
     return ["".join(tokens[:n]) for n in range(len(tokens) - 1, 0, -1)]
 
 

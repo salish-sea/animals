@@ -60,8 +60,10 @@ entity that exact spelling would have kept distinct.
 
 - **Exact ambiguity is allowed, and honest.** 199 bare designations name two entities
   today — `T090` is both a hidden name on the matriline (because catalogues write "the
-  T090s" and "T090" for the family) and the label of the matriarch; `Gull` is both a
-  nickname of T097 and the common name of Laridae. The fold does not create these and
+  T090s" and "T090" for the family) and the label of the matriarch; two further
+  names are ambiguous for unrelated reasons — `Gull` is both a nickname of T097 and the
+  common name of Laridae, and `Otter` is a common name of both *Lontra canadensis* and
+  Lutrinae. The fold does not create these and
   does not resolve them. C2's honest answer is sometimes *two candidates*, and an
   autocomplete shows both, distinguished by rank. Ambiguity the vocabulary actually has
   is surfaced, never adjudicated by string manipulation.
