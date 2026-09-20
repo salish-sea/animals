@@ -107,6 +107,13 @@ from bout data and someone wants one diagram — the honest way is a separate
 `taxonomic_parent` relation rather than overloading membership, and it would still mean
 importing and maintaining a backbone we deliberately do not own.
 
+> **2026-09-20: it was wanted, and not for a diagram.** A consumer publishing occurrences
+> needs `kingdom` … `genus`, and had been taking them from iNaturalist for want of anywhere
+> else. [ADR-0022](0022-taxonomic-hierarchy-is-ncbis-excerpted.md) adds that separate
+> relation in the one form that avoids the cost named here: an excerpt of NCBI's lineage,
+> fetched by script and never edited, in NCBI's identifiers. Membership is untouched and
+> the register is still a forest.
+
 ## Consequences
 
 - No species curation burden, and no risk of our species list drifting from consensus.
