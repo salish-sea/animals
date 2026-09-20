@@ -32,6 +32,8 @@ DIST = ROOT / "dist"
 TABLES = [
     ("source", "sources", {}),
     ("rank", "ranks", {}),
+    # Before entities: entity.taxon_id references it (ADR-0022).
+    ("taxonomic_parent", "taxonomic_parent", {}),
     ("entity", "entities", {}),
     ("name", "names", {}),
     ("membership", "membership", {"start": "starts", "end": "ends"}),
@@ -43,7 +45,8 @@ TABLES = [
 
 # Views exported to dist/ so no consumer reimplements them. Each answers a competency
 # question; see docs/competency-questions.md.
-DIST_VIEWS = ["ancestor", "current_status", "searchable_name", "retired"]
+DIST_VIEWS = ["ancestor", "current_status", "searchable_name", "retired",
+              "taxon_ancestor", "classification"]
 
 # GitHub renders Mermaid in Markdown; it does not render Graphviz.
 MERMAID_ID = str.maketrans({":": "_", "-": "_", " ": "_", "'": ""})
@@ -178,6 +181,43 @@ def graph_checks(db: sqlite3.Connection) -> None:
            SELECT a, b FROM walk WHERE a = b"""
     ):
         err(f"membership.tsv: {member} is transitively a member of itself")
+
+    # taxonomic_parent is an excerpt of someone else's tree (ADR-0022), so these are
+    # checks that the excerpt is WHOLE, not that the taxonomy is right. parent_id is not
+    # a foreign key -- rows load in identifier order -- so existence is checked here.
+    for taxon, parent in db.execute(
+        """SELECT t.taxon_id, t.parent_id FROM taxonomic_parent t
+           LEFT JOIN taxonomic_parent p ON p.taxon_id = t.parent_id
+           WHERE t.parent_id IS NOT NULL AND p.taxon_id IS NULL"""
+    ):
+        err(f"taxonomic_parent.tsv: {taxon} has parent {parent}, which has no row -- "
+            "re-run bin/import_taxonomy.py --apply")
+
+    roots = [r[0] for r in db.execute(
+        "SELECT taxon_id FROM taxonomic_parent WHERE parent_id IS NULL")]
+    if db.execute("SELECT 1 FROM taxonomic_parent").fetchone() and len(roots) != 1:
+        err(f"taxonomic_parent.tsv: expected exactly one root, found {sorted(roots)}")
+
+    for (taxon,) in db.execute(
+        """WITH RECURSIVE walk(a, b) AS (
+             SELECT taxon_id, parent_id FROM taxonomic_parent WHERE parent_id IS NOT NULL
+             UNION SELECT w.a, t.parent_id FROM walk w
+                   JOIN taxonomic_parent t ON t.taxon_id = w.b
+                   WHERE t.parent_id IS NOT NULL)
+           SELECT DISTINCT a FROM walk WHERE a = b"""
+    ):
+        err(f"taxonomic_parent.tsv: {taxon} is its own ancestor")
+
+    # A node nothing descends to is a leftover from a taxon the register no longer
+    # points at. Harmless to consumers, but the file is generated, so drift from what
+    # the generator would write means someone edited it by hand or forgot to re-run it.
+    for (taxon,) in db.execute(
+        """SELECT t.taxon_id FROM taxonomic_parent t
+           WHERE NOT EXISTS (SELECT 1 FROM entity e JOIN taxon_ancestor a
+                             ON a.taxon_id = e.taxon_id WHERE a.ancestor_id = t.taxon_id)"""
+    ):
+        err(f"taxonomic_parent.tsv: {taxon} is on no entity's lineage -- "
+            "re-run bin/import_taxonomy.py --apply")
 
     # A deprecated entity has been merged or withdrawn, so nothing may still be a member
     # of it. This is worth enforcing rather than reporting, and it is what makes the

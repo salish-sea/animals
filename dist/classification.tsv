@@ -1,0 +1,41 @@
+entity_id	label	taxon_id	scientific_name	taxon_rank	kingdom	phylum	class	order	family	genus
+SSA:0000900	Orcinus orca	NCBITaxon:9733	Orcinus orca	species	Metazoa	Chordata	Mammalia	Artiodactyla	Delphinidae	Orcinus
+SSA:0000901	Megaptera novaeangliae	NCBITaxon:9773	Megaptera novaeangliae	species	Metazoa	Chordata	Mammalia	Artiodactyla	Balaenopteridae	Megaptera
+SSA:0000902	Eumetopias jubatus	NCBITaxon:34886	Eumetopias jubatus	species	Metazoa	Chordata	Mammalia	Carnivora	Otariidae	Eumetopias
+SSA:0000903	Zalophus californianus	NCBITaxon:9704	Zalophus californianus	species	Metazoa	Chordata	Mammalia	Carnivora	Otariidae	Zalophus
+SSA:0000904	Phoca vitulina	NCBITaxon:9720	Phoca vitulina	species	Metazoa	Chordata	Mammalia	Carnivora	Phocidae	Phoca
+SSA:0000905	Eschrichtius robustus	NCBITaxon:9764	Eschrichtius robustus	species	Metazoa	Chordata	Mammalia	Artiodactyla	Eschrichtiidae	Eschrichtius
+SSA:0000906	Lontra canadensis	NCBITaxon:76717	Lontra canadensis	species	Metazoa	Chordata	Mammalia	Carnivora	Mustelidae	Lontra
+SSA:0000907	Aves	NCBITaxon:8782	Aves	class	Metazoa	Chordata	Aves			
+SSA:0000908	Laridae	NCBITaxon:8910	Laridae	family	Metazoa	Chordata	Aves	Charadriiformes	Laridae	
+SSA:0000909	Cepphus columba	NCBITaxon:28696	Cepphus columba	species	Metazoa	Chordata	Aves	Charadriiformes	Alcidae	Cepphus
+SSA:0000910	Pandion haliaetus	NCBITaxon:56262	Pandion haliaetus	species	Metazoa	Chordata	Aves	Accipitriformes	Pandionidae	Pandion
+SSA:0000911	Passer domesticus	NCBITaxon:48849	Passer domesticus	species	Metazoa	Chordata	Aves	Passeriformes	Passeridae	Passer
+SSA:0000912	Phocoena phocoena	NCBITaxon:9742	Phocoena phocoena	species	Metazoa	Chordata	Mammalia	Artiodactyla	Phocoenidae	Phocoena
+SSA:0000913	Phocoenoides dalli	NCBITaxon:9744	Phocoenoides dalli	species	Metazoa	Chordata	Mammalia	Artiodactyla	Phocoenidae	Phocoenoides
+SSA:0000914	Sagmatias obliquidens	NCBITaxon:3371155	Aethalodelphis obliquidens	species	Metazoa	Chordata	Mammalia	Artiodactyla	Delphinidae	Aethalodelphis
+SSA:0000915	Balaenoptera acutorostrata	NCBITaxon:9767	Balaenoptera acutorostrata	species	Metazoa	Chordata	Mammalia	Artiodactyla	Balaenopteridae	Balaenoptera
+SSA:0000916	Balaenoptera physalus	NCBITaxon:9770	Balaenoptera physalus	species	Metazoa	Chordata	Mammalia	Artiodactyla	Balaenopteridae	Balaenoptera
+SSA:0000917	Mirounga angustirostris	NCBITaxon:9716	Mirounga angustirostris	species	Metazoa	Chordata	Mammalia	Carnivora	Phocidae	Mirounga
+SSA:0000918	Enhydra lutris	NCBITaxon:34882	Enhydra lutris	species	Metazoa	Chordata	Mammalia	Carnivora	Mustelidae	Enhydra
+SSA:0000919	Balaenoptera musculus	NCBITaxon:9771	Balaenoptera musculus	species	Metazoa	Chordata	Mammalia	Artiodactyla	Balaenopteridae	Balaenoptera
+SSA:0000920	Balaenoptera borealis	NCBITaxon:9768	Balaenoptera borealis	species	Metazoa	Chordata	Mammalia	Artiodactyla	Balaenopteridae	Balaenoptera
+SSA:0000921	Physeter macrocephalus	NCBITaxon:9755	Physeter macrocephalus	species	Metazoa	Chordata	Mammalia	Artiodactyla	Physeteridae	Physeter
+SSA:0000922	Kogia breviceps	NCBITaxon:27615	Kogia breviceps	species	Metazoa	Chordata	Mammalia	Artiodactyla	Physeteridae	Kogia
+SSA:0000923	Kogia sima	NCBITaxon:9752	Kogia sima	species	Metazoa	Chordata	Mammalia	Artiodactyla	Physeteridae	Kogia
+SSA:0000924	Berardius bairdii	NCBITaxon:48742	Berardius bairdii	species	Metazoa	Chordata	Mammalia	Artiodactyla	Ziphiidae	Berardius
+SSA:0000925	Ziphius cavirostris	NCBITaxon:9760	Ziphius cavirostris	species	Metazoa	Chordata	Mammalia	Artiodactyla	Ziphiidae	Ziphius
+SSA:0000926	Grampus griseus	NCBITaxon:83653	Grampus griseus	species	Metazoa	Chordata	Mammalia	Artiodactyla	Delphinidae	Grampus
+SSA:0000927	Tursiops truncatus	NCBITaxon:9739	Tursiops truncatus	species	Metazoa	Chordata	Mammalia	Artiodactyla	Delphinidae	Tursiops
+SSA:0000928	Delphinus delphis	NCBITaxon:9728	Delphinus delphis	species	Metazoa	Chordata	Mammalia	Artiodactyla	Delphinidae	Delphinus
+SSA:0000929	Lissodelphis borealis	NCBITaxon:103588	Lissodelphis borealis	species	Metazoa	Chordata	Mammalia	Artiodactyla	Delphinidae	Lissodelphis
+SSA:0000930	Stenella coeruleoalba	NCBITaxon:9737	Stenella coeruleoalba	species	Metazoa	Chordata	Mammalia	Artiodactyla	Delphinidae	Stenella
+SSA:0000931	Globicephala macrorhynchus	NCBITaxon:38241	Globicephala macrorhynchus	species	Metazoa	Chordata	Mammalia	Artiodactyla	Delphinidae	Globicephala
+SSA:0000932	Arctocephalus townsendi	NCBITaxon:161921	Arctocephalus townsendi	species	Metazoa	Chordata	Mammalia	Carnivora	Otariidae	Arctocephalus
+SSA:0000933	Callorhinus ursinus	NCBITaxon:34884	Callorhinus ursinus	species	Metazoa	Chordata	Mammalia	Carnivora	Otariidae	Callorhinus
+SSA:0000934	Cetacea	NCBITaxon:9721	Cetacea	infraorder	Metazoa	Chordata	Mammalia	Artiodactyla		
+SSA:0000935	Mysticeti	NCBITaxon:9761	Mysticeti	parvorder	Metazoa	Chordata	Mammalia	Artiodactyla		
+SSA:0000936	Otariidae	NCBITaxon:9702	Otariidae	family	Metazoa	Chordata	Mammalia	Carnivora	Otariidae	
+SSA:0000937	Phocidae	NCBITaxon:9709	Phocidae	family	Metazoa	Chordata	Mammalia	Carnivora	Phocidae	
+SSA:0000938	Pinnipedia	NCBITaxon:3072905	Pinnipedia	clade	Metazoa	Chordata	Mammalia	Carnivora		
+SSA:0000939	Lutrinae	NCBITaxon:169417	Lutrinae	subfamily	Metazoa	Chordata	Mammalia	Carnivora	Mustelidae	

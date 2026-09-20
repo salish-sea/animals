@@ -38,6 +38,36 @@ CREATE TABLE rank (
 );
 
 -- ---------------------------------------------------------------------------
+-- Taxonomic hierarchy -- NCBI's, excerpted, not ours (ADR-0022)
+-- ---------------------------------------------------------------------------
+
+-- The lineage of every taxon an entity points at, in NCBI's own identifiers, ranks and
+-- names. Written by bin/import_taxonomy.py and never by hand: the register delegates
+-- species identity (ADR-0008), so it reports the authority's tree rather than keeping
+-- one. No SSA: identifier is minted for anything here.
+--
+-- Subsumption ("Orcinus orca is in Delphinidae") is kept apart from membership ("J35 is
+-- in the J17s") on purpose. One closure over both would answer "what groups is J35 in?"
+-- with Mammalia.
+CREATE TABLE taxonomic_parent (
+  taxon_id        TEXT PRIMARY KEY CHECK (taxon_id GLOB 'NCBITaxon:[0-9]*'),
+
+  -- Empty for the root only. Not a foreign key: rows load in identifier order, so a
+  -- parent may arrive after its child. bin/validate.py checks that every parent exists,
+  -- that there is one root, and that nothing loops.
+  parent_id       TEXT CHECK (parent_id IS NULL OR parent_id GLOB 'NCBITaxon:[0-9]*'),
+
+  -- NCBI's word, verbatim: `species`, `family`, `infraorder`, and for about a fifth of
+  -- the nodes `clade` or `no rank`. Unrelated to the `rank` table, which holds social
+  -- levels (ADR-0004).
+  rank            TEXT NOT NULL,
+  scientific_name TEXT NOT NULL,
+  source_id       TEXT NOT NULL REFERENCES source(source_id),
+
+  CHECK (taxon_id <> parent_id)
+);
+
+-- ---------------------------------------------------------------------------
 -- Entities
 -- ---------------------------------------------------------------------------
 
@@ -57,8 +87,10 @@ CREATE TABLE entity (
   -- NOT an integration key — it is mutable by design (ADR-0011).
   label     TEXT NOT NULL CHECK (length(trim(label)) > 0),
 
-  -- References an external species identifier; mints none (ADR-0008).
-  taxon_id  TEXT,
+  -- References an external species identifier; mints none (ADR-0008). Every taxon an
+  -- entity points at has its lineage in taxonomic_parent, so a new taxon_id fails here
+  -- until bin/import_taxonomy.py has fetched it (ADR-0022).
+  taxon_id  TEXT REFERENCES taxonomic_parent(taxon_id),
 
   -- EDTF. Qualifiers: ? uncertain, ~ approximate. Open ranges for animals first seen
   -- as adults: '../1966' means "no later than 1966".
@@ -230,6 +262,40 @@ SELECT w.entity_id, w.ancestor_id, min(w.depth) AS depth, e.label AS ancestor_la
        e.kind AS ancestor_kind, e.rank AS ancestor_rank
 FROM walk w JOIN entity e ON e.entity_id = w.ancestor_id
 GROUP BY w.entity_id, w.ancestor_id;
+
+-- Every taxon and everything above it, NCBI's tree walked once so no consumer has to.
+-- A taxon is its own ancestor at depth 0, so "is this a pinniped?" is one equality test
+-- against Phocidae or Otariidae whether the entity is a species or the family itself.
+CREATE VIEW taxon_ancestor AS
+WITH RECURSIVE walk(taxon_id, ancestor_id, depth) AS (
+  SELECT taxon_id, taxon_id, 0 FROM taxonomic_parent
+  UNION
+  SELECT w.taxon_id, t.parent_id, w.depth + 1
+  FROM walk w JOIN taxonomic_parent t ON t.taxon_id = w.ancestor_id
+  WHERE t.parent_id IS NOT NULL
+)
+SELECT w.taxon_id, w.ancestor_id, w.depth,
+       a.rank AS ancestor_rank, a.scientific_name AS ancestor_name
+FROM walk w JOIN taxonomic_parent a ON a.taxon_id = w.ancestor_id;
+
+-- The DarwinCore higher classification for each taxon entity, which is what a consumer
+-- publishing occurrences needs and the one thing a flat list of species cannot give it.
+-- NCBI's names, verbatim: the kingdom is `Metazoa`, and a whale's order is `Artiodactyla`.
+-- A column is empty where the entity sits above that rank (Laridae has no genus) or NCBI
+-- has no node at it.
+CREATE VIEW classification AS
+SELECT e.entity_id, e.label, e.taxon_id, t.scientific_name, t.rank AS taxon_rank,
+       max(CASE WHEN a.ancestor_rank = 'kingdom' THEN a.ancestor_name END) AS kingdom,
+       max(CASE WHEN a.ancestor_rank = 'phylum'  THEN a.ancestor_name END) AS phylum,
+       max(CASE WHEN a.ancestor_rank = 'class'   THEN a.ancestor_name END) AS class,
+       max(CASE WHEN a.ancestor_rank = 'order'   THEN a.ancestor_name END) AS "order",
+       max(CASE WHEN a.ancestor_rank = 'family'  THEN a.ancestor_name END) AS family,
+       max(CASE WHEN a.ancestor_rank = 'genus'   THEN a.ancestor_name END) AS genus
+FROM entity e
+JOIN taxonomic_parent t ON t.taxon_id = e.taxon_id
+JOIN taxon_ancestor a ON a.taxon_id = e.taxon_id
+WHERE e.kind = 'taxon'
+GROUP BY e.entity_id;
 
 -- C2: everything a moderator might type, in one place. Autocomplete must read the
 -- preferred name AND the alternates; searching only `name` misses every label.
