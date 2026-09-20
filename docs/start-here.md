@@ -52,7 +52,7 @@ which used to head this list, was answered on 2026-08-29 — see
 | **[Q15](https://github.com/salish-sea/animals/issues/11)** | How does CWR's published census list L87 during the years he travelled with J pod? | The register defines membership as genealogical, so L87 is L pod permanently. If CWR prints him under J pod, curators need a stated rule for transcribing an associational roster — otherwise two curators will diverge silently. |
 | [Q4](https://github.com/salish-sea/animals/issues/4) | Populate Northern Residents and offshores now, or later? | Curation effort against moderator coverage. |
 | [Q9](https://github.com/salish-sea/animals/issues/6) | Is there anything in scope that should not be in a public repository? | Naming programmes, cultural significance, catalogues that withhold detail. |
-| **[Q22](https://github.com/salish-sea/animals/issues/13)** | Is a T-number lineage the right grouping? The sheet seems to record two levels — a lineage, and travelling sub-groups within it — and the import flattens them to one. | 132 derived groups depend on the answer. |
+| **[Q22](https://github.com/salish-sea/animals/issues/13)** | Does a Bigg's lineage have one level of real groups, or two? The register now holds both — 132 top-level lineages and 73 sub-lineages nested inside them, all derived from designations. | If the sub-lineages are not real, 73 groups are merged away; nothing else changes. |
 | [Q13](https://github.com/salish-sea/animals/issues/9) | Is `J17s` the canonical written form for a matriline, or would a catalogue write `T090 matriline`? | Display is the consumer's business; this is asking what the community actually writes. |
 | [Q23](https://github.com/salish-sea/animals/issues/14) | What are the `AM3`-style Alaska/California designations, and what catalogue are they from? | They are searchable names now; they belong in `mappings.tsv` as a crosswalk. |
 
@@ -73,8 +73,8 @@ GitHub. Two things are worth noticing in it:
 
 ## Things to know before you judge the data
 
-- **The Bigg's data is imported, not curated.** 510 individuals and 132 matrilines came
-  from the community designation sheet by script
+- **The Bigg's data is imported, not curated.** 510 individuals, 132 matrilines and
+  73 sub-lineages nested inside them came from the community designation sheet by script
   ([ADR-0015](../decisions/0015-bulk-import.md)). Nobody has checked them against a
   catalogue. The individuals are a fairly direct transcription; **the groupings are
   derived and are the least confident thing here** — see [Q22](https://github.com/salish-sea/animals/issues/13).

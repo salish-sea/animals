@@ -125,8 +125,30 @@ importing and maintaining a backbone we deliberately do not own.
   the split is scientifically correct. Neither NCBI Taxonomy nor WoRMS has adopted it —
   both checked 2026-07-28; WoRMS has only `Orcinus orca`, AphiaID 137102, status
   `accepted`. So the crosswalk cannot even be written yet: no authority has minted an
-  identifier to point at. If the split is adopted it is a `taxon_id` edit on two rows plus
-  new `mappings.tsv` entries; if it is not, nothing breaks. The register does not have to
+  identifier to point at. If the split is adopted, no identifier changes, and the cost is
+  a `taxon_id` rewrite that is larger than the "two rows" this record first said but still
+  mechanical. It cannot be keyed on the old value, because every killer whale and every
+  group of them carries the same `NCBITaxon:9733` whichever species it would become. It is
+  keyed on **which ecotype a row rolls up to**, which `dist/ancestor.tsv` already answers.
+  On 2026-09-20 that sorts the 734 rows as follows:
+
+  | Rows | Which | Becomes |
+  |---|---|---|
+  | 719 | everything under `SSA:0000002` Bigg's, and Bigg's itself | the *rectipinnus* identifier |
+  | 13 | everything under `SSA:0000003` Resident, and Resident itself | the *ater* identifier |
+  | 1 | `SSA:0000001`, deprecated, merged into the Southern Resident community | follows its successor: *ater* |
+  | 1 | `SSA:0000900`, the taggable "an orca, not resolved further" | stays on `NCBITaxon:9733` |
+
+  `SSA:0000900` is the one judgement in it. What a moderator meant by tagging it — a
+  killer whale, ecotype undetermined — is unchanged by the split, and *Orcinus orca* in the
+  broad sense is still the narrowest name that covers it, so it keeps its `taxon_id` and
+  its `inaturalist.taxon` mapping until those authorities themselves retire the concept.
+  In `mappings.tsv`, the two rows that say an ecotype is `skos:broadMatch` to
+  `NCBITaxon:9733` are replaced by `skos:exactMatch` rows to the new identifiers; nothing
+  else there changes. `SSA:0000003` and `SSA:0000002` would then be coextensive with
+  species and should stay the groups they are: minting a `kind = taxon` entity beside each
+  would be one thing under two identifiers, the duplicate Q1 removed. If the split is not
+  adopted, nothing breaks. The register does not have to
   hold an opinion, and should not.
 - iNaturalist is deliberately *not* the taxonomic authority here, despite being named
   first in the originating discussion. It is a good audience and a reasonable crosswalk

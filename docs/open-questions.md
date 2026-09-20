@@ -28,7 +28,7 @@ Filter: [`science-review`](https://github.com/salish-sea/animals/issues?q=is%3Ai
 | Q9 | Are there animals or names we should *not* publish? | S. Veirs | [#6](https://github.com/salish-sea/animals/issues/6) |
 | Q13 | Is the plural the canonical written form for a matriline? | S. Veirs, D. Bain | [#9](https://github.com/salish-sea/animals/issues/9) |
 | Q15 | What does a curator do when a published roster is associational? | S. Veirs, D. Bain | [#11](https://github.com/salish-sea/animals/issues/11) |
-| Q22 | Is a T-number lineage the right grouping, or does the sheet group differently? | S. Veirs, D. Bain | [#13](https://github.com/salish-sea/animals/issues/13) |
+| Q22 | Does a Bigg's lineage have one level of real groups, or two? (Both are in the register, pending the answer.) | S. Veirs, D. Bain | [#13](https://github.com/salish-sea/animals/issues/13) |
 | Q23 | What are the Alaska/California designations, and where do they belong? | S. Veirs | [#14](https://github.com/salish-sea/animals/issues/14) |
 | Q26 | Which genus does the Pacific white-sided dolphin get labelled with? | S. Veirs, D. Bain | [#17](https://github.com/salish-sea/animals/issues/17) |
 | Q27 | Is an ecotype a population, and where do transients from another stock belong? | S. Veirs, D. Bain | [#22](https://github.com/salish-sea/animals/issues/22) |
@@ -253,7 +253,7 @@ whitespace, strip leading zeros in each digit run — with executable test cases
 Two findings from testing the rule against the live register shaped it:
 
 - **A trailing `s` must never fold.** `T090s` names the matriline and `T090` its
-  matriarch — 126 such pairs exist — so folding the plural resolves a name to the wrong
+  matriarch — 199 such pairs exist — so folding the plural resolves a name to the wrong
   animal. This is the one clause SalishSea.io's `normalize_designation()` must drop when
   it reconciles (ADR-0012); its zero-and-case handling already agrees with the fold on
   every equivalence class, differing only in direction (it pads where the fold strips).

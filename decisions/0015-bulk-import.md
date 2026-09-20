@@ -38,7 +38,20 @@ None of them is obviously right:
 - **Matrilines are derived from the designation prefix.** `T023`, `T023D`, `T023C3` are all
   placed in a group labelled `T023s`. The sheet itself groups differently — blank rows
   separate sub-blocks, and a "Known as the Motley Crew" heading spans several of them. See
-  [Q22](../docs/open-questions.md).
+  [Q22](https://github.com/salish-sea/animals/issues/13).
+- **Sub-lineages are derived the same way, one level down, and were minted before Q22 was
+  answered** (added 2026-09-20). A letter-suffixed animal with registered descendants heads
+  a nested group: `T023Cs` and `T023Ds` sit inside `T023s`. 73 of them. The reason for not
+  waiting is that the two ways of being wrong are not symmetric. If sub-lineages are not
+  real, each is deprecated as `merged` into its enclosing lineage with `replaced_by`, which
+  a consumer may follow automatically ([ADR-0010](0010-identifiers-are-never-reused.md)) —
+  "the T023Cs" was always a true, finer statement about the T023s. If they are real and
+  absent, every record made against `T023s` is permanently coarser than what its author
+  knew. Minting costs 73 identifiers; not minting costs information.
+- **An animal in a sub-lineage keeps its edge to the top-level lineage.** That edge is now
+  implied, and it stays anyway: the script never edits a row it imported, and the 73 groups
+  remain revocable as a set. The `ancestor` view reports each pair once, at the shortest
+  path, so the redundancy does not reach consumers.
 - **"Known as …" headings become a `common` name on the derived matriline**, rather than a
   new rank. `Motley Crew`, `Secret Agents`, `Gretzky's`. This is the least confident
   decision in the import.
