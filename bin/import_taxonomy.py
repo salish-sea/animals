@@ -22,8 +22,10 @@ Judgements it makes, all deliberately small:
     infraorder. Those are NCBI's positions, reported as such; a consumer that must say
     `Animalia` maps that one value on its own side and records why.
   - The root is the first node NCBI lists (`cellular organisms`). Its parent is empty.
-  - No date is written per row, so re-running against an unchanged NCBI produces no diff.
-    When the excerpt was last taken is `retrieved_on` on the NCBI row of sources.tsv.
+  - No date is written per row, so an unchanged NCBI changes no row however often this
+    runs. When the excerpt was last taken is `retrieved_on` on the NCBI row of
+    sources.tsv, which --apply stamps with today's date -- and only --apply, because
+    "we looked today and it still says this" is a claim, and a dry run makes none.
 
 Deterministic and idempotent. Rows are sorted by identifier.
 
@@ -34,6 +36,7 @@ Usage:
 """
 
 import csv
+import datetime
 import sys
 import urllib.parse
 import urllib.request
@@ -133,6 +136,22 @@ def main():
         w.writerow(HEADER)
         w.writerows(rows)
     print(f"wrote {OUT.relative_to(ROOT)}", file=sys.stderr)
+    stamp_source()
+
+
+def stamp_source():
+    """Record today as the day the excerpt was taken, on the NCBI row of sources.tsv."""
+    path = DATA / "sources.tsv"
+    lines = path.read_text().split("\n")
+    col = lines[0].split("\t").index("retrieved_on")
+    hits = [i for i, line in enumerate(lines) if line.split("\t")[0] == SOURCE]
+    if len(hits) != 1:
+        sys.exit(f"expected exactly one {SOURCE} row in sources.tsv, found {len(hits)}")
+    cells = lines[hits[0]].split("\t")
+    cells[col] = datetime.date.today().isoformat()
+    lines[hits[0]] = "\t".join(cells)
+    path.write_text("\n".join(lines))
+    print(f"stamped {SOURCE}.retrieved_on = {cells[col]}", file=sys.stderr)
 
 
 if __name__ == "__main__":

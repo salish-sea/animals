@@ -81,7 +81,8 @@ bin/check_crosswalks.py
                 still mean what we recorded. Weekly, and on any PR touching them.
 bin/import_taxonomy.py
                 Fetches NCBI's lineage for every taxon we point at and writes
-                data/taxonomic_parent.tsv. The only thing that may. See ADR-0022.
+                data/taxonomic_parent.tsv. Nothing else may write that file: it is
+                an excerpt, not something we curate. See ADR-0022.
 dist/           Generated derived views. Never hand-edited.
 ```
 

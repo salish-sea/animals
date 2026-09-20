@@ -50,12 +50,15 @@ CREATE TABLE rank (
 -- in the J17s") on purpose. One closure over both would answer "what groups is J35 in?"
 -- with Mammalia.
 CREATE TABLE taxonomic_parent (
-  taxon_id        TEXT PRIMARY KEY CHECK (taxon_id GLOB 'NCBITaxon:[0-9]*'),
+  -- GLOB has no "one or more digits", so: starts with a digit, and no non-digit follows.
+  taxon_id        TEXT PRIMARY KEY CHECK (taxon_id GLOB 'NCBITaxon:[0-9]*'
+                                          AND taxon_id NOT GLOB 'NCBITaxon:*[^0-9]*'),
 
   -- Empty for the root only. Not a foreign key: rows load in identifier order, so a
   -- parent may arrive after its child. bin/validate.py checks that every parent exists,
   -- that there is one root, and that nothing loops.
-  parent_id       TEXT CHECK (parent_id IS NULL OR parent_id GLOB 'NCBITaxon:[0-9]*'),
+  parent_id       TEXT CHECK (parent_id IS NULL OR (parent_id GLOB 'NCBITaxon:[0-9]*'
+                                                    AND parent_id NOT GLOB 'NCBITaxon:*[^0-9]*')),
 
   -- NCBI's word, verbatim: `species`, `family`, `infraorder`, and for about a fifth of
   -- the nodes `clade` or `no rank`. Unrelated to the `rank` table, which holds social
@@ -273,6 +276,11 @@ WITH RECURSIVE walk(taxon_id, ancestor_id, depth) AS (
   SELECT w.taxon_id, t.parent_id, w.depth + 1
   FROM walk w JOIN taxonomic_parent t ON t.taxon_id = w.ancestor_id
   WHERE t.parent_id IS NOT NULL
+    -- A terminator, not a limit anyone should meet. `depth` makes every step a new row,
+    -- so UNION alone would walk a loop for ever, and this view ships inside register.db
+    -- where a consumer would hang rather than the validator. NCBI's deepest lineage here
+    -- is under 40; a loop is reported by bin/validate.py, which is where it is an error.
+    AND w.depth < 200
 )
 SELECT w.taxon_id, w.ancestor_id, w.depth,
        a.rank AS ancestor_rank, a.scientific_name AS ancestor_name

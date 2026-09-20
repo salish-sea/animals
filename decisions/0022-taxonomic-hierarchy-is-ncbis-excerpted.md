@@ -79,7 +79,8 @@ Two views do the consuming once ([ADR-0013](0013-distribution.md)):
   judgements are in its header, the rows are its output, and re-running it against an
   unchanged NCBI writes nothing.
 - No date is recorded per row, which is what makes that true. When the excerpt was last
-  taken is `retrieved_on` on the `NCBI` row of `sources.tsv`.
+  taken is `retrieved_on` on the `NCBI` row of `sources.tsv`, which `--apply` stamps; a
+  dry run and `--check` write nothing at all.
 - One request to NCBI's E-utilities covers every taxon the register holds.
 - `--check` exits non-zero when NCBI's lineage has moved. **It is not yet wired into the
   weekly drift job**, which today asks only whether each `taxon_id` still resolves. Until

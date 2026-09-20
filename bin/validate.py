@@ -208,6 +208,7 @@ def graph_checks(db: sqlite3.Connection) -> None:
     ):
         err(f"taxonomic_parent.tsv: {taxon} is its own ancestor")
 
+    # (Reads taxon_ancestor, which is bounded, so this ends even if a loop was just found.)
     # A node nothing descends to is a leftover from a taxon the register no longer
     # points at. Harmless to consumers, but the file is generated, so drift from what
     # the generator would write means someone edited it by hand or forgot to re-run it.
