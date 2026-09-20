@@ -23,6 +23,11 @@ confirmation.
   community usage. The bare designation and the `<id> matriline` form are recorded as
   `hidden` names so either resolves in autocomplete.
 - Used for both residents and Bigg's.
+- **Matrilines nest.** A daughter with descendants of her own heads a matriline inside her
+  mother's: `T073As` is a member of `T073s`, and both have rank `matriline`. The register
+  holds 73 such Bigg's sub-lineages, derived from designations and minted ahead of
+  [Q22](https://github.com/salish-sea/animals/issues/13), which asks whether they are real
+  groups. Record the narrowest one you are sure of.
 
 ## What it is not
 

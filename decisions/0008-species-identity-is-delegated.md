@@ -125,8 +125,14 @@ importing and maintaining a backbone we deliberately do not own.
   the split is scientifically correct. Neither NCBI Taxonomy nor WoRMS has adopted it —
   both checked 2026-07-28; WoRMS has only `Orcinus orca`, AphiaID 137102, status
   `accepted`. So the crosswalk cannot even be written yet: no authority has minted an
-  identifier to point at. If the split is adopted it is a `taxon_id` edit on two rows plus
-  new `mappings.tsv` entries; if it is not, nothing breaks. The register does not have to
+  identifier to point at. If the split is adopted it is a mechanical `taxon_id` rewrite — of
+  every row that carries `NCBITaxon:9733`, which is every killer whale and every group of
+  them, 733 rows on 2026-09-20, not the "two rows" this record first said — plus new
+  `mappings.tsv` entries, and no identifier changes. `SSA:0000003` and `SSA:0000002` would
+  then be coextensive with species, and should stay the groups they are, their mapping
+  moving from `skos:broadMatch` to `skos:exactMatch`: minting a `kind = taxon` entity
+  beside each would be one thing under two identifiers, the duplicate Q1 removed. If the
+  split is not adopted, nothing breaks. The register does not have to
   hold an opinion, and should not.
 - iNaturalist is deliberately *not* the taxonomic authority here, despite being named
   first in the originating discussion. It is a good audience and a reasonable crosswalk

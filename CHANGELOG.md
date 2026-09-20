@@ -9,6 +9,18 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 ## Unreleased
 
 ### Register
+- **73 Bigg's sub-lineages, `SSA:0002131`–`SSA:0002203`**, nested inside the top-level
+  lineages: `T073As` (`SSA:0002172`) is T073A and her descendants, and is a member of
+  `T073s`. Until now an observer who saw the T073As could only record the whole T073
+  lineage. They are minted ahead of
+  [Q22](https://github.com/salish-sea/animals/issues/13), which asks whether they are real
+  groups; if the answer is no, each is deprecated as `merged` into its enclosing lineage
+  and a consumer may follow `replaced_by` automatically. Each carries its bare designation
+  as a `hidden` name, so `T073A` now resolves to two candidates — the whale and her
+  lineage — as `T073` already did ([ADR-0019](decisions/0019-names-are-compared-by-folding.md)).
+- 269 animals gain a membership edge to their narrowest sub-lineage and **keep** the one
+  to their top-level lineage. `dist/ancestor.tsv` reports each pair once, at the shortest
+  path.
 - **`SSA:0000003` — the *Resident* ecotype**, which the hierarchy was missing. The
   Southern Residents now roll up through it to *Orcinus orca*.
 - **`SSA:0000001` is deprecated**, `merged` into **`SSA:0000010`**. Both identifiers

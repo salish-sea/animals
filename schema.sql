@@ -223,16 +223,20 @@ WITH RECURSIVE walk(entity_id, ancestor_id, depth) AS (
   SELECT w.entity_id, m.group_id, w.depth + 1
   FROM walk w JOIN membership m ON m.member_id = w.ancestor_id
 )
-SELECT w.entity_id, w.ancestor_id, w.depth, e.label AS ancestor_label,
+-- One row per pair, at the shortest path. An animal in a Bigg's sub-lineage reaches its
+-- top-level lineage twice — directly, and through the sub-lineage (ADR-0015 keeps both
+-- edges) — and a consumer joining on this view must not count it twice.
+SELECT w.entity_id, w.ancestor_id, min(w.depth) AS depth, e.label AS ancestor_label,
        e.kind AS ancestor_kind, e.rank AS ancestor_rank
-FROM walk w JOIN entity e ON e.entity_id = w.ancestor_id;
+FROM walk w JOIN entity e ON e.entity_id = w.ancestor_id
+GROUP BY w.entity_id, w.ancestor_id;
 
 -- C2: everything a moderator might type, in one place. Autocomplete must read the
 -- preferred name AND the alternates; searching only `name` misses every label.
 --
 -- The entity's label, kind and rank ride along because C2's honest answer is sometimes
 -- *two* candidates (ADR-0019: `T037` is a matriline's bare designation and its
--- matriarch's label, 126 such pairs), and a picker cannot offer a choice it has no way
+-- matriarch's label, 199 such pairs), and a picker cannot offer a choice it has no way
 -- to describe. A hidden name makes the need sharper still: it matches in search and must
 -- never be displayed, so a consumer that matched `J` has nothing to show without the
 -- label. Same denormalisation, same reason, as `ancestor`.

@@ -38,6 +38,15 @@ SNAPSHOT = "2026-07"
 
 DESIGNATION = re.compile(r"^(T\d+)([A-Z]?\d*)*$")
 LINEAGE = re.compile(r"^(T\d+)")
+# A designation is a T-number followed by alternating letter and number tokens, one per
+# generation: T073 > T073A > T073A1. Stripping the last token gives the mother's.
+TOKENS = re.compile(r"T\d+|[A-Z]+|\d+")
+
+
+def enclosing(desig):
+    """Every designation `desig` descends from, nearest first: T073A1 -> T073A, T073."""
+    tokens = TOKENS.findall(desig)
+    return ["".join(tokens[:n]) for n in range(len(tokens) - 1, 0, -1)]
 
 
 def read_tsv(path):
@@ -134,6 +143,39 @@ def main():
     for desig, rec in individuals.items():
         lineages.setdefault(rec["lineage"], []).append(desig)
 
+    # --- sub-lineages (Q22) ---------------------------------------------------------
+    # The judgement: a letter-suffixed animal with registered descendants heads a group
+    # of her own, nested inside her mother's. (The sheet sexes 71 of the 73 heads F and
+    # leaves T064B1 and T075C blank; descendants named after her are the evidence.) T073A and her calves are `T073As`, inside
+    # `T073s`. This is what the field reports ("the T073As were off Sooke") and what a
+    # hydrophone moderator hears; the top-level lineage alone made them record less than
+    # they knew, permanently, because identifiers are never reused (ADR-0010).
+    #
+    # Minted BEFORE Q22 is answered, deliberately, because the two ways of being wrong
+    # are not symmetric. If these groups turn out not to be real, each is deprecated as
+    # `merged` with `replaced_by` its enclosing lineage, and a consumer may follow that
+    # without asking anyone: "the T073As" was always a true, finer statement about the
+    # T073s. If they are real and were never minted, every record made against `T073s`
+    # is coarser than what its author knew and nothing can refine it afterwards.
+    #
+    # Three narrower judgements, none obviously right:
+    #  - "Descendant" is read off the designation, exactly as the top-level lineages
+    #    are. No parentage is consulted; parentage.tsv does not hold the Bigg's yet.
+    #  - A head must herself be a registered animal. A gap in the sheet (calves with no
+    #    row for their mother) yields no group rather than a group named for nobody.
+    #  - An animal with no registered descendants heads nothing: T073B is in `T073s`
+    #    and no narrower group, which is not a claim that she travels with her mother.
+    sub_heads = sorted(
+        d for d in individuals
+        if d != individuals[d]["lineage"]
+        and any(d in enclosing(other) for other in individuals))
+
+    def deepest_group(desig, include_self):
+        """The narrowest lineage `desig` belongs to, as a key into mat_id."""
+        candidates = ([desig] if include_self else []) + enclosing(desig)
+        return next(c for c in candidates
+                    if c in sub_heads or c == individuals[desig]["lineage"])
+
     # --- assign identifiers deterministically -------------------------------------
     def mint(block, taken):
         n = block
@@ -146,6 +188,11 @@ def main():
     for lineage in sorted(lineages):
         label = f"{lineage}s"
         mat_id[lineage] = by_label.get(label) or mint(MATRILINE_BLOCK, used)
+
+    # Sub-lineages are minted after every top-level lineage, so adding them cannot move
+    # an identifier the first import already assigned.
+    for head in sub_heads:
+        mat_id[head] = by_label.get(f"{head}s") or mint(MATRILINE_BLOCK, used)
 
     ind_id = {}
     for desig in sorted(individuals):
@@ -194,6 +241,20 @@ def main():
                       "Recorded in the sheet as a \"Known as\" heading."])
         add_name([eid, lineage, "hidden", "en", SOURCE, "Bare designation."])
 
+    for head in sub_heads:
+        eid = mat_id[head]
+        parent = deepest_group(head, include_self=False)
+        if (eid, mat_id[parent]) not in known_edges:
+            mem.append([eid, mat_id[parent], "", "", SOURCE,
+                        f"{head}s are a sub-lineage of the {parent}s."])
+        if eid in known_entities:
+            continue
+        ent.append([eid, "group", "matriline", f"{head}s", "NCBITaxon:9733", "", "",
+                    SOURCE, f"{head} and her descendants, derived from the designation. "
+                    "Minted ahead of Q22; if sub-lineages prove not to be real groups "
+                    f"this merges into {parent}s."])
+        add_name([eid, head, "hidden", "en", SOURCE, "Bare designation."])
+
     for desig in sorted(individuals):
         rec = individuals[desig]
         eid = ind_id[desig]
@@ -213,6 +274,13 @@ def main():
                         rec["born"] or "", rec["sex"] or "", SOURCE, " ".join(notes)])
         if (eid, mat_id[rec["lineage"]]) not in known_edges:
             mem.append([eid, mat_id[rec["lineage"]], "", "", SOURCE, ""])
+        # The edge to the top-level lineage above is kept, not moved, although it is now
+        # implied by the narrower one. An imported row is never edited by the script
+        # (ADR-0015), and it keeps the sub-lineages revocable as a set: take their rows
+        # out and the register is exactly what it was.
+        narrowest = deepest_group(desig, include_self=True)
+        if narrowest != rec["lineage"] and (eid, mat_id[narrowest]) not in known_edges:
+            mem.append([eid, mat_id[narrowest], "", "", SOURCE, ""])
 
         for nick in rec["nicknames"]:
             note = f"Named by {rec['namer']}." if rec["namer"] else ""
@@ -235,7 +303,8 @@ def main():
             add_status([eid, "alive", rec["born"], "", "2026-07-28", SOURCE, ""])
 
     print(f"{len(individuals)} individuals, {len(lineages)} matrilines, "
-          f"{len(nam)} names, {len(sta)} status rows", file=sys.stderr)
+          f"{len(sub_heads)} sub-lineages in the sheet; new rows: {len(ent)} entities, "
+          f"{len(mem)} membership, {len(nam)} names, {len(sta)} status", file=sys.stderr)
 
     if "--apply" not in sys.argv:
         print("dry run; pass --apply to write", file=sys.stderr)

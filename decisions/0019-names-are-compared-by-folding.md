@@ -58,7 +58,7 @@ entity that exact spelling would have kept distinct.
 
 ## What this means for the data
 
-- **Exact ambiguity is allowed, and honest.** 126 bare designations name two entities
+- **Exact ambiguity is allowed, and honest.** 199 bare designations name two entities
   today — `T090` is both a hidden name on the matriline (because catalogues write "the
   T090s" and "T090" for the family) and the label of the matriarch; `Gull` is both a
   nickname of T097 and the common name of Laridae. The fold does not create these and
@@ -107,7 +107,7 @@ entity that exact spelling would have kept distinct.
   write `T090`, not `T90`.
 - **Enumerate every spelling in `names.tsv`.** Unbounded — Q17's original complaint. Case
   × padding × hyphen × apostrophe multiplies; a rule handles the product for free.
-- **Fold the trailing `s` too.** Rejected on data, not taste: it merges 126
+- **Fold the trailing `s` too.** Rejected on data, not taste: it merges 199
   matriline/matriarch pairs that are distinct entities. This is the clause SalishSea.io's
   implementation gets wrong for the register's purposes.
 - **Publish a folded-form → identifier lookup in `dist/`.** Rejected: a consumer must
