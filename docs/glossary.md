@@ -108,6 +108,15 @@ from the matriarch", not "child of". Recorded for very few animals so far — ab
 The `SSA:` in `SSA:0000101`. Distinguishes our identifiers from `NCBITaxon:9733` or
 `finwave:T090` so they can be mixed in one column without collision.
 
+**The case is not ours to choose.** Each prefix is written in its Bioregistry *preferred*
+form — `NCBITaxon`, `inaturalist.taxon`, `SSA` — which is why the mixture is consistent
+rather than sloppy. Bioregistry's own keys are all lowercase (`ncbitaxon`, `ssa`); the
+preferred form is the one it publishes for writing, and that is the distinction
+[ADR-0021](../decisions/0021-ssa-is-a-registered-prefix.md) registered `SSA` on. A prefix
+Bioregistry does not carry, like `finwave:`, follows its owner's styling. Predicate
+vocabularies (`skos:`, `semapv:`) are lowercase for the same reason: it is their
+published form.
+
 ### ⚖️ Occurrence
 A record that an animal was at a place at a time. Deliberately **not** in this register.
 The word is also a Darwin Core term with a precise meaning, which is roughly ours.

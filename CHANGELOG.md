@@ -24,6 +24,14 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
   *new* `taxon_id` fails validation until the importer has fetched its lineage.
 
 ### Design
+- **Glossary states the prefix-case rule**, which turns out to be one rule and not the two
+  it looks like. `mappings.tsv` writes `NCBITaxon:` capitalised beside 40 rows of
+  lowercase `inaturalist.taxon:`, which reads as a drift worth fixing. It is not: both are
+  the *preferred prefix* Bioregistry publishes for that registry, as `SSA` is ours —
+  exactly the distinction [ADR-0021](decisions/0021-ssa-is-a-registered-prefix.md) drew
+  when it registered the lowercase key `ssa` with the preferred form `SSA`. Nothing in
+  `data/` changes; the rule is written down so the apparent inconsistency stops being
+  rediscovered and half-fixed.
 - Glossary entry for **catalogue**, marked ⚖️. It was the last load-bearing term both
   communities use differently with no entry, and the divergence is wide: in the whale
   world "the catalogue" means CWR's photo-ID catalogue, an enumeration kept so a new
