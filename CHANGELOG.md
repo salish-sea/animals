@@ -24,6 +24,17 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
   *new* `taxon_id` fails validation until the importer has fetched its lineage.
 
 ### Design
+- Glossary entry for **catalogue**, marked ⚖️. It was the last load-bearing term both
+  communities use differently with no entry, and the divergence is wide: in the whale
+  world "the catalogue" means CWR's photo-ID catalogue, an enumeration kept so a new
+  sighting can be matched to a known animal. The register is not one and the word is
+  never used for it — the catalogues sit upstream (CWR, MERS, Bay Cetology, published
+  through finwave) and downstream (SalishSea.io) of the register, which is the
+  relationship [ADR-0012](decisions/0012-relationship-to-the-salishsea-io-catalogue.md)
+  depends on. *Register* is also sharpened to say what distinguishes it — the identity
+  assignment rather than the description — and to note it is not a *registry*: a registry
+  is the office that keeps a register, and this is a publication rather than a service
+  ([ADR-0014](decisions/0014-a-publication-not-a-service.md)).
 - [ADR-0022](decisions/0022-taxonomic-hierarchy-is-ncbis-excerpted.md) amends ADR-0008:
   species identity is still delegated and nothing is curated, but the register now reports
   what the authority it delegated to says about ancestry. Subsumption stays a separate
