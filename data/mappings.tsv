@@ -44,3 +44,16 @@ SSA:0000936	skos:exactMatch	inaturalist.taxon:41736	Otariidae	semapv:ManualMappi
 SSA:0000937	skos:exactMatch	inaturalist.taxon:41687	Phocidae	semapv:ManualMappingCuration	1.0	INAT	
 SSA:0000938	skos:closeMatch	inaturalist.taxon:372843	Phocoidea	semapv:ManualMappingCuration	1.0	INAT	See the entity note: iNaturalist's Phocoidea is labelled 'Pinnipeds' and used as such, but names a narrower clade.
 SSA:0000939	skos:exactMatch	inaturalist.taxon:526556	Lutrinae	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000940	skos:exactMatch	inaturalist.taxon:41547	Balaenoptera	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000941	skos:exactMatch	inaturalist.taxon:41756	Callorhinus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000942	skos:exactMatch	inaturalist.taxon:41524	Delphinus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000943	skos:exactMatch	inaturalist.taxon:41859	Enhydra	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000944	skos:exactMatch	inaturalist.taxon:41754	Eumetopias	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000945	skos:exactMatch	inaturalist.taxon:41775	Lontra	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000946	skos:exactMatch	inaturalist.taxon:41565	Megaptera	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000947	skos:exactMatch	inaturalist.taxon:41727	Mirounga	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000948	skos:exactMatch	inaturalist.taxon:41520	Orcinus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000949	skos:exactMatch	inaturalist.taxon:41707	Phoca	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000950	skos:exactMatch	inaturalist.taxon:41438	Phocoena	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000951	skos:exactMatch	inaturalist.taxon:41480	Tursiops	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000952	skos:exactMatch	inaturalist.taxon:41737	Zalophus	semapv:ManualMappingCuration	1.0	INAT	

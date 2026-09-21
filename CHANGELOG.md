@@ -8,6 +8,14 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+### Register
+- **13 genus entities, `SSA:0000940`–`SSA:0000952`**, each a genus over a species the register already held: *Balaenoptera*, *Callorhinus*, *Delphinus*, *Enhydra*, *Eumetopias*, *Lontra*, *Megaptera*, *Mirounga*, *Orcinus*, *Phoca*, *Phocoena*, *Tursiops*, *Zalophus*. All crosswalked to iNaturalist and to NCBI.
+
+  These exist because an observer often reports a **rank coarser than species** — "a sea lion", without separating Steller from California. Such a record reached no register entity at all, and for a consumer that is not a cosmetic gap: SalishSea.io keeps iNaturalist taxon ids on its own data purely as a fallback for records the register cannot identify, and a fallback has to exist for every record or none. Measured there, these 13 close **124 of the 182** unidentified records and take coverage from 99.71% to **99.91%**.
+
+  **A monotypic genus shares its only species' common name** — *Orcinus* is "Killer whale", as *O. orca* is — because they denote the same animal. Five are monotypic: *Callorhinus*, *Enhydra*, *Eumetopias*, *Megaptera*, *Orcinus*. **The other eight take a genus-level name that names no species**: *Phoca* is "Seal" and not "Harbour seal", *Zalophus* is "Sea lion" and not "California sea lion", *Phocoena* is "Porpoise" and not "Harbour porpoise". A genus-level record does not support naming the species, and the register should not let a consumer imply one.
+- Two `hidden` search aliases are recapitalised, `SSA:0000917` "elephant seal" and `SSA:0000927` "bottlenose dolphin", to match the new genus names exactly. Sharing an identical string is a fact about the vocabulary and [C2](docs/competency-questions.md) answers with both candidates; meeting only under the fold is the accident [ADR-0019](decisions/0019-names-are-compared-by-folding.md) forbids, and the validator caught it.
+
 ## 2026.09.3 — 2026-09-21
 
 One name, and no identifier added, moved or retired. The *Resident* ecotype had only its label; it now has a `common` name, so a consumer that reached it through 2026.09.2's crosswalk has something to display.
