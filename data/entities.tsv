@@ -772,3 +772,16 @@ SSA:0002200	group	matriline	T166As	NCBITaxon:9733			BIGGS-SHEET	T166A and her de
 SSA:0002201	group	matriline	T168As	NCBITaxon:9733			BIGGS-SHEET	T168A and her descendants, derived from the designation. Minted ahead of Q22; if sub-lineages prove not to be real groups this merges into T168s.
 SSA:0002202	group	matriline	T174As	NCBITaxon:9733			BIGGS-SHEET	T174A and her descendants, derived from the designation. Minted ahead of Q22; if sub-lineages prove not to be real groups this merges into T174s.
 SSA:0002203	group	matriline	T174Bs	NCBITaxon:9733			BIGGS-SHEET	T174B and her descendants, derived from the designation. Minted ahead of Q22; if sub-lineages prove not to be real groups this merges into T174s.
+SSA:0000940	taxon		Balaenoptera	NCBITaxon:9766			SEED	Rorquals. Named for the group rather than for a species: the register holds four Balaenoptera species and NCBI counts eleven, so any species name here would claim more than a genus-level identification supports.
+SSA:0000941	taxon		Callorhinus	NCBITaxon:34883			SEED	Monotypic: C. ursinus (SSA:0000933) is the only species, so the genus and the species denote the same animal and share a common name.
+SSA:0000942	taxon		Delphinus	NCBITaxon:9727			SEED	Common dolphins. NCBI counts six species; the name is the group's, not D. delphis'.
+SSA:0000943	taxon		Enhydra	NCBITaxon:34881			SEED	Monotypic: E. lutris (SSA:0000918) is the only species.
+SSA:0000944	taxon		Eumetopias	NCBITaxon:34885			SEED	Monotypic: E. jubatus (SSA:0000902) is the only species. The commonest genus-level identification in consumer data -- observers report a sea lion without separating Steller from California.
+SSA:0000945	taxon		Lontra	NCBITaxon:71112			SEED	New World river otters. NCBI counts four species; only L. canadensis (SSA:0000906) occurs in the Salish Sea, so 'River otter' is honest here and shares the species' name deliberately.
+SSA:0000946	taxon		Megaptera	NCBITaxon:9772			SEED	Monotypic: M. novaeangliae (SSA:0000901) is the only species.
+SSA:0000947	taxon		Mirounga	NCBITaxon:9714			SEED	Both elephant seals. Only M. angustirostris (SSA:0000917) occurs here, but the genus name stays at genus level.
+SSA:0000948	taxon		Orcinus	NCBITaxon:9732			SEED	Monotypic: O. orca (SSA:0000900) is the only species. Note this is the GENUS; an ecotype is not a taxon and is recorded separately (ADR-0008).
+SSA:0000949	taxon		Phoca	NCBITaxon:9717			SEED	NCBI counts four species. Deliberately NOT 'Harbour seal': P. vitulina (SSA:0000904) is one species of several and a genus-level record does not support naming it. Distinct from SSA:0000937 Phocidae ('True seal') and SSA:0000938 Pinnipedia ('Pinniped'), which sit above it.
+SSA:0000950	taxon		Phocoena	NCBITaxon:9741			SEED	NCBI counts five species. Not 'Harbour porpoise': P. phocoena (SSA:0000912) is one of them.
+SSA:0000951	taxon		Tursiops	NCBITaxon:9738			SEED	Bottlenose dolphins. NCBI counts ten species under the genus; the name is the group's.
+SSA:0000952	taxon		Zalophus	NCBITaxon:9703			SEED	NCBI counts three species. Not 'California sea lion': Z. californianus (SSA:0000903) is one of them. A Zalophus record is a sea lion, which is all it claims.

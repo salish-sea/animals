@@ -86,9 +86,9 @@ SSA:0000915	Balaenoptera acutorostrata	preferred	en	Balaenoptera acutorostrata	t
 SSA:0000915	Minke whale	common	en	Balaenoptera acutorostrata	taxon		0	
 SSA:0000916	Balaenoptera physalus	preferred	en	Balaenoptera physalus	taxon		0	
 SSA:0000916	Fin whale	common	en	Balaenoptera physalus	taxon		0	
+SSA:0000917	Elephant seal	hidden	en	Mirounga angustirostris	taxon		0	
 SSA:0000917	Mirounga angustirostris	preferred	en	Mirounga angustirostris	taxon		0	
 SSA:0000917	Northern elephant seal	common	en	Mirounga angustirostris	taxon		0	
-SSA:0000917	elephant seal	hidden	en	Mirounga angustirostris	taxon		0	
 SSA:0000918	Enhydra lutris	preferred	en	Enhydra lutris	taxon		0	
 SSA:0000918	Sea otter	common	en	Enhydra lutris	taxon		0	
 SSA:0000919	Balaenoptera musculus	preferred	en	Balaenoptera musculus	taxon		0	
@@ -108,9 +108,9 @@ SSA:0000925	Cuvier's beaked whale	common	en	Ziphius cavirostris	taxon		0
 SSA:0000925	Ziphius cavirostris	preferred	en	Ziphius cavirostris	taxon		0	
 SSA:0000926	Grampus griseus	preferred	en	Grampus griseus	taxon		0	
 SSA:0000926	Risso's dolphin	common	en	Grampus griseus	taxon		0	
+SSA:0000927	Bottlenose dolphin	hidden	en	Tursiops truncatus	taxon		0	
 SSA:0000927	Common bottlenose dolphin	common	en	Tursiops truncatus	taxon		0	
 SSA:0000927	Tursiops truncatus	preferred	en	Tursiops truncatus	taxon		0	
-SSA:0000927	bottlenose dolphin	hidden	en	Tursiops truncatus	taxon		0	
 SSA:0000928	Common dolphin	common	en	Delphinus delphis	taxon		0	
 SSA:0000928	Delphinus delphis	preferred	en	Delphinus delphis	taxon		0	
 SSA:0000928	short-beaked common dolphin	hidden	en	Delphinus delphis	taxon		0	
@@ -143,6 +143,32 @@ SSA:0000938	seal or sea lion	hidden	en	Pinnipedia	taxon		0
 SSA:0000939	Lutrinae	preferred	en	Lutrinae	taxon		0	
 SSA:0000939	Otter	common	en	Lutrinae	taxon		0	
 SSA:0000939	otter	hidden	en	Lutrinae	taxon		0	
+SSA:0000940	Balaenoptera	preferred	en	Balaenoptera	taxon		0	
+SSA:0000940	Rorqual	common	en	Balaenoptera	taxon		0	
+SSA:0000941	Callorhinus	preferred	en	Callorhinus	taxon		0	
+SSA:0000941	Northern fur seal	common	en	Callorhinus	taxon		0	
+SSA:0000942	Common dolphin	common	en	Delphinus	taxon		0	
+SSA:0000942	Delphinus	preferred	en	Delphinus	taxon		0	
+SSA:0000943	Enhydra	preferred	en	Enhydra	taxon		0	
+SSA:0000943	Sea otter	common	en	Enhydra	taxon		0	
+SSA:0000944	Eumetopias	preferred	en	Eumetopias	taxon		0	
+SSA:0000944	Steller sea lion	common	en	Eumetopias	taxon		0	
+SSA:0000945	Lontra	preferred	en	Lontra	taxon		0	
+SSA:0000945	River otter	common	en	Lontra	taxon		0	
+SSA:0000946	Humpback whale	common	en	Megaptera	taxon		0	
+SSA:0000946	Megaptera	preferred	en	Megaptera	taxon		0	
+SSA:0000947	Elephant seal	common	en	Mirounga	taxon		0	
+SSA:0000947	Mirounga	preferred	en	Mirounga	taxon		0	
+SSA:0000948	Killer whale	common	en	Orcinus	taxon		0	
+SSA:0000948	Orcinus	preferred	en	Orcinus	taxon		0	
+SSA:0000949	Phoca	preferred	en	Phoca	taxon		0	
+SSA:0000949	Seal	common	en	Phoca	taxon		0	
+SSA:0000950	Phocoena	preferred	en	Phocoena	taxon		0	
+SSA:0000950	Porpoise	common	en	Phocoena	taxon		0	
+SSA:0000951	Bottlenose dolphin	common	en	Tursiops	taxon		0	
+SSA:0000951	Tursiops	preferred	en	Tursiops	taxon		0	
+SSA:0000952	Sea lion	common	en	Zalophus	taxon		0	
+SSA:0000952	Zalophus	preferred	en	Zalophus	taxon		0	
 SSA:0002000	T002	hidden	en	T002s	group	matriline	0	
 SSA:0002000	T002s	preferred	en	T002s	group	matriline	0	
 SSA:0002001	Secret Agents	common	en	T007s	group	matriline	0	

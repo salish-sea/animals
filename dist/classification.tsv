@@ -39,3 +39,16 @@ SSA:0000936	Otariidae	NCBITaxon:9702	Otariidae	family	Metazoa	Chordata	Mammalia	
 SSA:0000937	Phocidae	NCBITaxon:9709	Phocidae	family	Metazoa	Chordata	Mammalia	Carnivora	Phocidae	
 SSA:0000938	Pinnipedia	NCBITaxon:3072905	Pinnipedia	clade	Metazoa	Chordata	Mammalia	Carnivora		
 SSA:0000939	Lutrinae	NCBITaxon:169417	Lutrinae	subfamily	Metazoa	Chordata	Mammalia	Carnivora	Mustelidae	
+SSA:0000940	Balaenoptera	NCBITaxon:9766	Balaenoptera	genus	Metazoa	Chordata	Mammalia	Artiodactyla	Balaenopteridae	Balaenoptera
+SSA:0000941	Callorhinus	NCBITaxon:34883	Callorhinus	genus	Metazoa	Chordata	Mammalia	Carnivora	Otariidae	Callorhinus
+SSA:0000942	Delphinus	NCBITaxon:9727	Delphinus	genus	Metazoa	Chordata	Mammalia	Artiodactyla	Delphinidae	Delphinus
+SSA:0000943	Enhydra	NCBITaxon:34881	Enhydra	genus	Metazoa	Chordata	Mammalia	Carnivora	Mustelidae	Enhydra
+SSA:0000944	Eumetopias	NCBITaxon:34885	Eumetopias	genus	Metazoa	Chordata	Mammalia	Carnivora	Otariidae	Eumetopias
+SSA:0000945	Lontra	NCBITaxon:71112	Lontra	genus	Metazoa	Chordata	Mammalia	Carnivora	Mustelidae	Lontra
+SSA:0000946	Megaptera	NCBITaxon:9772	Megaptera	genus	Metazoa	Chordata	Mammalia	Artiodactyla	Balaenopteridae	Megaptera
+SSA:0000947	Mirounga	NCBITaxon:9714	Mirounga	genus	Metazoa	Chordata	Mammalia	Carnivora	Phocidae	Mirounga
+SSA:0000948	Orcinus	NCBITaxon:9732	Orcinus	genus	Metazoa	Chordata	Mammalia	Artiodactyla	Delphinidae	Orcinus
+SSA:0000949	Phoca	NCBITaxon:9717	Phoca	genus	Metazoa	Chordata	Mammalia	Carnivora	Phocidae	Phoca
+SSA:0000950	Phocoena	NCBITaxon:9741	Phocoena	genus	Metazoa	Chordata	Mammalia	Artiodactyla	Phocoenidae	Phocoena
+SSA:0000951	Tursiops	NCBITaxon:9738	Tursiops	genus	Metazoa	Chordata	Mammalia	Artiodactyla	Delphinidae	Tursiops
+SSA:0000952	Zalophus	NCBITaxon:9703	Zalophus	genus	Metazoa	Chordata	Mammalia	Carnivora	Otariidae	Zalophus

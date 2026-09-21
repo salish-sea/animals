@@ -54,7 +54,7 @@ SSA:0000914	Aethalodelphis obliquidens	hidden	en	SEED	The name NCBI gives NCBITa
 SSA:0000915	Minke whale	common	en	SEED	No bare "minke" row: T064A (SSA:0010183) is nicknamed Minke, and the two fold together (ADR-0019).
 SSA:0000916	Fin whale	common	en	SEED	
 SSA:0000917	Northern elephant seal	common	en	SEED	
-SSA:0000917	elephant seal	hidden	en	SEED	No other elephant seal occurs here.
+SSA:0000917	Elephant seal	hidden	en	SEED	No other elephant seal occurs here.
 SSA:0000918	Sea otter	common	en	SEED	
 SSA:0000919	Blue whale	common	en	SEED	
 SSA:0000920	Sei whale	common	en	SEED	
@@ -66,7 +66,7 @@ SSA:0000924	Baird's beaked whale	common	en	SEED
 SSA:0000925	Cuvier's beaked whale	common	en	SEED	
 SSA:0000926	Risso's dolphin	common	en	SEED	
 SSA:0000927	Common bottlenose dolphin	common	en	SEED	
-SSA:0000927	bottlenose dolphin	hidden	en	SEED	
+SSA:0000927	Bottlenose dolphin	hidden	en	SEED	
 SSA:0000928	Common dolphin	common	en	SEED	
 SSA:0000928	short-beaked common dolphin	hidden	en	SEED	
 SSA:0000929	Northern right whale dolphin	common	en	SEED	
@@ -757,3 +757,16 @@ SSA:0002200	T166A	hidden	en	BIGGS-SHEET	Bare designation.
 SSA:0002201	T168A	hidden	en	BIGGS-SHEET	Bare designation.
 SSA:0002202	T174A	hidden	en	BIGGS-SHEET	Bare designation.
 SSA:0002203	T174B	hidden	en	BIGGS-SHEET	Bare designation.
+SSA:0000940	Rorqual	common	en	SEED	Genus-level name: it must not claim any one species.
+SSA:0000941	Northern fur seal	common	en	SEED	Monotypic genus; shares its only species' name.
+SSA:0000942	Common dolphin	common	en	SEED	Genus-level name: it must not claim any one species.
+SSA:0000943	Sea otter	common	en	SEED	Monotypic genus; shares its only species' name.
+SSA:0000944	Steller sea lion	common	en	SEED	Monotypic genus; shares its only species' name.
+SSA:0000945	River otter	common	en	SEED	Genus-level name: it must not claim any one species.
+SSA:0000946	Humpback whale	common	en	SEED	Monotypic genus; shares its only species' name.
+SSA:0000947	Elephant seal	common	en	SEED	Genus-level name: it must not claim any one species.
+SSA:0000948	Killer whale	common	en	SEED	Monotypic genus; shares its only species' name.
+SSA:0000949	Seal	common	en	SEED	Genus-level name: it must not claim any one species.
+SSA:0000950	Porpoise	common	en	SEED	Genus-level name: it must not claim any one species.
+SSA:0000951	Bottlenose dolphin	common	en	SEED	Genus-level name: it must not claim any one species.
+SSA:0000952	Sea lion	common	en	SEED	Genus-level name: it must not claim any one species.
