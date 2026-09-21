@@ -8,6 +8,10 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+## 2026.09.3 — 2026-09-21
+
+One name, and no identifier added, moved or retired. The *Resident* ecotype had only its label; it now has a `common` name, so a consumer that reached it through 2026.09.2's crosswalk has something to display.
+
 ### Register
 - **The *Resident* ecotype has a common name: "Resident killer whale"** (`SSA:0000003`).
   It had only its label, `Resident`, which is the ecotype's designation and not a name for
