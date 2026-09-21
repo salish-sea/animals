@@ -8,6 +8,10 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+## 2026.09.4 — 2026-09-21
+
+One kind of thing the register could not identify, and now can: an animal reported at a rank coarser than species. Thirteen genus entities, no identifier moved or retired.
+
 ### Register
 - **13 genus entities, `SSA:0000940`–`SSA:0000952`**, each a genus over a species the register already held: *Balaenoptera*, *Callorhinus*, *Delphinus*, *Enhydra*, *Eumetopias*, *Lontra*, *Megaptera*, *Mirounga*, *Orcinus*, *Phoca*, *Phocoena*, *Tursiops*, *Zalophus*. All crosswalked to iNaturalist and to NCBI.
 
