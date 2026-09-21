@@ -8,6 +8,18 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+### Register
+- **The *Resident* ecotype has a common name: "Resident killer whale"** (`SSA:0000003`).
+  It had only its label, `Resident`, which is the ecotype's designation and not a name for
+  an animal. That gap was load-bearing rather than cosmetic: 2026.09.2 crosswalked
+  `SSA:0000003` to *Orcinus orca ater* so a consumer could reach the entity, but a consumer
+  displaying the register's `common` name reached it and found nothing to show. SalishSea.io
+  had been composing the string "Resident killer whale" in a table of its own for want of
+  this row — the second opinion [ADR-0012](decisions/0012-relationship-to-the-salishsea-io-catalogue.md)
+  exists to prevent — and deletes that table now. The string is unchanged for a reader; what
+  changes is who asserts it. Symmetric with `SSA:0000002` *Bigg's killer whale* and
+  `SSA:0000010` *Southern Resident killer whale*, both of which already had theirs.
+
 ## 2026.09.2 — 2026-09-20
 
 Two things a consumer can now ask the register that it could not before, and no identifier
