@@ -8,10 +8,11 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
-Six search names, and no identifier added, moved or retired. The register's first names in a language other than English.
+Eight search names, and no identifier added, moved or retired. The register's first names in a language other than English.
 
 ### Register
 - **Four French and Spanish common names**, the labels Whale Alert uses in those languages: `Baleine grise` (fr, *Eschrichtius robustus*), `Ballena jorobada` (es, *Megaptera novaeangliae*), `Ballena azul` (es, *Balaenoptera musculus*), `Marsouin commun` (fr, *Phocoena phocoena*). They are the first non-English rows, added as [ADR-0020](decisions/0020-localised-preferred-names-are-name-rows.md) says localised names should be — as `names.tsv` rows, once they exist. A consumer choosing a display name by language (English first) is unaffected.
+- **The two killer-whale subspecies names as `hidden` aliases of the ecotypes they close-match**: `Orcinus orca rectipinnus` on Bigg's (`SSA:0000002`) and `Orcinus orca ater` on Resident (`SSA:0000003`). 2026.09.2 already asserts those crosswalks; the aliases let a record *identified* by the subspecies name reach the ecotype.
 - **Two `hidden` spellings the fold cannot reach**: `Short finned pilot whale` (*Globicephala macrorhynchus*) and `Northern right-whale dolphin` (*Lissodelphis borealis*). [ADR-0019](decisions/0019-names-are-compared-by-folding.md)'s fold deletes a hyphen without inserting a space, so "short finned" and "Short-finned" do not meet under it.
 
 These six complete what SalishSea.io's retired Maplify dictionary covered: with them, every label that dictionary translated resolves through the register instead.

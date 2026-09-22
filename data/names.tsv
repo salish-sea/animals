@@ -4,7 +4,9 @@ SSA:0000010	Southern Resident killer whale	common	en	SEED
 SSA:0000002	Transient	historical	en	SEED	Superseded term; retained so historical text still resolves.
 SSA:0000002	Biggs	hidden	en	SEED	Apostrophe-free spelling, for autocomplete.
 SSA:0000002	Bigg's killer whale	common	en	SEED	
+SSA:0000002	Orcinus orca rectipinnus	hidden	en	SEED	iNaturalist's subspecies name, which this entity closeMatches (mappings.tsv). A search alias so a record identified that way reaches the ecotype.
 SSA:0000003	Resident killer whale	common	en	SEED	The counterpart of SSA:0000002's common name. Asserted here because a consumer was otherwise obliged to compose it: SalishSea.io held 'Resident killer whale' in its own table for want of this row, which is the second opinion ADR-0012 exists to prevent.
+SSA:0000003	Orcinus orca ater	hidden	en	SEED	iNaturalist's subspecies name, which this entity closeMatches (mappings.tsv). A search alias so a record identified that way reaches the ecotype.
 SSA:0000020	Js	hidden	en	SEED	As used in bout name "Faint Js".
 SSA:0000020	J	hidden	en	ORCASOUND	Bare pod letter. Applied to 29 bouts; also the context label copied into signals-srkw.
 SSA:0000021	K	hidden	en	ORCASOUND	Bare pod letter. Applied to 10 bouts.
