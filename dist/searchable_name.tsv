@@ -3,7 +3,9 @@ SSA:0000001	Southern Resident	preferred	en	Southern Resident	group	ecotype	1	SSA
 SSA:0000002	Bigg's	preferred	en	Bigg's	group	ecotype	0	
 SSA:0000002	Bigg's killer whale	common	en	Bigg's	group	ecotype	0	
 SSA:0000002	Biggs	hidden	en	Bigg's	group	ecotype	0	
+SSA:0000002	Orcinus orca rectipinnus	hidden	en	Bigg's	group	ecotype	0	
 SSA:0000002	Transient	historical	en	Bigg's	group	ecotype	0	
+SSA:0000003	Orcinus orca ater	hidden	en	Resident	group	ecotype	0	
 SSA:0000003	Resident	preferred	en	Resident	group	ecotype	0	
 SSA:0000003	Resident killer whale	common	en	Resident	group	ecotype	0	
 SSA:0000010	SRKW	hidden	en	Southern Resident	group	community	0	
@@ -40,6 +42,7 @@ SSA:0000900	KW	hidden	en	Orcinus orca	taxon		0
 SSA:0000900	Killer whale	common	en	Orcinus orca	taxon		0	
 SSA:0000900	Orcinus orca	preferred	en	Orcinus orca	taxon		0	
 SSA:0000900	orca	hidden	en	Orcinus orca	taxon		0	
+SSA:0000901	Ballena jorobada	common	es	Megaptera novaeangliae	taxon		0	
 SSA:0000901	Humpback whale	common	en	Megaptera novaeangliae	taxon		0	
 SSA:0000901	Megaptera novaeangliae	preferred	en	Megaptera novaeangliae	taxon		0	
 SSA:0000901	humpback	hidden	en	Megaptera novaeangliae	taxon		0	
@@ -51,6 +54,7 @@ SSA:0000903	Zalophus californianus	preferred	en	Zalophus californianus	taxon		0
 SSA:0000904	Harbour seal	common	en	Phoca vitulina	taxon		0	
 SSA:0000904	Phoca vitulina	preferred	en	Phoca vitulina	taxon		0	
 SSA:0000904	harbor seal	hidden	en	Phoca vitulina	taxon		0	
+SSA:0000905	Baleine grise	common	fr	Eschrichtius robustus	taxon		0	
 SSA:0000905	Eschrichtius robustus	preferred	en	Eschrichtius robustus	taxon		0	
 SSA:0000905	Gray	hidden	en	Eschrichtius robustus	taxon		0	
 SSA:0000905	Gray whale	common	en	Eschrichtius robustus	taxon		0	
@@ -75,6 +79,7 @@ SSA:0000911	HOSP	hidden	en	Passer domesticus	taxon		0
 SSA:0000911	House sparrow	common	en	Passer domesticus	taxon		0	
 SSA:0000911	Passer domesticus	preferred	en	Passer domesticus	taxon		0	
 SSA:0000912	Harbour porpoise	common	en	Phocoena phocoena	taxon		0	
+SSA:0000912	Marsouin commun	common	fr	Phocoena phocoena	taxon		0	
 SSA:0000912	Phocoena phocoena	preferred	en	Phocoena phocoena	taxon		0	
 SSA:0000912	harbor porpoise	hidden	en	Phocoena phocoena	taxon		0	
 SSA:0000913	Dall's porpoise	common	en	Phocoenoides dalli	taxon		0	
@@ -95,6 +100,7 @@ SSA:0000917	Northern elephant seal	common	en	Mirounga angustirostris	taxon		0
 SSA:0000918	Enhydra lutris	preferred	en	Enhydra lutris	taxon		0	
 SSA:0000918	Sea otter	common	en	Enhydra lutris	taxon		0	
 SSA:0000919	Balaenoptera musculus	preferred	en	Balaenoptera musculus	taxon		0	
+SSA:0000919	Ballena azul	common	es	Balaenoptera musculus	taxon		0	
 SSA:0000919	Blue whale	common	en	Balaenoptera musculus	taxon		0	
 SSA:0000920	Balaenoptera borealis	preferred	en	Balaenoptera borealis	taxon		0	
 SSA:0000920	Sei whale	common	en	Balaenoptera borealis	taxon		0	
@@ -120,10 +126,12 @@ SSA:0000928	Delphinus delphis	preferred	en	Delphinus delphis	taxon		0
 SSA:0000928	short-beaked common dolphin	hidden	en	Delphinus delphis	taxon		0	
 SSA:0000929	Lissodelphis borealis	preferred	en	Lissodelphis borealis	taxon		0	
 SSA:0000929	Northern right whale dolphin	common	en	Lissodelphis borealis	taxon		0	
+SSA:0000929	Northern right-whale dolphin	hidden	en	Lissodelphis borealis	taxon		0	
 SSA:0000929	right whale dolphin	hidden	en	Lissodelphis borealis	taxon		0	
 SSA:0000930	Stenella coeruleoalba	preferred	en	Stenella coeruleoalba	taxon		0	
 SSA:0000930	Striped dolphin	common	en	Stenella coeruleoalba	taxon		0	
 SSA:0000931	Globicephala macrorhynchus	preferred	en	Globicephala macrorhynchus	taxon		0	
+SSA:0000931	Short finned pilot whale	hidden	en	Globicephala macrorhynchus	taxon		0	
 SSA:0000931	Short-finned pilot whale	common	en	Globicephala macrorhynchus	taxon		0	
 SSA:0000931	pilot whale	hidden	en	Globicephala macrorhynchus	taxon		0	
 SSA:0000932	Arctocephalus townsendi	preferred	en	Arctocephalus townsendi	taxon		0	
