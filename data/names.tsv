@@ -32,6 +32,8 @@ SSA:0000904	Harbour seal	common	en	SEED
 SSA:0000904	harbor seal	hidden	en	SEED	US spelling.
 SSA:0000905	Gray whale	common	en	SEED	
 SSA:0000905	Grey whale	hidden	en	SEED	Canadian spelling, as in the HALLO labels.
+SSA:0000905	Gray	hidden	en	SEED	Whale Alert's category label, as it reaches SalishSea.io through Maplify.
+SSA:0000905	Grey	hidden	en	SEED	Whale Alert's category label, as it reaches SalishSea.io through Maplify.
 SSA:0000906	River otter	common	en	SEED	
 SSA:0000906	otter	hidden	en	SEED	As tagged in OrcaHello bouts. Genuinely ambiguous: sea otter (SSA:0000918) and the unidentified-otter entity (SSA:0000939) share the spelling, so C2 answers with both candidates. Near a hydrophone this one is almost always meant.
 SSA:0000907	Bird	common	en	SEED	
@@ -53,6 +55,7 @@ SSA:0000914	Lagenorhynchus obliquidens	historical	en	SEED	The genus this species
 SSA:0000914	Aethalodelphis obliquidens	hidden	en	SEED	The name NCBI gives NCBITaxon:3371155. Searchable, but not offered as a name; see the entity note.
 SSA:0000915	Minke whale	common	en	SEED	No bare "minke" row: T064A (SSA:0010183) is nicknamed Minke, and the two fold together (ADR-0019).
 SSA:0000916	Fin whale	common	en	SEED	
+SSA:0000916	Finback whale	hidden	en	SEED	An older common name, and Whale Alert's category label.
 SSA:0000917	Northern elephant seal	common	en	SEED	
 SSA:0000917	Elephant seal	hidden	en	SEED	No other elephant seal occurs here.
 SSA:0000918	Sea otter	common	en	SEED	
@@ -69,6 +72,7 @@ SSA:0000927	Common bottlenose dolphin	common	en	SEED
 SSA:0000927	Bottlenose dolphin	hidden	en	SEED	
 SSA:0000928	Common dolphin	common	en	SEED	
 SSA:0000928	short-beaked common dolphin	hidden	en	SEED	
+SSA:0000928	Delphinus capensis	historical	en	SEED	The long-beaked form's former species name; NCBI and iNaturalist now place it within D. delphis (see the entity note).
 SSA:0000929	Northern right whale dolphin	common	en	SEED	
 SSA:0000929	right whale dolphin	hidden	en	SEED	
 SSA:0000930	Striped dolphin	common	en	SEED	
@@ -770,3 +774,6 @@ SSA:0000949	Seal	common	en	SEED	Genus-level name: it must not claim any one spec
 SSA:0000950	Porpoise	common	en	SEED	Genus-level name: it must not claim any one species.
 SSA:0000951	Bottlenose dolphin	common	en	SEED	Genus-level name: it must not claim any one species.
 SSA:0000952	Sea lion	common	en	SEED	Genus-level name: it must not claim any one species.
+SSA:0000953	Beluga	common	en	SEED	
+SSA:0000954	Right whale	common	en	SEED	Genus-level name: it must not claim any one species.
+SSA:0000955	Bottlenose whale	common	en	SEED	Genus-level name: it must not claim any one species.

@@ -52,3 +52,6 @@ SSA:0000949	Phoca	NCBITaxon:9717	Phoca	genus	Metazoa	Chordata	Mammalia	Carnivora
 SSA:0000950	Phocoena	NCBITaxon:9741	Phocoena	genus	Metazoa	Chordata	Mammalia	Artiodactyla	Phocoenidae	Phocoena
 SSA:0000951	Tursiops	NCBITaxon:9738	Tursiops	genus	Metazoa	Chordata	Mammalia	Artiodactyla	Delphinidae	Tursiops
 SSA:0000952	Zalophus	NCBITaxon:9703	Zalophus	genus	Metazoa	Chordata	Mammalia	Carnivora	Otariidae	Zalophus
+SSA:0000953	Delphinapterus leucas	NCBITaxon:9749	Delphinapterus leucas	species	Metazoa	Chordata	Mammalia	Artiodactyla	Monodontidae	Delphinapterus
+SSA:0000954	Eubalaena	NCBITaxon:27605	Eubalaena	genus	Metazoa	Chordata	Mammalia	Artiodactyla	Balaenidae	Eubalaena
+SSA:0000955	Hyperoodon	NCBITaxon:48743	Hyperoodon	genus	Metazoa	Chordata	Mammalia	Artiodactyla	Ziphiidae	Hyperoodon

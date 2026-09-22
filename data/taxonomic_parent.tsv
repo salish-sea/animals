@@ -41,6 +41,9 @@ NCBITaxon:9741	NCBITaxon:9740	genus	Phocoena	NCBI
 NCBITaxon:9742	NCBITaxon:9741	species	Phocoena phocoena	NCBI
 NCBITaxon:9743	NCBITaxon:9740	genus	Phocoenoides	NCBI
 NCBITaxon:9744	NCBITaxon:9743	species	Phocoenoides dalli	NCBI
+NCBITaxon:9747	NCBITaxon:9722	family	Monodontidae	NCBI
+NCBITaxon:9748	NCBITaxon:9747	genus	Delphinapterus	NCBI
+NCBITaxon:9749	NCBITaxon:9748	species	Delphinapterus leucas	NCBI
 NCBITaxon:9750	NCBITaxon:9722	family	Physeteridae	NCBI
 NCBITaxon:9751	NCBITaxon:9750	genus	Kogia	NCBI
 NCBITaxon:9752	NCBITaxon:9751	species	Kogia sima	NCBI
@@ -61,12 +64,14 @@ NCBITaxon:9770	NCBITaxon:9766	species	Balaenoptera physalus	NCBI
 NCBITaxon:9771	NCBITaxon:9766	species	Balaenoptera musculus	NCBI
 NCBITaxon:9772	NCBITaxon:9765	genus	Megaptera	NCBI
 NCBITaxon:9773	NCBITaxon:9772	species	Megaptera novaeangliae	NCBI
+NCBITaxon:27605	NCBITaxon:30558	genus	Eubalaena	NCBI
 NCBITaxon:27612	NCBITaxon:9726	genus	Lissodelphis	NCBI
 NCBITaxon:27615	NCBITaxon:9751	species	Kogia breviceps	NCBI
 NCBITaxon:28683	NCBITaxon:8906	family	Alcidae	NCBI
 NCBITaxon:28695	NCBITaxon:28683	genus	Cepphus	NCBI
 NCBITaxon:28696	NCBITaxon:28695	species	Cepphus columba	NCBI
 NCBITaxon:29083	NCBITaxon:9702	genus	Arctocephalus	NCBI
+NCBITaxon:30558	NCBITaxon:9761	family	Balaenidae	NCBI
 NCBITaxon:32523	NCBITaxon:1338369	clade	Tetrapoda	NCBI
 NCBITaxon:32524	NCBITaxon:32523	clade	Amniota	NCBI
 NCBITaxon:32525	NCBITaxon:40674	clade	Theria	NCBI
@@ -86,6 +91,7 @@ NCBITaxon:38241	NCBITaxon:9729	species	Globicephala macrorhynchus	NCBI
 NCBITaxon:40674	NCBITaxon:32524	class	Mammalia	NCBI
 NCBITaxon:48741	NCBITaxon:9756	genus	Berardius	NCBI
 NCBITaxon:48742	NCBITaxon:48741	species	Berardius bairdii	NCBI
+NCBITaxon:48743	NCBITaxon:9756	genus	Hyperoodon	NCBI
 NCBITaxon:48849	NCBITaxon:9159	species	Passer domesticus	NCBI
 NCBITaxon:56260	NCBITaxon:2558200	family	Pandionidae	NCBI
 NCBITaxon:56261	NCBITaxon:56260	genus	Pandion	NCBI
