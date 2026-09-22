@@ -8,6 +8,8 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+## 2026.09.6 — 2026-09-22
+
 Eight search names, and no identifier added, moved or retired. The register's first names in a language other than English.
 
 ### Register
