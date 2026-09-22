@@ -8,6 +8,8 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+## 2026.09.5 — 2026-09-22
+
 Names a consumer's feed actually uses, and three animals it has actually reported. Three taxa minted; no identifier moved or retired.
 
 ### Register
