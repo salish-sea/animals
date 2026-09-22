@@ -8,6 +8,12 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+Names a consumer's feed actually uses, and three animals it has actually reported. Three taxa minted; no identifier moved or retired.
+
+### Register
+- **Three taxa, `SSA:0000953`–`SSA:0000955`**: *Delphinapterus leucas* ("Beluga"), and the genera *Eubalaena* ("Right whale") and *Hyperoodon* ("Bottlenose whale"). Each is crosswalked to iNaturalist, and NCBI's lineage for them is added to `taxonomic_parent.tsv`. They are vagrants here, not residents — SalishSea.io holds 9 Whale Alert reports of them inside the Salish Sea, and those were the only identified records in its Maplify feed that reached no register entity. The two genera take a genus-level name that claims no species, as the 2026.09.4 genera do.
+- **Four search names** so that SalishSea.io can resolve its Maplify feed through the register instead of through iNaturalist's taxonomy: `Gray` and `Grey` (`hidden`, on *Eschrichtius robustus*) — Whale Alert's bare category label, 141 records; `Finback whale` (`hidden`, on *Balaenoptera physalus*) — an older common name and Whale Alert's label; and `Delphinus capensis` (`historical`, on *Delphinus delphis*) — the long-beaked form's former species name, consistent with that entity's note that NCBI and iNaturalist place it within *D. delphis*. None is displayable; `hidden` and `historical` names match and are never shown.
+
 ## 2026.09.4 — 2026-09-21
 
 One kind of thing the register could not identify, and now can: an animal reported at a rank coarser than species. Thirteen genus entities, no identifier moved or retired.

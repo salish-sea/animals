@@ -785,3 +785,6 @@ SSA:0000949	taxon		Phoca	NCBITaxon:9717			SEED	NCBI counts four species. Deliber
 SSA:0000950	taxon		Phocoena	NCBITaxon:9741			SEED	NCBI counts five species. Not 'Harbour porpoise': P. phocoena (SSA:0000912) is one of them.
 SSA:0000951	taxon		Tursiops	NCBITaxon:9738			SEED	Bottlenose dolphins. NCBI counts ten species under the genus; the name is the group's.
 SSA:0000952	taxon		Zalophus	NCBITaxon:9703			SEED	NCBI counts three species. Not 'California sea lion': Z. californianus (SSA:0000903) is one of them. A Zalophus record is a sea lion, which is all it claims.
+SSA:0000953	taxon		Delphinapterus leucas	NCBITaxon:9749			SEED	A vagrant here, not a resident: minted because SalishSea.io holds a Whale Alert report of one inside the Salish Sea.
+SSA:0000954	taxon		Eubalaena	NCBITaxon:27605			SEED	Right whales. Whale Alert reports them at genus rank; NCBI counts three species.
+SSA:0000955	taxon		Hyperoodon	NCBITaxon:48743			SEED	Bottlenose whales. Whale Alert reports them at genus rank; NCBI counts two species.

@@ -57,3 +57,6 @@ SSA:0000949	skos:exactMatch	inaturalist.taxon:41707	Phoca	semapv:ManualMappingCu
 SSA:0000950	skos:exactMatch	inaturalist.taxon:41438	Phocoena	semapv:ManualMappingCuration	1.0	INAT	
 SSA:0000951	skos:exactMatch	inaturalist.taxon:41480	Tursiops	semapv:ManualMappingCuration	1.0	INAT	
 SSA:0000952	skos:exactMatch	inaturalist.taxon:41737	Zalophus	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000953	skos:exactMatch	inaturalist.taxon:41461	Delphinapterus leucas	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000954	skos:exactMatch	inaturalist.taxon:41568	Eubalaena	semapv:ManualMappingCuration	1.0	INAT	
+SSA:0000955	skos:exactMatch	inaturalist.taxon:41419	Hyperoodon	semapv:ManualMappingCuration	1.0	INAT	
