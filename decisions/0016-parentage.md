@@ -3,6 +3,7 @@
 - **Status:** Proposed
 - **Date:** 2026-07-28
 - **Audience:** Scientific reviewers — this adds a claim the register makes about animals, so the modelling is yours to check. Informatics reviewers — it adds a table and five checks.
+- **Amended by:** [ADR-0023](0023-southern-residents-from-noaas-census-file.md), for Southern Residents only. Their matrilines are derived from parentage under this record's reconsideration clause (see "Alternatives considered").
 
 ## Context
 
