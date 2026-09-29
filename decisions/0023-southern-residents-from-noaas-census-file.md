@@ -3,6 +3,7 @@
 - **Status:** Proposed
 - **Date:** 2026-09-29
 - **Audience:** Scientific reviewers — this chooses the source for every Southern Resident animal and their mothers, and it states how its disagreements with other accounts are handled. Informatics reviewers — it adds a source, an import script and a refresh.
+- **Amends:** [ADR-0016](0016-parentage.md), for Southern Residents only. It takes up that record's own reconsideration clause: matrilines are derived from parentage where parentage is dense.
 
 ## Context
 
@@ -21,7 +22,7 @@ The file is the census table behind NOAA's population projections and 5-year sta
 The judgements the script makes, which are what a reviewer should check:
 
 1. **Parentage comes from `mom`**, as `mother` edges in `parentage.tsv` ([ADR-0016](0016-parentage.md)). The file names no fathers.
-2. **Matrilines are derived from parentage, not read from `matriline`.** NOAA's `matriline` column names a founding lineage, which is coarser than a matriline here. For example, it files J35 under J9, while the register has her in J17s. The column is used as a check: a derived matriline that falls outside NOAA's founding lineage is flagged, not written. Which females anchor a matriline is itself a judgement the script must state. The Bigg's import met the same problem from the other side (Q22).
+2. **Southern Resident matrilines are derived from parentage, not read from `matriline`. This amends [ADR-0016](0016-parentage.md) for this population only.** ADR-0016 keeps parentage and membership independent so each can check the other. It rejected deriving one from the other "for now, on data rather than on principle", because parentage was sparse, and said the question was "reconsiderable once parentage is dense". For Southern Residents, this file makes parentage dense: nearly every whale born since 1970 has a recorded mother. NOAA has no independent matriline assertion to set against it. Its `matriline` column names a founding lineage, which is coarser than a matriline here: it files J35 under J9, while the register has her in J17s. What is lost is ADR-0016's independent cross-check. What partly replaces it: the founding lineage is used as a check, and a derived matriline that falls outside it is flagged, not written. An independent matriline source, such as CWR's matriline charts, would restore the full check and is worth adding when one can be used. Everywhere else, including Bigg's, ADR-0016 stands unchanged. Which females anchor a matriline is itself a judgement the script must state. The Bigg's import met the same problem from the other side (Q22).
 3. **`pod` becomes membership in the existing pod entities.** `J001`, `K001` and `L001` are NOAA's codes for J, K and L pods, not animals. They map to `SSA:0000020`–`22`.
 4. **`sexF1M2` maps as 1 → `F`, 2 → `M`, and 0 → blank** (not known), not `U`, because the file does not say whether 0 means unknown or unrecorded.
 5. **A death year becomes `presumed_dead`**, effective in that year. The file does not separate whales missing from the census from those found dead, and a disappearance is how most Southern Resident deaths are known. A `dead` status needs a second source naming a carcass or necropsy.
