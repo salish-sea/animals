@@ -33,7 +33,8 @@ confirmation.
   [Q22](https://github.com/salish-sea/animals/issues/13), which asks whether they are real
   groups. Record the narrowest one you are sure of.
 - **Southern Resident matrilines nest by the same rule, read off parentage instead.**
-  Every female NOAA's census names as a mother heads a matriline inside her mother's:
+  Every female NOAA's census names as a mother heads a matriline inside her mother's,
+  unless NOAA files the two under different founding lineages:
   `J35s` is in `J17s`, which is in `J5s`. 69 of them, derived by
   [`bin/import_srkw.py`](../bin/import_srkw.py) under
   [ADR-0023](../decisions/0023-southern-residents-from-noaas-census-file.md). A female with

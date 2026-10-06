@@ -185,6 +185,7 @@ failures are more likely than a modelling error, and
 
 ## Status
 
-Everything here is **proposed**. No decision in `decisions/` has been ratified, no row
+Almost everything here is **proposed**. One decision in `decisions/` is accepted
+([ADR-0023](../decisions/0023-southern-residents-from-noaas-census-file.md)), no row
 in `data/` is verified, and the identifier prefix is not yet registered. See
 [docs/open-questions.md](open-questions.md).

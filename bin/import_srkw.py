@@ -241,10 +241,15 @@ def main():
         mom = census[h]["mom"]
         note = (f"{label(h)} and her descendants, derived from NOAA's maternity "
                 "records (ADR-0023). Anchoring every mother's line as a matriline is "
-                "unconfirmed" + ("; if these prove too fine, this merges into "
-                                 f"{label(mom)}s." if mom and placed_with_mother(h)
-                                 else ". No mother is recorded for her in the file, "
-                                 "so this is a top-level matriline in her pod."))
+                "unconfirmed")
+        if mom and placed_with_mother(h):
+            note += f"; if these prove too fine, this merges into {label(mom)}s."
+        elif mom:
+            note += (f". Her mother {label(mom)} is in a different NOAA founding "
+                     "lineage, so this is a top-level matriline in her pod.")
+        else:
+            note += (". No mother is recorded for her in the file, so this is a "
+                     "top-level matriline in her pod.")
         note = " ".join(filter(None, [note, KEPT_NOTES.get(("entity", f"{label(h)}s"))]))
         ent.append({"entity_id": mat_id[h], "kind": "group", "rank": "matriline",
                     "label": f"{label(h)}s", "taxon_id": taxon, "source_id": SOURCE,

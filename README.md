@@ -4,7 +4,8 @@ A shared register of the marine mammals that [Orcasound](https://live.orcasound.
 [SalishSea.io](https://salishsea.io) both need to talk about — individuals, the groups
 they belong to, and what the words for those groups mean.
 
-**Status: proposed, and under design.** Nothing here is ratified. No row in `data/` has
+**Status: proposed, and under design.** One decision record is accepted, the rest are
+proposed. No row in `data/` has
 been verified by a curator. Read [docs/scope.md](docs/scope.md) first, and disagree with
 it — that is what this stage is for.
 
