@@ -8,12 +8,15 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+## 2026.10.1 — 2026-10-06
+
+The Southern Residents arrive: 289 identifiers minted (222 whales, 67 matrilines), the seven `SEED` Southern Resident entities rewritten in place, 184 mothers, and a new file, `matriarchs.tsv`, naming which whale each matriline is named for. No identifier retired.
+
 ### Register
 - **The Southern Residents are imported from NOAA NWFSC's census file** ([ADR-0023](decisions/0023-southern-residents-from-noaas-census-file.md)), by [`bin/import_srkw.py`](bin/import_srkw.py) at a pinned commit. 227 whales, 76 of them alive in the file, with birth and death years, sex and pod. 184 mothers go into `parentage.tsv`, and that is the first time it holds more than one row. The new identifiers are 222 individuals at `SSA:0020000`–`SSA:0020221` and 67 matrilines at `SSA:0003000`–`SSA:0003066`.
 - **Matrilines are derived from mothers, and they nest.** Every female with a recorded calf heads a matriline, inside her mother's where her mother is recorded: J35 and J57 are in `J35s`, which is in `J17s`, which is in `J5s`. J5 has no recorded mother, so `J5s` sits directly in J pod, as do 25 other top-level lines. This is the Bigg's sub-lineage rule applied to parentage, and it is as unconfirmed as they are (Q22). Six calves that NOAA files under a different founding lineage from their mother's are placed in their pod instead, with a note.
 - **The seven `SEED` Southern Resident entities keep their identifiers, and their facts change in place.** J17 (`SSA:0000105`) is now `presumed_dead` from 2019. `J17s` (`SSA:0000030`) is now inside `J5s` rather than directly in J pod. J50 and J57 lose the months the seed gave them (2014-12, 2020-09) because NOAA gives years only. Their nicknames are unchanged and still `SEED`.
 - **Two things a consumer may trip on.** K36's sex is blank: NOAA codes K36 male and also names K36 as K47's mother, so one of the two is wrong. K47's mother is K36 per NOAA, and the note on that row cites the Puget Sound Institute's tentative K43. Three calves that died before being designated are registered under NOAA's placeholders, `J28-neonate`, `J31-neonate` and `J35-neonate`.
-
 - **`data/matriarchs.tsv`, a new file: which whale each matriline is named for** ([ADR-0024](decisions/0024-a-matriline-names-its-matriarch.md)). 231 rows: all 69 Southern Resident lines and 162 Bigg's lines. `J17s` (`SSA:0000030`) → `J17` (`SSA:0000105`), without parsing a label. `entities.tsv` is unchanged, so a loader that checks headers keeps working. A consumer that wants the link reads the new file. No row for seven Bigg's lineages whose founder the sheet has no row for, or for the 36 Bigg's "lineages" that are a single male.
 
 ### Design
