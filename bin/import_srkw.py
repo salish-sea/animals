@@ -64,6 +64,11 @@ DISAGREEMENTS = {
 }
 
 
+# Contradictions within the file that have been reported to NOAA, by designation.
+UPSTREAM = {
+    "K036": "https://github.com/noaa-nwfsc/srkw-status/issues/1",
+}
+
 # Seed notes that explain the register's modelling rather than state a fact, and that
 # the docs point at. They survive the take-over; every other seed note is superseded.
 KEPT_NOTES = {
@@ -151,6 +156,7 @@ def main():
     # The exception: K036 is coded 2 and is also named as K047's mother. Both cannot
     # hold. Rather than choose, the sex is left blank and the conflict noted; the
     # maternity is kept because it is the claim in dispute elsewhere (DISAGREEMENTS).
+    # Each such conflict is put to NOAA; the question rides in the note (UPSTREAM).
     sex, sex_note = {}, {}
     for a, r in census.items():
         sex[a] = {"1": "F", "2": "M", "0": ""}[r["sexF1M2"]]
@@ -160,6 +166,8 @@ def main():
             sex_note[a] = (f"NOAA codes this animal male (sexF1M2 = 2) but names it as "
                            f"the mother of {kids}. Both cannot hold, so sex is left "
                            "blank until a curator settles which is wrong.")
+            if a in UPSTREAM:
+                sex_note[a] += f" Asked of NOAA: {UPSTREAM[a]}"
 
     # --- 2. matrilines (ADR-0023, judgement 2) ----------------------------------------
     # Derived from parentage, not read from NOAA's `matriline` column, which names a

@@ -949,7 +949,7 @@ SSA:0020090	individual		K32	NCBITaxon:9733	2000		NOAA-NWFSC
 SSA:0020091	individual		K33	NCBITaxon:9733	2001	M	NOAA-NWFSC	
 SSA:0020092	individual		K34	NCBITaxon:9733	2001	M	NOAA-NWFSC	
 SSA:0020093	individual		K35	NCBITaxon:9733	2002	M	NOAA-NWFSC	
-SSA:0020094	individual		K36	NCBITaxon:9733	2003		NOAA-NWFSC	NOAA codes this animal male (sexF1M2 = 2) but names it as the mother of K47. Both cannot hold, so sex is left blank until a curator settles which is wrong.
+SSA:0020094	individual		K36	NCBITaxon:9733	2003		NOAA-NWFSC	NOAA codes this animal male (sexF1M2 = 2) but names it as the mother of K47. Both cannot hold, so sex is left blank until a curator settles which is wrong. Asked of NOAA: https://github.com/noaa-nwfsc/srkw-status/issues/1
 SSA:0020095	individual		K37	NCBITaxon:9733	2003	M	NOAA-NWFSC	
 SSA:0020096	individual		K38	NCBITaxon:9733	2004	M	NOAA-NWFSC	
 SSA:0020097	individual		K39	NCBITaxon:9733	2006		NOAA-NWFSC	
