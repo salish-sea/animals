@@ -313,8 +313,9 @@ def main():
                         "source_id": SOURCE, "note": "NOAA gives the year only."})
 
     # --- 5. merge into the tables --------------------------------------------------------
-    # The seed rows for the taken-over entities are replaced wholesale: their entity row
-    # is rewritten under NOAA's authority, and their seed edges and statuses go. Their
+    # The seed rows for the taken-over entities are replaced: their entity row is
+    # rewritten under NOAA's authority and their seed edges go. Their seed statuses stay,
+    # because status.tsv is append-only, and are superseded instead. Their
     # nicknames stay `SEED` in names.tsv until a naming source is chosen (ADR-0023).
     # Everything else already on disk is kept, and nothing already present is appended.
     ent_by_id = {e["entity_id"]: e for e in ent}
@@ -324,19 +325,24 @@ def main():
     new_entities = [e for e in ent if e["entity_id"] not in known_ids]
     entities += new_entities
 
-    def merge(stem, rows, key, owner):
+    def merge(stem, rows, key, owner, replace_seed=True):
         header, old = tables[stem]
-        kept = [r for r in old
-                if not (r["source_id"] == "SEED" and r[owner] in taken_over)]
-        keys = {tuple(r[k] for k in key) for r in kept}
+        kept = [r for r in old if not (replace_seed and r["source_id"] == "SEED"
+                                       and r[owner] in taken_over)]
+        # A seed status stays beside NOAA's identical one (append-only); only a row this
+        # script already wrote counts as present.
+        keys = {tuple(r[k] for k in key) for r in kept
+                if replace_seed or r["source_id"] == SOURCE}
         added = [r for r in rows if tuple(r[k] for k in key) not in keys]
         return header, kept + added, len(old) - len(kept), len(added)
 
     out = {
         "membership": merge("membership", mem, ("member_id", "group_id"), "member_id"),
         "parentage": merge("parentage", par, ("child_id", "role"), "child_id"),
+        # status.tsv is append-only (ADR-0006): the seed's statuses stay, and NOAA's
+        # supersede them on `recorded`, which is how a correction is made there.
         "status": merge("status", sta, ("entity_id", "status", "effective"),
-                        "entity_id"),
+                        "entity_id", replace_seed=False),
     }
 
     # One source row, pointing at the snapshot most recently read. A refresh moves its
