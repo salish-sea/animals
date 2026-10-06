@@ -62,6 +62,7 @@ Definitions follow the same shape with `working` → `agreed`; see
 | [0021](0021-ssa-is-a-registered-prefix.md) | `SSA` is kept, and claimed as a Bioregistry prefix | Informatics reviewers |
 | [0022](0022-taxonomic-hierarchy-is-ncbis-excerpted.md) | The taxonomic hierarchy is NCBI's, excerpted by script — not curated here (amends 0008) | Informatics reviewers |
 | [0023](0023-southern-residents-from-noaas-census-file.md) | Southern Residents are imported from NOAA NWFSC's public-domain census file (salishsea-io's D-22); matrilines derived from mothers, disagreements noted not settled, SEED identifiers reused (amends 0016 for Southern Residents) | Scientific + informatics |
+| [0024](0024-a-matriline-names-its-matriarch.md) | A matriline names its matriarch, in `matriarchs.tsv` rather than a column, so no consumer's loader breaks; a male is never one | Scientific + informatics |
 
 ## Template
 

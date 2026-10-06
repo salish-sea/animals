@@ -18,7 +18,9 @@ confirmation.
 - Named for the matriarch, which means **the matriline and the whale it is named after
   are two different entities in the register**. The matriline `J17s` is `SSA:0000030`;
   the whale `J17` is `SSA:0000105`. See
-  [ADR-0003](../decisions/0003-one-identifier-space.md).
+  [ADR-0003](../decisions/0003-one-identifier-space.md). Which whale a line is named for
+  is recorded in `data/matriarchs.tsv`, not left to the label
+  ([ADR-0024](../decisions/0024-a-matriline-names-its-matriarch.md)).
 - **The register labels matrilines in the plural** — `J17s`, `T090s` — following ordinary
   community usage. The bare designation and the `<id> matriline` form are recorded as
   `hidden` names so either resolves in autocomplete.

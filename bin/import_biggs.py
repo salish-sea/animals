@@ -208,7 +208,7 @@ def main():
         ind_id[desig] = by_label.get(desig) or mint(INDIVIDUAL_BLOCK, used)
 
     # --- emit ---------------------------------------------------------------------
-    ent, nam, mem, sta = [], [], [], []
+    ent, nam, mem, sta, mat = [], [], [], [], []
 
     def add_name(row):
         key = (row[0], row[1], row[3])
@@ -232,9 +232,27 @@ def main():
     known_edges = existing_keys("membership", (0, 1))
     known_names = existing_keys("names", (0, 1, 3))
     known_status = existing_keys("status", (0, 4, 2))
+    known_matriarchs = {k[0] for k in existing_keys("matriarchs", (0,))}
+
+    # --- matriarchs (ADR-0024) -----------------------------------------------------
+    # A lineage is named for the animal whose designation it carries: T065s for T065,
+    # T073As for T073A. Recorded only where that animal is registered and not sexed M.
+    #  - Seven lineages (T002s, T012s, ...) have no row for their founder in the sheet,
+    #    so they get no matriarch: absent means "not recorded".
+    #  - 36 lineages are named for a lone male: the prefix rule above gives every
+    #    T-number a group, and for these the group holds one male and nobody else. A
+    #    male heads no matriline, so no row is written. Whether those groups should
+    #    exist at all is a question about this import, not about matriarchs.
+    def add_matriarch(head, line_id):
+        rec = individuals.get(head)
+        if rec and rec["sex"] != "M" and line_id not in known_matriarchs:
+            known_matriarchs.add(line_id)
+            mat.append([line_id, ind_id[head], SOURCE,
+                        "Read off the designation, as the lineage itself is."])
 
     for lineage in sorted(lineages):
         eid = mat_id[lineage]
+        add_matriarch(lineage, eid)
         # Reusing an existing entity must not skip its edges — an earlier version of this
         # script did, leaving the seeded T090s with no parent.
         if (eid, BIGGS_ECOTYPE) not in known_edges:
@@ -252,6 +270,7 @@ def main():
 
     for head in sub_heads:
         eid = mat_id[head]
+        add_matriarch(head, eid)
         parent = deepest_group(head, include_self=False)
         if (eid, mat_id[parent]) not in known_edges:
             mem.append([eid, mat_id[parent], "", "", SOURCE,
@@ -313,14 +332,15 @@ def main():
 
     print(f"{len(individuals)} individuals, {len(lineages)} matrilines, "
           f"{len(sub_heads)} sub-lineages in the sheet; new rows: {len(ent)} entities, "
-          f"{len(mem)} membership, {len(nam)} names, {len(sta)} status", file=sys.stderr)
+          f"{len(mem)} membership, {len(nam)} names, {len(sta)} status, "
+          f"{len(mat)} matriarchs", file=sys.stderr)
 
     if "--apply" not in sys.argv:
         print("dry run; pass --apply to write", file=sys.stderr)
         return
 
     for stem, rows in (("entities", ent), ("names", nam),
-                       ("membership", mem), ("status", sta)):
+                       ("membership", mem), ("status", sta), ("matriarchs", mat)):
         path = DATA / f"{stem}.tsv"
         width = len(path.read_text().splitlines()[0].split("\t"))
         with path.open("a") as f:

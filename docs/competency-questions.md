@@ -36,6 +36,7 @@ generating this table rather than maintaining it by hand.
 | C11 | A moderator heard an orca but couldn't place the ecotype. What do they tag? | Orcasound, ~30% of biophony bouts | Yes — the `Orcinus orca` taxon entity, with no ecotype alongside |
 | C12 | This bout is a humpback / sea lion / harbour seal. What do they tag? | Orcasound, SalishSea.io | Yes — `kind = taxon` entities |
 | C13 | Who is this animal's mother? | SalishSea.io profile pages, curators checking a roster | Yes, `parentage.tsv` — for the Southern Residents, from NOAA's census ([ADR-0023](../decisions/0023-southern-residents-from-noaas-census-file.md)), and for almost no other animal. Absent means *not recorded*, never *no mother*. It is not recoverable from membership: a matriline spans generations, so membership implies descent from the matriarch. See [ADR-0016](../decisions/0016-parentage.md) |
+| C14 | Which whale is this matriline named for, and which line is this whale's? | SalishSea.io matriline and individual pages | Yes, `matriarchs.tsv` — without parsing a label. Absent means *not recorded*: seven Bigg's lineages are named for a founder the register does not hold, and a male is never recorded as one. See [ADR-0024](../decisions/0024-a-matriline-names-its-matriarch.md) |
 
 ## Open — the model does not answer these yet
 

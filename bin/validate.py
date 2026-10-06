@@ -38,6 +38,7 @@ TABLES = [
     ("name", "names", {}),
     ("membership", "membership", {"start": "starts", "end": "ends"}),
     ("parentage", "parentage", {}),
+    ("matriarch", "matriarchs", {}),
     ("status", "status", {}),
     ("mapping", "mappings", {}),
     ("deprecation", "deprecations", {}),
@@ -315,6 +316,49 @@ def graph_checks(db: sqlite3.Connection) -> None:
     ):
         warn(f"parentage.tsv: {child} ({cg}) and its mother {mother} ({mg}) are in "
              "different matrilines; expected the same unless the matriline has split")
+
+    # ADR-0024: a matriarch is a female (or one not known to be male) who belongs to the
+    # line named for her. Each is a hard rule; a row breaking one is a wrong row.
+    for line, head, problem in db.execute(
+        """SELECT m.matriline_id, m.matriarch_id,
+                  CASE WHEN g.kind <> 'group' OR coalesce(g.rank, '') <> 'matriline'
+                         THEN 'is not a matriline'
+                       WHEN h.kind <> 'individual' THEN 'names a matriarch that is not an animal'
+                       WHEN h.sex = 'M' THEN 'names a matriarch sexed M'
+                       WHEN NOT EXISTS (SELECT 1 FROM ancestor a
+                                        WHERE a.entity_id = m.matriarch_id
+                                          AND a.ancestor_id = m.matriline_id)
+                         THEN 'names a matriarch who is not a member of it'
+                  END
+           FROM matriarch m
+           JOIN entity g ON g.entity_id = m.matriline_id
+           JOIN entity h ON h.entity_id = m.matriarch_id"""
+    ):
+        if problem:
+            err(f"matriarchs.tsv: {line} {problem} ({head})")
+
+    # The nesting rule both importers state (ADR-0015, ADR-0023): a mother heads a line,
+    # and a daughter's line sits inside her mother's. Warnings, because NOAA files some
+    # calves under a different founding lineage from their mother's, and a line headed by
+    # one is top-level on purpose; the membership row's note says why.
+    for (mother,) in db.execute(
+        """SELECT DISTINCT p.parent_id FROM parentage p
+           WHERE p.role = 'mother'
+             AND p.parent_id NOT IN (SELECT matriarch_id FROM matriarch)"""
+    ):
+        warn(f"parentage.tsv: {mother} is a recorded mother but heads no matriline "
+             "in matriarchs.tsv")
+    for line, mline in db.execute(
+        """SELECT d.matriline_id, m.matriline_id
+           FROM matriarch d
+           JOIN parentage p ON p.child_id = d.matriarch_id AND p.role = 'mother'
+           JOIN matriarch m ON m.matriarch_id = p.parent_id
+           WHERE NOT EXISTS (SELECT 1 FROM ancestor a
+                             WHERE a.entity_id = d.matriline_id
+                               AND a.ancestor_id = m.matriline_id)"""
+    ):
+        warn(f"matriarchs.tsv: {line} is not inside {mline}, the line of its matriarch's "
+             "mother")
 
     # EDTF is only compared when both dates start with a plain year, which is what the
     # roster actually carries. '../1966' and a bare qualifier yield nothing to compare,
