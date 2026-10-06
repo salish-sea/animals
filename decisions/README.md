@@ -35,8 +35,7 @@ failure mode #3 in [background.md](../docs/background.md). So:
 Definitions follow the same shape with `working` → `agreed`; see
 [definitions/README.md](../definitions/README.md).
 
-**All records are currently `Proposed`.** Nothing has been ratified, and nothing has yet
-been formally put to the scientific reviewers.
+**ADR-0023 is the only `Accepted` record.** Every other record is still `Proposed`. ADR-0023 is also the only one so far that has been formally put to a scientific reviewer.
 
 | # | Decision | Audience |
 |---|---|---|
@@ -62,6 +61,7 @@ been formally put to the scientific reviewers.
 | [0020](0020-localised-preferred-names-are-name-rows.md) | Localised preferred names are `names.tsv` rows, added when they exist | Scientific + informatics |
 | [0021](0021-ssa-is-a-registered-prefix.md) | `SSA` is kept, and claimed as a Bioregistry prefix | Informatics reviewers |
 | [0022](0022-taxonomic-hierarchy-is-ncbis-excerpted.md) | The taxonomic hierarchy is NCBI's, excerpted by script — not curated here (amends 0008) | Informatics reviewers |
+| [0023](0023-southern-residents-from-noaas-census-file.md) | Southern Residents are imported from NOAA NWFSC's public-domain census file (salishsea-io's D-22); matrilines derived from mothers, disagreements noted not settled, SEED identifiers reused (amends 0016 for Southern Residents) | Scientific + informatics |
 
 ## Template
 

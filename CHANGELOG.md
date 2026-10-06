@@ -8,6 +8,9 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+### Design
+- **[ADR-0023](decisions/0023-southern-residents-from-noaas-census-file.md) is Accepted, the first record to be.** Southern Residents will come from NOAA NWFSC's census file. Their matrilines are derived from their mothers, which amends ADR-0016 for this population only. Disagreements with other accounts go in notes rather than being settled, and the five `SEED` whales keep their identifiers. The scientific reviewer and the informatics reviewer each approved it explicitly. salishsea-io's rights determination D-22, which reads the file as public domain, was adopted at the same time, so the import ([#44](https://github.com/salish-sea/animals/issues/44)) is no longer blocked. Nothing in `data/` changes yet.
+
 ## 2026.09.6 — 2026-09-22
 
 Eight search names, and no identifier added, moved or retired. The register's first names in a language other than English.
