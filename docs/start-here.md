@@ -80,9 +80,12 @@ GitHub. Two things are worth noticing in it:
   derived and are the least confident thing here** — see [Q22](https://github.com/salish-sea/animals/issues/13).
 - **The Southern Residents are imported from NOAA's census file**, also by script
   ([ADR-0023](../decisions/0023-southern-residents-from-noaas-census-file.md)): 227
-  whales with their mothers, and 69 matrilines **derived from those mothers**. Every
-  female with a recorded calf heads a matriline nested inside her mother's (J35s inside
-  J17s inside J5s), the same rule as the Bigg's sub-lineages, and just as unconfirmed.
+  whales, 184 of them with a recorded mother, and 69 matrilines **derived from those
+  mothers**. Every female with a recorded calf heads a matriline, nested inside her
+  mother's (J35s inside J17s inside J5s). It is top-level in her pod when she has no
+  recorded mother, as J5 has not, or when NOAA files her under a different founding
+  lineage from her mother's. The same rule as the Bigg's sub-lineages, and just as
+  unconfirmed.
   Nicknames are still `SEED`.
 - **Almost nothing is ratified.** ADR-0023 is `Accepted`; every other decision record is
   `Proposed`. They are written
