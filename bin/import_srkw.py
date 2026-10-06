@@ -362,10 +362,52 @@ def main():
                  "bin/import_srkw.py (ADR-0023)."),
     })
 
+    # Drift: a row this script wrote from an earlier snapshot that the current one no
+    # longer produces. Appending would leave both the old claim and the new one, and
+    # replacing would edit an imported row, which only a curator may do (ADR-0015). So
+    # the run stops and lists them. A curator corrects each row by hand, changing its
+    # `source_id` to whoever now stands behind it, and re-runs. A row a curator has
+    # already taken over no longer carries SOURCE and is not this script's concern.
+    generated = {
+        "entities": {e["entity_id"]: (e["label"], e.get("born", ""), e.get("sex", ""))
+                     for e in ent},
+        "membership": {(m["member_id"], m["group_id"]) for m in mem},
+        "parentage": {(p["child_id"], p["role"]): p["parent_id"] for p in par},
+        "status": {(s["entity_id"], s["status"], s["effective"]) for s in sta},
+    }
+    drift = []
+    for e in entities:
+        if (e["source_id"] == SOURCE and e["entity_id"] in generated["entities"]
+                and e["entity_id"] not in taken_over):
+            was = (e["label"], e.get("born", ""), e.get("sex", ""))
+            now = generated["entities"][e["entity_id"]]
+            if was != now:
+                drift.append(f"entities: {e['entity_id']} was {was}, census now {now}")
+    for r in tables["membership"][1]:
+        if r["source_id"] == SOURCE and (r["member_id"], r["group_id"]) not in \
+                generated["membership"]:
+            drift.append(f"membership: {r['member_id']} in {r['group_id']} is no longer "
+                         "derived")
+    for r in tables["parentage"][1]:
+        key = (r["child_id"], r["role"])
+        if r["source_id"] == SOURCE and generated["parentage"].get(key) != r["parent_id"]:
+            drift.append(f"parentage: {r['child_id']}'s {r['role']} was {r['parent_id']}, "
+                         f"census now {generated['parentage'].get(key) or 'none'}")
+    for r in tables["status"][1]:
+        if r["source_id"] == SOURCE and (r["entity_id"], r["status"], r["effective"]) \
+                not in generated["status"]:
+            drift.append(f"status: {r['entity_id']} {r['status']} from {r['effective']} "
+                         "is no longer in the census")
+
     print(f"{len(census)} whales, {len(heads)} matrilines in the census; "
           f"{len(taken_over)} seed entities taken over; new: {len(new_entities)} "
           "entities, " + ", ".join(f"{n} {s} (-{d} seed)" for s, (_, _, d, n)
                                     in out.items()), file=sys.stderr)
+    for d in drift:
+        print(f"drift: {d}", file=sys.stderr)
+    if drift:
+        sys.exit(f"{len(drift)} imported rows disagree with this snapshot; correct them "
+                 "by hand (ADR-0015) and re-run. Nothing written.")
 
     if "--apply" not in sys.argv:
         print("dry run; pass --apply to write", file=sys.stderr)
