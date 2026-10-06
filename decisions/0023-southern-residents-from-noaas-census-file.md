@@ -1,6 +1,6 @@
 # ADR-0023: Southern Residents are imported from NOAA's census file
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-06. Scott Veirs approved it for the scientific reviewers and Peter Abrahamsen for the informatics reviewers, both explicitly, so the two-week window was not needed.
 - **Date:** 2026-09-29
 - **Audience:** Scientific reviewers — this chooses the source for every Southern Resident animal and their mothers, and it states how its disagreements with other accounts are handled. Informatics reviewers — it adds a source, an import script and a refresh.
 - **Amends:** [ADR-0016](0016-parentage.md), for Southern Residents only. It takes up that record's own reconsideration clause: matrilines are derived from parentage where parentage is dense.
@@ -17,7 +17,7 @@ The authority, the Center for Whale Research (CWR), publishes no open roster. It
 
 **Southern Resident individuals, their mothers, sex and birth and death years are imported from `orca.csv` in NOAA Northwest Fisheries Science Center's [`noaa-nwfsc/srkw-status`](https://github.com/noaa-nwfsc/srkw-status), by a script under [ADR-0015](0015-bulk-import.md).** The first import pins commit `ba0b8c40e422aa9f5afcf845a0697b4d7d15701f` (2026-02-03). A new `sources.tsv` row, `NOAA-NWFSC`, stands behind every row it produces.
 
-The file is the census table behind NOAA's population projections and 5-year status reviews. It has one row per whale catalogued since the census began, with `animal`, `birth`, `death`, `pod`, `matriline`, `mom` and `sexF1M2`. Births run through 2025. Every mother it names is itself a row in the file. Its README says the content is a U.S. government work, in the public domain in the United States (17 U.S.C. §105). It also carries a GPL-3 license, which covers the package's code and cannot attach to public-domain facts. That reading is salishsea-io's rights determination [D-22](https://github.com/salish-sea/salishsea-io/blob/claude/peaceful-darwin-5esd9n/docs/rights-policy.md#72-noaa-nwfsc-southern-resident-census-file-d-22), which is itself still proposed. Until D-22 is adopted, the `NOAA-NWFSC` row's `license_status` is `not-yet-cleared` and the import is not merged.
+The file is the census table behind NOAA's population projections and 5-year status reviews. It has one row per whale catalogued since the census began, with `animal`, `birth`, `death`, `pod`, `matriline`, `mom` and `sexF1M2`. Births run through 2025. Every mother it names is itself a row in the file. Its README says the content is a U.S. government work, in the public domain in the United States (17 U.S.C. §105). It also carries a GPL-3 license, which covers the package's code and cannot attach to public-domain facts. That reading is salishsea-io's rights determination [D-22](D22URL), adopted 2026-10-06 on the same approval as this record. So the import needs no permission, and the `NOAA-NWFSC` row's `license_status` is `cleared`.
 
 The judgements the script makes, which are what a reviewer should check:
 
@@ -43,7 +43,7 @@ It is the only complete, current and reusable roster found:
 | [Orca Network](https://orcanetwork.org/resources/srkw-births-and-deaths/) | births and deaths since 1990 | in prose | December 2025 | all rights reserved; misfiles J61, omits J60 |
 | CWR ID guide | whole population | yes | 2025 | paid; reproduction needs consent |
 
-Its data are CWR's own census observations, made under NOAA contract. So taking the file takes the authority's facts as the government has already published them. It does not route around CWR. CWR is credited as the observer in the `NOAA-NWFSC` row's note. Asking CWR is still worthwhile for what the file lacks (photos, guide content, confirmation of disputed mothers), Once D-22 is adopted, it does not gate the import.
+Its data are CWR's own census observations, made under NOAA contract. So taking the file takes the authority's facts as the government has already published them. It does not route around CWR. CWR is credited as the observer in the `NOAA-NWFSC` row's note. Asking CWR is still worthwhile for what the file lacks (photos, guide content, confirmation of disputed mothers). It does not gate the import.
 
 ## Consequences
 
