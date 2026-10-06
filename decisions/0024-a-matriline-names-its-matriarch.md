@@ -54,7 +54,7 @@ Both importers write the rows: `bin/import_srkw.py` for every line it derives, a
 
 - SalishSea.io can read the matriarch from the register and drop `anchor_individual_id`, which is its decision to make.
 - `entities.tsv` is unchanged, so no consumer's loader breaks.
-- The 36 single-male Bigg's groups are now visible as a set, where before they were indistinguishable from real lineages.
+- The 36 single-male Bigg's groups are counted and explained here and in `bin/import_biggs.py`, but the data does not mark them. In `matriarchs.tsv` they look the same as the seven lineages whose founder is unregistered: both simply have no row. Telling them apart takes the label, so if they are to be dealt with, it is by a change to the Bigg's import, not by reading this table.
 
 ## Alternatives considered
 
