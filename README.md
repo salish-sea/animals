@@ -122,10 +122,12 @@ SSA:0000900  Orcinus orca (taxon)
        └─ SSA:0000010  Southern Resident (community)
             └─ SSA:0000011  J clan
                  ├─ SSA:0000020  J pod
-                 │    └─ SSA:0000030  J17s (matriline)
-                 │         ├─ SSA:0000105  J17   ← the whale, not the matriline
-                 │         ├─ SSA:0000101  J35
-                 │         └─ SSA:0000102  J57
+                 │    └─ SSA:0003001  J5s (matriline)
+                 │         └─ SSA:0000030  J17s (matriline, inside her mother's)
+                 │              ├─ SSA:0000105  J17   ← the whale, not the matriline
+                 │              └─ SSA:0003012  J35s
+                 │                   ├─ SSA:0000101  J35
+                 │                   └─ SSA:0000102  J57
                  ├─ SSA:0000021  K pod
                  └─ SSA:0000022  L pod
 ```
@@ -142,7 +144,7 @@ nothing should ever key on a label, because labels are meant to change.
 ## What it deliberately doesn't do
 
 No sightings, no locations, no photographs, no health data, no genealogy beyond
-membership, and no sound vocabulary — signal types live in
+membership and mothers, and no sound vocabulary — signal types live in
 [orcasound/signals-srkw](https://github.com/orcasound/signals-srkw). Each boundary is
 argued in [docs/scope.md](docs/scope.md); the load-bearing one is
 [ADR-0007](decisions/0007-no-observations.md).
