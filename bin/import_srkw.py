@@ -336,6 +336,15 @@ def main():
         added = [r for r in rows if tuple(r[k] for k in key) not in keys]
         return header, kept + added, len(old) - len(kept), len(added)
 
+    # A curator who corrects a derived membership takes the row over, so it no longer
+    # carries SOURCE (ADR-0015). Re-adding the derived edge beside it would undo the
+    # correction, so a member with any curated edge gets no derived one. The curator's
+    # edge is the answer; the run says it deferred, and carries on.
+    curated = {r["member_id"] for r in tables["membership"][1]
+               if r["source_id"] not in (SOURCE, "SEED")}
+    mem_curated = [m for m in mem if m["member_id"] in curated]
+    mem = [m for m in mem if m["member_id"] not in curated]
+
     out = {
         "membership": merge("membership", mem, ("member_id", "group_id"), "member_id"),
         "parentage": merge("parentage", par, ("child_id", "role"), "child_id"),
@@ -377,10 +386,13 @@ def main():
     generated = {
         "entities": {e["entity_id"]: (e["label"], e.get("born", ""), e.get("sex", ""))
                      for e in ent},
-        "membership": {(m["member_id"], m["group_id"]) for m in mem},
+        "membership": {(m["member_id"], m["group_id"]) for m in mem + mem_curated},
         "parentage": {(p["child_id"], p["role"]): p["parent_id"] for p in par},
         "status": {(s["entity_id"], s["status"], s["effective"]) for s in sta},
     }
+    for m in mem_curated:
+        print(f"deferring to the curated membership of {m['member_id']}; derived edge to "
+              f"{m['group_id']} not added", file=sys.stderr)
     drift = []
     for e in entities:
         if (e["source_id"] == SOURCE and e["entity_id"] in generated["entities"]
