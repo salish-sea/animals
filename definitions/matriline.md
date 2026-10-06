@@ -32,6 +32,14 @@ confirmation.
   heads (`T064B1`, `T075C`) are not even sexed in the source. They were minted ahead of
   [Q22](https://github.com/salish-sea/animals/issues/13), which asks whether they are real
   groups. Record the narrowest one you are sure of.
+- **Southern Resident matrilines nest by the same rule, read off parentage instead.**
+  Every female NOAA's census names as a mother heads a matriline inside her mother's,
+  unless NOAA files the two under different founding lineages:
+  `J35s` is in `J17s`, which is in `J5s`. 69 of them, derived by
+  [`bin/import_srkw.py`](../bin/import_srkw.py) under
+  [ADR-0023](../decisions/0023-southern-residents-from-noaas-census-file.md). A female with
+  no recorded mother heads a top-level matriline in her pod. Which of these the community
+  would actually call a matriline is the same open question as Q22.
 
 ## What it is not
 

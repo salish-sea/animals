@@ -7,14 +7,14 @@ SSA:0000011	group	clan	J clan	NCBITaxon:9733			SEED	Southern Residents are belie
 SSA:0000020	group	pod	J pod	NCBITaxon:9733			SEED	
 SSA:0000021	group	pod	K pod	NCBITaxon:9733			SEED	
 SSA:0000022	group	pod	L pod	NCBITaxon:9733			SEED	
-SSA:0000030	group	matriline	J17s	NCBITaxon:9733			SEED	The matriline, distinct from individual SSA:0000105. See ADR-0003.
-SSA:0000031	group	matriline	L32s	NCBITaxon:9733			SEED	
+SSA:0000030	group	matriline	J17s	NCBITaxon:9733			NOAA-NWFSC	J17 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J5s. The matriline, distinct from individual J17. See ADR-0003.
+SSA:0000031	group	matriline	L32s	NCBITaxon:9733			NOAA-NWFSC	L32 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
 SSA:0000040	group	matriline	T090s	NCBITaxon:9733			SEED	
-SSA:0000101	individual		J35	NCBITaxon:9733	1998	F	SEED	Birth year unverified.
-SSA:0000102	individual		J57	NCBITaxon:9733	2020-09	M	SEED	
-SSA:0000103	individual		J50	NCBITaxon:9733	2014-12	F	SEED	See status.tsv.
-SSA:0000104	individual		L87	NCBITaxon:9733	1992	M	SEED	Mother was L32, who is not yet in the register, so the edge is not in parentage.tsv. Travelled with K pod and later J pod. See ADR-0005 and docs/walkthrough.md.
-SSA:0000105	individual		J17	NCBITaxon:9733	1977	F	SEED	The individual, distinct from matriline SSA:0000030.
+SSA:0000101	individual		J35	NCBITaxon:9733	1998	F	NOAA-NWFSC	
+SSA:0000102	individual		J57	NCBITaxon:9733	2020	M	NOAA-NWFSC	
+SSA:0000103	individual		J50	NCBITaxon:9733	2014	F	NOAA-NWFSC	
+SSA:0000104	individual		L87	NCBITaxon:9733	1992	M	NOAA-NWFSC	
+SSA:0000105	individual		J17	NCBITaxon:9733	1977	F	NOAA-NWFSC	The individual, distinct from matriline J17s. See ADR-0003.
 SSA:0000900	taxon		Orcinus orca	NCBITaxon:9733			SEED	Tag this when an orca is heard but the ecotype is undetermined.
 SSA:0000901	taxon		Megaptera novaeangliae	NCBITaxon:9773			SEED	
 SSA:0000902	taxon		Eumetopias jubatus	NCBITaxon:34886			SEED	
@@ -788,3 +788,292 @@ SSA:0000952	taxon		Zalophus	NCBITaxon:9703			SEED	NCBI counts three species. Not
 SSA:0000953	taxon		Delphinapterus leucas	NCBITaxon:9749			SEED	A vagrant here, not a resident: minted because SalishSea.io holds a Whale Alert report of one inside the Salish Sea.
 SSA:0000954	taxon		Eubalaena	NCBITaxon:27605			SEED	Right whales. Whale Alert reports them at genus rank; NCBI counts three species.
 SSA:0000955	taxon		Hyperoodon	NCBITaxon:48743			SEED	Bottlenose whales. Whale Alert reports them at genus rank; NCBI counts two species.
+SSA:0003000	group	matriline	J4s	NCBITaxon:9733			NOAA-NWFSC	J4 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003001	group	matriline	J5s	NCBITaxon:9733			NOAA-NWFSC	J5 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003002	group	matriline	J10s	NCBITaxon:9733			NOAA-NWFSC	J10 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003003	group	matriline	J11s	NCBITaxon:9733			NOAA-NWFSC	J11 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J4s.
+SSA:0003004	group	matriline	J12s	NCBITaxon:9733			NOAA-NWFSC	J12 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003005	group	matriline	J14s	NCBITaxon:9733			NOAA-NWFSC	J14 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J12s.
+SSA:0003006	group	matriline	J16s	NCBITaxon:9733			NOAA-NWFSC	J16 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003007	group	matriline	J19s	NCBITaxon:9733			NOAA-NWFSC	J19 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J4s.
+SSA:0003008	group	matriline	J20s	NCBITaxon:9733			NOAA-NWFSC	J20 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J10s.
+SSA:0003009	group	matriline	J22s	NCBITaxon:9733			NOAA-NWFSC	J22 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J10s.
+SSA:0003010	group	matriline	J28s	NCBITaxon:9733			NOAA-NWFSC	J28 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J17s.
+SSA:0003011	group	matriline	J31s	NCBITaxon:9733			NOAA-NWFSC	J31 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J11s.
+SSA:0003012	group	matriline	J35s	NCBITaxon:9733			NOAA-NWFSC	J35 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J17s.
+SSA:0003013	group	matriline	J36s	NCBITaxon:9733			NOAA-NWFSC	J36 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J16s.
+SSA:0003014	group	matriline	J37s	NCBITaxon:9733			NOAA-NWFSC	J37 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J14s.
+SSA:0003015	group	matriline	J40s	NCBITaxon:9733			NOAA-NWFSC	J40 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J14s.
+SSA:0003016	group	matriline	J41s	NCBITaxon:9733			NOAA-NWFSC	J41 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J19s.
+SSA:0003017	group	matriline	J42s	NCBITaxon:9733			NOAA-NWFSC	J42 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into J16s.
+SSA:0003018	group	matriline	K3s	NCBITaxon:9733			NOAA-NWFSC	K3 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into K8s.
+SSA:0003019	group	matriline	K4s	NCBITaxon:9733			NOAA-NWFSC	K4 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003020	group	matriline	K7s	NCBITaxon:9733			NOAA-NWFSC	K7 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003021	group	matriline	K8s	NCBITaxon:9733			NOAA-NWFSC	K8 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003022	group	matriline	K11s	NCBITaxon:9733			NOAA-NWFSC	K11 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into K7s.
+SSA:0003023	group	matriline	K12s	NCBITaxon:9733			NOAA-NWFSC	K12 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into K4s.
+SSA:0003024	group	matriline	K13s	NCBITaxon:9733			NOAA-NWFSC	K13 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into K11s.
+SSA:0003025	group	matriline	K14s	NCBITaxon:9733			NOAA-NWFSC	K14 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into K3s.
+SSA:0003026	group	matriline	K16s	NCBITaxon:9733			NOAA-NWFSC	K16 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into K3s.
+SSA:0003027	group	matriline	K18s	NCBITaxon:9733			NOAA-NWFSC	K18 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003028	group	matriline	K20s	NCBITaxon:9733			NOAA-NWFSC	K20 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into K13s.
+SSA:0003029	group	matriline	K22s	NCBITaxon:9733			NOAA-NWFSC	K22 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into K12s.
+SSA:0003030	group	matriline	K27s	NCBITaxon:9733			NOAA-NWFSC	K27 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into K13s.
+SSA:0003031	group	matriline	K28s	NCBITaxon:9733			NOAA-NWFSC	K28 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into K12s.
+SSA:0003032	group	matriline	K36s	NCBITaxon:9733			NOAA-NWFSC	K36 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into K14s.
+SSA:0003033	group	matriline	L2s	NCBITaxon:9733			NOAA-NWFSC	L2 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003034	group	matriline	L3s	NCBITaxon:9733			NOAA-NWFSC	L3 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003035	group	matriline	L4s	NCBITaxon:9733			NOAA-NWFSC	L4 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003036	group	matriline	L5s	NCBITaxon:9733			NOAA-NWFSC	L5 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003037	group	matriline	L7s	NCBITaxon:9733			NOAA-NWFSC	L7 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003038	group	matriline	L11s	NCBITaxon:9733			NOAA-NWFSC	L11 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003039	group	matriline	L12s	NCBITaxon:9733			NOAA-NWFSC	L12 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003040	group	matriline	L15s	NCBITaxon:9733			NOAA-NWFSC	L15 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003041	group	matriline	L21s	NCBITaxon:9733			NOAA-NWFSC	L21 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003042	group	matriline	L22s	NCBITaxon:9733			NOAA-NWFSC	L22 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L32s.
+SSA:0003043	group	matriline	L23s	NCBITaxon:9733			NOAA-NWFSC	L23 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003044	group	matriline	L26s	NCBITaxon:9733			NOAA-NWFSC	L26 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003045	group	matriline	L27s	NCBITaxon:9733			NOAA-NWFSC	L27 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003046	group	matriline	L28s	NCBITaxon:9733			NOAA-NWFSC	L28 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003047	group	matriline	L35s	NCBITaxon:9733			NOAA-NWFSC	L35 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003048	group	matriline	L37s	NCBITaxon:9733			NOAA-NWFSC	L37 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003049	group	matriline	L43s	NCBITaxon:9733			NOAA-NWFSC	L43 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L37s.
+SSA:0003050	group	matriline	L45s	NCBITaxon:9733			NOAA-NWFSC	L45 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed. No mother is recorded for her in the file, so this is a top-level matriline in her pod.
+SSA:0003051	group	matriline	L47s	NCBITaxon:9733			NOAA-NWFSC	L47 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L21s.
+SSA:0003052	group	matriline	L51s	NCBITaxon:9733			NOAA-NWFSC	L51 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L3s.
+SSA:0003053	group	matriline	L54s	NCBITaxon:9733			NOAA-NWFSC	L54 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L35s.
+SSA:0003054	group	matriline	L55s	NCBITaxon:9733			NOAA-NWFSC	L55 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L4s.
+SSA:0003055	group	matriline	L60s	NCBITaxon:9733			NOAA-NWFSC	L60 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L26s.
+SSA:0003056	group	matriline	L67s	NCBITaxon:9733			NOAA-NWFSC	L67 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L2s.
+SSA:0003057	group	matriline	L72s	NCBITaxon:9733			NOAA-NWFSC	L72 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L43s.
+SSA:0003058	group	matriline	L77s	NCBITaxon:9733			NOAA-NWFSC	L77 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L11s.
+SSA:0003059	group	matriline	L82s	NCBITaxon:9733			NOAA-NWFSC	L82 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L55s.
+SSA:0003060	group	matriline	L83s	NCBITaxon:9733			NOAA-NWFSC	L83 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L47s.
+SSA:0003061	group	matriline	L86s	NCBITaxon:9733			NOAA-NWFSC	L86 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L4s.
+SSA:0003062	group	matriline	L90s	NCBITaxon:9733			NOAA-NWFSC	L90 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L26s.
+SSA:0003063	group	matriline	L91s	NCBITaxon:9733			NOAA-NWFSC	L91 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L47s.
+SSA:0003064	group	matriline	L94s	NCBITaxon:9733			NOAA-NWFSC	L94 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L11s.
+SSA:0003065	group	matriline	L103s	NCBITaxon:9733			NOAA-NWFSC	L103 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L55s.
+SSA:0003066	group	matriline	L119s	NCBITaxon:9733			NOAA-NWFSC	L119 and her descendants, derived from NOAA's maternity records (ADR-0023). Anchoring every mother's line as a matriline is unconfirmed; if these prove too fine, this merges into L77s.
+SSA:0020000	individual		J1	NCBITaxon:9733	1951	M	NOAA-NWFSC	
+SSA:0020001	individual		J2	NCBITaxon:9733	1911	F	NOAA-NWFSC	
+SSA:0020002	individual		J3	NCBITaxon:9733	1953	M	NOAA-NWFSC	
+SSA:0020003	individual		J4	NCBITaxon:9733	1957	F	NOAA-NWFSC	
+SSA:0020004	individual		J5	NCBITaxon:9733	1938	F	NOAA-NWFSC	
+SSA:0020005	individual		J6	NCBITaxon:9733	1956	M	NOAA-NWFSC	
+SSA:0020006	individual		J7	NCBITaxon:9733	1939	F	NOAA-NWFSC	
+SSA:0020007	individual		J8	NCBITaxon:9733	1933	F	NOAA-NWFSC	
+SSA:0020008	individual		J9	NCBITaxon:9733	1917	F	NOAA-NWFSC	
+SSA:0020009	individual		J10	NCBITaxon:9733	1962	F	NOAA-NWFSC	
+SSA:0020010	individual		J11	NCBITaxon:9733	1972	F	NOAA-NWFSC	
+SSA:0020011	individual		J12	NCBITaxon:9733	1935	F	NOAA-NWFSC	
+SSA:0020012	individual		J13	NCBITaxon:9733	1971	F	NOAA-NWFSC	
+SSA:0020013	individual		J14	NCBITaxon:9733	1974	F	NOAA-NWFSC	
+SSA:0020014	individual		J15	NCBITaxon:9733	1976	M	NOAA-NWFSC	
+SSA:0020015	individual		J16	NCBITaxon:9733	1972	F	NOAA-NWFSC	
+SSA:0020016	individual		J18	NCBITaxon:9733	1977	M	NOAA-NWFSC	
+SSA:0020017	individual		J19	NCBITaxon:9733	1979	F	NOAA-NWFSC	
+SSA:0020018	individual		J20	NCBITaxon:9733	1981	F	NOAA-NWFSC	
+SSA:0020019	individual		J21	NCBITaxon:9733	1982		NOAA-NWFSC	
+SSA:0020020	individual		J22	NCBITaxon:9733	1985	F	NOAA-NWFSC	
+SSA:0020021	individual		J23	NCBITaxon:9733	1987	M	NOAA-NWFSC	
+SSA:0020022	individual		J24	NCBITaxon:9733	1972		NOAA-NWFSC	
+SSA:0020023	individual		J25	NCBITaxon:9733	1988		NOAA-NWFSC	
+SSA:0020024	individual		J26	NCBITaxon:9733	1991	M	NOAA-NWFSC	
+SSA:0020025	individual		J27	NCBITaxon:9733	1991	M	NOAA-NWFSC	
+SSA:0020026	individual		J28	NCBITaxon:9733	1993	F	NOAA-NWFSC	
+SSA:0020027	individual		J28-neonate	NCBITaxon:9733	2013	M	NOAA-NWFSC	A calf that died before it was given a designation; the label is NOAA's placeholder.
+SSA:0020028	individual		J29	NCBITaxon:9733	1993	M	NOAA-NWFSC	
+SSA:0020029	individual		J30	NCBITaxon:9733	1995	M	NOAA-NWFSC	
+SSA:0020030	individual		J31	NCBITaxon:9733	1995	F	NOAA-NWFSC	
+SSA:0020031	individual		J31-neonate	NCBITaxon:9733	2016		NOAA-NWFSC	A calf that died before it was given a designation; the label is NOAA's placeholder.
+SSA:0020032	individual		J32	NCBITaxon:9733	1996	F	NOAA-NWFSC	
+SSA:0020033	individual		J33	NCBITaxon:9733	1996	M	NOAA-NWFSC	
+SSA:0020034	individual		J34	NCBITaxon:9733	1998	M	NOAA-NWFSC	
+SSA:0020035	individual		J35-neonate	NCBITaxon:9733	2018	F	NOAA-NWFSC	A calf that died before it was given a designation; the label is NOAA's placeholder.
+SSA:0020036	individual		J36	NCBITaxon:9733	1999	F	NOAA-NWFSC	
+SSA:0020037	individual		J37	NCBITaxon:9733	2001	F	NOAA-NWFSC	
+SSA:0020038	individual		J38	NCBITaxon:9733	2003	M	NOAA-NWFSC	
+SSA:0020039	individual		J39	NCBITaxon:9733	2003	M	NOAA-NWFSC	
+SSA:0020040	individual		J40	NCBITaxon:9733	2004	F	NOAA-NWFSC	
+SSA:0020041	individual		J41	NCBITaxon:9733	2005	F	NOAA-NWFSC	
+SSA:0020042	individual		J42	NCBITaxon:9733	2007	F	NOAA-NWFSC	
+SSA:0020043	individual		J43	NCBITaxon:9733	2007		NOAA-NWFSC	
+SSA:0020044	individual		J44	NCBITaxon:9733	2009	M	NOAA-NWFSC	
+SSA:0020045	individual		J45	NCBITaxon:9733	2009	M	NOAA-NWFSC	
+SSA:0020046	individual		J46	NCBITaxon:9733	2009	F	NOAA-NWFSC	
+SSA:0020047	individual		J47	NCBITaxon:9733	2010	M	NOAA-NWFSC	
+SSA:0020048	individual		J48	NCBITaxon:9733	2011		NOAA-NWFSC	
+SSA:0020049	individual		J49	NCBITaxon:9733	2012	M	NOAA-NWFSC	
+SSA:0020050	individual		J51	NCBITaxon:9733	2015	M	NOAA-NWFSC	
+SSA:0020051	individual		J52	NCBITaxon:9733	2015	M	NOAA-NWFSC	
+SSA:0020052	individual		J53	NCBITaxon:9733	2015	F	NOAA-NWFSC	
+SSA:0020053	individual		J54	NCBITaxon:9733	2015	M	NOAA-NWFSC	
+SSA:0020054	individual		J55	NCBITaxon:9733	2015		NOAA-NWFSC	
+SSA:0020055	individual		J56	NCBITaxon:9733	2019	F	NOAA-NWFSC	
+SSA:0020056	individual		J58	NCBITaxon:9733	2020	F	NOAA-NWFSC	
+SSA:0020057	individual		J59	NCBITaxon:9733	2022	F	NOAA-NWFSC	
+SSA:0020058	individual		J61	NCBITaxon:9733	2024	F	NOAA-NWFSC	
+SSA:0020059	individual		J62	NCBITaxon:9733	2024	F	NOAA-NWFSC	
+SSA:0020060	individual		J63	NCBITaxon:9733	2025	F	NOAA-NWFSC	
+SSA:0020061	individual		J64	NCBITaxon:9733	2025	F	NOAA-NWFSC	
+SSA:0020062	individual		K1	NCBITaxon:9733	1955	M	NOAA-NWFSC	
+SSA:0020063	individual		K2	NCBITaxon:9733	1953	M	NOAA-NWFSC	
+SSA:0020064	individual		K3	NCBITaxon:9733	1956	F	NOAA-NWFSC	
+SSA:0020065	individual		K4	NCBITaxon:9733	1933	F	NOAA-NWFSC	
+SSA:0020066	individual		K5	NCBITaxon:9733	1953	M	NOAA-NWFSC	
+SSA:0020067	individual		K7	NCBITaxon:9733	1910	F	NOAA-NWFSC	
+SSA:0020068	individual		K8	NCBITaxon:9733	1930	F	NOAA-NWFSC	
+SSA:0020069	individual		K11	NCBITaxon:9733	1933	F	NOAA-NWFSC	
+SSA:0020070	individual		K12	NCBITaxon:9733	1971	F	NOAA-NWFSC	
+SSA:0020071	individual		K13	NCBITaxon:9733	1972	F	NOAA-NWFSC	
+SSA:0020072	individual		K14	NCBITaxon:9733	1977	F	NOAA-NWFSC	
+SSA:0020073	individual		K15	NCBITaxon:9733	1971		NOAA-NWFSC	
+SSA:0020074	individual		K16	NCBITaxon:9733	1985	F	NOAA-NWFSC	
+SSA:0020075	individual		K17	NCBITaxon:9733	1966	M	NOAA-NWFSC	
+SSA:0020076	individual		K18	NCBITaxon:9733	1948	F	NOAA-NWFSC	
+SSA:0020077	individual		K19	NCBITaxon:9733	1953	M	NOAA-NWFSC	
+SSA:0020078	individual		K20	NCBITaxon:9733	1986	F	NOAA-NWFSC	
+SSA:0020079	individual		K21	NCBITaxon:9733	1986	M	NOAA-NWFSC	
+SSA:0020080	individual		K22	NCBITaxon:9733	1987	F	NOAA-NWFSC	
+SSA:0020081	individual		K23	NCBITaxon:9733	1988		NOAA-NWFSC	
+SSA:0020082	individual		K24	NCBITaxon:9733	1990		NOAA-NWFSC	
+SSA:0020083	individual		K25	NCBITaxon:9733	1991	M	NOAA-NWFSC	
+SSA:0020084	individual		K26	NCBITaxon:9733	1993	M	NOAA-NWFSC	
+SSA:0020085	individual		K27	NCBITaxon:9733	1994	F	NOAA-NWFSC	
+SSA:0020086	individual		K28	NCBITaxon:9733	1994	F	NOAA-NWFSC	
+SSA:0020087	individual		K29	NCBITaxon:9733	1996	M	NOAA-NWFSC	
+SSA:0020088	individual		K30	NCBITaxon:9733	1929	F	NOAA-NWFSC	
+SSA:0020089	individual		K31	NCBITaxon:9733	1999	M	NOAA-NWFSC	
+SSA:0020090	individual		K32	NCBITaxon:9733	2000		NOAA-NWFSC	
+SSA:0020091	individual		K33	NCBITaxon:9733	2001	M	NOAA-NWFSC	
+SSA:0020092	individual		K34	NCBITaxon:9733	2001	M	NOAA-NWFSC	
+SSA:0020093	individual		K35	NCBITaxon:9733	2002	M	NOAA-NWFSC	
+SSA:0020094	individual		K36	NCBITaxon:9733	2003		NOAA-NWFSC	NOAA codes this animal male (sexF1M2 = 2) but names it as the mother of K47. Both cannot hold, so sex is left blank until a curator settles which is wrong. Asked of NOAA: https://github.com/noaa-nwfsc/srkw-status/issues/1
+SSA:0020095	individual		K37	NCBITaxon:9733	2003	M	NOAA-NWFSC	
+SSA:0020096	individual		K38	NCBITaxon:9733	2004	M	NOAA-NWFSC	
+SSA:0020097	individual		K39	NCBITaxon:9733	2006		NOAA-NWFSC	
+SSA:0020098	individual		K40	NCBITaxon:9733	1963	F	NOAA-NWFSC	
+SSA:0020099	individual		K41	NCBITaxon:9733	2006		NOAA-NWFSC	
+SSA:0020100	individual		K42	NCBITaxon:9733	2008	F	NOAA-NWFSC	
+SSA:0020101	individual		K43	NCBITaxon:9733	2010	F	NOAA-NWFSC	
+SSA:0020102	individual		K44	NCBITaxon:9733	2011	M	NOAA-NWFSC	
+SSA:0020103	individual		K45	NCBITaxon:9733	2022	F	NOAA-NWFSC	
+SSA:0020104	individual		K46	NCBITaxon:9733	1974		NOAA-NWFSC	
+SSA:0020105	individual		K47	NCBITaxon:9733	2025		NOAA-NWFSC	
+SSA:0020106	individual		L1	NCBITaxon:9733	1959	M	NOAA-NWFSC	
+SSA:0020107	individual		L2	NCBITaxon:9733	1960	F	NOAA-NWFSC	
+SSA:0020108	individual		L3	NCBITaxon:9733	1950	F	NOAA-NWFSC	
+SSA:0020109	individual		L4	NCBITaxon:9733	1949	F	NOAA-NWFSC	
+SSA:0020110	individual		L5	NCBITaxon:9733	1958	F	NOAA-NWFSC	
+SSA:0020111	individual		L6	NCBITaxon:9733	1963	M	NOAA-NWFSC	
+SSA:0020112	individual		L7	NCBITaxon:9733	1961	F	NOAA-NWFSC	
+SSA:0020113	individual		L8	NCBITaxon:9733	1954	M	NOAA-NWFSC	
+SSA:0020114	individual		L9	NCBITaxon:9733	1931	F	NOAA-NWFSC	
+SSA:0020115	individual		L10	NCBITaxon:9733	1954	M	NOAA-NWFSC	
+SSA:0020116	individual		L11	NCBITaxon:9733	1957	F	NOAA-NWFSC	
+SSA:0020117	individual		L12	NCBITaxon:9733	1933	F	NOAA-NWFSC	
+SSA:0020118	individual		L13	NCBITaxon:9733	1952	M	NOAA-NWFSC	
+SSA:0020119	individual		L14	NCBITaxon:9733	1972	M	NOAA-NWFSC	
+SSA:0020120	individual		L15	NCBITaxon:9733	1930	F	NOAA-NWFSC	
+SSA:0020121	individual		L16	NCBITaxon:9733	1949	M	NOAA-NWFSC	
+SSA:0020122	individual		L20	NCBITaxon:9733	1955	M	NOAA-NWFSC	
+SSA:0020123	individual		L21	NCBITaxon:9733	1950	F	NOAA-NWFSC	
+SSA:0020124	individual		L22	NCBITaxon:9733	1971	F	NOAA-NWFSC	
+SSA:0020125	individual		L23	NCBITaxon:9733	1952	F	NOAA-NWFSC	
+SSA:0020126	individual		L25	NCBITaxon:9733	1928	F	NOAA-NWFSC	
+SSA:0020127	individual		L26	NCBITaxon:9733	1956	F	NOAA-NWFSC	
+SSA:0020128	individual		L27	NCBITaxon:9733	1965	F	NOAA-NWFSC	
+SSA:0020129	individual		L28	NCBITaxon:9733	1949	F	NOAA-NWFSC	
+SSA:0020130	individual		L32	NCBITaxon:9733	1955	F	NOAA-NWFSC	
+SSA:0020131	individual		L33	NCBITaxon:9733	1963	M	NOAA-NWFSC	
+SSA:0020132	individual		L35	NCBITaxon:9733	1942	F	NOAA-NWFSC	
+SSA:0020133	individual		L36	NCBITaxon:9733	1975		NOAA-NWFSC	
+SSA:0020134	individual		L37	NCBITaxon:9733	1933	F	NOAA-NWFSC	
+SSA:0020135	individual		L38	NCBITaxon:9733	1965	M	NOAA-NWFSC	
+SSA:0020136	individual		L39	NCBITaxon:9733	1975	M	NOAA-NWFSC	
+SSA:0020137	individual		L41	NCBITaxon:9733	1977	M	NOAA-NWFSC	
+SSA:0020138	individual		L42	NCBITaxon:9733	1973	M	NOAA-NWFSC	
+SSA:0020139	individual		L43	NCBITaxon:9733	1972	F	NOAA-NWFSC	
+SSA:0020140	individual		L44	NCBITaxon:9733	1974	M	NOAA-NWFSC	
+SSA:0020141	individual		L45	NCBITaxon:9733	1938	F	NOAA-NWFSC	
+SSA:0020142	individual		L47	NCBITaxon:9733	1974	F	NOAA-NWFSC	
+SSA:0020143	individual		L48	NCBITaxon:9733	1977		NOAA-NWFSC	
+SSA:0020144	individual		L49	NCBITaxon:9733	1979		NOAA-NWFSC	
+SSA:0020145	individual		L50	NCBITaxon:9733	1973	M	NOAA-NWFSC	
+SSA:0020146	individual		L51	NCBITaxon:9733	1973	F	NOAA-NWFSC	
+SSA:0020147	individual		L52	NCBITaxon:9733	1980		NOAA-NWFSC	
+SSA:0020148	individual		L53	NCBITaxon:9733	1977	F	NOAA-NWFSC	
+SSA:0020149	individual		L54	NCBITaxon:9733	1977	F	NOAA-NWFSC	
+SSA:0020150	individual		L55	NCBITaxon:9733	1977	F	NOAA-NWFSC	
+SSA:0020151	individual		L56	NCBITaxon:9733	1978		NOAA-NWFSC	
+SSA:0020152	individual		L57	NCBITaxon:9733	1977	M	NOAA-NWFSC	
+SSA:0020153	individual		L58	NCBITaxon:9733	1980	M	NOAA-NWFSC	
+SSA:0020154	individual		L59	NCBITaxon:9733	1979		NOAA-NWFSC	
+SSA:0020155	individual		L60	NCBITaxon:9733	1971	F	NOAA-NWFSC	
+SSA:0020156	individual		L61	NCBITaxon:9733	1973	M	NOAA-NWFSC	
+SSA:0020157	individual		L62	NCBITaxon:9733	1980	M	NOAA-NWFSC	
+SSA:0020158	individual		L63	NCBITaxon:9733	1984	M	NOAA-NWFSC	
+SSA:0020159	individual		L64	NCBITaxon:9733	1985		NOAA-NWFSC	
+SSA:0020160	individual		L65	NCBITaxon:9733	1984	F	NOAA-NWFSC	
+SSA:0020161	individual		L66	NCBITaxon:9733	1924	F	NOAA-NWFSC	
+SSA:0020162	individual		L67	NCBITaxon:9733	1985	F	NOAA-NWFSC	
+SSA:0020163	individual		L68	NCBITaxon:9733	1985	M	NOAA-NWFSC	
+SSA:0020164	individual		L69	NCBITaxon:9733	1984		NOAA-NWFSC	
+SSA:0020165	individual		L71	NCBITaxon:9733	1986	M	NOAA-NWFSC	
+SSA:0020166	individual		L72	NCBITaxon:9733	1986	F	NOAA-NWFSC	
+SSA:0020167	individual		L73	NCBITaxon:9733	1986	M	NOAA-NWFSC	
+SSA:0020168	individual		L74	NCBITaxon:9733	1986	M	NOAA-NWFSC	
+SSA:0020169	individual		L75	NCBITaxon:9733	1986	F	NOAA-NWFSC	
+SSA:0020170	individual		L76	NCBITaxon:9733	1987		NOAA-NWFSC	
+SSA:0020171	individual		L77	NCBITaxon:9733	1987	F	NOAA-NWFSC	
+SSA:0020172	individual		L78	NCBITaxon:9733	1989	M	NOAA-NWFSC	
+SSA:0020173	individual		L79	NCBITaxon:9733	1989	M	NOAA-NWFSC	
+SSA:0020174	individual		L80	NCBITaxon:9733	1990		NOAA-NWFSC	
+SSA:0020175	individual		L81	NCBITaxon:9733	1990	M	NOAA-NWFSC	
+SSA:0020176	individual		L82	NCBITaxon:9733	1990	F	NOAA-NWFSC	
+SSA:0020177	individual		L83	NCBITaxon:9733	1990	F	NOAA-NWFSC	
+SSA:0020178	individual		L84	NCBITaxon:9733	1990	M	NOAA-NWFSC	
+SSA:0020179	individual		L85	NCBITaxon:9733	1991	M	NOAA-NWFSC	
+SSA:0020180	individual		L86	NCBITaxon:9733	1991	F	NOAA-NWFSC	
+SSA:0020181	individual		L88	NCBITaxon:9733	1993	M	NOAA-NWFSC	
+SSA:0020182	individual		L89	NCBITaxon:9733	1993	M	NOAA-NWFSC	
+SSA:0020183	individual		L90	NCBITaxon:9733	1993	F	NOAA-NWFSC	
+SSA:0020184	individual		L91	NCBITaxon:9733	1995	F	NOAA-NWFSC	
+SSA:0020185	individual		L92	NCBITaxon:9733	1995	M	NOAA-NWFSC	
+SSA:0020186	individual		L93	NCBITaxon:9733	1995	F	NOAA-NWFSC	
+SSA:0020187	individual		L94	NCBITaxon:9733	1995	F	NOAA-NWFSC	
+SSA:0020188	individual		L95	NCBITaxon:9733	1996	M	NOAA-NWFSC	
+SSA:0020189	individual		L96	NCBITaxon:9733	1996	M	NOAA-NWFSC	
+SSA:0020190	individual		L97	NCBITaxon:9733	1999		NOAA-NWFSC	
+SSA:0020191	individual		L98	NCBITaxon:9733	1999	M	NOAA-NWFSC	
+SSA:0020192	individual		L99	NCBITaxon:9733	2000		NOAA-NWFSC	
+SSA:0020193	individual		L100	NCBITaxon:9733	2001	M	NOAA-NWFSC	
+SSA:0020194	individual		L101	NCBITaxon:9733	2002	M	NOAA-NWFSC	
+SSA:0020195	individual		L102	NCBITaxon:9733	2002		NOAA-NWFSC	
+SSA:0020196	individual		L103	NCBITaxon:9733	2003	F	NOAA-NWFSC	
+SSA:0020197	individual		L104	NCBITaxon:9733	2004	M	NOAA-NWFSC	
+SSA:0020198	individual		L105	NCBITaxon:9733	2005	M	NOAA-NWFSC	
+SSA:0020199	individual		L106	NCBITaxon:9733	2005	M	NOAA-NWFSC	
+SSA:0020200	individual		L107	NCBITaxon:9733	2005		NOAA-NWFSC	
+SSA:0020201	individual		L108	NCBITaxon:9733	2006	M	NOAA-NWFSC	
+SSA:0020202	individual		L109	NCBITaxon:9733	2007	M	NOAA-NWFSC	
+SSA:0020203	individual		L110	NCBITaxon:9733	2007	M	NOAA-NWFSC	
+SSA:0020204	individual		L111	NCBITaxon:9733	2008	F	NOAA-NWFSC	
+SSA:0020205	individual		L112	NCBITaxon:9733	2009	F	NOAA-NWFSC	
+SSA:0020206	individual		L113	NCBITaxon:9733	2009	F	NOAA-NWFSC	
+SSA:0020207	individual		L114	NCBITaxon:9733	2010		NOAA-NWFSC	
+SSA:0020208	individual		L115	NCBITaxon:9733	2010	M	NOAA-NWFSC	
+SSA:0020209	individual		L116	NCBITaxon:9733	2010	M	NOAA-NWFSC	
+SSA:0020210	individual		L117	NCBITaxon:9733	2010	M	NOAA-NWFSC	
+SSA:0020211	individual		L118	NCBITaxon:9733	2011	F	NOAA-NWFSC	
+SSA:0020212	individual		L119	NCBITaxon:9733	2012	F	NOAA-NWFSC	
+SSA:0020213	individual		L120	NCBITaxon:9733	2014	F	NOAA-NWFSC	
+SSA:0020214	individual		L121	NCBITaxon:9733	2015	M	NOAA-NWFSC	
+SSA:0020215	individual		L122	NCBITaxon:9733	2015	M	NOAA-NWFSC	
+SSA:0020216	individual		L123	NCBITaxon:9733	2015	M	NOAA-NWFSC	
+SSA:0020217	individual		L124	NCBITaxon:9733	2019	F	NOAA-NWFSC	
+SSA:0020218	individual		L125	NCBITaxon:9733	2021	F	NOAA-NWFSC	
+SSA:0020219	individual		L126	NCBITaxon:9733	2023	M	NOAA-NWFSC	
+SSA:0020220	individual		L127	NCBITaxon:9733	2023	F	NOAA-NWFSC	
+SSA:0020221	individual		L128	NCBITaxon:9733	2024		NOAA-NWFSC	

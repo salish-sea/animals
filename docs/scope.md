@@ -137,7 +137,9 @@ The differences are not simply errors, though. Each exists because real data dem
 — associational rosters, parentage-derived matrilines, designation normalization, named
 groups with no rank — and each is a requirement this register must meet before the
 migration is possible. They are tracked as Q15–Q19; parentage is answered by
-[ADR-0016](../decisions/0016-parentage.md), designation matching by
+[ADR-0016](../decisions/0016-parentage.md), parentage-derived matrilines for the Southern
+Residents by [ADR-0023](../decisions/0023-southern-residents-from-noaas-census-file.md),
+designation matching by
 [ADR-0019](../decisions/0019-names-are-compared-by-folding.md), and the rest remain open.
 
 ## Relationship to signals-srkw
@@ -183,6 +185,7 @@ failures are more likely than a modelling error, and
 
 ## Status
 
-Everything here is **proposed**. No decision in `decisions/` has been ratified, no row
+Almost everything here is **proposed**. One decision in `decisions/` is accepted
+([ADR-0023](../decisions/0023-southern-residents-from-noaas-census-file.md)), no row
 in `data/` is verified, and the identifier prefix is not yet registered. See
 [docs/open-questions.md](open-questions.md).

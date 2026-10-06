@@ -298,6 +298,8 @@ def graph_checks(db: sqlite3.Connection) -> None:
     # (ADR-0005). Not an error: a matriline that grows large is eventually split, and
     # after a fission the two can legitimately differ. Worth a curator's eye either way,
     # since the alternative explanation is that one of the two claims is wrong.
+    # Matrilines nest (a daughter who has calves heads a line inside her mother's), so
+    # "the same" means the mother's matriline is one the calf is in at any depth.
     for child, mother, cg, mg in db.execute(
         """WITH matriline AS (
              SELECT m.member_id AS id, m.group_id AS grp FROM membership m
@@ -306,7 +308,10 @@ def graph_checks(db: sqlite3.Connection) -> None:
            FROM parentage p
            JOIN matriline c ON c.id = p.child_id
            JOIN matriline m ON m.id = p.parent_id
-           WHERE p.role = 'mother' AND c.grp <> m.grp"""
+           WHERE p.role = 'mother'
+             AND NOT EXISTS (SELECT 1 FROM ancestor a
+                             WHERE a.entity_id = p.child_id
+                               AND a.ancestor_id = m.grp)"""
     ):
         warn(f"parentage.tsv: {child} ({cg}) and its mother {mother} ({mg}) are in "
              "different matrilines; expected the same unless the matriline has split")
