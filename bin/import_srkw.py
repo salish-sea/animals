@@ -140,7 +140,8 @@ def main():
     census = read_census(sys.argv[1])
 
     tables = {s: read_tsv(s) for s in
-              ("entities", "membership", "parentage", "status", "sources")}
+              ("entities", "membership", "parentage", "matriarchs", "status",
+               "sources")}
     ent_hdr, entities = tables["entities"]
 
     children = defaultdict(list)
@@ -242,7 +243,7 @@ def main():
             mat_id[h] = mint(MATRILINE_BLOCK)
 
     # --- 4. rows ------------------------------------------------------------------------
-    ent, mem, par, sta = [], [], [], []
+    ent, mem, par, sta, mat = [], [], [], [], []
     taxon = "NCBITaxon:9733"
 
     for h in heads:
@@ -259,6 +260,10 @@ def main():
             note += (". No mother is recorded for her in the file, so this is a "
                      "top-level matriline in her pod.")
         note = " ".join(filter(None, [note, KEPT_NOTES.get(("entity", f"{label(h)}s"))]))
+        # The line is named for her, and the register says so rather than leave it to
+        # the label (ADR-0024).
+        mat.append({"matriline_id": mat_id[h], "matriarch_id": ind_id[h],
+                    "source_id": SOURCE, "note": ""})
         ent.append({"entity_id": mat_id[h], "kind": "group", "rank": "matriline",
                     "label": f"{label(h)}s", "taxon_id": taxon, "source_id": SOURCE,
                     "note": note})
@@ -356,6 +361,7 @@ def main():
     out = {
         "membership": merge("membership", mem, ("member_id", "group_id"), "member_id"),
         "parentage": merge("parentage", par, ("child_id", "role"), "child_id"),
+        "matriarchs": merge("matriarchs", mat, ("matriline_id",), "matriline_id"),
         # status.tsv is append-only (ADR-0006): the seed's statuses stay, and NOAA's
         # supersede them on `recorded`, which is how a correction is made there.
         "status": merge("status", sta, ("entity_id", "status", "effective"),
@@ -396,6 +402,7 @@ def main():
                      for e in ent},
         "membership": {(m["member_id"], m["group_id"]) for m in mem + mem_curated},
         "parentage": {(p["child_id"], p["role"]): p["parent_id"] for p in par},
+        "matriarchs": {(m["matriline_id"], m["matriarch_id"]) for m in mat},
         "status": {(s["entity_id"], s["status"], s["effective"]) for s in sta},
     }
     for m in mem_curated:
@@ -414,6 +421,11 @@ def main():
                 generated["membership"]:
             drift.append(f"membership: {r['member_id']} in {r['group_id']} is no longer "
                          "derived")
+    for r in tables["matriarchs"][1]:
+        if r["source_id"] == SOURCE and (r["matriline_id"], r["matriarch_id"]) not in \
+                generated["matriarchs"]:
+            drift.append(f"matriarchs: {r['matriline_id']} named for {r['matriarch_id']} "
+                         "is no longer derived")
     for r in tables["parentage"][1]:
         key = (r["child_id"], r["role"])
         if r["source_id"] == SOURCE and generated["parentage"].get(key) != r["parent_id"]:

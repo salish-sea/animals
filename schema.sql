@@ -183,6 +183,23 @@ CREATE TABLE parentage (
 );
 
 -- ---------------------------------------------------------------------------
+-- Matriarchs — which whale a matriline is named for (ADR-0024)
+-- ---------------------------------------------------------------------------
+--
+-- J17s and J17 are two entities (ADR-0003), and until this table the only thing joining
+-- them was that one label is the other plus `s`, which nothing may key on (ADR-0011).
+-- Absent means "not recorded", never "no matriarch": seven Bigg's lineages are named
+-- for a founder the register does not hold.
+
+CREATE TABLE matriarch (
+  matriline_id TEXT NOT NULL PRIMARY KEY REFERENCES entity(entity_id),
+  matriarch_id TEXT NOT NULL UNIQUE REFERENCES entity(entity_id),
+  source_id    TEXT NOT NULL REFERENCES source(source_id),
+  note         TEXT,
+  CHECK (matriline_id <> matriarch_id)
+);
+
+-- ---------------------------------------------------------------------------
 -- Life status — append-only, three clocks (ADR-0006)
 -- ---------------------------------------------------------------------------
 
