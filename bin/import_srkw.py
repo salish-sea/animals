@@ -22,6 +22,7 @@ Usage:  python3 bin/import_srkw.py <path-to-orca.csv> [--apply]
 """
 
 import csv
+import hashlib
 import re
 import sys
 from collections import defaultdict
@@ -37,6 +38,8 @@ SOURCE = "NOAA-NWFSC"
 # The commit the rows come from, and the day they were written down. A refresh bumps
 # both: `recorded` is status.tsv's precedence key and must say when we learned it.
 PIN = "ba0b8c40e422aa9f5afcf845a0697b4d7d15701f"
+# The file at PIN, so that a different orca.csv cannot be imported under PIN's name.
+SHA256 = "151f297678eab0ed95e3db35a39a51328e1ea7340f9cab16779aab5ce65a5cd5"
 RECORDED = "2026-10-06"
 
 # NOAA's `pod` column codes the three pods with the designations of their first-listed
@@ -87,6 +90,11 @@ def label(code):
 
 
 def read_census(path):
+    digest = hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    if digest != SHA256:
+        sys.exit(f"{path} is not orca.csv at {PIN[:7]} (sha256 {digest}). Fetch it from "
+                 f"https://raw.githubusercontent.com/noaa-nwfsc/srkw-status/{PIN}/orca.csv, "
+                 "or, to refresh, update PIN, SHA256 and RECORDED together.")
     with open(path, newline="", encoding="utf-8") as f:
         rows = {r["animal"]: r for r in csv.DictReader(f)}
     for r in rows.values():
@@ -326,24 +334,28 @@ def main():
                         "entity_id"),
     }
 
+    # One source row, pointing at the snapshot most recently read. A refresh moves its
+    # url and date forward; which snapshot an older row came from is in git history,
+    # which is the register's assertion-time axis (ADR-0006), and in status.tsv's
+    # `recorded`.
     src_hdr, sources = tables["sources"]
-    if not any(s["source_id"] == SOURCE for s in sources):
-        sources.append({
-            "source_id": SOURCE,
-            "name": "NOAA NWFSC Southern Resident census (srkw-status, orca.csv)",
-            "url": f"https://github.com/noaa-nwfsc/srkw-status/blob/{PIN}/orca.csv",
-            "scope": "SRKW individuals, mothers, sex, birth and death years, pods",
-            "license": "public-domain",
-            "license_status": "cleared",
-            "retrieved_on": RECORDED,
-            "note": ("The observations are the Center for Whale Research's annual "
-                     "photo-identification census, made under NOAA contract; CWR is "
-                     "credited as the observer and NOAA NWFSC as the publisher of the "
-                     "table. U.S. government work (17 U.S.C. §105); the repository's "
-                     "GPL-3 covers its code, not these facts. Assessed as D-22 in "
-                     "salishsea-io/docs/rights-policy.md section 7.2. Imported by "
-                     "bin/import_srkw.py (ADR-0023)."),
-        })
+    sources = [s for s in sources if s["source_id"] != SOURCE]
+    sources.append({
+        "source_id": SOURCE,
+        "name": "NOAA NWFSC Southern Resident census (srkw-status, orca.csv)",
+        "url": f"https://github.com/noaa-nwfsc/srkw-status/blob/{PIN}/orca.csv",
+        "scope": "SRKW individuals, mothers, sex, birth and death years, pods",
+        "license": "public-domain",
+        "license_status": "cleared",
+        "retrieved_on": RECORDED,
+        "note": ("The observations are the Center for Whale Research's annual "
+                 "photo-identification census, made under NOAA contract; CWR is "
+                 "credited as the observer and NOAA NWFSC as the publisher of the "
+                 "table. U.S. government work (17 U.S.C. §105); the repository's "
+                 "GPL-3 covers its code, not these facts. Assessed as D-22 in "
+                 "salishsea-io/docs/rights-policy.md section 7.2. Imported by "
+                 "bin/import_srkw.py (ADR-0023)."),
+    })
 
     print(f"{len(census)} whales, {len(heads)} matrilines in the census; "
           f"{len(taken_over)} seed entities taken over; new: {len(new_entities)} "
