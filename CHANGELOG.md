@@ -8,6 +8,12 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+No change to the data.
+
+### Design
+- **[ADR-0025](decisions/0025-the-maintainer-accepts-a-record.md) changes how a decision record becomes Accepted.** The maintainer now accepts a record once its content agrees with the data and with the other records. A record addressed to scientific reviewers says in its Status line whether one has reviewed it, and anyone's objection reopens it. Before, a record stayed Proposed until its reviewers had been asked and had two weeks to object, and in eleven weeks only ADR-0023 got there.
+- **ADR-0001 to ADR-0022 and ADR-0024 are Accepted by the maintainer**, after an audit on 2026-10-12 corrected facts that had gone out of date, each as a dated amendment. The main corrections: the `SSA` prefix is requested in the Bioregistry, not registered, and ADR-0021's title now says so; SalishSea.io follows the newest release rather than pinning one, and has retired Postgres; Orcasound's tags now cite register identifiers; `main` is not protected, so the no-rewrite and no-removal rules hold by practice; and examples and counts that the Southern Resident import changed (J50 is no longer placed directly in J pod, 184 mothers rather than one, 56 taxon entities rather than five). None of those addressed to scientific reviewers has been reviewed by one. [ADR-0023](decisions/0023-southern-residents-from-noaas-census-file.md) also records that the import answered its second open question, and that this answer has not been put to a scientific reviewer.
+
 ## 2026.10.1 — 2026-10-06
 
 The Southern Residents arrive: 289 identifiers minted (222 whales, 67 matrilines), the seven `SEED` Southern Resident entities rewritten in place, 184 mothers, and a new file, `matriarchs.tsv`, naming which whale each matriline is named for. No identifier retired.
