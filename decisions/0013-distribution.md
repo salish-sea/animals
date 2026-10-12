@@ -1,8 +1,16 @@
 # ADR-0013: The schema is the validation; releases carry the artefacts
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer.
 - **Date:** 2026-07-28
 - **Audience:** Informatics reviewers — implementation detail. Safe to skip if you're reviewing the science.
+
+*Amended 2026-10-12:*
+
+- **Neither consumer is a Postgres database that pins a tag.** SalishSea.io retired its Postgres database in October 2026; its build reads `register-tsv.tar.gz` into a database of its own. Orcasound does not fetch releases at all: its tags cite register identifiers that were matched by hand (see [ADR-0012](0012-relationship-to-the-salishsea-io-catalogue.md)'s amendment).
+- **SalishSea.io follows the newest release.** Its build asks every five minutes which release `releases/latest` points to, verifies a new edition against `SHA256SUMS`, and records the tag it adopted ([SalishSea.io decision 064](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/064-what-users-do-not-write-leaves-postgres-first.md)). So for SalishSea.io, tagging a release changes production within minutes. The statement under "Cadence" that nothing is dragged along by a tag holds only for a consumer that pins one.
+- **The edition requirement is narrower than "on every annotation".** "Provenance without a lockfile" below says ADR-0006 wants `register_edition` recorded on every annotation. [ADR-0018](0018-annotation-semantics-belong-to-consumers.md) narrowed that: only facts derived from the register need to record the edition they came from.
+- **[Q25](../docs/open-questions.md) is answered.** It was resolved on 2026-08-09: no one else cuts releases for now.
+- **The example URLs below named `2026.07.1`, a release that never existed; the first was `2026.08.1`, and the examples now use it.** `releases/latest/download/register.db` resolves too.
 
 ## Context
 
@@ -120,8 +128,8 @@ Releases do what was wanted, with permanent URLs that need no client:
 
 ```
 https://github.com/salish-sea/animals/releases/latest/download/register.db
-https://github.com/salish-sea/animals/releases/download/2026.07.1/register.db
-gh release download 2026.07.1 --repo salish-sea/animals --pattern 'register.db'
+https://github.com/salish-sea/animals/releases/download/2026.08.1/register.db
+gh release download 2026.08.1 --repo salish-sea/animals --pattern 'register.db'
 ```
 
 This answers [Q11](../docs/open-questions.md): that URL *is* the stable address, and it
@@ -131,7 +139,7 @@ Release assets:
 
 | Asset | For |
 |---|---|
-| `register-tsv.tar.gz` | Both consumers. Postgres ingests it with `COPY`. |
+| `register-tsv.tar.gz` | ~~Both consumers. Postgres ingests it with `COPY`.~~ [SalishSea.io, whose build reads it into its own database; Orcasound fetches no release. See the 2026-10-12 amendment.] |
 | `dist/*.tsv` (in the tarball) | The derived views, same treatment |
 | `register.db` | Third parties, notebooks, `datasette`. Neither consumer runs it. |
 | `schema.sql` | The constraint contract, to be translated into each consumer's own DDL |
@@ -141,7 +149,7 @@ Release assets:
 
 A package manager would have given integrity hashes and pinning for free, which is what
 [ADR-0006](0006-valid-time-in-data-assertion-time-in-git.md) wants recorded as
-`register_edition` on every annotation. Releases do not. So: publish `SHA256SUMS`, and
+`register_edition` ~~on every annotation~~ [on facts derived from the register, not on every annotation: [ADR-0018](0018-annotation-semantics-belong-to-consumers.md)]. Releases do not. So: publish `SHA256SUMS`, and
 have consumers record the tag **and the digest they verified**. That is more honest than a
 lockfile anyway, since it survives the file being fetched from anywhere.
 
@@ -160,9 +168,9 @@ depends only on there being editions to be stale between, not on how often they 
 
 Frequent tagging costs consumers nothing, and this is the reason the question of release
 churn dissolves rather than needing a `release` branch to answer it: **nothing is dragged
-along by a tag.** Both consumers pin a tag and record a digest, so each moves when it
+along by a tag.** ~~Both consumers pin a tag and record a digest, so each moves when it
 decides to. Only `releases/latest/download/` tracks the tip, and that is for third
-parties and notebooks that asked for exactly that. A release branch would also have
+parties and notebooks that asked for exactly that.~~ [SalishSea.io follows the newest release and Orcasound fetches none, so this holds only for a consumer that pins; see the 2026-10-12 amendment.] A release branch would also have
 nothing to hold — it earns its keep when fixes must be backported to a maintained old
 line, and corrections here are append-only and forward-only
 ([ADR-0006](0006-valid-time-in-data-assertion-time-in-git.md),
@@ -171,16 +179,16 @@ line, and corrections here are append-only and forward-only
 **P. Abrahamsen cuts releases today**, which works only because tagging and curation are
 currently the same person. Widening that — S. Veirs is the obvious second — means making
 the authority delegable without also handing over the ability to publish an arbitrary
-artefact under the register's name. Unresolved; see [Q25](../docs/open-questions.md).
+artefact under the register's name. ~~Unresolved~~ [Answered 2026-08-09: no one else, for now]; see [Q25](../docs/open-questions.md).
 
 ## Consequences
 
-- Both consumers are Postgres — Orcasound runs `ash_postgres`, SalishSea.io runs Supabase
-  — so neither will ever *query* the SQLite file. The TSVs are the integration path and
+- ~~Both consumers are Postgres — Orcasound runs `ash_postgres`, SalishSea.io runs Supabase
+  —~~ [SalishSea.io retired Postgres and reads the tarball into its build, and Orcasound fetches no release; see the 2026-10-12 amendment] so neither will ever *query* the SQLite file. The TSVs are the integration path and
   the `.db` is a byproduct that happens to be useful to others. Building it is still
   worthwhile because it is *how the constraints get checked*.
-- **Both consumers consume the same way**: a released artefact at a pinned tag, with the
-  tag and digest recorded. SalishSea.io's tight coupling
+- ~~**Both consumers consume the same way**: a released artefact at a pinned tag, with the
+  tag and digest recorded.~~ [SalishSea.io adopts the newest release and records its tag and digest; Orcasound fetches no release. See the 2026-10-12 amendment.] SalishSea.io's tight coupling
   ([ADR-0012](0012-relationship-to-the-salishsea-io-catalogue.md)) is a statement about
   the model — it holds no identity of its own — not about the transport. One distribution
   path means one path to keep working.

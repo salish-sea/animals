@@ -1,6 +1,6 @@
 # ADR-0001: TSV files in git are the source of truth
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer.
 - **Date:** 2026-07-27
 - **Audience:** Informatics reviewers — implementation detail. Safe to skip if you're reviewing the science.
 
@@ -8,6 +8,8 @@
 > database" as if it were one decision. It is two — what we *edit and review*, and what we
 > *ship* — and everything below concerns only the first. TSV in git remains the source of
 > truth; the shipped artefacts are SQLite and generated TSV.
+
+*Amended 2026-10-12:* `main` is not protected. As of 2026-10-12 GitHub has no branch protection or ruleset on it, and changelog commits are pushed to it directly rather than through a pull request. So the rule below that history is never rewritten holds by practice, and by the checks that run on pull requests, not by enforcement.
 
 ## Context
 

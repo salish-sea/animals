@@ -1,8 +1,10 @@
 # ADR-0017: The register publishes no counts of animals
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-07-28
 - **Audience:** Scientific reviewers — this refuses a number people will ask for, and the reasons are ones you can check. Informatics reviewers — it is a rule about what may be generated into `dist/`.
+
+*Amended 2026-10-12:* reason 1 is weaker than it was for one population. Since edition 2026.10.1 the Southern Residents come from NOAA's census file ([ADR-0023](0023-southern-residents-from-noaas-census-file.md)), which lists every whale catalogued since the census began, through the 2025 births. Whether that is complete and verified enough to revisit this record is its open question, and nobody has answered it. The decision is unchanged.
 
 ## Context
 

@@ -62,4 +62,4 @@ Its data are CWR's own census observations, made under NOAA contract. So taking 
 ## Open questions
 
 - Does NOAA's `death` year include whales presumed dead, or only confirmed deaths? The mapping in (5) is written to be safe either way.
-- Which females anchor a derived matriline: every female with a surviving descendant, or only those the census names as matriarchs?
+- Which females anchor a derived matriline: every female with a surviving descendant, or only those the census names as matriarchs? *(Amended 2026-10-12: answered in practice by the import in [#47](https://github.com/salish-sea/animals/pull/47). Every female NOAA names as a mother heads a matriline, inside her mother's, so `J35s` sits inside `J17s`, which sits inside `J5s`. A female with no recorded mother, or whom NOAA files under a different founding lineage from her mother's, heads a matriline directly in her pod. [definitions/matriline.md](../definitions/matriline.md) records the rule. This answer has not been put to a scientific reviewer: Scott Veirs's approval of this record came before it. Whether the community would call each of these lines a matriline is the same question as Q22.)*

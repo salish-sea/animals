@@ -1,8 +1,10 @@
 # ADR-0006: Valid time in the data, assertion time in git history
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer.
 - **Date:** 2026-07-27
 - **Audience:** Informatics reviewers — implementation detail. Safe to skip if you're reviewing the science.
+
+*Amended 2026-10-12:* `main` is not protected. As of 2026-10-12 GitHub has no branch protection or ruleset on it, and changelog commits are pushed to it directly rather than through a pull request. So the no-rewrite rule this record leans on, and the rule that `status.tsv` is append-only, hold by practice and by the checks that run on pull requests, not by enforcement. A commit pushed straight to `main` is not checked. The Southern Resident import ([#47](https://github.com/salish-sea/animals/pull/47)) went through a pull request and appended its status rows without changing any existing one.
 
 ## Context
 

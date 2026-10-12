@@ -1,8 +1,18 @@
 # ADR-0012: This register is authoritative; the SalishSea.io catalogue reconciles toward it
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-07-27
 - **Audience:** Scientific and informatics reviewers — the sections below are split, so each can read their half.
+
+*Amended 2026-10-12:* the direction below holds, and much of the work it describes has been done. Several facts in the body are out of date:
+
+- **SalishSea.io no longer runs Postgres.** It retired its database in October 2026. Its read-path build now loads each register edition, and since SalishSea.io decision [070](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/070-southern-residents-are-generated-from-the-register.md) (2026-10-07) the Southern Residents' catalogue rows are generated from that edition rather than kept by hand. The Bigg's rows are still checked in there, and are to follow. Read "loaded into Postgres" and `public.*` below with that in mind.
+- **SalishSea.io does not pin a tag.** Its build adopts the newest release, verifies it against `SHA256SUMS`, and records which edition it holds; an operator can hold it at one edition (SalishSea.io decision [064](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/064-what-users-do-not-write-leaves-postgres-first.md)).
+- **Orcasound does not fetch releases, and no longer carries only free-text tags.** Its tags now carry a kind and a register identifier ([orcasound/orcasite#1013](https://github.com/orcasound/orcasite/issues/1013)). The 16 identifiers in use were matched by hand against edition 2026.09.6 and set in production on 2026-09-25.
+- **Of the five findings,** `normalize_designation()` is gone: SalishSea.io compares designations by this register's fold (its decision [052](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/052-designations-compared-by-the-registers-fold.md)). Rosters that record association ([Q15](https://github.com/salish-sea/animals/issues/11)) and groups that have a name but no rank are still open.
+- **Under Implementation,** `sources.tsv` now has rows for the Bigg's sheet (`BIGGS-SHEET`), MERS and finwave. Q19 was answered by [ADR-0015](0015-bulk-import.md), and the Bigg's sheet has been imported.
+- **Under Consequences,** SalishSea.io's profile URLs now key on the register identifier, with the designation as a slug that is never read (its decision [034](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/034-profile-urls-key-on-the-register-identifier.md)). Its decision [033](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/033-register-names-the-animals.md) records on that side that its decision 008 does not govern the register, as this record asked.
+- **Both open questions are answered on SalishSea.io's side.** The catalogue migrates before the first Orcasound bout is tagged (decision [035](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/035-catalogue-migrates-before-tagging.md)), and SalishSea.io alone makes the recommendation to Orcasound (decision [028](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/028-salishsea-io-speaks-to-orcasound.md)).
 
 ## Context
 
@@ -51,15 +61,15 @@ both repositories, so nothing external enforces it.
 |---|---|---|
 | Relationship | The same data, presented. No translation boundary. | A separate project: distinct audience and purpose, organizationally adjacent. |
 | Coupling | Tight, permanently. Separate repos for process reasons only. | Loose: a separate project's own model, referencing ours. |
-| How it consumes | A released artefact at a pinned tag. | The same. |
+| How it consumes | ~~A released artefact at a pinned tag.~~ [The newest release; see the 2026-10-12 amendment.] | ~~The same.~~ [It does not fetch releases; see the 2026-10-12 amendment.] |
 | Animal identity of its own | None — materialized from here. | None, and that is the ask in [orcasound/orcasite#1001](https://github.com/orcasound/orcasite/issues/1001), not yet agreed. |
 | Who decides | The author of both. | In practice S. Veirs, whose initiative the whole effort is, plus this repository's author. See below. |
 
 **Tight coupling is a claim about the model, not about the transport.** SalishSea.io is
 tightly coupled in that it holds no animal identity of its own and cannot disagree with
 this register. It is not tightly coupled in the sense of reading this working tree: it
-fetches a released artefact at a pinned tag and records the tag and the digest it
-verified, exactly as Orcasound does
+fetches a released artefact ~~at a pinned tag~~ [the newest one; see the 2026-10-12 amendment] and records the tag and the digest it
+verified~~, exactly as Orcasound does~~ [Orcasound does not fetch releases]
 ([ADR-0013](0013-distribution.md), [ADR-0006](0006-valid-time-in-data-assertion-time-in-git.md)).
 
 Tracking the repository directly would tie deployments to whatever `main` happened to
@@ -68,7 +78,8 @@ distribution paths where only one is exercised. Being the same author's other pr
 a reason to trust the data, not a reason to skip the front door.
 
 Unifying the two on one roster is the goal of this effort. Orcasound currently carries
-free-text tags (`tag.ex`, `item_tag.ex` in `server/lib/orcasite/radio/`) and no roster;
+~~free-text tags (`tag.ex`, `item_tag.ex` in `server/lib/orcasite/radio/`)~~ [tags that
+cite register identifiers since 2026-09-25; see the 2026-10-12 amendment] and no roster;
 the intent is that it never acquires one.
 
 "Separate project" describes audience and purpose, not distance. All three efforts are
@@ -123,12 +134,13 @@ notice and adopt it — not to defend the newer model.
 
 - `salishsea-io` is **not** a row in `sources.tsv`, because it is not a source of
   authority. The upstream catalogues it derived its data from (the Bigg's nickname
-  spreadsheet, and whatever MERS/finwave material fed it) belong there, and do not yet
-  appear.
+  spreadsheet, and whatever MERS/finwave material fed it) belong there~~, and do not yet appear~~
+  [they do now, as `BIGGS-SHEET`, `MERS` and `FINWAVE`; see the 2026-10-12 amendment].
 - The 649-row Bigg's file is a **seed candidate**, not a source. Importing it is
-  [Q19](../docs/open-questions.md) — bulk import is not currently a supported operation,
+  [Q19](../docs/open-questions.md) — ~~bulk import is not currently a supported operation,
   and the reviewable-diff premise of [ADR-0001](0001-tsv-in-git-as-source-of-truth.md)
-  does not survive a several-thousand-row pull request without a stated exception.
+  does not survive a several-thousand-row pull request without a stated exception~~
+  [answered by [ADR-0015](0015-bulk-import.md), under which the Bigg's sheet was imported].
 - Migration direction is one-way. Until the catalogue migrates, crosswalk rows in
   `mappings.tsv` are the interim bridge, and they are expected to be temporary.
 - The rights analysis in `salishsea-io/docs/rights-policy.md` (and its decision 004) is
@@ -138,13 +150,13 @@ notice and adopt it — not to defend the newer model.
 
 ## Consequences
 
-- SalishSea.io absorbs migration cost — new identifiers, changed URLs (its public routes
+- SalishSea.io absorbs migration cost — new identifiers, changed URLs (~~its public routes
   key on `primary_designation`, which its own schema marks as changeable via
-  `designations.superseded_by`), and a rank-vocabulary reconciliation.
+  `designations.superseded_by`~~ [they now key on the register identifier, with the designation as a slug that is never read: [SalishSea.io decision 034](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/034-profile-urls-key-on-the-register-identifier.md)]), and a rank-vocabulary reconciliation.
 - Public URLs keyed on a designation are a live violation of
   [ADR-0011](0011-label-is-a-preferred-name.md)'s "nothing may key on a label". That rule
-  is currently stated as a hypothetical risk; it is a present fact and the migration has
-  to address it.
+  is currently stated as a hypothetical risk; ~~it is a present fact and the migration has
+  to address it~~ [it was, and the migration has addressed it: [SalishSea.io decision 034](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/034-profile-urls-key-on-the-register-identifier.md)].
 - This register acquires an obligation it did not have yesterday: it must be at least as
   expressive as the catalogue it is displacing *on identity and membership*. Four of the
   five findings above are the bill; the fifth is void, because on annotation semantics the

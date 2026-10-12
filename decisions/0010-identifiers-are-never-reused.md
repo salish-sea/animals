@@ -1,8 +1,13 @@
 # ADR-0010: Identifiers are never deleted or reused
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer.
 - **Date:** 2026-07-27
 - **Audience:** Informatics reviewers — implementation detail. Safe to skip if you're reviewing the science.
+
+*Amended 2026-10-12:*
+
+- `main` is not protected. As of 2026-10-12 GitHub has no branch protection or ruleset on it, and changelog commits are pushed to it directly rather than through a pull request. So the rule that no identifier is ever removed holds by practice and by the check that runs on pull requests, not by enforcement, and a commit pushed straight to `main` is not checked.
+- The open question below is answered: deprecated identifiers stay in the published files, with a flag. `dist/retired.tsv` lists each one with its replacement, and `dist/searchable_name.tsv` marks its names with `retired` and `replaced_by` ([ADR-0013](0013-distribution.md)). The first deprecation, `SSA:0000001`, was made on 2026-08-29 under [Q1](../docs/open-questions.md).
 
 ## Context
 
@@ -43,8 +48,8 @@ Validation enforces:
   successor is always live and a consumer never has to chase a chain.
 - No identifier present in git history is ever absent from `entities.tsv` — removal is
   never permitted, with or without a deprecation row. Enforced in CI rather than in
-  `bin/validate.py`, and only against the pull-request base, so branch protection is what
-  actually makes this hold.
+  `bin/validate.py`, and only against the pull-request base, so ~~branch protection is what
+  actually makes this hold~~ [`main` has no branch protection, so this holds by practice and by the pull-request check; see the 2026-10-12 amendment].
 
 Deprecated entities **stay in `entities.tsv`** and keep resolving to a label. They are
 excluded from autocomplete and from new annotations, but a 2025 record referencing one

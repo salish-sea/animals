@@ -1,8 +1,14 @@
 # ADR-0004: Rank is an open vocabulary, not a fixed hierarchy
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-07-27
 - **Audience:** Scientific reviewers — this decision changes what the data *means*. Needs domain expertise, not software judgement.
+
+*Amended 2026-10-12:*
+
+- The example in point 3 below no longer holds. Since edition 2026.10.1, `SSA:0000103` (J50) belongs to the matriline `J16s` (`SSA:0003006`), not directly to J pod. The point itself stands with another whale: J1 (`SSA:0020000`), whose mother is not recorded, belongs directly to J pod.
+- Point 2 cites Q1 and Q2. Q1 was answered on 2026-08-29: Southern Resident is a community within a Resident ecotype, so the community rank is in use ([open-questions.md](../docs/open-questions.md)). Q2, about clans, is still open.
+- Depth now varies in a way this record did not foresee: matrilines sit inside matrilines. A Bigg's sub-lineage such as `T023Cs` sits inside `T023s` ([ADR-0015](0015-bulk-import.md)), and a Southern Resident line such as `J35s` sits inside `J17s`, which sits inside `J5s` ([ADR-0023](0023-southern-residents-from-noaas-census-file.md)).
 
 ## Context
 

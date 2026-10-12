@@ -1,10 +1,15 @@
 # ADR-0022: The taxonomic hierarchy is NCBI's, excerpted — not curated here
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer.
 - **Date:** 2026-09-20
 - **Amends:** [ADR-0008](0008-species-identity-is-delegated.md), which anticipated a
   `taxonomic_parent` relation and warned what it would cost.
 - **Audience:** Informatics reviewers, and anyone publishing occurrences from the register.
+
+*Amended 2026-10-12:*
+
+- "A family is not an entity, cannot be tagged" is too broad. What this record means is that a node appearing only in NCBI's lineage gets no `SSA:` identifier, and Delphinidae is such a node. A family can still be a `kind = taxon` entity when someone needs to tag it, under [ADR-0008](0008-species-identity-is-delegated.md): Laridae, Otariidae and Phocidae are.
+- The counts are as of 2026-09-20. As of 2026-10-12 there are 56 taxon entities and 132 rows in `taxonomic_parent.tsv`.
 
 ## Context
 
@@ -43,8 +48,8 @@ the authority it delegated to says.
 
 ## What this means for the data
 
-- **No `SSA:` identifier is minted.** Delphinidae is `NCBITaxon:9726` and nothing else. A
-  family is not an entity, cannot be tagged, and has no names here.
+- **No `SSA:` identifier is minted.** Delphinidae is `NCBITaxon:9726` and nothing else. ~~A
+  family is not an entity, cannot be tagged, and has no names here.~~ [A node that appears only in NCBI's lineage, as Delphinidae does, is not an entity, cannot be tagged, and has no names here. A family can still be a taxon entity: Laridae, Otariidae and Phocidae are; see the 2026-10-12 amendment.]
 - **The whole lineage is kept, unranked clades included.** A killer whale has 28 ancestors
   and 14 of them have no rank (Boreoeutheria, Whippomorpha…). Dropping them would be
   editing NCBI's tree. `dist/classification.tsv` does the filtering a consumer usually

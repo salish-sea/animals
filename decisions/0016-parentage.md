@@ -1,9 +1,15 @@
 # ADR-0016: The register records parentage, as edges rather than columns
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-07-28
 - **Audience:** Scientific reviewers — this adds a claim the register makes about animals, so the modelling is yours to check. Informatics reviewers — it adds a table and five checks.
 - **Amended by:** [ADR-0023](0023-southern-residents-from-noaas-census-file.md), for Southern Residents only. Their matrilines are derived from parentage under this record's reconsideration clause (see "Alternatives considered").
+
+*Amended 2026-10-12:*
+
+- Parentage is no longer one row. As of 2026-10-12 `parentage.tsv` records 184 mothers, all of them Southern Residents, from NOAA's census file ([ADR-0023](0023-southern-residents-from-noaas-census-file.md)). Bigg's still have none, and no father is recorded.
+- The paragraph about L87 describes the register before that import. L87's mother, L32, is now registered (`SSA:0020130`), and the link between them is a row in `parentage.tsv`.
+- The table under Implementation, introduced as five checks, lists six.
 
 ## Context
 
@@ -94,7 +100,7 @@ child_id  parent_id  role  source_id  note
   is the same trick `membership.group_kind` uses and the same wart ADR-0013 admits to:
   curators never maintain them, the build populates them, and the TSV has five columns.
 
-Five checks, and it is worth noting which the schema gets for free:
+~~Five checks~~ [Six checks; see the 2026-10-12 amendment], and it is worth noting which the schema gets for free:
 
 | Check | Where |
 |---|---|

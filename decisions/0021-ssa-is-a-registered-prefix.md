@@ -1,6 +1,6 @@
-# ADR-0021: `SSA` is kept, and claimed as a Bioregistry prefix
+# ADR-0021: `SSA` is kept, and a Bioregistry prefix is requested
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer.
 - **Date:** 2026-08-13
 - **Audience:** Informatics reviewers — this settles a naming question with a registry
   check and a registration; nothing about the data changes.
@@ -71,6 +71,17 @@ Requested as a new prefix on [biopragmatics/bioregistry](https://github.com/biop
 *Amended 2026-08-29: the example was `SSA:0000001`, which Q1 deprecated. A registry entry
 outlives the submission that made it, so it should not name a withdrawn identifier. Nothing
 else in this record changes.*
+
+*Amended 2026-10-12:* the request is open, not granted. It was filed as
+[biopragmatics/bioregistry#2028](https://github.com/biopragmatics/bioregistry/issues/2028)
+on 2026-08-13, and as of 2026-10-12 `ssa` is not registered: `/api/registry/ssa` still
+returns 404. The request itself still gives `0000001` as its example; the change to
+`SSA:0000020` above was made in this record only. Where this record speaks of holding or
+claiming the prefix, read *requesting* it. The decision to keep `SSA` does not depend on
+the outcome, as Consequences already says. The moment the Context anticipated has also
+arrived: since 2026-09-25 Orcasound's tags carry register identifiers
+([orcasound/orcasite#1013](https://github.com/orcasound/orcasite/issues/1013)), so `SSA:`
+is in a third party's database while the registration is still pending.
 
 **No URI format, and that is not a defect.** [ADR-0014](0014-a-publication-not-a-service.md)
 says this register is a publication, not a service; there is no resolver to point at and we

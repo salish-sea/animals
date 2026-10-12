@@ -16,26 +16,35 @@ Currently:
   science.
 
 A record may name either, or both. Moderators who apply the vocabulary, and people
-implementing a downstream consumer, are plausible future audiences; neither has a record
-addressed to it yet.
+implementing a downstream consumer, are plausible future audiences. One record so far,
+[ADR-0022](0022-taxonomic-hierarchy-is-ncbis-excerpted.md), also addresses anyone publishing
+occurrences from the register.
 
 ## How a record becomes Accepted
 
-Without a stated rule, nothing is ever ratified — and "the change process is too slow" is
-failure mode #3 in [background.md](../docs/background.md). So:
+[ADR-0025](0025-the-maintainer-accepts-a-record.md) sets the rule. It replaced, on
+2026-10-12, the rule in force since 2026-07-27, under which a record became Accepted only
+after the reviewers its Audience line names had been asked and had two weeks to object.
 
-- A record is **Proposed** when merged. Merging a proposal is cheap and commits nobody.
-- It becomes **Accepted** when the reviewers named in its Audience line have had a stated
-  window to object and have not — two weeks, or sooner if they say so explicitly. The
-  window starts when the record is announced to them, not when it is merged.
-- Silence from an audience that was never actually asked does not count. If nobody with
-  the relevant expertise has looked, the record stays Proposed and that is informative.
+- A record is **Proposed** when merged.
+- It becomes **Accepted** when the maintainer accepts it, by a commit that changes its
+  Status line to "Accepted, *date*, by *name* as maintainer". The maintainer accepts a
+  record once its content agrees with the data and with the other records.
+- A record whose Audience includes scientific reviewers says in its Status line whether one
+  has reviewed it: "No scientific reviewer has reviewed it" until one has, and who and when
+  once one has.
+- Anyone can reopen an Accepted record by objecting, in an issue or a pull request, and a
+  scientific reviewer's objection always reopens it. A reopened record goes back to
+  Proposed until an amendment or a new record resolves the objection.
 - **Superseded** records keep their file and gain a pointer.
 
-Definitions follow the same shape with `working` → `agreed`; see
-[definitions/README.md](../definitions/README.md).
+Definitions still follow their own rule, `working` → `agreed`, which ADR-0025 does not
+change; see [definitions/README.md](../definitions/README.md).
 
-**ADR-0023 is the only `Accepted` record.** Every other record is still `Proposed`. ADR-0023 is also the only one so far that has been formally put to a scientific reviewer.
+**Every record is Accepted. Only ADR-0023 has been reviewed by a scientific reviewer**:
+Scott Veirs approved it on 2026-10-06. The maintainer accepted the others on 2026-10-12,
+after an audit corrected facts in them that had gone out of date. Each record addressed to
+scientific reviewers says in its Status line that none has reviewed it.
 
 | # | Decision | Audience |
 |---|---|---|
@@ -59,10 +68,11 @@ Definitions follow the same shape with `working` → `agreed`; see
 | [0018](0018-annotation-semantics-belong-to-consumers.md) | Annotation semantics belong to the consuming systems | Scientific + informatics |
 | [0019](0019-names-are-compared-by-folding.md) | Names are compared by folding, never rewritten | Scientific + informatics |
 | [0020](0020-localised-preferred-names-are-name-rows.md) | Localised preferred names are `names.tsv` rows, added when they exist | Scientific + informatics |
-| [0021](0021-ssa-is-a-registered-prefix.md) | `SSA` is kept, and claimed as a Bioregistry prefix | Informatics reviewers |
+| [0021](0021-ssa-is-a-registered-prefix.md) | `SSA` is kept, and a Bioregistry prefix is requested | Informatics reviewers |
 | [0022](0022-taxonomic-hierarchy-is-ncbis-excerpted.md) | The taxonomic hierarchy is NCBI's, excerpted by script — not curated here (amends 0008) | Informatics reviewers |
 | [0023](0023-southern-residents-from-noaas-census-file.md) | Southern Residents are imported from NOAA NWFSC's public-domain census file (salishsea-io's D-22); matrilines derived from mothers, disagreements noted not settled, SEED identifiers reused (amends 0016 for Southern Residents) | Scientific + informatics |
-| [0024](0024-a-matriline-names-its-matriarch.md) | A matriline names its matriarch, in `matriarchs.tsv` rather than a column, so no consumer's loader breaks; a male is never one | Scientific + informatics |
+| [0024](0024-a-matriline-names-its-matriarch.md) | A matriline names its matriarch, in a table of its own | Scientific + informatics |
+| [0025](0025-the-maintainer-accepts-a-record.md) | The maintainer accepts a record, and its Status line says whether a scientist has reviewed it | Scientific + informatics |
 
 ## Template
 
