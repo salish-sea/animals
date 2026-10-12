@@ -1,6 +1,6 @@
 # ADR-0024: A matriline names its matriarch, in a table of its own
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-10-06
 - **Audience:** Scientific reviewers — this records which whale each matriline is named for, and it declines to name a male. Informatics reviewers — it adds a table, `data/matriarchs.tsv`, and four checks.
 

@@ -1,6 +1,6 @@
 # ADR-0015: Bulk imports are reviewed as a transformation, not as rows
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-07-28
 - **Audience:** Scientific and informatics reviewers — the sections below are split, so each can read their half.
 
