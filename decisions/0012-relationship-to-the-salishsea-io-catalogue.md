@@ -1,8 +1,18 @@
 # ADR-0012: This register is authoritative; the SalishSea.io catalogue reconciles toward it
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-07-27
 - **Audience:** Scientific and informatics reviewers — the sections below are split, so each can read their half.
+
+*Amended 2026-10-12:* the direction below holds, and much of the work it describes has been done. Several facts in the body are out of date:
+
+- **SalishSea.io no longer runs Postgres.** It retired its database in October 2026. Its read-path build now loads each register edition, and since SalishSea.io decision [070](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/070-southern-residents-are-generated-from-the-register.md) (2026-10-07) the Southern Residents' catalogue rows are generated from that edition rather than kept by hand. The Bigg's rows are still checked in there, and are to follow. Read "loaded into Postgres" and `public.*` below with that in mind.
+- **SalishSea.io does not pin a tag.** Its build adopts the newest release, verifies it against `SHA256SUMS`, and records which edition it holds; an operator can hold it at one edition (SalishSea.io decision [064](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/064-what-users-do-not-write-leaves-postgres-first.md)).
+- **Orcasound does not fetch releases, and no longer carries only free-text tags.** Its tags now carry a kind and a register identifier ([orcasound/orcasite#1013](https://github.com/orcasound/orcasite/issues/1013)). The 16 identifiers in use were matched by hand against edition 2026.09.6 and set in production on 2026-09-25.
+- **Of the five findings,** `normalize_designation()` is gone: SalishSea.io compares designations by this register's fold (its decision [052](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/052-designations-compared-by-the-registers-fold.md)). Rosters that record association ([Q15](https://github.com/salish-sea/animals/issues/11)) and groups that have a name but no rank are still open.
+- **Under Implementation,** `sources.tsv` now has rows for the Bigg's sheet (`BIGGS-SHEET`), MERS and finwave. Q19 was answered by [ADR-0015](0015-bulk-import.md), and the Bigg's sheet has been imported.
+- **Under Consequences,** SalishSea.io's profile URLs now key on the register identifier, with the designation as a slug that is never read (its decision [034](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/034-profile-urls-key-on-the-register-identifier.md)). Its decision [033](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/033-register-names-the-animals.md) records on that side that its decision 008 does not govern the register, as this record asked.
+- **Both open questions are answered on SalishSea.io's side.** The catalogue migrates before the first Orcasound bout is tagged (decision [035](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/035-catalogue-migrates-before-tagging.md)), and SalishSea.io alone makes the recommendation to Orcasound (decision [028](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/028-salishsea-io-speaks-to-orcasound.md)).
 
 ## Context
 

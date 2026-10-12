@@ -1,8 +1,13 @@
 # ADR-0009: Uncertainty belongs on the annotation, not in the vocabulary
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-07-27
 - **Audience:** Scientific and informatics reviewers — the sections below are split, so each can read their half.
+
+*Amended 2026-10-12:*
+
+- SalishSea.io has settled what this record left to the aggregator, in its decision [054](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/054-certainty-is-the-asserters-status-is-ours.md) (2026-09-26). The asserter's certainty takes the same three values as the sketch below (`certain`, `probable`, `possible`). The dataset's verification status (`candidate`, `validated`, `rejected`) is a separate field, and neither is derived from the other. A numeric confidence is kept for scores from machines only. That answers, for SalishSea.io, the first open question at the end of this record.
+- Orcasound has made the schema change the Consequences section expected. Its tags now carry a kind and a register identifier ([orcasound/orcasite#1013](https://github.com/orcasound/orcasite/issues/1013)), and a moderator can record how sure they are of a tag ([orcasound/orcasite#1014](https://github.com/orcasound/orcasite/issues/1014)). Both issues were closed as completed in September 2026.
 
 ## Context
 

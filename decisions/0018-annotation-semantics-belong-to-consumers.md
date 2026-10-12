@@ -1,8 +1,14 @@
 # ADR-0018: Annotation semantics belong to the consuming systems
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-07-29
 - **Audience:** Scientific and informatics reviewers — the sections below are split, so each can read their half.
+
+*Amended 2026-10-12:*
+
+- Both open questions at the end of this record are answered on SalishSea.io's side. The substance of Q18 landed in its decision [054](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/054-certainty-is-the-asserters-status-is-ours.md) (2026-09-26), which keeps the asserter's certainty and the dataset's verification status as two separate fields. Its decision [028](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/028-salishsea-io-speaks-to-orcasound.md) (2026-08-13) makes SalishSea.io the only one of the two repositories that recommends an annotation schema to Orcasound.
+- Orcasound has since added a kind and a register identifier to its tags, and a moderator's certainty about a tag ([orcasound/orcasite#1013](https://github.com/orcasound/orcasite/issues/1013), [#1014](https://github.com/orcasound/orcasite/issues/1014)).
+- The `public.identifications` table described under Context was in SalishSea.io's Postgres database, which SalishSea.io retired in October 2026. A relation of the same name survives in its read-path build.
 
 ## Context
 

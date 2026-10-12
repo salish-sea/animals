@@ -1,8 +1,16 @@
 # ADR-0013: The schema is the validation; releases carry the artefacts
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer.
 - **Date:** 2026-07-28
 - **Audience:** Informatics reviewers — implementation detail. Safe to skip if you're reviewing the science.
+
+*Amended 2026-10-12:*
+
+- **Neither consumer is a Postgres database that pins a tag.** SalishSea.io retired its Postgres database in October 2026; its build reads `register-tsv.tar.gz` into a database of its own. Orcasound does not fetch releases at all: its tags cite register identifiers that were matched by hand (see [ADR-0012](0012-relationship-to-the-salishsea-io-catalogue.md)'s amendment).
+- **SalishSea.io follows the newest release.** Its build asks every five minutes which release `releases/latest` points to, verifies a new edition against `SHA256SUMS`, and records the tag it adopted ([SalishSea.io decision 064](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/064-what-users-do-not-write-leaves-postgres-first.md)). So for SalishSea.io, tagging a release changes production within minutes. The statement under "Cadence" that nothing is dragged along by a tag holds only for a consumer that pins one.
+- **The edition requirement is narrower than "on every annotation".** "Provenance without a lockfile" below says ADR-0006 wants `register_edition` recorded on every annotation. [ADR-0018](0018-annotation-semantics-belong-to-consumers.md) narrowed that: only facts derived from the register need to record the edition they came from.
+- **[Q25](../docs/open-questions.md) is answered.** It was resolved on 2026-08-09: no one else cuts releases for now.
+- **The example URLs for `2026.07.1` do not resolve.** No such release exists; the first was `2026.08.1`. `releases/latest/download/register.db` does resolve.
 
 ## Context
 
