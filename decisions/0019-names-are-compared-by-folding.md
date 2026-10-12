@@ -1,11 +1,17 @@
 # ADR-0019: Names are compared by folding, never rewritten
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-08-09
 - **Audience:** Informatics reviewers — this is the matching rule every consumer
   implements, with published, executable test cases. Scientific reviewers — one clause is
   a domain judgement rather than typography: a plural designation names a matriline, not
   its matriarch, so the rule refuses to treat `T090s` and `T090` as the same string.
+
+*Amended 2026-10-12:*
+
+- SalishSea.io has made the change described under Implementation. `normalize_designation()` is gone, and SalishSea.io compares designations by this fold everywhere it matches them ([its decision 052](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/052-designations-compared-by-the-registers-fold.md)).
+- The figure of 199 bare designations naming two entities is as of 2026-08-09.
+- The open question met its first real case in edition 2026.09.6. The fold deletes a hyphen without putting a space in its place, so "Short finned pilot whale" and "Short-finned pilot whale" fold differently. The register added the unhyphenated spelling as a `hidden` name rather than change the fold.
 
 ## Context
 

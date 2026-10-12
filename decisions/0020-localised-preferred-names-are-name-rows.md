@@ -1,11 +1,16 @@
 # ADR-0020: Localised preferred names are `names.tsv` rows, added when they exist
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-08-09
 - **Audience:** Informatics reviewers — this settles a schema question by narrowing it,
   and defers the (additive) implementation until there is a row to hold. Scientific
   reviewers — one premise is yours to check: most of what this register calls a name is
   notation, not language.
+
+*Amended 2026-10-12:*
+
+- The counts under Context (668 entities, roughly 650 labelled with designations) are as of 2026-08-09.
+- The register's first names in languages other than English followed this record. Edition 2026.09.6 added four French and Spanish common names, the labels Whale Alert uses, as `common` rows with a language. None is marked preferred, so the `preferred` type is still not implemented.
 
 ## Context
 
