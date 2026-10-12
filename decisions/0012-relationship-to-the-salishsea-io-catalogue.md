@@ -78,7 +78,8 @@ distribution paths where only one is exercised. Being the same author's other pr
 a reason to trust the data, not a reason to skip the front door.
 
 Unifying the two on one roster is the goal of this effort. Orcasound currently carries
-free-text tags (`tag.ex`, `item_tag.ex` in `server/lib/orcasite/radio/`) and no roster;
+~~free-text tags (`tag.ex`, `item_tag.ex` in `server/lib/orcasite/radio/`)~~ [tags that
+cite register identifiers since 2026-09-25; see the 2026-10-12 amendment] and no roster;
 the intent is that it never acquires one.
 
 "Separate project" describes audience and purpose, not distance. All three efforts are
@@ -136,9 +137,10 @@ notice and adopt it — not to defend the newer model.
   spreadsheet, and whatever MERS/finwave material fed it) belong there~~, and do not yet appear~~
   [they do now, as `BIGGS-SHEET`, `MERS` and `FINWAVE`; see the 2026-10-12 amendment].
 - The 649-row Bigg's file is a **seed candidate**, not a source. Importing it is
-  [Q19](../docs/open-questions.md) — bulk import is not currently a supported operation,
+  [Q19](../docs/open-questions.md) — ~~bulk import is not currently a supported operation,
   and the reviewable-diff premise of [ADR-0001](0001-tsv-in-git-as-source-of-truth.md)
-  does not survive a several-thousand-row pull request without a stated exception.
+  does not survive a several-thousand-row pull request without a stated exception~~
+  [answered by [ADR-0015](0015-bulk-import.md), under which the Bigg's sheet was imported].
 - Migration direction is one-way. Until the catalogue migrates, crosswalk rows in
   `mappings.tsv` are the interim bridge, and they are expected to be temporary.
 - The rights analysis in `salishsea-io/docs/rights-policy.md` (and its decision 004) is
