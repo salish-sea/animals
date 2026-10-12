@@ -10,7 +10,7 @@
 - **SalishSea.io follows the newest release.** Its build asks every five minutes which release `releases/latest` points to, verifies a new edition against `SHA256SUMS`, and records the tag it adopted ([SalishSea.io decision 064](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/064-what-users-do-not-write-leaves-postgres-first.md)). So for SalishSea.io, tagging a release changes production within minutes. The statement under "Cadence" that nothing is dragged along by a tag holds only for a consumer that pins one.
 - **The edition requirement is narrower than "on every annotation".** "Provenance without a lockfile" below says ADR-0006 wants `register_edition` recorded on every annotation. [ADR-0018](0018-annotation-semantics-belong-to-consumers.md) narrowed that: only facts derived from the register need to record the edition they came from.
 - **[Q25](../docs/open-questions.md) is answered.** It was resolved on 2026-08-09: no one else cuts releases for now.
-- **The example URLs for `2026.07.1` do not resolve.** No such release exists; the first was `2026.08.1`. `releases/latest/download/register.db` does resolve.
+- **The example URLs below named `2026.07.1`, a release that never existed; the first was `2026.08.1`, and the examples now use it.** `releases/latest/download/register.db` resolves too.
 
 ## Context
 
@@ -128,8 +128,8 @@ Releases do what was wanted, with permanent URLs that need no client:
 
 ```
 https://github.com/salish-sea/animals/releases/latest/download/register.db
-https://github.com/salish-sea/animals/releases/download/2026.07.1/register.db
-gh release download 2026.07.1 --repo salish-sea/animals --pattern 'register.db'
+https://github.com/salish-sea/animals/releases/download/2026.08.1/register.db
+gh release download 2026.08.1 --repo salish-sea/animals --pattern 'register.db'
 ```
 
 This answers [Q11](../docs/open-questions.md): that URL *is* the stable address, and it
