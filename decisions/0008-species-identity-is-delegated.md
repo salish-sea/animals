@@ -89,7 +89,7 @@ vocabulary, exactly as [ADR-0009](0009-uncertainty-on-the-annotation.md) require
 
 ### Why the register is a forest, not a tree
 
-The membership graph has one root per `taxon` entity — five today — rather than a single
+The membership graph has one root per `taxon` entity — ~~five today~~ [56 as of 2026-10-12; see the 2026-10-12 amendment] — rather than a single
 root at Animalia. That looks unfinished and is deliberate.
 
 **Membership here is genealogical and social** ([ADR-0005](0005-membership-is-genealogical.md)):

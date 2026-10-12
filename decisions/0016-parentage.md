@@ -100,7 +100,7 @@ child_id  parent_id  role  source_id  note
   is the same trick `membership.group_kind` uses and the same wart ADR-0013 admits to:
   curators never maintain them, the build populates them, and the TSV has five columns.
 
-Five checks, and it is worth noting which the schema gets for free:
+~~Five checks~~ [Six checks; see the 2026-10-12 amendment], and it is worth noting which the schema gets for free:
 
 | Check | Where |
 |---|---|

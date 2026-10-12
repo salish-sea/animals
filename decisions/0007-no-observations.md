@@ -50,7 +50,7 @@ seen* would be an occurrence, and is not recorded.
 ## Implementation
 
 - No table has a location column, an observer column, or an encounter identifier.
-- `status.tsv` is the only table with a real-world date, and it holds life status only —
+- ~~`status.tsv` is the only table with a real-world date, and it holds~~ [`status.tsv` is not the only table with a real-world date, since births and membership dates are recorded too (see the 2026-10-12 amendment); it holds] life status only —
   not "last seen".
 - New columns proposed on any table should be tested against the rule above in review.
   [ADR-0016](0016-parentage.md) is the first case where that happened: "J57's mother is

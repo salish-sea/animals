@@ -61,15 +61,15 @@ both repositories, so nothing external enforces it.
 |---|---|---|
 | Relationship | The same data, presented. No translation boundary. | A separate project: distinct audience and purpose, organizationally adjacent. |
 | Coupling | Tight, permanently. Separate repos for process reasons only. | Loose: a separate project's own model, referencing ours. |
-| How it consumes | A released artefact at a pinned tag. | The same. |
+| How it consumes | ~~A released artefact at a pinned tag.~~ [The newest release; see the 2026-10-12 amendment.] | ~~The same.~~ [It does not fetch releases; see the 2026-10-12 amendment.] |
 | Animal identity of its own | None — materialized from here. | None, and that is the ask in [orcasound/orcasite#1001](https://github.com/orcasound/orcasite/issues/1001), not yet agreed. |
 | Who decides | The author of both. | In practice S. Veirs, whose initiative the whole effort is, plus this repository's author. See below. |
 
 **Tight coupling is a claim about the model, not about the transport.** SalishSea.io is
 tightly coupled in that it holds no animal identity of its own and cannot disagree with
 this register. It is not tightly coupled in the sense of reading this working tree: it
-fetches a released artefact at a pinned tag and records the tag and the digest it
-verified, exactly as Orcasound does
+fetches a released artefact ~~at a pinned tag~~ [the newest one; see the 2026-10-12 amendment] and records the tag and the digest it
+verified~~, exactly as Orcasound does~~ [Orcasound does not fetch releases]
 ([ADR-0013](0013-distribution.md), [ADR-0006](0006-valid-time-in-data-assertion-time-in-git.md)).
 
 Tracking the repository directly would tie deployments to whatever `main` happened to
@@ -133,8 +133,8 @@ notice and adopt it — not to defend the newer model.
 
 - `salishsea-io` is **not** a row in `sources.tsv`, because it is not a source of
   authority. The upstream catalogues it derived its data from (the Bigg's nickname
-  spreadsheet, and whatever MERS/finwave material fed it) belong there, and do not yet
-  appear.
+  spreadsheet, and whatever MERS/finwave material fed it) belong there~~, and do not yet appear~~
+  [they do now, as `BIGGS-SHEET`, `MERS` and `FINWAVE`; see the 2026-10-12 amendment].
 - The 649-row Bigg's file is a **seed candidate**, not a source. Importing it is
   [Q19](../docs/open-questions.md) — bulk import is not currently a supported operation,
   and the reviewable-diff premise of [ADR-0001](0001-tsv-in-git-as-source-of-truth.md)
@@ -148,13 +148,13 @@ notice and adopt it — not to defend the newer model.
 
 ## Consequences
 
-- SalishSea.io absorbs migration cost — new identifiers, changed URLs (its public routes
+- SalishSea.io absorbs migration cost — new identifiers, changed URLs (~~its public routes
   key on `primary_designation`, which its own schema marks as changeable via
-  `designations.superseded_by`), and a rank-vocabulary reconciliation.
+  `designations.superseded_by`~~ [they now key on the register identifier, with the designation as a slug that is never read: [SalishSea.io decision 034](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/034-profile-urls-key-on-the-register-identifier.md)]), and a rank-vocabulary reconciliation.
 - Public URLs keyed on a designation are a live violation of
   [ADR-0011](0011-label-is-a-preferred-name.md)'s "nothing may key on a label". That rule
-  is currently stated as a hypothetical risk; it is a present fact and the migration has
-  to address it.
+  is currently stated as a hypothetical risk; ~~it is a present fact and the migration has
+  to address it~~ [it was, and the migration has addressed it: [SalishSea.io decision 034](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/034-profile-urls-key-on-the-register-identifier.md)].
 - This register acquires an obligation it did not have yesterday: it must be at least as
   expressive as the catalogue it is displacing *on identity and membership*. Four of the
   five findings above are the bill; the fifth is void, because on annotation semantics the

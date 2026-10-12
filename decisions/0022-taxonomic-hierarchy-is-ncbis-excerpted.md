@@ -48,8 +48,8 @@ the authority it delegated to says.
 
 ## What this means for the data
 
-- **No `SSA:` identifier is minted.** Delphinidae is `NCBITaxon:9726` and nothing else. A
-  family is not an entity, cannot be tagged, and has no names here.
+- **No `SSA:` identifier is minted.** Delphinidae is `NCBITaxon:9726` and nothing else. ~~A
+  family is not an entity, cannot be tagged, and has no names here.~~ [A node that appears only in NCBI's lineage, as Delphinidae does, is not an entity, cannot be tagged, and has no names here. A family can still be a taxon entity: Laridae, Otariidae and Phocidae are; see the 2026-10-12 amendment.]
 - **The whole lineage is kept, unranked clades included.** A killer whale has 28 ancestors
   and 14 of them have no rank (Boreoeutheria, Whippomorpha…). Dropping them would be
   editing NCBI's tree. `dist/classification.tsv` does the filtering a consumer usually

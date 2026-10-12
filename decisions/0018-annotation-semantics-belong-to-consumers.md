@@ -180,5 +180,12 @@ version.
   amendment to 013 or a successor. The findings file above is a holding place, not that;
   a note nobody has to act on is easier to keep than a decision. Filing it is this author's
   job wearing the other hat, which is precisely the kind of obligation that gets dropped.
+  **Answered 2026-10-12:** it landed, as SalishSea.io's decision
+  [054](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/054-certainty-is-the-asserters-status-is-ours.md)
+  (2026-09-26), which keeps the asserter's certainty and the dataset's verification status
+  as separate fields.
 - Does Orcasound get a written recommendation, and from which repository? Two projects
   independently telling a third what its annotation schema should be is worse than one.
+  **Answered 2026-10-12:** from SalishSea.io alone, under its decision
+  [028](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/028-salishsea-io-speaks-to-orcasound.md)
+  (2026-08-13).

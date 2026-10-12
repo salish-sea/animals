@@ -33,7 +33,7 @@ held by consumers, not an endpoint queried at runtime.
 ## What this means for the science
 
 Nothing about the *content* changes. The register still resolves ecotype, pod, matriline
-and individual; it still expects to draw on CWR for Southern Residents, and on MERS,
+and individual; it still expects to draw on ~~CWR~~ [NOAA's census file, which records CWR's observations: [ADR-0023](0023-southern-residents-from-noaas-census-file.md)] for Southern Residents, and on MERS,
 finwave or DFO for Bigg's; the community still agrees what the terms mean. The vision in
 #1001 is what this implements.
 
@@ -68,7 +68,7 @@ Four reasons that matters, in rough order of weight:
 
 ## Implementation
 
-- Consumers hold the register: fetched at a pinned edition, loaded into their own
+- Consumers hold the register: fetched ~~at a pinned edition~~ [as a published edition; SalishSea.io follows the newest, see the 2026-10-12 amendment], loaded into their own
   database. See [ADR-0013](0013-distribution.md).
 - Editions are CalVer tags with permanent asset URLs. There is no endpoint.
 - A convenience API over the published editions remains possible later, and would be a

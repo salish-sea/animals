@@ -139,7 +139,7 @@ Release assets:
 
 | Asset | For |
 |---|---|
-| `register-tsv.tar.gz` | Both consumers. Postgres ingests it with `COPY`. |
+| `register-tsv.tar.gz` | ~~Both consumers. Postgres ingests it with `COPY`.~~ [SalishSea.io, whose build reads it into its own database; Orcasound fetches no release. See the 2026-10-12 amendment.] |
 | `dist/*.tsv` (in the tarball) | The derived views, same treatment |
 | `register.db` | Third parties, notebooks, `datasette`. Neither consumer runs it. |
 | `schema.sql` | The constraint contract, to be translated into each consumer's own DDL |
@@ -149,7 +149,7 @@ Release assets:
 
 A package manager would have given integrity hashes and pinning for free, which is what
 [ADR-0006](0006-valid-time-in-data-assertion-time-in-git.md) wants recorded as
-`register_edition` on every annotation. Releases do not. So: publish `SHA256SUMS`, and
+`register_edition` ~~on every annotation~~ [on facts derived from the register, not on every annotation: [ADR-0018](0018-annotation-semantics-belong-to-consumers.md)]. Releases do not. So: publish `SHA256SUMS`, and
 have consumers record the tag **and the digest they verified**. That is more honest than a
 lockfile anyway, since it survives the file being fetched from anywhere.
 
@@ -168,9 +168,9 @@ depends only on there being editions to be stale between, not on how often they 
 
 Frequent tagging costs consumers nothing, and this is the reason the question of release
 churn dissolves rather than needing a `release` branch to answer it: **nothing is dragged
-along by a tag.** Both consumers pin a tag and record a digest, so each moves when it
+along by a tag.** ~~Both consumers pin a tag and record a digest, so each moves when it
 decides to. Only `releases/latest/download/` tracks the tip, and that is for third
-parties and notebooks that asked for exactly that. A release branch would also have
+parties and notebooks that asked for exactly that.~~ [SalishSea.io follows the newest release and Orcasound fetches none, so this holds only for a consumer that pins; see the 2026-10-12 amendment.] A release branch would also have
 nothing to hold — it earns its keep when fixes must be backported to a maintained old
 line, and corrections here are append-only and forward-only
 ([ADR-0006](0006-valid-time-in-data-assertion-time-in-git.md),
@@ -179,16 +179,16 @@ line, and corrections here are append-only and forward-only
 **P. Abrahamsen cuts releases today**, which works only because tagging and curation are
 currently the same person. Widening that — S. Veirs is the obvious second — means making
 the authority delegable without also handing over the ability to publish an arbitrary
-artefact under the register's name. Unresolved; see [Q25](../docs/open-questions.md).
+artefact under the register's name. ~~Unresolved~~ [Answered 2026-08-09: no one else, for now]; see [Q25](../docs/open-questions.md).
 
 ## Consequences
 
-- Both consumers are Postgres — Orcasound runs `ash_postgres`, SalishSea.io runs Supabase
-  — so neither will ever *query* the SQLite file. The TSVs are the integration path and
+- ~~Both consumers are Postgres — Orcasound runs `ash_postgres`, SalishSea.io runs Supabase
+  —~~ [SalishSea.io retired Postgres and reads the tarball into its build, and Orcasound fetches no release; see the 2026-10-12 amendment] so neither will ever *query* the SQLite file. The TSVs are the integration path and
   the `.db` is a byproduct that happens to be useful to others. Building it is still
   worthwhile because it is *how the constraints get checked*.
-- **Both consumers consume the same way**: a released artefact at a pinned tag, with the
-  tag and digest recorded. SalishSea.io's tight coupling
+- ~~**Both consumers consume the same way**: a released artefact at a pinned tag, with the
+  tag and digest recorded.~~ [SalishSea.io adopts the newest release and records its tag and digest; Orcasound fetches no release. See the 2026-10-12 amendment.] SalishSea.io's tight coupling
   ([ADR-0012](0012-relationship-to-the-salishsea-io-catalogue.md)) is a statement about
   the model — it holds no identity of its own — not about the transport. One distribution
   path means one path to keep working.

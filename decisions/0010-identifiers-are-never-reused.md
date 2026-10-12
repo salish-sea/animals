@@ -48,8 +48,8 @@ Validation enforces:
   successor is always live and a consumer never has to chase a chain.
 - No identifier present in git history is ever absent from `entities.tsv` — removal is
   never permitted, with or without a deprecation row. Enforced in CI rather than in
-  `bin/validate.py`, and only against the pull-request base, so branch protection is what
-  actually makes this hold.
+  `bin/validate.py`, and only against the pull-request base, so ~~branch protection is what
+  actually makes this hold~~ [`main` has no branch protection, so this holds by practice and by the pull-request check; see the 2026-10-12 amendment].
 
 Deprecated entities **stay in `entities.tsv`** and keep resolving to a label. They are
 excluded from autocomplete and from new annotations, but a 2025 record referencing one

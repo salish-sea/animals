@@ -102,7 +102,7 @@ Two related patterns fall out of the same principle:
   [ADR-0018](0018-annotation-semantics-belong-to-consumers.md) now says where ownership
   sits. SalishSea.io's shipped model separates the asserter's confidence from the
   dataset's verification status — a distinction the sketch above collapses, and a real
-  gap: a moderator's `possible` that a curator later confirms has nowhere to land. That
+  gap: a moderator's `possible` that a curator later confirms has nowhere to land [in the sketch; in SalishSea.io it lands, because its decision [054](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/054-certainty-is-the-asserters-status-is-ours.md) keeps the asserter's certainty and the verification status in separate fields]. That
   model is better on the point and this record defers to it.
 - The sketch makes `certainty` a three-value enum because a numeric probability implies a
   precision a listening moderator does not have. The shipped model carries a numeric
