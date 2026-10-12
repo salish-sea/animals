@@ -9,7 +9,7 @@
 
 Since 2026-07-27 the rule has been that a record is Proposed when merged and becomes Accepted only when the reviewers its Audience line names have been asked and have had two weeks to object. Silence from reviewers nobody asked did not count.
 
-Eleven weeks later, one record of 24 is Accepted ([ADR-0023](0023-southern-residents-from-noaas-census-file.md)). No other record was ever put to a scientific reviewer, and the maintainer does not expect Scott Veirs or Dave Bain to have time for a review of this kind. Waiting longer will not change that.
+Eleven weeks later, one record of 24 is Accepted ([ADR-0023](0023-southern-residents-from-noaas-census-file.md)). No other record was ever put to a scientific reviewer. The people CODEOWNERS names for that role have limited time, and the maintainer does not expect a review of 23 records to happen. Waiting longer will not change that.
 
 So every other record reads Proposed, whether it describes how the register has worked for months (TSV files in git, [ADR-0001](0001-tsv-in-git-as-source-of-truth.md); dated releases, [ADR-0014](0014-a-publication-not-a-service.md)) or a choice still in doubt. A reader, or a consumer such as SalishSea.io deciding what it can rely on, cannot tell the two apart. The old rule meant to make that difference visible and ended up hiding it. It was written against failure mode 3 in [background.md](../docs/background.md), a change process too slow to use, and became an instance of it.
 
