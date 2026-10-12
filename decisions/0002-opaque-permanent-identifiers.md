@@ -1,8 +1,13 @@
 # ADR-0002: Opaque, permanent identifiers with an adjacent label
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-07-27
 - **Audience:** Scientific and informatics reviewers — the sections below are split, so each can read their half.
+
+*Amended 2026-10-12:*
+
+- The open question below says `SSA` is "now claimed". It is requested, not claimed. `SSA` was free when checked on 2026-08-13, and a registration was requested in the Bioregistry that day ([biopragmatics/bioregistry#2028](https://github.com/biopragmatics/bioregistry/issues/2028)). As of 2026-10-12 it is not registered. See [ADR-0021](0021-ssa-is-a-registered-prefix.md).
+- The number blocks listed under Implementation are the hand-written seed's. The imports since then use blocks of their own: Bigg's matrilines from `SSA:0002000` and Bigg's individuals from `SSA:0010000` ([ADR-0015](0015-bulk-import.md)), Southern Resident matrilines from `SSA:0003000` and individuals from `SSA:0020000` ([ADR-0023](0023-southern-residents-from-noaas-census-file.md)), and taxa from `SSA:0000900`. As before, no block carries any meaning.
 
 ## Context
 

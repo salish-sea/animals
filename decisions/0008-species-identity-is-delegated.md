@@ -1,8 +1,13 @@
 # ADR-0008: Species identity is delegated, not minted
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-07-27
 - **Audience:** Scientific and informatics reviewers — the sections below are split, so each can read their half.
+
+*Amended 2026-10-12:*
+
+- "One root per `taxon` entity — five today": as of 2026-10-12 there are 56 taxon entities: 33 species, 15 genera, three families (Laridae, Otariidae, Phocidae) and a few higher groups such as Cetacea and Pinnipedia. Each is still a root of its own, and membership still holds no taxonomy.
+- The table that sorts 734 killer-whale rows by ecotype is as of 2026-09-20. The Southern Resident import in edition 2026.10.1 added 289 rows under Resident. As of 2026-10-12 the same sort gives 719 rows under Bigg's, 302 under Resident, the one deprecated row, and `SSA:0000900`: 1,023 in all. The rule for sorting them is unchanged.
 
 ## Context
 

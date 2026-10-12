@@ -1,8 +1,13 @@
 # ADR-0007: The register holds no observations
 
-- **Status:** Proposed
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-07-27
 - **Audience:** Scientific and informatics reviewers — the sections below are split, so each can read their half.
+
+*Amended 2026-10-12:*
+
+- Implementation says `status.tsv` is the only table with a real-world date. That is not accurate. `entities.tsv` records birth years, and `membership.tsv` records when a membership started or ended ([ADR-0005](0005-membership-is-genealogical.md)). None of these dates belongs to an encounter, so the rule is unchanged: `status.tsv` is the only table about life status, and nothing records when an animal was last seen.
+- "Hundreds of rows, not millions" is out of date. As of 2026-10-12 the register holds 1,078 entities.
 
 ## Context
 
