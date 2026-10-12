@@ -146,7 +146,7 @@ signal must be taggable with no animal tag, so that a moderator who knows the ca
 and not the producer is not forced to name an animal. Folded into Q18.
 
 ### Q10 — Is `SSA:` a safe prefix?
-**Resolved 2026-08-13. Free, and now claimed.** Checked against four registries:
+**Resolved 2026-08-13. Free, and a registration requested** (biopragmatics/bioregistry#2028, still open as of 2026-10-12). Checked against four registries:
 Bioregistry (2,759 prefixes — no `ssa`, and no prefix or synonym even beginning with
 "ssa"), N2T (4,110), identifiers.org, and prefix.cc. Nothing collides. The only clashes
 are semantic — anti-SSA/Ro is routine in biomedicine — and those cannot collide
@@ -168,8 +168,10 @@ serves:
 
 ```
 https://github.com/salish-sea/animals/releases/latest/download/register.db
-https://github.com/salish-sea/animals/releases/download/2026.07.1/register-tsv.tar.gz
+https://github.com/salish-sea/animals/releases/download/2026.08.1/register-tsv.tar.gz
 ```
+
+(The first release was `2026.08.1`; this example originally named `2026.07.1`, a tag that was never cut.)
 
 That *is* the stable address, it needs no client and no API call, and it carries no
 hosting commitment — which is what made the dereferenceable-identifier version of this

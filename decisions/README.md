@@ -16,8 +16,9 @@ Currently:
   science.
 
 A record may name either, or both. Moderators who apply the vocabulary, and people
-implementing a downstream consumer, are plausible future audiences; neither has a record
-addressed to it yet.
+implementing a downstream consumer, are plausible future audiences. One record so far,
+[ADR-0022](0022-taxonomic-hierarchy-is-ncbis-excerpted.md), also addresses anyone publishing
+occurrences from the register.
 
 ## How a record becomes Accepted
 
