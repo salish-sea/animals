@@ -87,9 +87,12 @@ GitHub. Two things are worth noticing in it:
   lineage from her mother's. The same rule as the Bigg's sub-lineages, and just as
   unconfirmed.
   Nicknames are still `SEED`.
-- **Almost nothing is ratified.** ADR-0023 is `Accepted`; every other decision record is
-  `Proposed`. They are written
-  as arguments to disagree with, not as conclusions.
+- **Accepted is not the same as reviewed.** Every decision record is `Accepted`, which
+  means the maintainer stands behind it
+  ([ADR-0025](../decisions/0025-the-maintainer-accepts-a-record.md)). Only ADR-0023 has
+  been reviewed by a scientist; each other record that needs one says so in its Status
+  line. They are still written as arguments to disagree with, and an objection reopens
+  one.
 - **Identifiers look unfriendly on purpose.** `SSA:0000101` rather than `J35`, because a
   meaningful identifier becomes a lie when the thing it names changes. The name sits right
   next to it and can be changed freely.

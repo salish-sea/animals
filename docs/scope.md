@@ -185,7 +185,9 @@ failures are more likely than a modelling error, and
 
 ## Status
 
-Almost everything here is **proposed**. One decision in `decisions/` is accepted
-([ADR-0023](../decisions/0023-southern-residents-from-noaas-census-file.md)), no row
-in `data/` is verified, and the identifier prefix is not yet registered. See
+Every decision in `decisions/` has been accepted by the maintainer, but only one
+([ADR-0023](../decisions/0023-southern-residents-from-noaas-census-file.md)) has been
+reviewed by a scientist; anyone may still object and reopen one
+([ADR-0025](../decisions/0025-the-maintainer-accepts-a-record.md)). No row in `data/` is
+verified, and the identifier prefix is requested but not yet registered. See
 [docs/open-questions.md](open-questions.md).
