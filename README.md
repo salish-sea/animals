@@ -135,6 +135,14 @@ SSA:0000900  Orcinus orca (taxon)
                  └─ SSA:0000022  L pod
 ```
 
+### Identifiers
+
+An identifier is written `SSA:` and seven digits, such as `SSA:0000020`, J pod. That is its
+compact form, the one the files here use and consumers store. Its global form, for
+publishing outside a system that already knows the prefix, is a web address:
+`SSA:0000020` is `https://w3id.org/salish-sea/animals/0000020`
+([ADR-0026](decisions/0026-identifiers-resolve-through-w3id.md)).
+
 Identifiers are opaque on purpose — a readable identifier becomes a lie when the thing
 it names changes ([ADR-0002](decisions/0002-opaque-permanent-identifiers.md)). The
 preferred name sits next to the identifier, which also keeps diffs reviewable.

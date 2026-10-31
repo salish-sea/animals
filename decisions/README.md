@@ -68,11 +68,12 @@ scientific reviewers says in its Status line that none has reviewed it.
 | [0018](0018-annotation-semantics-belong-to-consumers.md) | Annotation semantics belong to the consuming systems | Scientific + informatics |
 | [0019](0019-names-are-compared-by-folding.md) | Names are compared by folding, never rewritten | Scientific + informatics |
 | [0020](0020-localised-preferred-names-are-name-rows.md) | Localised preferred names are `names.tsv` rows, added when they exist | Scientific + informatics |
-| [0021](0021-ssa-is-a-registered-prefix.md) | `SSA` is kept, and a Bioregistry prefix is requested | Informatics reviewers |
+| [0021](0021-ssa-is-a-registered-prefix.md) | `SSA` is kept, and a Bioregistry prefix is requested (request superseded by 0026) | Informatics reviewers |
 | [0022](0022-taxonomic-hierarchy-is-ncbis-excerpted.md) | The taxonomic hierarchy is NCBI's, excerpted by script — not curated here (amends 0008) | Informatics reviewers |
 | [0023](0023-southern-residents-from-noaas-census-file.md) | Southern Residents are imported from NOAA NWFSC's public-domain census file (salishsea-io's D-22); matrilines derived from mothers, disagreements noted not settled, SEED identifiers reused (amends 0016 for Southern Residents) | Scientific + informatics |
 | [0024](0024-a-matriline-names-its-matriarch.md) | A matriline names its matriarch, in a table of its own | Scientific + informatics |
 | [0025](0025-the-maintainer-accepts-a-record.md) | The maintainer accepts a record, and its Status line says whether a scientist has reviewed it | Scientific + informatics |
+| [0026](0026-identifiers-resolve-through-w3id.md) | An identifier's global form is a w3id.org address, and the Bioregistry request is withdrawn | Informatics reviewers |
 
 ## Template
 

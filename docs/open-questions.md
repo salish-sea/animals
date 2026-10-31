@@ -146,16 +146,18 @@ signal must be taggable with no animal tag, so that a moderator who knows the ca
 and not the producer is not forced to name an animal. Folded into Q18.
 
 ### Q10 — Is `SSA:` a safe prefix?
-**Resolved 2026-08-13. Free, and a registration requested** (biopragmatics/bioregistry#2028, still open as of 2026-10-12). Checked against four registries:
+*Since 2026-10-31 ([ADR-0026](../decisions/0026-identifiers-resolve-through-w3id.md)): the registration is withdrawn, and an identifier's global form is `https://w3id.org/salish-sea/animals/` followed by its digits; `SSA:` stays the compact form.* **Resolved 2026-08-13. Free, and a registration requested** (biopragmatics/bioregistry#2028, still open as of 2026-10-12). Checked against four registries:
 Bioregistry (2,759 prefixes — no `ssa`, and no prefix or synonym even beginning with
 "ssa"), N2T (4,110), identifiers.org, and prefix.cc. Nothing collides. The only clashes
 are semantic — anti-SSA/Ro is routine in biomedicine — and those cannot collide
 mechanically with a CURIE prefix.
 
-But "free" decays, so the answer is not just the check: `SSA` is being **registered in
+~~But "free" decays, so the answer is not just the check: `SSA` is being **registered in
 the Bioregistry**, with no URI format, which 1,151 of its 2,759 entries also lack and
 which keeps [ADR-0014](../decisions/0014-a-publication-not-a-service.md)'s
-publication-not-a-service promise intact. The trigger for resolving it now was
+publication-not-a-service promise intact.~~ [Withdrawn 2026-10-31: rather than rely on a
+registry, the register states the prefix's expansion itself, to a `w3id.org` address that
+needs no server of ours, [ADR-0026](../decisions/0026-identifiers-resolve-through-w3id.md).] The trigger for resolving it now was
 [orcasound/orcasite#1001](https://github.com/orcasound/orcasite/issues/1001) asking
 Orcasound to store register identifiers in a new column — the first external system, which
 is precisely the deadline this question set itself. See
