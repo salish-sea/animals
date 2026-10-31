@@ -1,6 +1,6 @@
 # ADR-0021: `SSA` is kept, and a Bioregistry prefix is requested
 
-- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer.
+- **Status:** Accepted, 2026-10-12, by Peter Abrahamsen as maintainer. Superseded by [ADR-0026](0026-identifiers-resolve-through-w3id.md) where it requests a Bioregistry prefix: the request is withdrawn, and an identifier's global form is a w3id.org address. Keeping `SSA` stands.
 - **Date:** 2026-08-13
 - **Audience:** Informatics reviewers — this settles a naming question with a registry
   check and a registration; nothing about the data changes.

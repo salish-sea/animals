@@ -146,7 +146,7 @@ signal must be taggable with no animal tag, so that a moderator who knows the ca
 and not the producer is not forced to name an animal. Folded into Q18.
 
 ### Q10 — Is `SSA:` a safe prefix?
-**Resolved 2026-08-13. Free, and a registration requested** (biopragmatics/bioregistry#2028, still open as of 2026-10-12). Checked against four registries:
+*Since 2026-10-31 ([ADR-0026](../decisions/0026-identifiers-resolve-through-w3id.md)): the registration is withdrawn, and an identifier's global form is `https://w3id.org/salish-sea/animals/` followed by its digits; `SSA:` stays the compact form.* **Resolved 2026-08-13. Free, and a registration requested** (biopragmatics/bioregistry#2028, still open as of 2026-10-12). Checked against four registries:
 Bioregistry (2,759 prefixes — no `ssa`, and no prefix or synonym even beginning with
 "ssa"), N2T (4,110), identifiers.org, and prefix.cc. Nothing collides. The only clashes
 are semantic — anti-SSA/Ro is routine in biomedicine — and those cannot collide

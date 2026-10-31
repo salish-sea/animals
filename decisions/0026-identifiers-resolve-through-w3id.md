@@ -21,7 +21,7 @@ ADR-0021 weighed exactly this, `w3id.org` addresses, and called it "the most fut
 
 **The address is held at w3id.org, not on a domain of our own.** A domain lasts as long as someone renews it, and [ADR-0010](0010-identifiers-are-never-reused.md) promises these identifiers indefinitely. If this project changed hands or lapsed, a lapsed domain could be bought by someone else, and every identifier would then point at them. w3id.org is held by the W3C Permanent Identifier Community Group, and a redirect there changes by a pull request to [perma-id/w3id.org](https://github.com/perma-id/w3id.org). It runs no server of ours, so the register stays a publication, not a service ([ADR-0014](0014-a-publication-not-a-service.md)).
 
-**The redirect starts simple.** Every address under `https://w3id.org/salish-sea/animals/` redirects to the README's section on identifiers, with a temporary redirect (`302`), as w3id.org requires, so the target can change later. Sending each identifier to a page about that entity, such as a SalishSea.io profile page, is a later choice. It changes only the redirect, never the identifiers.
+**The redirect starts simple.** Every address under `https://w3id.org/salish-sea/animals/` redirects to the README's section on identifiers. The redirect is `303 See Other`, which w3id.org recommends when an address names a thing and the target is a document about it; unlike a permanent `301`, which w3id.org discourages, it can be changed later. Sending each identifier to a page about that entity, such as a SalishSea.io profile page, is a later choice. It changes only the redirect, never the identifiers.
 
 **The Bioregistry request is withdrawn.** Peter withdraws it on bioregistry#2028, in his own words, as that project's policy asks.
 
