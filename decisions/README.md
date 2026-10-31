@@ -41,7 +41,7 @@ after the reviewers its Audience line names had been asked and had two weeks to 
 Definitions still follow their own rule, `working` → `agreed`, which ADR-0025 does not
 change; see [definitions/README.md](../definitions/README.md).
 
-**Every record is Accepted except [ADR-0026](0026-identifiers-resolve-through-w3id.md), which is Proposed. Only ADR-0023 has been reviewed by a scientific reviewer**:
+**Every record is Accepted. Only ADR-0023 has been reviewed by a scientific reviewer**:
 Scott Veirs approved it on 2026-10-06. The maintainer accepted the others on 2026-10-12,
 after an audit corrected facts in them that had gone out of date. Each record addressed to
 scientific reviewers says in its Status line that none has reviewed it.

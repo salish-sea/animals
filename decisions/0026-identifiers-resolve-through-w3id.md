@@ -1,6 +1,6 @@
 # ADR-0026: An identifier's global form is a w3id.org address, and the Bioregistry request is withdrawn
 
-- **Status:** Proposed.
+- **Status:** Accepted, 2026-10-31, by Peter Abrahamsen as maintainer.
 - **Date:** 2026-10-31
 - **Audience:** Informatics reviewers — this changes how an identifier is written outside the register, not what any identifier means.
 - **Supersedes:** [ADR-0021](0021-ssa-is-a-registered-prefix.md) where it requests a Bioregistry prefix. Its decision to keep `SSA` stands.
