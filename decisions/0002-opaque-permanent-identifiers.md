@@ -92,7 +92,7 @@ The cost is real: you cannot read `SSA:0000020` and know what it is. Which is wh
 ## Open questions
 
 - ~~Is `SSA` free as a prefix?~~ **Resolved 2026-08-13 (Q10).** Free in Bioregistry, N2T,
-  identifiers.org and prefix.cc, ~~and now claimed rather than merely unclaimed~~ [and requested in the Bioregistry, not yet registered; see the 2026-10-12 amendment] — see
-  [ADR-0021](0021-ssa-is-a-registered-prefix.md).
+  identifiers.org and prefix.cc, ~~and now claimed rather than merely unclaimed~~ ~~[and requested in the Bioregistry, not yet registered; see the 2026-10-12 amendment]~~ [the Bioregistry request was withdrawn on 2026-10-31; the register states the prefix's expansion itself, [ADR-0026](0026-identifiers-resolve-through-w3id.md)] — see
+  [ADR-0021](0021-ssa-is-a-registered-prefix.md) and ADR-0026.
 - Zero-padding to 7 digits assumes fewer than 10 million entities. Obviously fine, but
   the padding width is a formatting decision that is annoying to change later.
