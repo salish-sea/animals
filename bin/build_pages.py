@@ -4,8 +4,12 @@
 Each identifier's global form is a w3id.org address (ADR-0026). This script writes the
 page that address is meant to land on: what the entity is, what it belongs to, what
 belongs to it, its mother, its names and where each claim came from. Each page also
-carries the same facts in Darwin Core terms, as JSON-LD, so a program that follows an
-`organismID` out of a GBIF occurrence finds a description it can read.
+carries, as JSON-LD, what Darwin Core can say about an Organism on its own: its
+identifier, name, scope and taxon, the groups it belongs to and its mother. A program
+that follows an `organismID` out of a GBIF occurrence finds a description it can read.
+Sex, birth, life status and sources need the assertion and relationship tables of a
+Darwin Core Data Package, which a single page has no form for, so only the HTML shows
+them.
 
     python3 bin/build_pages.py --out build/pages
 
@@ -33,6 +37,7 @@ Judgements this script makes, which are what a reviewer should check:
 import argparse
 import html
 import json
+import shutil
 import sqlite3
 import subprocess
 import sys
@@ -131,8 +136,11 @@ class Register:
 def organism_jsonld(reg: Register, entity_id: str) -> dict:
     """The entity as a dwc:Organism, in the terms a flat Darwin Core record would use."""
     ent = reg.entities[entity_id]
+    # Only organisms: an ecotype is a member of a taxon entity, which is not one. Its
+    # taxon is carried by dwc:taxonID below.
     associated = [f'"member of":"{global_id(m["group_id"])}"'
-                  for m in reg.member_of[entity_id] if not m["ends"]]
+                  for m in reg.member_of[entity_id]
+                  if not m["ends"] and reg.entities[m["group_id"]]["kind"] == "group"]
     associated += [f'"offspring of":"{global_id(p["parent_id"])}"'
                    for p in reg.mothers[entity_id]]
     doc = {
@@ -224,7 +232,7 @@ def page(title: str, body: str, depth: int, jsonld: dict | None, stamp: str) -> 
     script = ""
     if jsonld:
         script = ('<script type="application/ld+json">\n'
-                  + json.dumps(jsonld, indent=2, ensure_ascii=False).replace("</", "<\\/")
+                  + json.dumps(jsonld, indent=2, ensure_ascii=False).replace("<", "\\u003c")
                   + "\n</script>\n")
     return f"""<!doctype html>
 <html lang="en">
@@ -356,9 +364,11 @@ def entity_page(reg: Register, entity_id: str, sha: str, stamp: str) -> str:
                    + "".join(f"<dt>{r}</dt><dd>{e(v)}</dd>" for r, v in rows) + "</dl>")
 
     jsonld = (taxon_jsonld if ent["kind"] == "taxon" else organism_jsonld)(reg, entity_id)
-    out.append('<h2>In Darwin Core</h2><p class="note">The same facts, in Darwin Core terms, '
-               'for programs that follow a Darwin Core <code>organismID</code> here. They are '
-               'embedded in this page as JSON-LD.</p><details><summary>Show</summary><pre>'
+    out.append('<h2>In Darwin Core</h2><p class="note">What Darwin Core can say about this '
+               'entity on its own, for programs that follow a Darwin Core '
+               '<code>organismID</code> here. It is embedded in this page as JSON-LD. Sex, '
+               'birth, status and sources are not included: Darwin Core records them as '
+               'separate assertions.</p><details><summary>Show</summary><pre>'
                + e(json.dumps(jsonld, indent=2, ensure_ascii=False)) + '</pre></details>')
     return page(f'{ent["label"]} ({entity_id})', "\n".join(out), 1, jsonld, stamp)
 
@@ -404,6 +414,12 @@ def main() -> int:
              'The register’s data is not yet licensed for redistribution.')
 
     args.out.mkdir(parents=True, exist_ok=True)
+    # A directory left from a build of another edition would serve an entity this edition
+    # does not have. Remove only identifier directories; leave anything else alone.
+    current = {digits(i) for i in reg.entities}
+    for d in args.out.iterdir():
+        if d.is_dir() and len(d.name) == 7 and d.name.isdigit() and d.name not in current:
+            shutil.rmtree(d)
     (args.out / "style.css").write_text(STYLE, encoding="utf-8")
     (args.out / "index.html").write_text(index_page(reg, stamp), encoding="utf-8")
     for entity_id in reg.entities:
