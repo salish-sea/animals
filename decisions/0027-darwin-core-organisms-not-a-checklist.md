@@ -1,6 +1,6 @@
 # ADR-0027: In Darwin Core, the register's animals and groups are Organisms, not a checklist, and each identifier resolves to a page about its entity
 
-- **Status:** Proposed. No scientific reviewer has reviewed it.
+- **Status:** Accepted, 2026-11-02, by Peter Abrahamsen as maintainer. No scientific reviewer has reviewed it.
 - **Date:** 2026-11-02
 - **Audience:** Scientific reviewers — this says how a whale, a matriline, a pod and an ecotype are each described to GBIF and to anyone else reading Darwin Core, and it answers [ADR-0008](0008-species-identity-is-delegated.md)'s question about ecotypes. Informatics reviewers — it adds a page generator, chooses where each identifier's address lands, and records how the register would map to a Darwin Core Data Package.
 - **Answers:** the open question in [ADR-0008](0008-species-identity-is-delegated.md), "how is an ecotype expressed in Darwin Core?"

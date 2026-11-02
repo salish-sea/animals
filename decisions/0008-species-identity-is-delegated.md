@@ -184,6 +184,6 @@ importing and maintaining a backbone we deliberately do not own.
 
 - ~~If anything is ever published to GBIF or OBIS, how is an ecotype expressed in Darwin
   Core? There may be no clean answer, which would be worth knowing before promising it.~~
-  [Answered by [ADR-0027](0027-darwin-core-organisms-not-a-checklist.md), which is Proposed: as
+  [Answered by [ADR-0027](0027-darwin-core-organisms-not-a-checklist.md): as
   a Darwin Core Organism whose scope is `ecotype`, never as a taxon. Whether an ecotype is a
   "defined group of organisms" at all is that record's open question.]
