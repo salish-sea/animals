@@ -74,6 +74,7 @@ scientific reviewers says in its Status line that none has reviewed it.
 | [0024](0024-a-matriline-names-its-matriarch.md) | A matriline names its matriarch, in a table of its own | Scientific + informatics |
 | [0025](0025-the-maintainer-accepts-a-record.md) | The maintainer accepts a record, and its Status line says whether a scientist has reviewed it | Scientific + informatics |
 | [0026](0026-identifiers-resolve-through-w3id.md) | An identifier's global form is a w3id.org address, and the Bioregistry request is withdrawn | Informatics reviewers |
+| [0027](0027-darwin-core-organisms-not-a-checklist.md) | In Darwin Core, the register's animals and groups are Organisms, not a checklist, and each identifier resolves to a page about its entity (answers 0008's open question) | Scientific + informatics |
 
 ## Template
 

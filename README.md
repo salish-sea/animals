@@ -56,7 +56,7 @@ Decision records addressed to `Informatics reviewers` are implementation detail.
 
 ### If you're reviewing the design
 
-[docs/scope.md](docs/scope.md), then [decisions/](decisions/) — twenty-one records covering the
+[docs/scope.md](docs/scope.md), then [decisions/](decisions/) — the records covering the
 choices that are expensive to reverse. [docs/background.md](docs/background.md) explains
 what we're borrowing from the Gene Ontology and OBO Foundry, what we're deliberately not
 taking, and why most projects like this one die.
@@ -85,6 +85,10 @@ bin/import_taxonomy.py
                 Fetches NCBI's lineage for every taxon we point at and writes
                 data/taxonomic_parent.tsv. Nothing else may write that file: it is
                 an excerpt, not something we curate. See ADR-0022.
+bin/build_pages.py
+                Writes a static page for every identifier, describing its entity
+                in words and in Darwin Core terms, into build/pages. Not yet
+                deployed. See ADR-0027.
 dist/           Generated derived views. Never hand-edited.
 ```
 
