@@ -113,7 +113,9 @@ shared conventions. We are taking its **policies** and leaving its **formalism**
 - **[Darwin Core](https://dwc.tdwg.org/)** — `identificationQualifier` and
   `identificationVerificationStatus` already solve the `+L?` problem, and SalishSea.io
   will likely want DwC-shaped output for OBIS/GBIF eventually. Worth conforming to at
-  the *export* boundary rather than internally.
+  the *export* boundary rather than internally. In Darwin Core the register's animals and
+  groups are Organisms, which is where `organismID` points
+  ([ADR-0027](../decisions/0027-darwin-core-organisms-not-a-checklist.md)).
 
 - **[EDTF](https://www.loc.gov/standards/datetime/)** (Extended Date/Time Format) — lets
   `1998`, `2020-09`, `1995/1998` and `1998?` all live in one column. Ages are usually
