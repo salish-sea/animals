@@ -312,6 +312,14 @@ def main():
 
         for nick in rec["nicknames"]:
             note = f"Named by {rec['namer']}." if rec["namer"] else ""
+            # A trailing `*` is the sheet's mark for a provisional nickname, not part of
+            # the name (#36). It goes in the note, as a hedged designation's `?` does:
+            # uncertainty belongs on the annotation, never in a name (ADR-0009).
+            if nick.endswith("*"):
+                nick = nick.rstrip("*").rstrip()
+                note = " ".join(filter(None, [note, "The sheet marks this nickname "
+                                              "provisional (a trailing *), so it may "
+                                              "change."]))
             add_name([eid, nick, "common", "en", SOURCE, note])
         if rec["alt"]:
             add_name([eid, rec["alt"], "hidden", "en", SOURCE,

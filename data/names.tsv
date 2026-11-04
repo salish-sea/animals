@@ -339,10 +339,10 @@ SSA:0010092	Slice	common	en	BIGGS-SHEET	Named by Monika Wieland Shields (Transie
 SSA:0010093	Graeme	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010094	Dana	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010098	Jane	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010099	Cook*	common	en	BIGGS-SHEET	Named by Dena Matkin.
+SSA:0010099	Cook	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010101	Borrowman	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010102	Falconer	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010103	Hocker*	common	en	BIGGS-SHEET	Named by Dena Matkin.
+SSA:0010103	Hocker	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010105	Captian Hook	common	en	BIGGS-SHEET	
 SSA:0010105	AL40	hidden	en	BIGGS-SHEET	Alaska/California catalogue designation. A proper crosswalk needs that catalogue's namespace — see Q23.
 SSA:0010106	Lawrie	common	en	BIGGS-SHEET	Named by Dena Matkin.
@@ -392,8 +392,8 @@ SSA:0010150	Bolder	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010151	Sita	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010152	Blakeslee	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010154	Passage	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010155	Lyrical*	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010156	Grandmama*	common	en	BIGGS-SHEET	Named by Dena Matkin.
+SSA:0010155	Lyrical	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
+SSA:0010156	Grandmama	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010157	Roswell	common	en	BIGGS-SHEET	Named by Ashley Keegan (Transient/Bigg's Orca Nick Naming Page) /Dena Matkin.
 SSA:0010157	Loner	common	en	BIGGS-SHEET	Named by Ashley Keegan (Transient/Bigg's Orca Nick Naming Page) /Dena Matkin.
 SSA:0010157	AL9	hidden	en	BIGGS-SHEET	Alaska/California catalogue designation. A proper crosswalk needs that catalogue's namespace — see Q23.
@@ -413,11 +413,11 @@ SSA:0010183	Minke	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010183	AM27	hidden	en	BIGGS-SHEET	Alaska/California catalogue designation. A proper crosswalk needs that catalogue's namespace — see Q23.
 SSA:0010184	Tonsai	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010185	Sparrow	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010185	Sparrow Rose*	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010186	Nova*	common	en	BIGGS-SHEET	Named by Dena Matkin.
+SSA:0010185	Sparrow Rose	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
+SSA:0010186	Nova	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010188	Amabilidad	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010189	Peaches*	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010191	Pelosi*	common	en	BIGGS-SHEET	Named by Dena Matkin.
+SSA:0010189	Peaches	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
+SSA:0010191	Pelosi	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010192	Whidbey II	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010192	AM22	hidden	en	BIGGS-SHEET	Alaska/California catalogue designation. A proper crosswalk needs that catalogue's namespace — see Q23.
 SSA:0010193	Artemis	common	en	BIGGS-SHEET	Named by Traci Walter (Transient/Bigg's Orca Nick Naming Page) /Dena Matkin.
@@ -430,7 +430,7 @@ SSA:0010196	Ellifrit	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010197	Indy	common	en	BIGGS-SHEET	Named by Andy Scheffler (Transient/Bigg's Orca Nick Naming Page)/Dena Matkin.
 SSA:0010197	Elsie	common	en	BIGGS-SHEET	Named by Andy Scheffler (Transient/Bigg's Orca Nick Naming Page)/Dena Matkin.
 SSA:0010198	Callisto	common	en	BIGGS-SHEET	Named by April Ryan (Transient/Bigg's Orca Nick Naming Page) / Dena Matkin.
-SSA:0010198	Butterbean*	common	en	BIGGS-SHEET	Named by April Ryan (Transient/Bigg's Orca Nick Naming Page) / Dena Matkin.
+SSA:0010198	Butterbean	common	en	BIGGS-SHEET	Named by April Ryan (Transient/Bigg's Orca Nick Naming Page) / Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010199	Chunk	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010199	AM26	hidden	en	BIGGS-SHEET	Alaska/California catalogue designation. A proper crosswalk needs that catalogue's namespace — see Q23.
 SSA:0010200	Birdsall	common	en	BIGGS-SHEET	Named by Dena Matkin.
@@ -444,17 +444,17 @@ SSA:0010204	AQ11	hidden	en	BIGGS-SHEET	Alaska/California catalogue designation. 
 SSA:0010205	Phylly	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010205	AQ12	hidden	en	BIGGS-SHEET	Alaska/California catalogue designation. A proper crosswalk needs that catalogue's namespace — see Q23.
 SSA:0010206	Obsidian	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010207	Fern*	common	en	BIGGS-SHEET	Named by Dena Matkin.
+SSA:0010207	Fern	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010210	Quartz	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010211	Wilder	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010212	Chiak	common	en	BIGGS-SHEET	Named by Dena Matkin/Ellie Sawyer (Transient/Bigg's Nick Naming Page.
 SSA:0010212	Penumbra	common	en	BIGGS-SHEET	Named by Dena Matkin/Ellie Sawyer (Transient/Bigg's Nick Naming Page.
-SSA:0010213	Venture*	common	en	BIGGS-SHEET	Named by Dena Matkin.
+SSA:0010213	Venture	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010214	Bazan	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010214	AQ14	hidden	en	BIGGS-SHEET	Alaska/California catalogue designation. A proper crosswalk needs that catalogue's namespace — see Q23.
 SSA:0010215	Sila	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010216	Jacobsen	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010218	Rich*	common	en	BIGGS-SHEET	Named by Dena Matkin.
+SSA:0010218	Rich	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010221	Komox	common	en	BIGGS-SHEET	Named by Ella Smiley (Transient/Bigg's Orca Nick Naming Page).
 SSA:0010222	Kitimat	common	en	BIGGS-SHEET	Named by Ella Smiley (Transient/Bigg's Orca Nick Naming Page).
 SSA:0010223	Hartley	common	en	BIGGS-SHEET	Named by Brendon Bissonnette (Transient/Bigg's Orca Nick Naming page).
@@ -482,7 +482,7 @@ SSA:0010249	Paws	common	en	BIGGS-SHEET	Named by Orca Behavior Institute/Dena Mat
 SSA:0010250	Ogopogo	common	en	BIGGS-SHEET	Named by Orca Behavior Institute/Dena Matkin.
 SSA:0010250	Trites	common	en	BIGGS-SHEET	Named by Orca Behavior Institute/Dena Matkin.
 SSA:0010251	Champ	common	en	BIGGS-SHEET	Named by Orca Behavior Institute/Dena Matkin.
-SSA:0010251	Jessica*	common	en	BIGGS-SHEET	Named by Orca Behavior Institute/Dena Matkin.
+SSA:0010251	Jessica	common	en	BIGGS-SHEET	Named by Orca Behavior Institute/Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010252	Blur	common	en	BIGGS-SHEET	Named by Dena Matkin/Nicky Smiley (Transient/Bigg's Orca Nick Naming page).
 SSA:0010252	Kwénis	common	en	BIGGS-SHEET	Named by Dena Matkin/Nicky Smiley (Transient/Bigg's Orca Nick Naming page).
 SSA:0010252	AQ35	hidden	en	BIGGS-SHEET	Alaska/California catalogue designation. A proper crosswalk needs that catalogue's namespace — see Q23.
@@ -501,11 +501,11 @@ SSA:0010261	Scars	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010262	Jasper	common	en	BIGGS-SHEET	Named by Sarah McCullagh (Transient/Bigg's Orca Nick Naming Page) /Dena Matkin.
 SSA:0010262	Fifi	common	en	BIGGS-SHEET	Named by Sarah McCullagh (Transient/Bigg's Orca Nick Naming Page) /Dena Matkin.
 SSA:0010263	Rubble	common	en	BIGGS-SHEET	Named by Ang Nicholson (Transient/Bigg's Orca Nick Naming Page)/Dena Matkin.
-SSA:0010263	Kasnikyu*	common	en	BIGGS-SHEET	Named by Ang Nicholson (Transient/Bigg's Orca Nick Naming Page)/Dena Matkin.
+SSA:0010263	Kasnikyu	common	en	BIGGS-SHEET	Named by Ang Nicholson (Transient/Bigg's Orca Nick Naming Page)/Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010264	Petra	common	en	BIGGS-SHEET	Named by Kelly Dawson & Padmini Harchandrai (Transient/Bigg's Orca Nick Naming Page).
 SSA:0010265	Bam-Bam	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010266	Carlos*	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010267	Gavin*	common	en	BIGGS-SHEET	Named by Dena Matkin.
+SSA:0010266	Carlos	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
+SSA:0010267	Gavin	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010268	Flint	common	en	BIGGS-SHEET	Named by Elizabeth Zwamborn (Transient/Bigg's Orca Nick Naming Page).
 SSA:0010269	Slate	common	en	BIGGS-SHEET	Named by Elizabeth Zwamborn & Monika Wieland Shields (Transient/Bigg's Orca Nick Naming Page).
 SSA:0010270	Asja	common	en	BIGGS-SHEET	Named by Dena Matkin.
@@ -606,7 +606,7 @@ SSA:0010378	Agafia	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010379	Litton	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010380	Wasini	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010381	Spindrift	common	en	BIGGS-SHEET	Named by Ashley Keegan (Transient/Bigg's Orca Nick Naming page)/Dena Matkin.
-SSA:0010381	Alethia*	common	en	BIGGS-SHEET	Named by Ashley Keegan (Transient/Bigg's Orca Nick Naming page)/Dena Matkin.
+SSA:0010381	Alethia	common	en	BIGGS-SHEET	Named by Ashley Keegan (Transient/Bigg's Orca Nick Naming page)/Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010382	Sabio	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010383	Strix	common	en	BIGGS-SHEET	Named by Amanda Marie Colbert (Transient/Bigg's Orca Nick Naming page).
 SSA:0010384	Kasuun	common	en	BIGGS-SHEET	Named by Dena Matkin.
@@ -655,12 +655,12 @@ SSA:0010434	Pelagia	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010442	CA28	hidden	en	BIGGS-SHEET	Alaska/California catalogue designation. A proper crosswalk needs that catalogue's namespace — see Q23.
 SSA:0010443	CA38	hidden	en	BIGGS-SHEET	Alaska/California catalogue designation. A proper crosswalk needs that catalogue's namespace — see Q23.
 SSA:0010444	Sitka	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010445	Thatcher*	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010446	Hobart*	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010447	Gusty*	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010449	Walpole*	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010450	Doniol*	common	en	BIGGS-SHEET	Named by Dena Matkin.
-SSA:0010451	Valcroze*	common	en	BIGGS-SHEET	Named by Dena Matkin.
+SSA:0010445	Thatcher	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
+SSA:0010446	Hobart	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
+SSA:0010447	Gusty	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
+SSA:0010449	Walpole	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
+SSA:0010450	Doniol	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
+SSA:0010451	Valcroze	common	en	BIGGS-SHEET	Named by Dena Matkin. The sheet marks this nickname provisional (a trailing *), so it may change.
 SSA:0010453	Bean	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010456	Chacon	common	en	BIGGS-SHEET	Named by Dena Matkin.
 SSA:0010457	Capilano	common	en	BIGGS-SHEET	Named by Sara Hysong-Shimazu (Transient/Bigg's Orca Nick Naming Page).
