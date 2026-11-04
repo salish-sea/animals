@@ -4,14 +4,17 @@
 
 ## Working definition
 
-A genetically and behaviourally distinct population within a species, differing
-consistently in prey preference, vocal repertoire, social structure, and morphology, and
-not interbreeding with other such populations despite overlapping in range.
+A genetically and behaviourally distinct form of a species, made up of one or more
+populations, that differs consistently from the species' other forms in prey preference,
+vocal repertoire, social structure, and morphology, and does not interbreed with them
+despite overlapping in range.
 
 ## Source
 
 Working definition, editors of this repository, 2026-07, paraphrasing the standard usage
-for *Orcinus orca*. Needs a citation to a specific source and expert confirmation.
+for *Orcinus orca*. Amended 2026-11-04 to say that an ecotype is made up of populations
+rather than being one (Q27). Needs a citation to a specific source and expert
+confirmation.
 
 ## Scope notes
 
@@ -21,6 +24,14 @@ for *Orcinus orca*. Needs a citation to a specific source and expert confirmatio
   Northern and Southern, rather than two ecotypes. Common usage speaks of SRKW and NRKW
   as separate ecotypes; the register does not, and a consumer rendering "ecotype" as a
   category will show *Resident* where a moderator might expect *SRKW*.
+- **An ecotype can hold several populations.** The resident ecotype holds the Northern
+  and Southern Residents, which are separate populations (Q1). The Bigg's ecotype holds
+  the West Coast Transients and the Gulf of Alaska, Aleutian and Bering Sea transients,
+  which are separate stocks. So T419, T420 and T421, which belong to the Alaskan stock,
+  are members of Bigg's (`SSA:0000002`) like the West Coast Transients (Q27). The
+  register has no rank for a stock. Add one when an observer needs to record a stock
+  rather than an ecotype or a matriline; until then, the three whales sit directly in
+  Bigg's, because their matriline is not known.
 - An ecotype is **not a formal taxonomic rank**, which is exactly why it needs an
   identifier here — no external taxonomy will provide one. See
   [ADR-0008](../decisions/0008-species-identity-is-delegated.md).
@@ -54,10 +65,5 @@ distinct and both needed: an ecotype contains communities.
 
 ## Open questions
 
-- Is an ecotype a *population*, as the definition above says, or something that contains
-  several? The register now holds three animals from the Alaskan transient stock
-  (`SSA:0010510`–`SSA:0010512`) under Bigg's, beside 132 West Coast Transient matrilines,
-  so the strict reading makes that membership false and the loose reading makes this
-  definition wrong. (Q27)
 - Do humpbacks or other in-scope species have populations that warrant the same
   treatment, or is this rank orca-only?
