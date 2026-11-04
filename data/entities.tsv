@@ -916,16 +916,16 @@ SSA:0020057	individual		J59	NCBITaxon:9733	2022	F	NOAA-NWFSC
 SSA:0020058	individual		J61	NCBITaxon:9733	2024	F	NOAA-NWFSC	
 SSA:0020059	individual		J62	NCBITaxon:9733	2024	F	NOAA-NWFSC	
 SSA:0020060	individual		J63	NCBITaxon:9733	2025	F	NOAA-NWFSC	
-SSA:0020061	individual		J64	NCBITaxon:9733	2025	F	NOAA-NWFSC	
+SSA:0020061	individual		J64	NCBITaxon:9733	2025	U	ORCANETWORK	Sex from Orca Network (recorded as unknown), which the register follows where it and NOAA disagree. NOAA's census file gives F.
 SSA:0020062	individual		K1	NCBITaxon:9733	1955	M	NOAA-NWFSC	
 SSA:0020063	individual		K2	NCBITaxon:9733	1953	M	NOAA-NWFSC	
-SSA:0020064	individual		K3	NCBITaxon:9733	1956	F	NOAA-NWFSC	
+SSA:0020064	individual		K3	NCBITaxon:9733	1954	F	ORCANETWORK	Birth year from Orca Network (an estimate), which the register follows where it and NOAA disagree. NOAA's census file gives 1956.
 SSA:0020065	individual		K4	NCBITaxon:9733	1933	F	NOAA-NWFSC	
 SSA:0020066	individual		K5	NCBITaxon:9733	1953	M	NOAA-NWFSC	
 SSA:0020067	individual		K7	NCBITaxon:9733	1910	F	NOAA-NWFSC	
 SSA:0020068	individual		K8	NCBITaxon:9733	1930	F	NOAA-NWFSC	
 SSA:0020069	individual		K11	NCBITaxon:9733	1933	F	NOAA-NWFSC	
-SSA:0020070	individual		K12	NCBITaxon:9733	1971	F	NOAA-NWFSC	
+SSA:0020070	individual		K12	NCBITaxon:9733	1972	F	ORCANETWORK	Birth year from Orca Network (an estimate), which the register follows where it and NOAA disagree. NOAA's census file gives 1971.
 SSA:0020071	individual		K13	NCBITaxon:9733	1972	F	NOAA-NWFSC	
 SSA:0020072	individual		K14	NCBITaxon:9733	1977	F	NOAA-NWFSC	
 SSA:0020073	individual		K15	NCBITaxon:9733	1971		NOAA-NWFSC	
@@ -949,13 +949,13 @@ SSA:0020090	individual		K32	NCBITaxon:9733	2000		NOAA-NWFSC
 SSA:0020091	individual		K33	NCBITaxon:9733	2001	M	NOAA-NWFSC	
 SSA:0020092	individual		K34	NCBITaxon:9733	2001	M	NOAA-NWFSC	
 SSA:0020093	individual		K35	NCBITaxon:9733	2002	M	NOAA-NWFSC	
-SSA:0020094	individual		K36	NCBITaxon:9733	2003		NOAA-NWFSC	NOAA codes this animal male (sexF1M2 = 2) but names it as the mother of K47. Both cannot hold, so sex is left blank until a curator settles which is wrong. Asked of NOAA: https://github.com/noaa-nwfsc/srkw-status/issues/1
-SSA:0020095	individual		K37	NCBITaxon:9733	2003	M	NOAA-NWFSC	
+SSA:0020094	individual		K36	NCBITaxon:9733	2003	F	ORCANETWORK	Sex from Orca Network (female), which names K43, not K36, as K47's mother. NOAA codes K36 male and names K36 as K47's mother; the parentage row still carries NOAA's claim. Asked of NOAA: https://github.com/noaa-nwfsc/srkw-status/issues/1
+SSA:0020095	individual		K37	NCBITaxon:9733	2004	M	ORCANETWORK	Birth year from Orca Network (January 2004), which the register follows where it and NOAA disagree. NOAA's census file gives 2003.
 SSA:0020096	individual		K38	NCBITaxon:9733	2004	M	NOAA-NWFSC	
 SSA:0020097	individual		K39	NCBITaxon:9733	2006		NOAA-NWFSC	
 SSA:0020098	individual		K40	NCBITaxon:9733	1963	F	NOAA-NWFSC	
 SSA:0020099	individual		K41	NCBITaxon:9733	2006		NOAA-NWFSC	
-SSA:0020100	individual		K42	NCBITaxon:9733	2008	F	NOAA-NWFSC	
+SSA:0020100	individual		K42	NCBITaxon:9733	2008	M	ORCANETWORK	Sex from Orca Network, which the register follows where it and NOAA disagree. NOAA's census file gives F.
 SSA:0020101	individual		K43	NCBITaxon:9733	2010	F	NOAA-NWFSC	
 SSA:0020102	individual		K44	NCBITaxon:9733	2011	M	NOAA-NWFSC	
 SSA:0020103	individual		K45	NCBITaxon:9733	2022	F	NOAA-NWFSC	
@@ -965,12 +965,12 @@ SSA:0020106	individual		L1	NCBITaxon:9733	1959	M	NOAA-NWFSC
 SSA:0020107	individual		L2	NCBITaxon:9733	1960	F	NOAA-NWFSC	
 SSA:0020108	individual		L3	NCBITaxon:9733	1950	F	NOAA-NWFSC	
 SSA:0020109	individual		L4	NCBITaxon:9733	1949	F	NOAA-NWFSC	
-SSA:0020110	individual		L5	NCBITaxon:9733	1958	F	NOAA-NWFSC	
+SSA:0020110	individual		L5	NCBITaxon:9733	1964	F	ORCANETWORK	Birth year from Orca Network (an estimate), which the register follows where it and NOAA disagree. NOAA's census file gives 1958.
 SSA:0020111	individual		L6	NCBITaxon:9733	1963	M	NOAA-NWFSC	
 SSA:0020112	individual		L7	NCBITaxon:9733	1961	F	NOAA-NWFSC	
 SSA:0020113	individual		L8	NCBITaxon:9733	1954	M	NOAA-NWFSC	
 SSA:0020114	individual		L9	NCBITaxon:9733	1931	F	NOAA-NWFSC	
-SSA:0020115	individual		L10	NCBITaxon:9733	1954	M	NOAA-NWFSC	
+SSA:0020115	individual		L10	NCBITaxon:9733	1959	M	ORCANETWORK	Birth year from Orca Network (an estimate), which the register follows where it and NOAA disagree. NOAA's census file gives 1954.
 SSA:0020116	individual		L11	NCBITaxon:9733	1957	F	NOAA-NWFSC	
 SSA:0020117	individual		L12	NCBITaxon:9733	1933	F	NOAA-NWFSC	
 SSA:0020118	individual		L13	NCBITaxon:9733	1952	M	NOAA-NWFSC	
@@ -1010,7 +1010,7 @@ SSA:0020151	individual		L56	NCBITaxon:9733	1978		NOAA-NWFSC
 SSA:0020152	individual		L57	NCBITaxon:9733	1977	M	NOAA-NWFSC	
 SSA:0020153	individual		L58	NCBITaxon:9733	1980	M	NOAA-NWFSC	
 SSA:0020154	individual		L59	NCBITaxon:9733	1979		NOAA-NWFSC	
-SSA:0020155	individual		L60	NCBITaxon:9733	1971	F	NOAA-NWFSC	
+SSA:0020155	individual		L60	NCBITaxon:9733	1972	F	ORCANETWORK	Birth year from Orca Network, which the register follows where it and NOAA disagree. NOAA's census file gives 1971.
 SSA:0020156	individual		L61	NCBITaxon:9733	1973	M	NOAA-NWFSC	
 SSA:0020157	individual		L62	NCBITaxon:9733	1980	M	NOAA-NWFSC	
 SSA:0020158	individual		L63	NCBITaxon:9733	1984	M	NOAA-NWFSC	
@@ -1053,7 +1053,7 @@ SSA:0020194	individual		L101	NCBITaxon:9733	2002	M	NOAA-NWFSC
 SSA:0020195	individual		L102	NCBITaxon:9733	2002		NOAA-NWFSC	
 SSA:0020196	individual		L103	NCBITaxon:9733	2003	F	NOAA-NWFSC	
 SSA:0020197	individual		L104	NCBITaxon:9733	2004	M	NOAA-NWFSC	
-SSA:0020198	individual		L105	NCBITaxon:9733	2005	M	NOAA-NWFSC	
+SSA:0020198	individual		L105	NCBITaxon:9733	2004	M	ORCANETWORK	Birth year from Orca Network (October 2004), which the register follows where it and NOAA disagree. NOAA's census file gives 2005.
 SSA:0020199	individual		L106	NCBITaxon:9733	2005	M	NOAA-NWFSC	
 SSA:0020200	individual		L107	NCBITaxon:9733	2005		NOAA-NWFSC	
 SSA:0020201	individual		L108	NCBITaxon:9733	2006	M	NOAA-NWFSC	
@@ -1068,7 +1068,7 @@ SSA:0020209	individual		L116	NCBITaxon:9733	2010	M	NOAA-NWFSC
 SSA:0020210	individual		L117	NCBITaxon:9733	2010	M	NOAA-NWFSC	
 SSA:0020211	individual		L118	NCBITaxon:9733	2011	F	NOAA-NWFSC	
 SSA:0020212	individual		L119	NCBITaxon:9733	2012	F	NOAA-NWFSC	
-SSA:0020213	individual		L120	NCBITaxon:9733	2014	F	NOAA-NWFSC	
+SSA:0020213	individual		L120	NCBITaxon:9733	2014	U	ORCANETWORK	Sex from Orca Network (recorded as unknown), which the register follows where it and NOAA disagree. NOAA's census file gives F.
 SSA:0020214	individual		L121	NCBITaxon:9733	2015	M	NOAA-NWFSC	
 SSA:0020215	individual		L122	NCBITaxon:9733	2015	M	NOAA-NWFSC	
 SSA:0020216	individual		L123	NCBITaxon:9733	2015	M	NOAA-NWFSC	
@@ -1077,3 +1077,7 @@ SSA:0020218	individual		L125	NCBITaxon:9733	2021	F	NOAA-NWFSC
 SSA:0020219	individual		L126	NCBITaxon:9733	2023	M	NOAA-NWFSC	
 SSA:0020220	individual		L127	NCBITaxon:9733	2023	F	NOAA-NWFSC	
 SSA:0020221	individual		L128	NCBITaxon:9733	2024		NOAA-NWFSC	
+SSA:0020222	individual		J65	NCBITaxon:9733	2026	M	ORCANETWORK	Born to J35, her third surviving calf; Orca Network marks the birth year as estimated. Not in NOAA's census file at the pinned commit.
+SSA:0020223	individual		L130	NCBITaxon:9733	2026	U	ORCANETWORK	Mother not known; first seen 14 June 2026. Not in NOAA's census file at the pinned commit.
+SSA:0020224	individual		J60	NCBITaxon:9733	2023-12	M	ORCANETWORK	Mother not known. Not in NOAA's census file at the pinned commit.
+SSA:0020225	individual		L129	NCBITaxon:9733	2026-02	U	ORCANETWORK	Mother not known. Not in NOAA's census file at the pinned commit.

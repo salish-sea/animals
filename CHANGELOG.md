@@ -8,7 +8,15 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
-No change to the data.
+Four Southern Resident whales are added (`SSA:0020222`–`SSA:0020225`), and twelve existing ones are corrected. No identifier is retired.
+
+### Register
+- **Where Orca Network and NOAA's census file disagree about a Southern Resident's birth year, sex or life status, the register now follows [Orca Network's births and deaths page](https://orcanetwork.org/resources/srkw-births-and-deaths/)**, under a new source, `ORCANETWORK`. Each corrected row now carries that source, and its note gives NOAA's value. The NOAA import treats these rows as a curator's and leaves them alone.
+  - Birth years: K12 1972 (NOAA 1971), K37 2004 (2003), L105 2004 (2005), L60 1972 (1971), K3 1954 (1956), L5 1964 (1958), L10 1959 (1954). K12, K3, L5 and L10 are estimates.
+  - Sex: K42 is male (NOAA: female). K36 is female; the register had left K36's sex blank, because NOAA codes K36 male but also names K36 as a mother. J64 and L120, calves that went missing within weeks of their first sighting, are `U` (NOAA: female).
+  - L85 is `presumed_dead`, last seen November 2023. NOAA's file records no death.
+- **Four whales NOAA's file does not have:** J65 (`SSA:0020222`), male, born 2026 to J35 and placed in `J35s`; L130 (`SSA:0020223`), sex unknown, first seen June 2026; J60 (`SSA:0020224`), male, born December 2023, presumed dead January 2024; L129 (`SSA:0020225`), sex unknown, first seen February 2026, presumed dead. The three with no known mother are placed directly in their pod.
+- **Mothers are not covered by this rule yet.** K47's mother is still NOAA's K36, although Orca Network names K43. Following Orca Network there would also change which matrilines are derived, so it is left for its own change.
 
 ### Design
 - **[ADR-0027](decisions/0027-darwin-core-organisms-not-a-checklist.md), Accepted: in Darwin Core the register's animals and groups are Organisms, not a checklist.** A GBIF checklist is a list of names, and J35 and J17s are not names. Each identifier's address will land on a page about its entity, which [`bin/build_pages.py`](bin/build_pages.py) now writes, with what Darwin Core can say about each organism embedded for programs that follow an `organismID`. The pages are not deployed until Q24 says whether publishing them republishes the Bigg's sheet. A Darwin Core Data Package for GBIF waits until GBIF accepts one and the data is licensed.
