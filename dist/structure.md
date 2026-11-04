@@ -17,11 +17,11 @@ graph BT
   matriline["matriline<br/>274"]
   pod["pod<br/>3"]
   taxon["taxon<br/>56"]
-  individual -->|984| matriline
+  individual -->|986| matriline
   matriline -->|132| ecotype
   matriline -->|116| matriline
-  individual -->|26| pod
   matriline -->|26| pod
+  individual -->|24| pod
   individual -->|3| ecotype
   pod -->|3| clan
   ecotype -->|2| taxon
@@ -630,11 +630,11 @@ graph BT
   SSA_0020207 --> SSA_0003058
   SSA_0020208 --> SSA_0003051
   SSA_0020209 --> SSA_0003059
-  SSA_0020210 --> SSA_0000022
+  SSA_0020210 --> SSA_0003053
   SSA_0020211 --> SSA_0003054
   SSA_0020212 --> SSA_0003066
   SSA_0020213 --> SSA_0003061
-  SSA_0020214 --> SSA_0000022
+  SSA_0020214 --> SSA_0003064
   SSA_0020215 --> SSA_0003063
   SSA_0020216 --> SSA_0003065
   SSA_0020217 --> SSA_0003058

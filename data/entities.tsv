@@ -960,7 +960,7 @@ SSA:0020101	individual		K43	NCBITaxon:9733	2010	F	NOAA-NWFSC
 SSA:0020102	individual		K44	NCBITaxon:9733	2011	M	NOAA-NWFSC	
 SSA:0020103	individual		K45	NCBITaxon:9733	2022	F	NOAA-NWFSC	
 SSA:0020104	individual		K46	NCBITaxon:9733	1974		NOAA-NWFSC	
-SSA:0020105	individual		K47	NCBITaxon:9733	2025		NOAA-NWFSC	
+SSA:0020105	individual		K47	NCBITaxon:9733	2025	U	ORCANETWORK	Sex from Orca Network, which records it as unknown; the Orca Behavior Institute agrees. NOAA's census file codes it 0, which the import leaves blank.
 SSA:0020106	individual		L1	NCBITaxon:9733	1959	M	NOAA-NWFSC	
 SSA:0020107	individual		L2	NCBITaxon:9733	1960	F	NOAA-NWFSC	
 SSA:0020108	individual		L3	NCBITaxon:9733	1950	F	NOAA-NWFSC	

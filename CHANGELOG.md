@@ -8,7 +8,7 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
-Four Southern Resident whales are added (`SSA:0020222`–`SSA:0020225`), and twelve existing ones are corrected. No identifier is retired.
+Four Southern Resident whales are added (`SSA:0020222`–`SSA:0020225`), and fifteen existing ones are corrected. No identifier is retired.
 
 ### Register
 - **Where Orca Network and NOAA's census file disagree about a Southern Resident's birth year, sex or life status, the register now follows [Orca Network's births and deaths page](https://orcanetwork.org/resources/srkw-births-and-deaths/)**, under a new source, `ORCANETWORK`. Each corrected row now carries that source, and its note gives NOAA's value. The NOAA import treats these rows as a curator's and leaves them alone.
@@ -16,7 +16,11 @@ Four Southern Resident whales are added (`SSA:0020222`–`SSA:0020225`), and twe
   - Sex: K42 is male (NOAA: female). K36 is female; the register had left K36's sex blank, because NOAA codes K36 male but also names K36 as a mother. J64 and L120, calves that went missing within weeks of their first sighting, are `U` (NOAA: female).
   - L85 is `presumed_dead`, last seen November 2023. NOAA's file records no death.
 - **Four whales NOAA's file does not have:** J65 (`SSA:0020222`), male, born 2026 to J35 and placed in `J35s`; L130 (`SSA:0020223`), sex unknown, first seen June 2026; J60 (`SSA:0020224`), male, born December 2023, presumed dead January 2024; L129 (`SSA:0020225`), sex unknown, first seen February 2026, presumed dead. The three with no known mother are placed directly in their pod.
-- **Mothers are not covered by this rule yet.** K47's mother is still NOAA's K36, although Orca Network names K43. Following Orca Network there would also change which matrilines are derived, so it is left for its own change.
+- **Mothers are not covered by this rule yet.** K47's mother is still NOAA's K36, although Orca Network names K43. Following Orca Network there would also change which matrilines are derived, so it is left for its own change. The Orca Behavior Institute names K36, as NOAA does, so two of the three sources agree on K36.
+  - Sex: K47 is `U`. Orca Network and the Orca Behavior Institute both record it as unknown; NOAA codes it 0, which the import left blank.
+- **The [Orca Behavior Institute's roster](https://www.orcabehaviorinstitute.org/meet-the-southern-resident-orcas) is a new source, `OBI`, and serves as an independent check on the derived matrilines** ([ADR-0023](decisions/0023-southern-residents-from-noaas-census-file.md) says the register lost such a check when it began deriving matrilines from mothers). For 68 of its 76 whales, OBI's matriline is one of the register's nested lines.
+  - Two whales move into their mother's line, as OBI places them: L117 from L pod into `L54s`, and L121 from L pod into `L94s`, which is inside `L11s`. The import had put both directly in the pod because NOAA's founding-lineage column disagreed with their mother's. OBI shows the column was wrong. That makes 70 of 76.
+  - Kept as they are: L22 and L25, which OBI puts in an "L12 sub-group", and L88, which OBI puts with the L54s. These are travelling groups, not lines of descent, and membership in the register is genealogical ([ADR-0005](decisions/0005-membership-is-genealogical.md)). L90 (OBI: `L4s`, register: inside `L26s`) has no source to settle it. L87 and L129 have no OBI matriline.
 
 ### Design
 - **[ADR-0027](decisions/0027-darwin-core-organisms-not-a-checklist.md), Accepted: in Darwin Core the register's animals and groups are Organisms, not a checklist.** A GBIF checklist is a list of names, and J35 and J17s are not names. Each identifier's address will land on a page about its entity, which [`bin/build_pages.py`](bin/build_pages.py) now writes, with what Darwin Core can say about each organism embedded for programs that follow an `organismID`. The pages are not deployed until Q24 says whether publishing them republishes the Bigg's sheet. A Darwin Core Data Package for GBIF waits until GBIF accepts one and the data is licensed.

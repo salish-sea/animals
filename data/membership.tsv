@@ -1277,11 +1277,11 @@ SSA:0020206	SSA:0003064			NOAA-NWFSC
 SSA:0020207	SSA:0003058			NOAA-NWFSC	
 SSA:0020208	SSA:0003051			NOAA-NWFSC	
 SSA:0020209	SSA:0003059			NOAA-NWFSC	
-SSA:0020210	SSA:0000022			NOAA-NWFSC	Not placed in L54s: NOAA files L117 under the L4 founding lineage and its mother L54 under L35. A split, an adoption or an error in one of the two columns; a curator decides.
+SSA:0020210	SSA:0003053			OBI	In its mother L54's line, as the Orca Behavior Institute places it (L54s). The import had placed it in L pod because NOAA files L117 under the L4 founding lineage and its mother L54 under L35; OBI settles that the founding-lineage column, not the mother, was wrong.
 SSA:0020211	SSA:0003054			NOAA-NWFSC	
 SSA:0020212	SSA:0003066			NOAA-NWFSC	
 SSA:0020213	SSA:0003061			NOAA-NWFSC	
-SSA:0020214	SSA:0000022			NOAA-NWFSC	Not placed in L94s: NOAA files L121 under the L11 founding lineage and its mother L94 under L12. A split, an adoption or an error in one of the two columns; a curator decides.
+SSA:0020214	SSA:0003064			OBI	In its mother L94's line, as the Orca Behavior Institute places it (L11s, which holds L94s). The import had placed it in L pod because NOAA files L121 under the L11 founding lineage and its mother L94 under L12; OBI settles that the founding-lineage column, not the mother, was wrong.
 SSA:0020215	SSA:0003063			NOAA-NWFSC	
 SSA:0020216	SSA:0003065			NOAA-NWFSC	
 SSA:0020217	SSA:0003058			NOAA-NWFSC	
