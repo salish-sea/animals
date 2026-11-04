@@ -4,10 +4,10 @@
 
 ## Working definition
 
-A genetically and behaviourally distinct form of a species, made up of one or more
-populations, that differs consistently from the species' other forms in prey preference,
-vocal repertoire, social structure, and morphology, and does not interbreed with them
-despite overlapping in range.
+A group of one or more populations within a species that is genetically and
+behaviourally distinct from the species' other such groups. It differs from them
+consistently in prey, calls, social structure and body shape, and does not interbreed
+with them even where their ranges overlap.
 
 ## Source
 
@@ -24,14 +24,18 @@ confirmation.
   Northern and Southern, rather than two ecotypes. Common usage speaks of SRKW and NRKW
   as separate ecotypes; the register does not, and a consumer rendering "ecotype" as a
   category will show *Resident* where a moderator might expect *SRKW*.
-- **An ecotype can hold several populations.** The resident ecotype holds the Northern
-  and Southern Residents, which are separate populations (Q1). The Bigg's ecotype holds
-  the West Coast Transients and the Gulf of Alaska, Aleutian and Bering Sea transients,
-  which are separate stocks. So T419, T420 and T421, which belong to the Alaskan stock,
-  are members of Bigg's (`SSA:0000002`) like the West Coast Transients (Q27). The
-  register has no rank for a stock. Add one when an observer needs to record a stock
-  rather than an ecotype or a matriline; until then, the three whales sit directly in
-  Bigg's, because their matriline is not known.
+- **An ecotype can hold several populations.** The resident ecotype holds two separate
+  populations, the Northern and Southern Residents (Q1). The Bigg's ecotype also holds
+  more than one: the Bigg's killer whales of the outer coast from California to
+  Southeast Alaska (the West Coast Transients; "transient" is the older name for Bigg's)
+  and those of the Gulf of Alaska, the Aleutian Islands and the Bering Sea. Fisheries
+  and management agencies call such a population a *stock*. So T419, T420 and T421,
+  which come from the Alaskan population, belong in Bigg's (`SSA:0000002`) as the West
+  Coast Transients do (Q27).
+- **The register records no level between ecotype and matriline for these
+  populations.** Add one when an observer needs to say "an Alaskan Bigg's whale" rather
+  than just "a Bigg's whale". Until then, the three whales sit directly in Bigg's, because
+  no one knows their mothers and so no matriline can be given.
 - An ecotype is **not a formal taxonomic rank**, which is exactly why it needs an
   identifier here — no external taxonomy will provide one. See
   [ADR-0008](../decisions/0008-species-identity-is-delegated.md).

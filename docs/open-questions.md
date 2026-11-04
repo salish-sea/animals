@@ -352,13 +352,14 @@ of who reviews the domain content.
 
 ### Q27 — Is an ecotype a population, and where do transients from another stock belong?
 **Resolved 2026-11-04, by the maintainer: an ecotype is made up of populations, and the
-Alaskan transients belong in Bigg's** ([#22](https://github.com/salish-sea/animals/issues/22)).
+Alaskan Bigg's whales belong in Bigg's** ([#22](https://github.com/salish-sea/animals/issues/22)).
 No scientific reviewer has reviewed this answer.
 
-The trigger was T419, T420 and T421 (`SSA:0010510`–`SSA:0010512`), from the Gulf of
-Alaska, Aleutian and Bering Sea transient stock, recorded as members of Bigg's beside the
-West Coast Transients. The definition then said an ecotype was a single population, which
-made that membership false.
+The question came from three whales, T419, T420 and T421 (`SSA:0010510`–`SSA:0010512`).
+They are Bigg's killer whales from the Gulf of Alaska, Aleutian Islands and Bering Sea, a
+separate population from the West Coast Transients who make up the rest of the register's
+Bigg's whales. The register records them as Bigg's. But the definition then said an
+ecotype was a single population, and by that definition they could not be Bigg's.
 
 Q1 had already answered the question from the resident side. It placed the Northern and
 Southern Residents, two separate populations, in one resident ecotype. An ecotype that
@@ -366,6 +367,7 @@ holds two populations cannot itself be a population, so the definition was the t
 that was wrong. [ecotype.md](../definitions/ecotype.md) now says an ecotype is made up of
 one or more populations, and the three whales' membership in Bigg's stands.
 
-Not decided: whether the register needs a rank for a stock, between ecotype and
-matriline. The definition says to add one when an observer needs to record a stock. One
-Alaskan trio is not that need.
+Not decided: whether the register needs a level for these populations, between ecotype
+and matriline. The definition says to add one when an observer needs to record "an
+Alaskan Bigg's whale" rather than "a Bigg's whale". Three whales seen in one visit don't
+yet create that need.

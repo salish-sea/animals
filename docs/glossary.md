@@ -69,8 +69,8 @@ record most birth years as estimates or open-ended bounds for animals first seen
 adults.
 
 ### 🐋 Ecotype
-A genetically and behaviourally distinct form of a species, made up of one or more
-populations. Not a formal
+A group of one or more populations within a species that is genetically and
+behaviourally distinct from the species' other such groups. Not a formal
 taxonomic rank, which is precisely why it needs an identifier here — no external
 taxonomy will give us one. See [definitions/ecotype.md](../definitions/ecotype.md).
 
