@@ -126,7 +126,10 @@ CREATE TABLE name (
   language  TEXT NOT NULL DEFAULT 'en',
   source_id TEXT NOT NULL REFERENCES source(source_id),
   note      TEXT,
-  PRIMARY KEY (entity_id, name, language)
+  PRIMARY KEY (entity_id, name, language),
+  -- A hedge is not part of a name (ADR-0009): a source's `?` or provisional `*` goes in
+  -- the note. Without this, the Bigg's import wrote 23 nicknames such as `Cook*` (#36).
+  CHECK (name NOT LIKE '%?' AND name NOT LIKE '%*')
 );
 
 -- ---------------------------------------------------------------------------
