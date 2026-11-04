@@ -8,7 +8,9 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
-Four Southern Resident whales are added (`SSA:0020222`–`SSA:0020225`), and fifteen existing ones are corrected. No identifier is retired.
+## 2026.11.1 — 2026-11-04
+
+Southern Residents are checked against two more rosters, Orca Network's and the Orca Behavior Institute's, which are new sources. Four whales are added (`SSA:0020222`–`SSA:0020225`) and fifteen are corrected, and 23 Bigg's nicknames lose a stray asterisk. No identifier is retired.
 
 ### Register
 - **Where Orca Network and NOAA's census file disagree about a Southern Resident's birth year, sex or life status, the register now follows [Orca Network's births and deaths page](https://orcanetwork.org/resources/srkw-births-and-deaths/)**, under a new source, `ORCANETWORK`. Each corrected row now carries that source, and its note gives NOAA's value. The NOAA import treats these rows as a curator's and leaves them alone.
