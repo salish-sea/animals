@@ -812,3 +812,9 @@ SSA:0020218	alive	2021		2026-10-06	NOAA-NWFSC
 SSA:0020219	alive	2023		2026-10-06	NOAA-NWFSC	
 SSA:0020220	alive	2023		2026-10-06	NOAA-NWFSC	
 SSA:0020221	presumed_dead	2024		2026-10-06	NOAA-NWFSC	NOAA gives the year only.
+SSA:0020222	alive	2026		2026-11-04	ORCANETWORK	
+SSA:0020223	alive	2026-06-14		2026-11-04	ORCANETWORK	First seen 14 June 2026.
+SSA:0020224	alive	2023-12		2026-11-04	ORCANETWORK	
+SSA:0020224	presumed_dead	2024-01		2026-11-04	ORCANETWORK	Last seen 7 January 2024, declared missing 27 January 2024.
+SSA:0020225	presumed_dead	2026		2026-11-04	ORCANETWORK	First seen 16 February 2026 and not in later sightings.
+SSA:0020179	presumed_dead	2023-11		2026-11-04	ORCANETWORK	Orca Network: last seen November 2023. NOAA's census file, which runs through 2025, records no death.

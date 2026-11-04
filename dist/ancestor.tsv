@@ -4307,3 +4307,26 @@ SSA:0020221	SSA:0000022	3	L pod	group	pod
 SSA:0020221	SSA:0000900	7	Orcinus orca	taxon	
 SSA:0020221	SSA:0003044	2	L26s	group	matriline
 SSA:0020221	SSA:0003062	1	L90s	group	matriline
+SSA:0020222	SSA:0000003	7	Resident	group	ecotype
+SSA:0020222	SSA:0000010	6	Southern Resident	group	community
+SSA:0020222	SSA:0000011	5	J clan	group	clan
+SSA:0020222	SSA:0000020	4	J pod	group	pod
+SSA:0020222	SSA:0000030	2	J17s	group	matriline
+SSA:0020222	SSA:0000900	8	Orcinus orca	taxon	
+SSA:0020222	SSA:0003001	3	J5s	group	matriline
+SSA:0020222	SSA:0003012	1	J35s	group	matriline
+SSA:0020223	SSA:0000003	4	Resident	group	ecotype
+SSA:0020223	SSA:0000010	3	Southern Resident	group	community
+SSA:0020223	SSA:0000011	2	J clan	group	clan
+SSA:0020223	SSA:0000022	1	L pod	group	pod
+SSA:0020223	SSA:0000900	5	Orcinus orca	taxon	
+SSA:0020224	SSA:0000003	4	Resident	group	ecotype
+SSA:0020224	SSA:0000010	3	Southern Resident	group	community
+SSA:0020224	SSA:0000011	2	J clan	group	clan
+SSA:0020224	SSA:0000020	1	J pod	group	pod
+SSA:0020224	SSA:0000900	5	Orcinus orca	taxon	
+SSA:0020225	SSA:0000003	4	Resident	group	ecotype
+SSA:0020225	SSA:0000010	3	Southern Resident	group	community
+SSA:0020225	SSA:0000011	2	J clan	group	clan
+SSA:0020225	SSA:0000022	1	L pod	group	pod
+SSA:0020225	SSA:0000900	5	Orcinus orca	taxon	

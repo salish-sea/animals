@@ -13,15 +13,15 @@ graph BT
   clan["clan<br/>1"]
   community["community<br/>1"]
   ecotype["ecotype<br/>2"]
-  individual["individual<br/>740"]
+  individual["individual<br/>744"]
   matriline["matriline<br/>274"]
   pod["pod<br/>3"]
   taxon["taxon<br/>56"]
-  individual -->|983| matriline
+  individual -->|984| matriline
   matriline -->|132| ecotype
   matriline -->|116| matriline
+  individual -->|26| pod
   matriline -->|26| pod
-  individual -->|23| pod
   individual -->|3| ecotype
   pod -->|3| clan
   ecotype -->|2| taxon
@@ -337,6 +337,10 @@ graph BT
   SSA_0020219["L126<br/>(individual)"]
   SSA_0020220["L127<br/>(individual)"]
   SSA_0020221["L128<br/>(individual)"]
+  SSA_0020222["J65<br/>(individual)"]
+  SSA_0020223["L130<br/>(individual)"]
+  SSA_0020224["J60<br/>(individual)"]
+  SSA_0020225["L129<br/>(individual)"]
   SSA_0000010 --> SSA_0000003
   SSA_0000011 --> SSA_0000010
   SSA_0000020 --> SSA_0000011
@@ -638,4 +642,8 @@ graph BT
   SSA_0020219 --> SSA_0003066
   SSA_0020220 --> SSA_0003064
   SSA_0020221 --> SSA_0003062
+  SSA_0020222 --> SSA_0003012
+  SSA_0020223 --> SSA_0000022
+  SSA_0020224 --> SSA_0000020
+  SSA_0020225 --> SSA_0000022
 ```
