@@ -34,7 +34,7 @@ Every definition file has:
 |---|---|---|
 | [ecotype](ecotype.md) | working | Expert confirmation |
 | [community](community.md) | working | Expert confirmation. Q1 settled that it is *not* redundant with ecotype; which rank a moderator picks is still open |
-| [clan](clan.md) | working | Q2 — may not be a useful rank at all |
+| [clan](clan.md) | working | Expert confirmation. Ford (1991) confirms that the Southern Residents are one clan; Q2 still asks whether the rank is useful |
 | [pod](pod.md) | working | Expert confirmation |
 | [matriline](matriline.md) | working | Expert confirmation |
 | [membership](membership.md) | working | The most consequential one; see ADR-0005 |

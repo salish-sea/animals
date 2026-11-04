@@ -9,7 +9,18 @@ share a range, and which do not associate with other communities.
 
 ## Source
 
-Working definition, editors of this repository, 2026-07. Needs expert confirmation.
+Working definition, editors of this repository, 2026-07. It agrees with the published one:
+
+> A community was defined as an assemblage of individuals that resided in the same area
+> and periodically associated with one another.
+
+— Bigg, M. A., P. F. Olesiuk, G. M. Ellis, J. K. B. Ford and K. C. Balcomb III (1990).
+Social organization and genealogy of resident killer whales (*Orcinus orca*) in the
+coastal waters of British Columbia and Washington State. *Reports of the International
+Whaling Commission*, Special Issue 12: 383–405. [PDF, hosted by the Center for Whale
+Research](https://whaleresearch.com/_files/ugd/760f65_1cc40ca4cba843ea9d2c47c0df5cbf62.pdf),
+section 3.1. The paper adds that whales of the northern and southern communities did not
+associate with each other. Needs expert confirmation.
 
 ## Scope notes
 

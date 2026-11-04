@@ -6,15 +6,37 @@
 
 A group of one or more populations within a species that is genetically and
 behaviourally distinct from the species' other such groups. It differs from them
-consistently in prey, calls, social structure and body shape, and does not interbreed
-with them even where their ranges overlap.
+consistently in prey, movements, calls, social structure and body shape, and does not
+interbreed with them even where their ranges overlap.
 
 ## Source
 
 Working definition, editors of this repository, 2026-07, paraphrasing the standard usage
 for *Orcinus orca*. Amended 2026-11-04 to say that an ecotype is made up of populations
-rather than being one (Q27). Needs a citation to a specific source and expert
-confirmation.
+rather than being one (Q27), and to add movements.
+
+There is no single agreed definition. The botanist Göte Turesson coined the term in 1922,
+for "the genotypical response of an ecospecies to a particular habitat" (as quoted in the
+review below). The standard review for killer whales says that "the use of the term varies across the literature, and
+there are inconsistencies in criteria used to confer ecotypic status". It cites a later
+definition that fits this one, in not requiring an ecotype to be a single population:
+
+> con-specific individuals or groups of individuals, with similar ecological adaptations
+> regardless of genealogical relationship
+
+and it groups the traits that distinguish killer whale ecotypes into five categories:
+foraging and diet, movements, social structure, morphology, and genetics and kinship. — de
+Bruyn, P. J. N., C. A. Tosh and A. Terauds (2013). Killer whale ecotypes: is there a
+global model? *Biological Reviews* 88: 62–80, section II.
+[Record](https://repository.up.ac.za/handle/2263/21531).
+
+A *population*, in the sense used here, is what US law calls a *stock*: "a group of marine
+mammals of the same species or smaller taxa in a common spatial arrangement, that
+interbreed when mature" (Marine Mammal Protection Act, 16 U.S.C. §1362(11)). NOAA's stock
+assessments name the West Coast Transient stock and the Gulf of Alaska, Aleutian Islands
+and Bering Sea Transient stock separately.
+
+Needs expert confirmation.
 
 ## Scope notes
 
