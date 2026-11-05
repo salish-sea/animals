@@ -8,6 +8,10 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+### Design
+- **The definitions of community, pod, matriline, clan and ecotype now cite published sources**, with the exact wording quoted. Community, pod and matriline come from Bigg et al. (1990), clan from Ford (1991), and ecotype from de Bruyn et al. (2013), with the Marine Mammal Protection Act for what a population, or stock, is. Where the published definition differs from the register's, the definition says so: a pod is defined by who travels together and the register places whales by descent (Q15), and the register's nested matrilines are finer than the published family groups (Q22). The clan definition now says the Southern Residents are one clan, as Ford found. All the definitions stay `working` until a scientist confirms them.
+- **Q27 answered: an ecotype is made up of populations, not one population** ([#22](https://github.com/salish-sea/animals/issues/22)). Q1 put two populations, the Northern and Southern Residents, in one resident ecotype, so the old definition contradicted the register. [ecotype.md](definitions/ecotype.md) and the glossary now say an ecotype holds one or more populations. T419, T420 and T421, Bigg's whales from the separate Alaskan population, stay in Bigg's, and the notes on their membership no longer say it is in doubt. No level for such populations is added between ecotype and matriline. No scientific reviewer has reviewed this answer.
+
 ## 2026.11.1 — 2026-11-04
 
 Southern Residents are checked against two more rosters, Orca Network's and the Orca Behavior Institute's, which are new sources. Four whales are added (`SSA:0020222`–`SSA:0020225`) and fifteen are corrected, and 23 Bigg's nicknames lose a stray asterisk. No identifier is retired.

@@ -31,7 +31,6 @@ Filter: [`science-review`](https://github.com/salish-sea/animals/issues?q=is%3Ai
 | Q22 | Does a Bigg's lineage have one level of real groups, or two? (Both are in the register, pending the answer.) | S. Veirs, D. Bain | [#13](https://github.com/salish-sea/animals/issues/13) |
 | Q23 | What are the Alaska/California designations, and where do they belong? | S. Veirs | [#14](https://github.com/salish-sea/animals/issues/14) |
 | Q26 | Which genus does the Pacific white-sided dolphin get labelled with? | S. Veirs, D. Bain | [#17](https://github.com/salish-sea/animals/issues/17) |
-| Q27 | Is an ecotype a population, and where do transients from another stock belong? | S. Veirs, D. Bain | [#22](https://github.com/salish-sea/animals/issues/22) |
 
 ## For the informatics reviewers
 
@@ -350,3 +349,25 @@ commit on `main`, an agreement about what a release asserts — is the price of 
 for a second releaser, whenever one is wanted; it is work deferred, not work declined.
 Reopen this when adding one, likely alongside Q8, which still owns the separate question
 of who reviews the domain content.
+
+### Q27 — Is an ecotype a population, and where do transients from another stock belong?
+**Resolved 2026-11-04, by the maintainer: an ecotype is made up of populations, and the
+Alaskan Bigg's whales belong in Bigg's** ([#22](https://github.com/salish-sea/animals/issues/22)).
+No scientific reviewer has reviewed this answer.
+
+The question came from three whales, T419, T420 and T421 (`SSA:0010510`–`SSA:0010512`).
+They are Bigg's killer whales from the Gulf of Alaska, Aleutian Islands and Bering Sea, a
+separate population from the West Coast Transients who make up the rest of the register's
+Bigg's whales. The register records them as Bigg's. But the definition then said an
+ecotype was a single population, and by that definition they could not be Bigg's.
+
+Q1 had already answered the question from the resident side. It placed the Northern and
+Southern Residents, two separate populations, in one resident ecotype. An ecotype that
+holds two populations cannot itself be a population, so the definition was the thing
+that was wrong. [ecotype.md](../definitions/ecotype.md) now says an ecotype is made up of
+one or more populations, and the three whales' membership in Bigg's stands.
+
+Not decided: whether the register needs a level for these populations, between ecotype
+and matriline. The definition says to add one when an observer needs to record "an
+Alaskan Bigg's whale" rather than "a Bigg's whale". Three whales seen in one visit don't
+yet create that need.

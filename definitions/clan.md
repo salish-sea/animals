@@ -10,14 +10,22 @@ animals sound like, not by who they travel with.
 
 ## Source
 
-Working definition, editors of this repository, 2026-07, paraphrasing standard usage for
-resident killer whales. Needs a citation and expert confirmation.
+Working definition, editors of this repository, 2026-07. It follows the published one:
+
+> the 16 pods formed four distinct acoustic associations, or clans, each having a unique
+> repertoire of discrete calls, or vocal tradition.
+
+— Ford, J. K. B. (1991). Vocal traditions among resident killer whales (*Orcinus orca*) in
+coastal waters of British Columbia. *Canadian Journal of Zoology* 69: 1454–1483. Abstract.
+Pods within a clan share several call types, and pods in different clans share none. Bigg
+et al. (1990) call clans "acoustic (but not social)" and suggest that the pods in a clan
+have "a distant common ancestor". Needs expert confirmation.
 
 ## Scope notes
 
-- The seed data asserts that the Southern Residents comprise a single acoustic clan
-  (J clan) containing J, K and L pods. **This is stated with low confidence and needs
-  checking.**
+- The Southern Residents are a single acoustic clan, J clan, containing J, K and L pods.
+  Ford (1991) found four clans among the residents: J clan in the south, and A, G and R
+  clans in the north.
 - Applies to resident ecotypes only.
 
 ## What it is not
@@ -29,6 +37,5 @@ can actually hear.
 
 ## Open questions
 
-- Are the Southern Residents one clan or more? (Q2)
 - Would a moderator ever tag a bout at clan level? If never, the rank is dead weight and
   should be dropped — a rank nobody uses still has to be maintained. (Q2)

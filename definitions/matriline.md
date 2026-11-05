@@ -10,8 +10,22 @@ ecotype in scope.
 
 ## Source
 
-Working definition, editors of this repository, 2026-07. Needs a citation and expert
-confirmation.
+Working definition, editors of this repository, 2026-07. The term comes from Bigg et al.,
+who first defined the group by travel and then showed from family trees that it is a line
+of descent:
+
+> an intra-pod group consists of a cohesive group of individuals within a subpod that
+> always travels in close proximity. […] The genealogical trees indicate that intra-pod
+> groups are matrilines. A matrilineal group typically comprises of 2-3 generations
+> (range 1-4; mean=2.3) and a generalized matrilineal group consists of a grandmother,
+> her adult son, her adult daughter and the offspring of her daughter.
+
+— Bigg, M. A., P. F. Olesiuk, G. M. Ellis, J. K. B. Ford and K. C. Balcomb III (1990).
+Social organization and genealogy of resident killer whales (*Orcinus orca*) in the
+coastal waters of British Columbia and Washington State. *Reports of the International
+Whaling Commission*, Special Issue 12: 383–405. [PDF, hosted by the Center for Whale
+Research](https://whaleresearch.com/_files/ugd/760f65_1cc40ca4cba843ea9d2c47c0df5cbf62.pdf),
+abstract. Needs expert confirmation.
 
 ## Scope notes
 
@@ -42,6 +56,14 @@ confirmation.
   [ADR-0023](../decisions/0023-southern-residents-from-noaas-census-file.md). A female with
   no recorded mother heads a top-level matriline in her pod. Which of these the community
   would actually call a matriline is the same open question as Q22.
+- **Those nested lines are finer than the published matrilineal group.** Bigg et al.'s
+  group is a family that travels together, usually two or three generations. When a
+  daughter's family starts travelling apart from her mother's, it becomes a new group.
+  The register instead starts a line at every mother, whether or not her family travels
+  apart. The Orca Behavior Institute's roster uses the published kind: it puts J62 in
+  `J19s`, where the register has her in `J41s`, inside `J19s`. Recording the finer line is
+  still true of the coarser one, so a consumer that wants the published kind can walk up
+  the nesting. Which kind a `matriline` in this register should be is part of Q22.
 
 ## What it is not
 
