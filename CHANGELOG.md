@@ -8,6 +8,10 @@ Entries that affect consumers — new, deprecated, or renamed identifiers — be
 
 ## Unreleased
 
+## 2026.11.2 — 2026-11-25
+
+The Bigg's get mothers, 375 of them, read off their designations. The definitions of community, pod, matriline, clan and ecotype cite their published sources, and Q27 is answered. No identifier is added or retired.
+
 ### Register
 - **The Bigg's have mothers: 375 of them, read off their designations** ([ADR-0028](decisions/0028-biggs-mothers-are-read-off-designations.md)). T065A5's mother is T065A, because a calf's designation is its mother's with one letter or number added. No source states Bigg's mothers, so each row's source is the sheet whose designations it reads, and its note says the mother was read off the designation. A whale whose mother has no row gets none, so founders and the calves of the seven missing founders have no mother. T122, once designated T46A, gets none either, because her current designation names no mother. The Bigg's import writes the rows, and they are exactly the 375 that SalishSea.io's catalogue holds. No identifier is added or retired.
 
