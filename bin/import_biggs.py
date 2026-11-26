@@ -246,6 +246,14 @@ def main():
     known_names = existing_keys("names", (0, 1, 3))
     known_status = existing_keys("status", (0, 4, 2))
     known_matriarchs = {k[0] for k in existing_keys("matriarchs", (0,))}
+
+    # An animal already registered keeps its row (above), and a curator may have corrected
+    # its sex there, so the register's sex decides whether she can be a matriarch or a
+    # mother, and the sheet's only for an animal not yet registered.
+    registered_sex = {r[hdr.index("label")]: r[hdr.index("sex")] for r in existing[1:]}
+
+    def sexed_male(desig):
+        return registered_sex.get(desig, individuals[desig]["sex"]) == "M"
     known_parentage = existing_keys("parentage", (0, 2))
 
     # --- matriarchs (ADR-0024) -----------------------------------------------------
@@ -259,7 +267,7 @@ def main():
     #    exist at all is a question about this import, not about matriarchs.
     def add_matriarch(head, line_id):
         rec = individuals.get(head)
-        if rec and rec["sex"] != "M" and line_id not in known_matriarchs:
+        if rec and not sexed_male(head) and line_id not in known_matriarchs:
             known_matriarchs.add(line_id)
             mat.append([line_id, ind_id[head], SOURCE,
                         "Read off the designation, as the lineage itself is."])
@@ -339,10 +347,10 @@ def main():
         # The designation names the mother: T065A5 is a calf of T065A. The sheet states
         # no parentage, so this is the convention read off, as the sub-lineages are,
         # and no stronger than it. Written only where the mother is a registered animal
-        # not sexed M; a calf whose mother has no row (T002C's mother, T002) gets none,
+        # not sexed M (by the register, if it already holds her); a calf whose mother has no row (T002C's mother, T002) gets none,
         # and absent means "not recorded".
         mother = mother_of(desig)
-        if (mother in individuals and individuals[mother]["sex"] != "M"
+        if (mother in individuals and not sexed_male(mother)
                 and (eid, "mother") not in known_parentage):
             known_parentage.add((eid, "mother"))
             par.append([eid, ind_id[mother], "mother", SOURCE,
