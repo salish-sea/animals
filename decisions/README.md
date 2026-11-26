@@ -75,6 +75,7 @@ scientific reviewers says in its Status line that none has reviewed it.
 | [0025](0025-the-maintainer-accepts-a-record.md) | The maintainer accepts a record, and its Status line says whether a scientist has reviewed it | Scientific + informatics |
 | [0026](0026-identifiers-resolve-through-w3id.md) | An identifier's global form is a w3id.org address, and the Bioregistry request is withdrawn | Informatics reviewers |
 | [0027](0027-darwin-core-organisms-not-a-checklist.md) | In Darwin Core, the register's animals and groups are Organisms, not a checklist, and each identifier resolves to a page about its entity (answers 0008's open question) | Scientific + informatics |
+| [0028](0028-biggs-mothers-are-read-off-designations.md) | Bigg's mothers are read off their designations until a source states them (amends 0016) | Scientific + informatics |
 
 ## Template
 
