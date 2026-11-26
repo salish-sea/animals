@@ -44,7 +44,8 @@ abstract. Needs expert confirmation.
   not off parentage**: a letter-suffixed animal heads one when other registered animals are
   named after her (`T073A1` after `T073A`). By convention a designation does encode
   maternal descent, which is why this is a reasonable reading — but nobody has checked
-  these against a catalogue, `parentage.tsv` does not hold the Bigg's, and two of the 73
+  these against a catalogue, the Bigg's mothers in `parentage.tsv` are read off the same
+  designations ([ADR-0028](../decisions/0028-biggs-mothers-are-read-off-designations.md)), so they can't confirm them, and two of the 73
   heads (`T064B1`, `T075C`) are not even sexed in the source. They were minted ahead of
   [Q22](https://github.com/salish-sea/animals/issues/13), which asks whether they are real
   groups. Record the narrowest one you are sure of.

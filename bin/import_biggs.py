@@ -39,8 +39,10 @@ SNAPSHOT = "2026-07"
 DESIGNATION = re.compile(r"^(T\d+)([A-Z]?\d*)*$")
 LINEAGE = re.compile(r"^(T\d+)")
 # A designation is a T-number followed by alternating letter and number tokens, one per
-# generation: T073 > T073A > T073A1. Stripping the last token gives the mother's.
-TOKENS = re.compile(r"T\d+|[A-Z]+|\d+")
+# generation: T073 > T073A > T073A1. Stripping the last token gives the mother's. The
+# T-number is anchored to the start, so a suffix letter T is a letter: T073T1 is a calf
+# of T073T, not of T073.
+TOKENS = re.compile(r"^T\d+|[A-Z]+|\d+")
 
 
 def enclosing(desig):
@@ -56,6 +58,17 @@ def enclosing(desig):
               "no sub-lineage derived", file=sys.stderr)
         return [tokens[0]]
     return ["".join(tokens[:n]) for n in range(len(tokens) - 1, 0, -1)]
+
+
+def mother_of(desig):
+    """The designation `desig` is named a calf of, or None: T073A1 -> T073A, T073 -> None.
+
+    None too for a designation enclosing() can't parse, since it then claims only the
+    lineage, and the lineage's founder is not thereby the mother."""
+    tokens = TOKENS.findall(desig)
+    if len(tokens) < 2 or any(len(t) > 1 for t in tokens[1:] if t.isalpha()):
+        return None
+    return "".join(tokens[:-1])
 
 
 def read_tsv(path):
@@ -169,7 +182,7 @@ def main():
     #
     # Three narrower judgements, none obviously right:
     #  - "Descendant" is read off the designation, exactly as the top-level lineages
-    #    are. No parentage is consulted; parentage.tsv does not hold the Bigg's yet.
+    #    are, and so are the mothers below (ADR-0028); neither is read off the other.
     #  - A head must herself be a registered animal. A gap in the sheet (calves with no
     #    row for their mother) yields no group rather than a group named for nobody.
     #  - An animal with no registered descendants heads nothing: T073B is in `T073s`
@@ -208,7 +221,7 @@ def main():
         ind_id[desig] = by_label.get(desig) or mint(INDIVIDUAL_BLOCK, used)
 
     # --- emit ---------------------------------------------------------------------
-    ent, nam, mem, sta, mat = [], [], [], [], []
+    ent, nam, mem, sta, mat, par = [], [], [], [], [], []
 
     def add_name(row):
         key = (row[0], row[1], row[3])
@@ -234,6 +247,15 @@ def main():
     known_status = existing_keys("status", (0, 4, 2))
     known_matriarchs = {k[0] for k in existing_keys("matriarchs", (0,))}
 
+    # An animal already registered keeps its row (above), and a curator may have corrected
+    # its sex there, so the register's sex decides whether she can be a matriarch or a
+    # mother, and the sheet's only for an animal not yet registered.
+    registered_sex = {r[hdr.index("label")]: r[hdr.index("sex")] for r in existing[1:]}
+
+    def sexed_male(desig):
+        return registered_sex.get(desig, individuals[desig]["sex"]) == "M"
+    known_parentage = existing_keys("parentage", (0, 2))
+
     # --- matriarchs (ADR-0024) -----------------------------------------------------
     # A lineage is named for the animal whose designation it carries: T065s for T065,
     # T073As for T073A. Recorded only where that animal is registered and not sexed M.
@@ -245,7 +267,7 @@ def main():
     #    exist at all is a question about this import, not about matriarchs.
     def add_matriarch(head, line_id):
         rec = individuals.get(head)
-        if rec and rec["sex"] != "M" and line_id not in known_matriarchs:
+        if rec and not sexed_male(head) and line_id not in known_matriarchs:
             known_matriarchs.add(line_id)
             mat.append([line_id, ind_id[head], SOURCE,
                         "Read off the designation, as the lineage itself is."])
@@ -321,6 +343,20 @@ def main():
                                               "provisional (a trailing *), so it may "
                                               "change."]))
             add_name([eid, nick, "common", "en", SOURCE, note])
+        # --- mother (ADR-0028) ------------------------------------------------------
+        # The designation names the mother: T065A5 is a calf of T065A. The sheet states
+        # no parentage, so this is the convention read off, as the sub-lineages are,
+        # and no stronger than it. Written only where the mother is a registered animal
+        # not sexed M (by the register, if it already holds her); a calf whose mother has no row (T002C's mother, T002) gets none,
+        # and absent means "not recorded".
+        mother = mother_of(desig)
+        if (mother in individuals and not sexed_male(mother)
+                and (eid, "mother") not in known_parentage):
+            known_parentage.add((eid, "mother"))
+            par.append([eid, ind_id[mother], "mother", SOURCE,
+                        f"Read off the designation: {desig} is named as a calf of "
+                        f"{mother}. The sheet states no parentage (ADR-0028)."])
+
         if rec["alt"]:
             add_name([eid, rec["alt"], "hidden", "en", SOURCE,
                         "Alaska/California catalogue designation. A proper crosswalk "
@@ -341,14 +377,15 @@ def main():
     print(f"{len(individuals)} individuals, {len(lineages)} matrilines, "
           f"{len(sub_heads)} sub-lineages in the sheet; new rows: {len(ent)} entities, "
           f"{len(mem)} membership, {len(nam)} names, {len(sta)} status, "
-          f"{len(mat)} matriarchs", file=sys.stderr)
+          f"{len(mat)} matriarchs, {len(par)} mothers", file=sys.stderr)
 
     if "--apply" not in sys.argv:
         print("dry run; pass --apply to write", file=sys.stderr)
         return
 
     for stem, rows in (("entities", ent), ("names", nam),
-                       ("membership", mem), ("status", sta), ("matriarchs", mat)):
+                       ("membership", mem), ("status", sta), ("matriarchs", mat),
+                       ("parentage", par)):
         path = DATA / f"{stem}.tsv"
         width = len(path.read_text().splitlines()[0].split("\t"))
         with path.open("a") as f:

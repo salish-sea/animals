@@ -14,6 +14,8 @@
 - **Under Consequences,** SalishSea.io's profile URLs now key on the register identifier, with the designation as a slug that is never read (its decision [034](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/034-profile-urls-key-on-the-register-identifier.md)). Its decision [033](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/033-register-names-the-animals.md) records on that side that its decision 008 does not govern the register, as this record asked.
 - **Both open questions are answered on SalishSea.io's side.** The catalogue migrates before the first Orcasound bout is tagged (decision [035](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/035-catalogue-migrates-before-tagging.md)), and SalishSea.io alone makes the recommendation to Orcasound (decision [028](https://github.com/salish-sea/salishsea-io/blob/main/docs/decisions/028-salishsea-io-speaks-to-orcasound.md)).
 
+*Amended 2026-11-25:* the Bigg's now have mothers, read off their designations ([ADR-0028](0028-biggs-mothers-are-read-off-designations.md)). "Bigg's have none", in the `mother_id` finding below, describes the register before that.
+
 ## Context
 
 SalishSea.io already ships a marine-mammal catalogue in production: `individuals`,
