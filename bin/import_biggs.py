@@ -39,8 +39,10 @@ SNAPSHOT = "2026-07"
 DESIGNATION = re.compile(r"^(T\d+)([A-Z]?\d*)*$")
 LINEAGE = re.compile(r"^(T\d+)")
 # A designation is a T-number followed by alternating letter and number tokens, one per
-# generation: T073 > T073A > T073A1. Stripping the last token gives the mother's.
-TOKENS = re.compile(r"T\d+|[A-Z]+|\d+")
+# generation: T073 > T073A > T073A1. Stripping the last token gives the mother's. The
+# T-number is anchored to the start, so a suffix letter T is a letter: T073T1 is a calf
+# of T073T, not of T073.
+TOKENS = re.compile(r"^T\d+|[A-Z]+|\d+")
 
 
 def enclosing(desig):
